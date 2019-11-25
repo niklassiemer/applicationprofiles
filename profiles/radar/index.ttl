@@ -1,0 +1,116 @@
+@base <https://purl.org/coscine/ap/radar/> .
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix coscinepublishmetadata: <https://purl.org/coscine/terms/publishMetadata/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+
+@prefix coscineradar: <https://purl.org/coscine/ap/radar/> .
+
+coscineradar:
+  a sh:NodeShape ;
+  sh:targetClass coscineradar:;
+  sh:closed true ; #no additional properties are allowed
+
+  sh:property [
+    sh:path rdf:type ;
+    sh:node rdf:type ;
+  ] ;
+
+  sh:property coscineradar:publishMetadata ;
+  sh:property coscineradar:hasIKZ ;
+  sh:property coscineradar:creator ;
+  sh:property coscineradar:title ;
+  sh:property coscineradar:created ;  
+  sh:property coscineradar:subject ;
+  sh:property coscineradar:type ;
+  sh:property coscineradar:rights ;
+  sh:property coscineradar:rightsHolder .
+
+coscineradar:publishMetadata
+  sh:path coscinepublishmetadata: ;
+  sh:node coscinepublishmetadata: ;
+  sh:order 0 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:class coscinepublishmetadata: ;
+  sh:name "Visibility"@en, "Sichtbarkeit"@de .
+
+coscineradar:hasIKZ
+  sh:path coscinepublishmetadata:hasIKZ ;
+  sh:node coscinepublishmetadata:hasIKZ ;
+  sh:order 1 ;
+  sh:minCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "IKZ"@en, "IKZ"@de .
+
+coscineradar:creator
+  sh:path dc:creator ;
+  sh:node dc:creator ;
+  sh:order 2 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:defaultValue "{ME}" ;
+  sh:name "Creator"@en, "Ersteller"@de .
+
+coscineradar:title
+  sh:path dc:title ;
+  sh:node dc:title ;
+  sh:order 3 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Title"@en, "Titel"@de .
+
+coscineradar:created
+  sh:path dc:created ;
+  sh:node dc:created ;
+  sh:order 4 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:date ;
+  sh:defaultValue "{TODAY}" ;
+  sh:name "Production Date"@en, "Erstelldatum"@de .
+
+coscineradar:subject
+  sh:path dc:subject ;
+  sh:node dc:subject ;
+  sh:order 5 ;
+  sh:maxCount 1 ;
+  sh:name "Subject Area"@en, "Fachrichtung"@de ;
+  sh:class <http://www.dfg.de/dfg_profil/gremien/fachkollegien/faecher/> .
+
+coscineradar:type
+  sh:path dc:type ;
+  sh:node dc:type ;
+  sh:order 6 ;
+  sh:maxCount 1 ;
+  sh:name "Resource"@en, "Ressource"@de ;
+  sh:class <http://purl.org/dc/dcmitype/> .
+
+coscineradar:rights
+  sh:path dc:rights ;
+  sh:node dc:rights ;
+  sh:order 7 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Rights"@en, "Berechtigung"@de .
+
+coscineradar:rightsHolder
+  sh:path dc:rightsHolder ;
+  sh:node dc:rightsHolder ;
+  sh:order 8 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Rightsholder"@en, "Rechteinhaber"@de .
