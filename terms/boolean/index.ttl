@@ -1,0 +1,19 @@
+@base  <https://purl.org/coscine/terms/boolean> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix coscineterms: <https://purl.org/coscine/terms/> .
+@prefix coscineboolean: <https://purl.org/coscine/terms/boolean#> .
+
+coscineterms:boolean
+  rdf:type coscineterms:boolean .
+
+coscineboolean:true
+  rdfs:label "Yes"@en ;
+  rdfs:label "Ja"@de ;
+  a coscineterms:boolean .
+  
+coscineboolean:false
+  rdfs:label "No"@en ;
+  rdfs:label "Nein"@de ;
+  a coscineterms:boolean .

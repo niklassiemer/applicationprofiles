@@ -1,0 +1,221 @@
+@base <https://purl.org/coscine/ap/ltt/> .
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix coscine: <https://purl.org/coscine/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix rwth412110: <https://purl.org/rwth/md/412110/1.0/> .
+@prefix rwthform: <https://purl.org/rwth/md/form/1.0/> .
+
+@prefix coscineltt: <https://purl.org/coscine/ap/ltt/> .
+
+coscineltt:
+  a sh:NodeShape ;
+  sh:targetClass coscineltt:;
+  sh:closed true ; #no additional properties are allowed
+
+  sh:property [
+    sh:path rdf:type ;
+    sh:node rdf:type ;
+  ] ;
+
+  sh:property coscineltt:title ;
+  sh:property coscineltt:idInternal ;
+  sh:property coscineltt:idExternal ;
+  sh:property coscineltt:start ;  
+  sh:property coscineltt:end ;
+  sh:property coscineltt:creator ;
+  sh:property coscineltt:contributor ;
+  sh:property coscineltt:workgroup ;
+  sh:property coscineltt:subWorkgroup ;
+  sh:property coscineltt:parentProjectId ;
+  sh:property coscineltt:siblingProjectId ;
+  sh:property coscineltt:visibility ;
+  sh:property coscineltt:description ;
+  sh:property coscineltt:abstract ;
+  sh:property coscineltt:projectPartner ;
+  sh:property coscineltt:hasDmp ;
+  sh:property coscineltt:dmpLocation ;
+  sh:property coscineltt:dateArchived ;
+  sh:property coscineltt:archiveExpire ;
+  sh:property coscineltt:archivedBy .
+
+coscineltt:title
+  sh:path dc:title ;
+  sh:node dc:title ;
+  sh:order 0 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Title of the research project"@en, "Titel des Forschungsvorhabens"@de .
+  
+coscineltt:idInternal
+  sh:path rwth412110:idInternal ;
+  sh:node rwth412110:idInternal ;
+  sh:order 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Identification Number – intern – "@en, "Identifikationsnummer – intern – "@de .  
+  
+coscineltt:idExternal
+  sh:path rwth412110:idExternal ;
+  sh:node rwth412110:idExternal ;
+  sh:order 2 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Identification Number – extern – "@en, "Identifikationsnummer – extern – "@de .  
+  
+coscineltt:start
+  sh:path rwth412110:start ;
+  sh:node rwth412110:start ;
+  sh:order 3 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:date ;
+  sh:name "Start of the term"@en, "Beginn der Laufzeit"@de .
+
+coscineltt:end
+  sh:path rwth412110:end ;
+  sh:node rwth412110:end ;
+  sh:order 4 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:date ;
+  sh:name "End of the term"@en, "Ende der Laufzeit"@de .  
+  
+coscineltt:creator
+  sh:path dc:creator ;
+  sh:node dc:creator ;
+  sh:order 5 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:defaultValue "{ME}" ;
+  sh:name "Main responsible person for the research project"@en, "Hauptverantwortliche(r) für das Forschungsvorhaben"@de .
+  
+coscineltt:contributor
+  sh:path dc:contributor ;
+  sh:node dc:contributor ;
+  sh:order 6 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:defaultValue "{ME}" ;
+  sh:name "Editor of the project"@en, "Bearbeiter des Projektes"@de .
+  
+coscineltt:workgroup
+  sh:path rwth412110:workgroup ;
+  sh:node rwth412110:workgroup ;
+  sh:order 7 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Team"@en, "Arbeitsgruppe"@de .  
+
+coscineltt:subWorkgroup
+  sh:path rwth412110:subWorkgroup ;
+  sh:node rwth412110:subWorkgroup ;
+  sh:order 8 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Sub-working group(s)"@en, "Unterarbeitsgruppe(n)"@de .  # multiline field
+
+coscineltt:parentProjectId
+  sh:path rwth412110:parentProjectId ;
+  sh:node rwth412110:parentProjectId ;
+  sh:order 9 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Identification number previous project"@en, "Identifikationsnummer Vorgängerprojekt"@de .  
+
+coscineltt:siblingProjectId
+  sh:path rwth412110:siblingProjectId ;
+  sh:node rwth412110:siblingProjectId ;
+  sh:order 10 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Identification number sister project"@en, "Identifikationsnummer Schwesterprojekt"@de .  
+
+coscineltt:visibility
+  sh:path coscine:visibility ;
+  sh:node coscine:visibility ;
+  sh:order 11 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:class coscine:visibility ;
+  sh:name "Confidentiality / access right"@en, "Vertraulichkeit / Zugriffsrecht"@de .
+
+coscineltt:description
+  sh:path dc:description ;
+  sh:node dc:description ;
+  sh:order 12 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Description of the research project"@en, "Beschreibung des Forschungsvorhabens"@de .    
+  
+coscineltt:abstract
+  sh:path dc:abstract ;
+  sh:node dc:abstract ;
+  sh:order 13 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Description of the work package or individual project"@en, "Beschreibung des Arbeitspaketes bzw. Einzelvorhabens"@de .
+  
+coscineltt:projectPartner
+  sh:path rwthform:projectPartner ;
+  sh:node rwthform:projectPartner ;
+  sh:order 14 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Project partners"@en, "Projektpartner"@de .    
+  
+coscineltt:hasDmp
+  sh:path rwthform:hasDmp ;
+  sh:node rwthform:hasDmp ;
+  sh:order 15 ;
+  sh:maxCount 1 ;
+  sh:class coscine:boolean ;
+  sh:name "Data management plan created?"@en, "Datenmanagementplan erstellt?"@de .
+  
+coscineltt:dmpLocation
+  sh:path rwthform:dmpLocation ;
+  sh:node rwthform:dmpLocation ;
+  sh:order 16 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Data management plan location"@en, "Datenmanagementplan Speicherort"@de .
+  
+coscineltt:dateArchived
+  sh:path rwth412110:dateArchived ;
+  sh:node rwth412110:dateArchived ;
+  sh:order 17 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:date ;
+  sh:defaultValue "{TODAY}" ;
+  sh:name "Date of archiving"@en, "Datum der Archivierung"@de .
+  
+coscineltt:archiveExpire
+  sh:path rwth412110:archiveExpire ;
+  sh:node rwth412110:archiveExpire ;
+  sh:order 18 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:date ;
+  sh:defaultValue "{TODAY}" ;
+  sh:name "Date closing of the node"@en, "Datum Schließung des Knotens"@de .
+  
+coscineltt:archivedBy
+  sh:path rwthform:archivedBy ;
+  sh:node rwthform:archivedBy ;
+  sh:order 19 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Name of the archivist"@en, "Name des Archivars"@de .
