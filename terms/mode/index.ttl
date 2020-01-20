@@ -1,0 +1,24 @@
+@base  <https://purl.org/coscine/terms/mode> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix coscineterms: <https://purl.org/coscine/terms/> .
+@prefix coscinemode: <https://purl.org/coscine/terms/mode#> .
+
+coscineterms:mode
+  rdf:type coscineterms:mode .
+
+coscinemode:simulation
+  rdfs:label "Simulation"@en ;
+  rdfs:label "Simulation"@de ;
+  a coscineterms:mode .
+  
+coscinemode:experiment
+  rdfs:label "Experiment"@en ;
+  rdfs:label "Experiment"@de ;
+  a coscineterms:mode .
+  
+coscinemode:analysis
+  rdfs:label "Analysis"@en ;
+  rdfs:label "Analyse"@de ;
+  a coscineterms:mode .

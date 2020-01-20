@@ -1,0 +1,2063 @@
+@base  <https://www.iana.org/assignments/media-types/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://www.iana.org/assignments/media-types/application/andrewinset>
+  rdf:about "https://www.iana.org/assignments/media-types/application/andrew-inset" ;
+  rdfs:label "*.ez"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/annodex>
+  rdf:about "https://www.iana.org/assignments/media-types/application/annodex" ;
+  rdfs:label "*.anx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/atom+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/atom+xml" ;
+  rdfs:label "*.atom"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/atomcat+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/atomcat+xml" ;
+  rdfs:label "*.atomcat"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/atomserv+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/atomserv+xml" ;
+  rdfs:label "*.atomsrv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/bbolin>
+  rdf:about "https://www.iana.org/assignments/media-types/application/bbolin" ;
+  rdfs:label "*.lin"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/cu-seeme>
+  rdf:about "https://www.iana.org/assignments/media-types/application/cu-seeme" ;
+  rdfs:label "*.cu"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/davmount+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/davmount+xml" ;
+  rdfs:label "*.davmount"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/dicom>
+  rdf:about "https://www.iana.org/assignments/media-types/application/dicom" ;
+  rdfs:label "*.dcm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/dsptype>
+  rdf:about "https://www.iana.org/assignments/media-types/application/dsptype" ;
+  rdfs:label "*.tsp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/ecmascript>
+  rdf:about "https://www.iana.org/assignments/media-types/application/ecmascript" ;
+  rdfs:label "*.es"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/font-sfnt>
+  rdf:about "https://www.iana.org/assignments/media-types/application/font-sfnt" ;
+  rdfs:label "*.otf, *.ttf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/font-tdpfr>
+  rdf:about "https://www.iana.org/assignments/media-types/application/font-tdpfr" ;
+  rdfs:label "*.pfr"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/font-woff>
+  rdf:about "https://www.iana.org/assignments/media-types/application/font-woff" ;
+  rdfs:label "*.woff"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/futuresplash>
+  rdf:about "https://www.iana.org/assignments/media-types/application/futuresplash" ;
+  rdfs:label "*.spl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/gzip>
+  rdf:about "https://www.iana.org/assignments/media-types/application/gzip" ;
+  rdfs:label "*.gz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/hta>
+  rdf:about "https://www.iana.org/assignments/media-types/application/hta" ;
+  rdfs:label "*.hta"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/java-archive>
+  rdf:about "https://www.iana.org/assignments/media-types/application/java-archive" ;
+  rdfs:label "*.jar"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/java-serialized-object>
+  rdf:about "https://www.iana.org/assignments/media-types/application/java-serialized-object" ;
+  rdfs:label "*.ser"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/java-vm>
+  rdf:about "https://www.iana.org/assignments/media-types/application/java-vm" ;
+  rdfs:label "*.class"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/javascript>
+  rdf:about "https://www.iana.org/assignments/media-types/application/javascript" ;
+  rdfs:label "*.js"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/json>
+  rdf:about "https://www.iana.org/assignments/media-types/application/json" ;
+  rdfs:label "*.json"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/m3g>
+  rdf:about "https://www.iana.org/assignments/media-types/application/m3g" ;
+  rdfs:label "*.m3g"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/mac-binhex40>
+  rdf:about "https://www.iana.org/assignments/media-types/application/mac-binhex40" ;
+  rdfs:label "*.hqx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/mac-compactpro>
+  rdf:about "https://www.iana.org/assignments/media-types/application/mac-compactpro" ;
+  rdfs:label "*.cpt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/mathematica>
+  rdf:about "https://www.iana.org/assignments/media-types/application/mathematica" ;
+  rdfs:label "*.nb, *.nbp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/mbox>
+  rdf:about "https://www.iana.org/assignments/media-types/application/mbox" ;
+  rdfs:label "*.mbox"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/msaccess>
+  rdf:about "https://www.iana.org/assignments/media-types/application/msaccess" ;
+  rdfs:label "*.mdb"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/msword>
+  rdf:about "https://www.iana.org/assignments/media-types/application/msword" ;
+  rdfs:label "*.doc, *.dot"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/application/mxf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/mxf" ;
+  rdfs:label "*.mxf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/octet-stream>
+  rdf:about "https://www.iana.org/assignments/media-types/application/octet-stream" ;
+  rdfs:label "*.bin"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/oda>
+  rdf:about "https://www.iana.org/assignments/media-types/application/oda" ;
+  rdfs:label "*.oda"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/oebps-package+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/oebps-package+xml" ;
+  rdfs:label "*.opf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/ogg>
+  rdf:about "https://www.iana.org/assignments/media-types/application/ogg" ;
+  rdfs:label "*.ogx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/onenote>
+  rdf:about "https://www.iana.org/assignments/media-types/application/onenote" ;
+  rdfs:label "*.one, *.onetoc2, *.onetmp, *.onepkg"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/pdf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/pdf" ;
+  rdfs:label "*.pdf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/pgp-encrypted>
+  rdf:about "https://www.iana.org/assignments/media-types/application/pgp-encrypted" ;
+  rdfs:label "*.pgp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/pgp-keys>
+  rdf:about "https://www.iana.org/assignments/media-types/application/pgp-keys" ;
+  rdfs:label "*.key"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/pgp-signature>
+  rdf:about "https://www.iana.org/assignments/media-types/application/pgp-signature" ;
+  rdfs:label "*.sig"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/pics-rules>
+  rdf:about "https://www.iana.org/assignments/media-types/application/pics-rules" ;
+  rdfs:label "*.prf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/postscript>
+  rdf:about "https://www.iana.org/assignments/media-types/application/postscript" ;
+  rdfs:label "*.ps, *.ai, *.eps, *.epsi, *.epsf, *.eps2, *.eps3"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/rar>
+  rdf:about "https://www.iana.org/assignments/media-types/application/rar" ;
+  rdfs:label "*.rar"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/rdf+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/rdf+xml" ;
+  rdfs:label "*.rdf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/rtf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/rtf" ;
+  rdfs:label "*.rtf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/sla>
+  rdf:about "https://www.iana.org/assignments/media-types/application/sla" ;
+  rdfs:label "*.stl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/smil+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/smil+xml" ;
+  rdfs:label "*.smi, *.smil"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/xhtml+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/xhtml+xml" ;
+  rdfs:label "*.xhtml, *.xht"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/xml" ;
+  rdfs:label "*.xml, *.xsd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/xslt+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/xslt+xml" ;
+  rdfs:label "*.xsl, *.xslt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/xspf+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/xspf+xml" ;
+  rdfs:label "*.xspf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/zip>
+  rdf:about "https://www.iana.org/assignments/media-types/application/zip" ;
+  rdfs:label "*.zip"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.android.package-archive>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.android.package-archive" ;
+  rdfs:label "*.apk"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.cinderella>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.cinderella" ;
+  rdfs:label "*.cdy"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.debian.binary-package>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.debian.binary-package" ;
+  rdfs:label "*.deb, *.ddeb, *.udeb"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.font-fontforge-sfd>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.font-fontforge-sfd" ;
+  rdfs:label "*.sfd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.google-earth.kml+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.google-earth.kml+xml" ;
+  rdfs:label "*.kml"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.google-earth.kmz>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.google-earth.kmz" ;
+  rdfs:label "*.kmz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.irepository.package+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.irepository.package+xml"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.mozilla.xul+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.mozilla.xul+xml" ;
+  rdfs:label "*.xul"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-excel>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-excel" ;
+  rdfs:label "*.xls, *.xlb, *.xlt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-excel.addin.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-excel.addin.macroEnabled.12" ;
+  rdfs:label "*.xlam"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-excel.sheet.binary.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-excel.sheet.binary.macroEnabled.12" ;
+  rdfs:label "*.xlsb"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-excel.sheet.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-excel.sheet.macroEnabled.12" ;
+  rdfs:label "*.xlsm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-excel.template.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-excel.template.macroEnabled.12" ;
+  rdfs:label "*.xltm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-fontobject>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-fontobject" ;
+  rdfs:label "*.eot"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-officetheme>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-officetheme" ;
+  rdfs:label "*.thmx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-pki.seccat>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-pki.seccat" ;
+  rdfs:label "*.cat"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint" ;
+  rdfs:label "*.ppt, *.pps"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint.addin.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint.addin.macroEnabled.12" ;
+  rdfs:label "*.ppam"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint.presentation.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint.presentation.macroEnabled.12" ;
+  rdfs:label "*.pptm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint.slide.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint.slide.macroEnabled.12" ;
+  rdfs:label "*.sldm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint.slideshow.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint.slideshow.macroEnabled.12" ;
+  rdfs:label "*.ppsm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint.template.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-powerpoint.template.macroEnabled.12" ;
+  rdfs:label "*.potm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-word.document.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-word.document.macroEnabled.12" ;
+  rdfs:label "*.docm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.ms-word.template.macroEnabled.12>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.ms-word.template.macroEnabled.12" ;
+  rdfs:label "*.dotm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.chart>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.chart" ;
+  rdfs:label "*.odc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.database>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.database" ;
+  rdfs:label "*.odb"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.formula>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.formula" ;
+  rdfs:label "*.odf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.graphics>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.graphics" ;
+  rdfs:label "*.odg"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.graphics-template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.graphics-template" ;
+  rdfs:label "*.otg"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.image>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.image" ;
+  rdfs:label "*.odi"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.presentation>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.presentation" ;
+  rdfs:label "*.odp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.presentation-template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.presentation-template" ;
+  rdfs:label "*.otp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.spreadsheet>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.spreadsheet" ;
+  rdfs:label "*.ods"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.spreadsheet-template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.spreadsheet-template" ;
+  rdfs:label "*.ots"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.text>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.text" ;
+  rdfs:label "*.odt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.text-master>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.text-master" ;
+  rdfs:label "*.odm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.text-template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.text-template" ;
+  rdfs:label "*.ott"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.text-web>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.oasis.opendocument.text-web" ;
+  rdfs:label "*.oth"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.presentationml.presentation>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.presentationml.presentation" ;
+  rdfs:label "*.pptx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.presentationml.slide>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.presentationml.slide" ;
+  rdfs:label "*.sldx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.presentationml.slideshow>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.presentationml.slideshow" ;
+  rdfs:label "*.ppsx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.presentationml.template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.presentationml.template" ;
+  rdfs:label "*.potx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ;
+  rdfs:label "*.xlsx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.template" ;
+  rdfs:label "*.xltx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
+  rdfs:label "*.docx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.template" ;
+  rdfs:label "*.dotx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.rim.cod>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.rim.cod" ;
+  rdfs:label "*.cod"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.smaf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.smaf" ;
+  rdfs:label "*.mmf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.stardivision.calc>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.stardivision.calc" ;
+  rdfs:label "*.sdc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.stardivision.chart>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.stardivision.chart" ;
+  rdfs:label "*.sds"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.stardivision.draw>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.stardivision.draw" ;
+  rdfs:label "*.sda"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.stardivision.impress>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.stardivision.impress" ;
+  rdfs:label "*.sdd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.stardivision.math>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.stardivision.math" ;
+  rdfs:label "*.sdf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.stardivision.writer>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.stardivision.writer" ;
+  rdfs:label "*.sdw"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.stardivision.writer-global>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.stardivision.writer-global" ;
+  rdfs:label "*.sgl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.sun.xml.calc>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.sun.xml.calc" ;
+  rdfs:label "*.sxc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.sun.xml.calc.template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.sun.xml.calc.template" ;
+  rdfs:label "*.stc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.sun.xml.draw>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.sun.xml.draw" ;
+  rdfs:label "*.sxd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.sun.xml.draw.template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.sun.xml.draw.template" ;
+  rdfs:label "*.std"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.sun.xml.impress>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.sun.xml.impress" ;
+  rdfs:label "*.sxi"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.sun.xml.impress.template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.sun.xml.impress.template" ;
+  rdfs:label "*.sti"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.sun.xml.math>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.sun.xml.math" ;
+  rdfs:label "*.sxm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.sun.xml.writer>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.sun.xml.writer" ;
+  rdfs:label "*.sxw"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.sun.xml.writer.global>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.sun.xml.writer.global" ;
+  rdfs:label "*.sxg"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.sun.xml.writer.template>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.sun.xml.writer.template" ;
+  rdfs:label "*.stw"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.symbian.install>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.symbian.install" ;
+  rdfs:label "*.sis"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.tcpdump.pcap>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.tcpdump.pcap" ;
+  rdfs:label "*.cap, *.pcap"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.visio>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.visio" ;
+  rdfs:label "*.vsd, *.vst, *.vsw, *.vss"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.wap.wbxml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.wap.wbxml" ;
+  rdfs:label "*.wbxml"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.wap.wmlc>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.wap.wmlc" ;
+  rdfs:label "*.wmlc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.wap.wmlscriptc>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.wap.wmlscriptc" ;
+  rdfs:label "*.wmlsc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.wordperfect>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.wordperfect" ;
+  rdfs:label "*.wpd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.wordperfect5.1>
+  rdf:about "https://www.iana.org/assignments/media-types/application/vnd.wordperfect5.1" ;
+  rdfs:label "*.wp5"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-123>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-123" ;
+  rdfs:label "*.wk"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-7z-compressed>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-7z-compressed" ;
+  rdfs:label "*.7z"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-abiword>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-abiword" ;
+  rdfs:label "*.abw"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-apple-diskimage>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-apple-diskimage" ;
+  rdfs:label "*.dmg"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-bcpio>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-bcpio" ;
+  rdfs:label "*.bcpio"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-bittorrent>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-bittorrent" ;
+  rdfs:label "*.torrent"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-cab>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-cab" ;
+  rdfs:label "*.cab"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-cbr>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-cbr" ;
+  rdfs:label "*.cbr"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-cbz>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-cbz" ;
+  rdfs:label "*.cbz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-cdf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-cdf" ;
+  rdfs:label "*.cdf, *.cda"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-cdlink>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-cdlink" ;
+  rdfs:label "*.vcd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-chess-pgn>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-chess-pgn" ;
+  rdfs:label "*.pgn"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-comsol>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-comsol" ;
+  rdfs:label "*.mph"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-cpio>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-cpio" ;
+  rdfs:label "*.cpio"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-csh>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-csh" ;
+  rdfs:label "*.csh"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-debian-package>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-debian-package" ;
+  rdfs:label "*.deb, *.udeb"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-director>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-director" ;
+  rdfs:label "*.dcr, *.dir, *.dxr"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-dms>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-dms" ;
+  rdfs:label "*.dms"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-doom>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-doom" ;
+  rdfs:label "*.wad"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-dvi>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-dvi" ;
+  rdfs:label "*.dvi"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-font>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-font" ;
+  rdfs:label "*.pfa, *.pfb, *.gsf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-font-pcf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-font-pcf" ;
+  rdfs:label "*.pcf, *.pcf.Z"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-freemind>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-freemind" ;
+  rdfs:label "*.mm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-futuresplash>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-futuresplash" ;
+  rdfs:label "*.spl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-ganttproject>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-ganttproject" ;
+  rdfs:label "*.gan"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-gnumeric>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-gnumeric" ;
+  rdfs:label "*.gnumeric"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-go-sgf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-go-sgf" ;
+  rdfs:label "*.sgf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-graphing-calculator>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-graphing-calculator" ;
+  rdfs:label "*.gcf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-gtar>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-gtar" ;
+  rdfs:label "*.gtar"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-gtar-compressed>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-gtar-compressed" ;
+  rdfs:label "*.tgz, *.taz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-hdf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-hdf" ;
+  rdfs:label "*.hdf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-hwp>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-hwp" ;
+  rdfs:label "*.hwp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-ica>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-ica" ;
+  rdfs:label "*.ica"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-info>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-info" ;
+  rdfs:label "*.info"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-internet-signup>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-internet-signup" ;
+  rdfs:label "*.ins, *.isp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-iphone>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-iphone" ;
+  rdfs:label "*.iii"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-iso9660-image>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-iso9660-image" ;
+  rdfs:label "*.iso"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-jam>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-jam" ;
+  rdfs:label "*.jam"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-java-jnlp-file>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-java-jnlp-file" ;
+  rdfs:label "*.jnlp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-jmol>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-jmol" ;
+  rdfs:label "*.jmz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-kchart>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-kchart" ;
+  rdfs:label "*.chrt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-killustrator>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-killustrator" ;
+  rdfs:label "*.kil"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-koan>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-koan" ;
+  rdfs:label "*.skp, *.skd, *.skt, *.skm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-kpresenter>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-kpresenter" ;
+  rdfs:label "*.kpr, *.kpt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-kspread>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-kspread" ;
+  rdfs:label "*.ksp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-kword>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-kword" ;
+  rdfs:label "*.kwd, *.kwt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-latex>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-latex" ;
+  rdfs:label "*.latex"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-lha>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-lha" ;
+  rdfs:label "*.lha"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-lyx>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-lyx" ;
+  rdfs:label "*.lyx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-lzh>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-lzh" ;
+  rdfs:label "*.lzh"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-lzx>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-lzx" ;
+  rdfs:label "*.lzx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-maker>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-maker" ;
+  rdfs:label "*.frm, *.maker, *.frame, *.fm, *.fb, *.book, *.fbdoc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-mif>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-mif" ;
+  rdfs:label "*.mif"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-mpegURL>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-mpegURL" ;
+  rdfs:label "*.m3u8"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-ms-wmd>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-ms-wmd" ;
+  rdfs:label "*.wmd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-ms-wmz>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-ms-wmz" ;
+  rdfs:label "*.wmz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-msdos-program>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-msdos-program" ;
+  rdfs:label "*.com, *.exe, *.bat, *.dll"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-msi>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-msi" ;
+  rdfs:label "*.msi"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-netcdf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-netcdf" ;
+  rdfs:label "*.nc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-ns-proxy-autoconfig>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-ns-proxy-autoconfig" ;
+  rdfs:label "*.pac"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-nwc>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-nwc" ;
+  rdfs:label "*.nwc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-object>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-object" ;
+  rdfs:label "*.o"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-oz-application>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-oz-application" ;
+  rdfs:label "*.oza"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-pkcs7-certreqresp>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-pkcs7-certreqresp" ;
+  rdfs:label "*.p7r"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-pkcs7-crl>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-pkcs7-crl" ;
+  rdfs:label "*.crl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-python-code>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-python-code" ;
+  rdfs:label "*.pyc, *.pyo"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-qgis>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-qgis" ;
+  rdfs:label "*.qgs, *.shp, *.shx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-quicktimeplayer>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-quicktimeplayer" ;
+  rdfs:label "*.qtl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-rdp>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-rdp" ;
+  rdfs:label "*.rdp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-redhat-package-manager>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-redhat-package-manager" ;
+  rdfs:label "*.rpm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-rss+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-rss+xml" ;
+  rdfs:label "*.rss"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-ruby>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-ruby" ;
+  rdfs:label "*.rb"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-scilab>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-scilab" ;
+  rdfs:label "*.sci, *.sce"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-scilab-xcos>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-scilab-xcos" ;
+  rdfs:label "*.xcos"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-sh>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-sh" ;
+  rdfs:label "*.sh"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-shar>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-shar" ;
+  rdfs:label "*.shar"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-shockwave-flash>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-shockwave-flash" ;
+  rdfs:label "*.swf, *.swfl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-silverlight>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-silverlight" ;
+  rdfs:label "*.scr"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-sql>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-sql" ;
+  rdfs:label "*.sql"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-stuffit>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-stuffit" ;
+  rdfs:label "*.sit, *.sitx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-sv4cpio>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-sv4cpio" ;
+  rdfs:label "*.sv4cpio"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-sv4crc>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-sv4crc" ;
+  rdfs:label "*.sv4crc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-tar>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-tar" ;
+  rdfs:label "*.tar"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-tcl>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-tcl" ;
+  rdfs:label "*.tcl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-tex-gf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-tex-gf" ;
+  rdfs:label "*.gf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-tex-pk>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-tex-pk" ;
+  rdfs:label "*.pk"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-texinfo>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-texinfo" ;
+  rdfs:label "*.texinfo, *.texi"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-trash>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-trash" ;
+  rdfs:label "*.~, *.%, *.bak, *.old, *.sik"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-troff>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-troff" ;
+  rdfs:label "*.t, *.tr, *.roff"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-troff-man>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-troff-man" ;
+  rdfs:label "*.man"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-troff-me>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-troff-me" ;
+  rdfs:label "*.me"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-troff-ms>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-troff-ms" ;
+  rdfs:label "*.ms"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-ustar>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-ustar" ;
+  rdfs:label "*.ustar"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-wais-source>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-wais-source" ;
+  rdfs:label "*.src"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-wingz>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-wingz" ;
+  rdfs:label "*.wz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-x509-ca-cert>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-x509-ca-cert" ;
+  rdfs:label "*.crt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-xcf>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-xcf" ;
+  rdfs:label "*.xcf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-xfig>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-xfig" ;
+  rdfs:label "*.fig"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-xpinstall>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-xpinstall" ;
+  rdfs:label "*.xpi"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/application/x-xz>
+  rdf:about "https://www.iana.org/assignments/media-types/application/x-xz" ;
+  rdfs:label "*.xz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/amr>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/amr" ;
+  rdfs:label "*.amr"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/amr-wb>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/amr-wb" ;
+  rdfs:label "*.awb"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/annodex>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/annodex" ;
+  rdfs:label "*.axa"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/basic>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/basic" ;
+  rdfs:label "*.au, *.snd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/csound>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/csound" ;
+  rdfs:label "*.csd, *.orc, *.sco"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/flac>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/flac" ;
+  rdfs:label "*.flac"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/midi>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/midi" ;
+  rdfs:label "*.mid, *.midi, *.kar"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/mpeg>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/mpeg" ;
+  rdfs:label "*.mpga, *.mpega, *.mp2, *.mp3, *.m4a"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/mpegurl>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/mpegurl" ;
+  rdfs:label "*.m3u"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/ogg>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/ogg" ;
+  rdfs:label "*.oga, *.ogg, *.opus, *.spx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/prs.sid>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/prs.sid" ;
+  rdfs:label "*.sid"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/x-aiff>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/x-aiff" ;
+  rdfs:label "*.aif, *.aiff, *.aifc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/x-gsm>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/x-gsm" ;
+  rdfs:label "*.gsm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/x-mpegurl>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/x-mpegurl" ;
+  rdfs:label "*.m3u"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/x-ms-wma>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/x-ms-wma" ;
+  rdfs:label "*.wma"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/x-ms-wax>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/x-ms-wax" ;
+  rdfs:label "*.wax"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/x-pn-realaudio>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/x-pn-realaudio" ;
+  rdfs:label "*.ra, *.rm, *.ram"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/x-realaudio>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/x-realaudio" ;
+  rdfs:label "*.ra"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/x-scpls>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/x-scpls" ;
+  rdfs:label "*.pls"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/x-sd2>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/x-sd2" ;
+  rdfs:label "*.sd2"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/audio/x-wav>
+  rdf:about "https://www.iana.org/assignments/media-types/audio/x-wav" ;
+  rdfs:label "*.wav"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-alchemy>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-alchemy" ;
+  rdfs:label "*.alc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-cache>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-cache" ;
+  rdfs:label "*.cac, *.cache"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-cache-csf>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-cache-csf" ;
+  rdfs:label "*.csf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-cactvs-binary>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-cactvs-binary" ;
+  rdfs:label "*.cbin, *.cascii, *.ctab"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-cdx>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-cdx" ;
+  rdfs:label "*.cdx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-cerius>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-cerius" ;
+  rdfs:label "*.cer"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-chem3d>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-chem3d" ;
+  rdfs:label "*.c3d"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-chemdraw>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-chemdraw" ;
+  rdfs:label "*.chm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-cif>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-cif" ;
+  rdfs:label "*.cif"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-cmdf>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-cmdf" ;
+  rdfs:label "*.cmdf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-cml>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-cml" ;
+  rdfs:label "*.cml"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-compass>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-compass" ;
+  rdfs:label "*.cpa"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-crossfire>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-crossfire" ;
+  rdfs:label "*.bsd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-csml>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-csml" ;
+  rdfs:label "*.csml, *.csm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-ctx>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-ctx" ;
+  rdfs:label "*.ctx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-cxf>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-cxf" ;
+  rdfs:label "*.cxf, *.cef"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-embl-dl-nucleotide>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-embl-dl-nucleotide" ;
+  rdfs:label "*.emb, *.embl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-galactic-spc>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-galactic-spc" ;
+  rdfs:label "*.spc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-gamess-input>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-gamess-input" ;
+  rdfs:label "*.inp, *.gam, *.gamin"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-gaussian-checkpoint>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-gaussian-checkpoint" ;
+  rdfs:label "*.fch, *.fchk"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-gaussian-cube>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-gaussian-cube" ;
+  rdfs:label "*.cub"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-gaussian-input>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-gaussian-input" ;
+  rdfs:label "*.gau, *.gjc, *.gjf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-gaussian-log>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-gaussian-log" ;
+  rdfs:label "*.gal"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-gcg8-sequence>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-gcg8-sequence" ;
+  rdfs:label "*.gcg"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-genbank>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-genbank" ;
+  rdfs:label "*.gen"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-hin>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-hin" ;
+  rdfs:label "*.hin"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-isostar>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-isostar" ;
+  rdfs:label "*.istr, *.ist"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-jcamp-dx>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-jcamp-dx" ;
+  rdfs:label "*.jdx, *.dx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-kinemage>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-kinemage" ;
+  rdfs:label "*.kin"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-macmolecule>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-macmolecule" ;
+  rdfs:label "*.mcm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-macromodel-input>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-macromodel-input" ;
+  rdfs:label "*.mmd, *.mmod"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mdl-molfile>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mdl-molfile" ;
+  rdfs:label "*.mol"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mdl-rdfile>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mdl-rdfile" ;
+  rdfs:label "*.rd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mdl-rxnfile>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mdl-rxnfile" ;
+  rdfs:label "*.rxn"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mdl-sdfile>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mdl-sdfile" ;
+  rdfs:label "*.sd, *.sdf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mdl-tgf>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mdl-tgf" ;
+  rdfs:label "*.tgf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mmcif>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mmcif" ;
+  rdfs:label "*.mcif"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mol2>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mol2" ;
+  rdfs:label "*.mol2"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-molconn-Z>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-molconn-Z" ;
+  rdfs:label "*.b"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mopac-graph>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mopac-graph" ;
+  rdfs:label "*.gpt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mopac-input>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mopac-input" ;
+  rdfs:label "*.mop, *.mopcrt, *.mpc, *.zmt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mopac-out>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mopac-out" ;
+  rdfs:label "*.moo"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-mopac-vib>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-mopac-vib" ;
+  rdfs:label "*.mvb"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-ncbi-asn1>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-ncbi-asn1" ;
+  rdfs:label "*.asn"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-ncbi-asn1-ascii>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-ncbi-asn1-ascii" ;
+  rdfs:label "*.prt, *.ent"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-ncbi-asn1-binary>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-ncbi-asn1-binary" ;
+  rdfs:label "*.val, *.aso"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-ncbi-asn1-spec>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-ncbi-asn1-spec" ;
+  rdfs:label "*.asn"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-pdb>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-pdb" ;
+  rdfs:label "*.pdb, *.ent"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-rosdal>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-rosdal" ;
+  rdfs:label "*.ros"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-swissprot>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-swissprot" ;
+  rdfs:label "*.sw"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-vamas-iso14976>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-vamas-iso14976" ;
+  rdfs:label "*.vms"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-vmd>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-vmd" ;
+  rdfs:label "*.vmd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-xtel>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-xtel" ;
+  rdfs:label "*.xtel"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/chemical/x-xyz>
+  rdf:about "https://www.iana.org/assignments/media-types/chemical/x-xyz" ;
+  rdfs:label "*.xyz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/gif>
+  rdf:about "https://www.iana.org/assignments/media-types/image/gif" ;
+  rdfs:label "*.gif"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/ief>
+  rdf:about "https://www.iana.org/assignments/media-types/image/ief" ;
+  rdfs:label "*.ief"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/jp2>
+  rdf:about "https://www.iana.org/assignments/media-types/image/jp2" ;
+  rdfs:label "*.jp2, *.jpg2"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/jpeg>
+  rdf:about "https://www.iana.org/assignments/media-types/image/jpeg" ;
+  rdfs:label "*.jpeg, *.jpg, *.jpe"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/jpm>
+  rdf:about "https://www.iana.org/assignments/media-types/image/jpm" ;
+  rdfs:label "*.jpm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/jpx>
+  rdf:about "https://www.iana.org/assignments/media-types/image/jpx" ;
+  rdfs:label "*.jpx, *.jpf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/pcx>
+  rdf:about "https://www.iana.org/assignments/media-types/image/pcx" ;
+  rdfs:label "*.pcx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/png>
+  rdf:about "https://www.iana.org/assignments/media-types/image/png" ;
+  rdfs:label "*.png"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/svg+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/image/svg+xml" ;
+  rdfs:label "*.svg, *.svgz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/tiff>
+  rdf:about "https://www.iana.org/assignments/media-types/image/tiff" ;
+  rdfs:label "*.tiff, *.tif"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/vnd.djvu>
+  rdf:about "https://www.iana.org/assignments/media-types/image/vnd.djvu" ;
+  rdfs:label "*.djvu, *.djv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/vnd.microsoft.icon>
+  rdf:about "https://www.iana.org/assignments/media-types/image/vnd.microsoft.icon" ;
+  rdfs:label "*.ico"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/vnd.wap.wbmp>
+  rdf:about "https://www.iana.org/assignments/media-types/image/vnd.wap.wbmp" ;
+  rdfs:label "*.wbmp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-canon-cr2>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-canon-cr2" ;
+  rdfs:label "*.cr2"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-canon-crw>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-canon-crw" ;
+  rdfs:label "*.crw"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-cmu-raster>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-cmu-raster" ;
+  rdfs:label "*.ras"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-coreldraw>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-coreldraw" ;
+  rdfs:label "*.cdr"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-coreldrawpattern>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-coreldrawpattern" ;
+  rdfs:label "*.pat"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-coreldrawtemplate>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-coreldrawtemplate" ;
+  rdfs:label "*.cdt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-corelphotopaint>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-corelphotopaint" ;
+  rdfs:label "*.cpt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-epson-erf>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-epson-erf" ;
+  rdfs:label "*.erf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-jg>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-jg" ;
+  rdfs:label "*.art"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-jng>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-jng" ;
+  rdfs:label "*.jng"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-ms-bmp>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-ms-bmp" ;
+  rdfs:label "*.bmp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-nikon-nef>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-nikon-nef" ;
+  rdfs:label "*.nef"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-olympus-orf>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-olympus-orf" ;
+  rdfs:label "*.orf"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-photoshop>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-photoshop" ;
+  rdfs:label "*.psd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-portable-anymap>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-portable-anymap" ;
+  rdfs:label "*.pnm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-portable-bitmap>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-portable-bitmap" ;
+  rdfs:label "*.pbm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-portable-graymap>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-portable-graymap" ;
+  rdfs:label "*.pgm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-portable-pixmap>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-portable-pixmap" ;
+  rdfs:label "*.ppm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-rgb>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-rgb" ;
+  rdfs:label "*.rgb"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-xbitmap>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-xbitmap" ;
+  rdfs:label "*.xbm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-xpixmap>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-xpixmap" ;
+  rdfs:label "*.xpm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/image/x-xwindowdump>
+  rdf:about "https://www.iana.org/assignments/media-types/image/x-xwindowdump" ;
+  rdfs:label "*.xwd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/message/rfc822>
+  rdf:about "https://www.iana.org/assignments/media-types/message/rfc822" ;
+  rdfs:label "*.eml"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/model/iges>
+  rdf:about "https://www.iana.org/assignments/media-types/model/iges" ;
+  rdfs:label "*.igs, *.iges"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/model/mesh>
+  rdf:about "https://www.iana.org/assignments/media-types/model/mesh" ;
+  rdfs:label "*.msh, *.mesh, *.silo"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/model/vrml>
+  rdf:about "https://www.iana.org/assignments/media-types/model/vrml" ;
+  rdfs:label "*.wrl, *.vrml"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/model/x3d+vrml>
+  rdf:about "https://www.iana.org/assignments/media-types/model/x3d+vrml" ;
+  rdfs:label "*.x3dv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/model/x3d+xml>
+  rdf:about "https://www.iana.org/assignments/media-types/model/x3d+xml" ;
+  rdfs:label "*.x3d"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/model/x3d+binary>
+  rdf:about "https://www.iana.org/assignments/media-types/model/x3d+binary" ;
+  rdfs:label "*.x3db"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/cache-manifest>
+  rdf:about "https://www.iana.org/assignments/media-types/text/cache-manifest" ;
+  rdfs:label "*.appcache"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/calendar>
+  rdf:about "https://www.iana.org/assignments/media-types/text/calendar" ;
+  rdfs:label "*.ics, *.icz"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/css>
+  rdf:about "https://www.iana.org/assignments/media-types/text/css" ;
+  rdfs:label "*.css"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/csv>
+  rdf:about "https://www.iana.org/assignments/media-types/text/csv" ;
+  rdfs:label "*.csv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/h323>
+  rdf:about "https://www.iana.org/assignments/media-types/text/h323" ;
+  rdfs:label "*.323"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/html>
+  rdf:about "https://www.iana.org/assignments/media-types/text/html" ;
+  rdfs:label "*.html, *.htm, *.shtml"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/iuls>
+  rdf:about "https://www.iana.org/assignments/media-types/text/iuls" ;
+  rdfs:label "*.uls"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/mathml>
+  rdf:about "https://www.iana.org/assignments/media-types/text/mathml" ;
+  rdfs:label "*.mml"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/plain>
+  rdf:about "https://www.iana.org/assignments/media-types/text/plain" ;
+  rdfs:label "*.asc, *.txt, *.text, *.pot, *.brf, *.srt"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/richtext>
+  rdf:about "https://www.iana.org/assignments/media-types/text/richtext" ;
+  rdfs:label "*.rtx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/scriptlet>
+  rdf:about "https://www.iana.org/assignments/media-types/text/scriptlet" ;
+  rdfs:label "*.sct, *.wsc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/texmacs>
+  rdf:about "https://www.iana.org/assignments/media-types/text/texmacs" ;
+  rdfs:label "*.tm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/tab-separated-values>
+  rdf:about "https://www.iana.org/assignments/media-types/text/tab-separated-values" ;
+  rdfs:label "*.tsv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/turtle>
+  rdf:about "https://www.iana.org/assignments/media-types/text/turtle" ;
+  rdfs:label "*.ttl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/vcard>
+  rdf:about "https://www.iana.org/assignments/media-types/text/vcard" ;
+  rdfs:label "*.vcf, *.vcard"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/vnd.sun.j2me.app-descriptor>
+  rdf:about "https://www.iana.org/assignments/media-types/text/vnd.sun.j2me.app-descriptor" ;
+  rdfs:label "*.jad"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/vnd.wap.wml>
+  rdf:about "https://www.iana.org/assignments/media-types/text/vnd.wap.wml" ;
+  rdfs:label "*.wml"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/vnd.wap.wmlscript>
+  rdf:about "https://www.iana.org/assignments/media-types/text/vnd.wap.wmlscript" ;
+  rdfs:label "*.wmls"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-bibtex>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-bibtex" ;
+  rdfs:label "*.bib"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-boo>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-boo" ;
+  rdfs:label "*.boo"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-c++hdr>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-c++hdr" ;
+  rdfs:label "*.h++, *.hpp, *.hxx, *.hh"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-c++src>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-c++src" ;
+  rdfs:label "*.c++, *.cpp, *.cxx, *.cc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-chdr>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-chdr" ;
+  rdfs:label "*.h"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-component>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-component" ;
+  rdfs:label "*.htc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-csh>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-csh" ;
+  rdfs:label "*.csh"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-csrc>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-csrc" ;
+  rdfs:label "*.c"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-dsrc>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-dsrc" ;
+  rdfs:label "*.d"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-diff>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-diff" ;
+  rdfs:label "*.diff, *.patch"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-haskell>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-haskell" ;
+  rdfs:label "*.hs"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-java>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-java" ;
+  rdfs:label "*.java"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-lilypond>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-lilypond" ;
+  rdfs:label "*.ly"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-literate-haskell>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-literate-haskell" ;
+  rdfs:label "*.lhs"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-moc>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-moc" ;
+  rdfs:label "*.moc"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-pascal>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-pascal" ;
+  rdfs:label "*.p, *.pas"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-pcs-gcd>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-pcs-gcd" ;
+  rdfs:label "*.gcd"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-perl>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-perl" ;
+  rdfs:label "*.pl, *.pm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-python>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-python" ;
+  rdfs:label "*.py"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-scala>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-scala" ;
+  rdfs:label "*.scala"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-setext>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-setext" ;
+  rdfs:label "*.etx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-sfv>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-sfv" ;
+  rdfs:label "*.sfv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-sh>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-sh" ;
+  rdfs:label "*.sh"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-tcl>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-tcl" ;
+  rdfs:label "*.tcl, *.tk"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-tex>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-tex" ;
+  rdfs:label "*.tex, *.ltx, *.sty, *.cls"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/text/x-vcalendar>
+  rdf:about "https://www.iana.org/assignments/media-types/text/x-vcalendar" ;
+  rdfs:label "*.vcs"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/3gpp>
+  rdf:about "https://www.iana.org/assignments/media-types/video/3gpp" ;
+  rdfs:label "*.3gp"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/annodex>
+  rdf:about "https://www.iana.org/assignments/media-types/video/annodex" ;
+  rdfs:label "*.axv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/dl>
+  rdf:about "https://www.iana.org/assignments/media-types/video/dl" ;
+  rdfs:label "*.dl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/dv>
+  rdf:about "https://www.iana.org/assignments/media-types/video/dv" ;
+  rdfs:label "*.dif, *.dv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/fli>
+  rdf:about "https://www.iana.org/assignments/media-types/video/fli" ;
+  rdfs:label "*.fli"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/gl>
+  rdf:about "https://www.iana.org/assignments/media-types/video/gl" ;
+  rdfs:label "*.gl"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/mpeg>
+  rdf:about "https://www.iana.org/assignments/media-types/video/mpeg" ;
+  rdfs:label "*.mpeg, *.mpg, *.mpe"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/MP2T>
+  rdf:about "https://www.iana.org/assignments/media-types/video/MP2T" ;
+  rdfs:label "*.ts"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/mp4>
+  rdf:about "https://www.iana.org/assignments/media-types/video/mp4" ;
+  rdfs:label "*.mp4"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/quicktime>
+  rdf:about "https://www.iana.org/assignments/media-types/video/quicktime" ;
+  rdfs:label "*.qt, *.mov"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/ogg>
+  rdf:about "https://www.iana.org/assignments/media-types/video/ogg" ;
+  rdfs:label "*.ogv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/webm>
+  rdf:about "https://www.iana.org/assignments/media-types/video/webm" ;
+  rdfs:label "*.webm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/vnd.mpegurl>
+  rdf:about "https://www.iana.org/assignments/media-types/video/vnd.mpegurl" ;
+  rdfs:label "*.mxu"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-flv>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-flv" ;
+  rdfs:label "*.flv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-la-asf>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-la-asf" ;
+  rdfs:label "*.lsf, *.lsx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-mng>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-mng" ;
+  rdfs:label "*.mng"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-ms-asf>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-ms-asf" ;
+  rdfs:label "*.asf, *.asx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-ms-wm>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-ms-wm" ;
+  rdfs:label "*.wm"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-ms-wmv>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-ms-wmv" ;
+  rdfs:label "*.wmv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-ms-wmx>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-ms-wmx" ;
+  rdfs:label "*.wmx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-ms-wvx>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-ms-wvx" ;
+  rdfs:label "*.wvx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-msvideo>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-msvideo" ;
+  rdfs:label "*.avi"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-sgi-movie>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-sgi-movie" ;
+  rdfs:label "*.movie"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/video/x-matroska>
+  rdf:about "https://www.iana.org/assignments/media-types/video/x-matroska" ;
+  rdfs:label "*.mpv, *.mkv"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/x-conference/x-cooltalk>
+  rdf:about "https://www.iana.org/assignments/media-types/x-conference/x-cooltalk" ;
+  rdfs:label "*.ice"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/x-epoc/x-sisx-app>
+  rdf:about "https://www.iana.org/assignments/media-types/x-epoc/x-sisx-app" ;
+  rdfs:label "*.sisx"@en ; 
+  a <https://www.iana.org/assignments/media-types/> .
+
+<https://www.iana.org/assignments/media-types/x-world/x-vrml>
+  rdf:about "https://www.iana.org/assignments/media-types/x-world/x-vrml" ;
+  rdfs:label "*.vrm, *.vrml, *.wrl"@en ;  
+  a <https://www.iana.org/assignments/media-types/> .

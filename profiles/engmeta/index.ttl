@@ -1,0 +1,325 @@
+@base <https://purl.org/coscine/ap/engmeta/> .
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix coscine: <https://purl.org/coscine/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
+
+@prefix engmeta: <http://www.ub.uni-stuttgart.de/dipling#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix pm: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix mime: <https://www.iana.org/assignments/media-types/> .
+
+@prefix coscineengmeta: <https://purl.org/coscine/ap/engmeta/> .
+
+coscineengmeta:
+  a sh:NodeShape ;
+  sh:targetClass coscineengmeta:;
+  sh:closed true ; #no additional properties are allowed
+
+  sh:property [
+    sh:path rdf:type ;
+    sh:node rdf:type ;
+  ] ;
+
+  sh:property coscineengmeta:publisher ;
+  sh:property coscineengmeta:creator ;
+  sh:property coscineengmeta:worked ;
+  sh:property coscineengmeta:workednote ;  
+  sh:property coscineengmeta:title ;
+  sh:property coscineengmeta:type ;
+  sh:property coscineengmeta:investigation_keyword ;
+  sh:property coscineengmeta:subject ;
+  sh:property coscineengmeta:created ;
+  sh:property coscineengmeta:issued ;
+  sh:property coscineengmeta:available ;
+  sh:property coscineengmeta:version ;
+  sh:property coscineengmeta:mode ;
+  sh:property coscineengmeta:meassuredvariable ;
+  sh:property coscineengmeta:controlledvariable ;
+  sh:property coscineengmeta:system ;
+  sh:property coscineengmeta:phase ;
+  sh:property coscineengmeta:component ;
+  sh:property coscineengmeta:parameter ;
+  sh:property coscineengmeta:grid ;
+  sh:property coscineengmeta:temporalresolution ;
+  sh:property coscineengmeta:boundarycondition ;
+  sh:property coscineengmeta:wasgeneratedby ;
+  sh:property coscineengmeta:step ;
+  sh:property coscineengmeta:license ;
+  sh:property coscineengmeta:rights ;
+  sh:property coscineengmeta:isreferencedby ;
+  sh:property coscineengmeta:size ;
+  sh:property coscineengmeta:storedAt ;
+  sh:property coscineengmeta:format ;
+  sh:property coscineengmeta:identifier ;
+  sh:property coscineengmeta:signature ;
+  sh:property coscineengmeta:relation .
+
+coscineengmeta:publisher
+  sh:path dc:publisher ;
+  sh:node dc:publisher ;
+  sh:order 0 ;
+  sh:minCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Contact"@en, "Ansprechpartner"@de .
+  
+coscineengmeta:creator
+  sh:path dc:creator ;
+  sh:node dc:creator ;
+  sh:order 1 ;
+  sh:minCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Creator"@en, "Autor"@de .
+
+coscineengmeta:worked
+  sh:path engmeta:worked ;
+  sh:node engmeta:worked ;
+  sh:order 2 ;
+  sh:maxCount 1 ;
+  sh:class coscine:boolean ;
+  sh:name "Worked"@en, "Hat funktioniert"@de .
+ 
+coscineengmeta:workednote
+  sh:path engmeta:workednote ;
+  sh:node engmeta:workednote ;
+  sh:order 3 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Worked Note"@en, "Begründung"@de .
+
+coscineengmeta:title
+  sh:path dc:title ;
+  sh:node dc:title ;
+  sh:order 4 ;
+  sh:minCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Title"@en, "Titel"@de .
+  
+coscineengmeta:type
+  sh:path dc:type ;
+  sh:node dc:type ;
+  sh:order 5 ;
+  sh:maxCount 1 ;
+  sh:name "Type"@en, "Typ"@de ;
+  sh:class <http://purl.org/dc/dcmitype/> .
+  
+coscineengmeta:investigation_keyword
+  sh:path csmd:investigation_keyword ;
+  sh:node csmd:investigation_keyword ;
+  sh:order 6 ;
+  sh:datatype xsd:string ;
+  sh:name "Keywords"@en, "Keywords"@de .
+  
+coscineengmeta:subject
+  sh:path dc:subject ;
+  sh:node dc:subject ;
+  sh:order 7 ;
+  sh:maxCount 1 ;
+  sh:name "Subject Area"@en, "Sachgebiet"@de ;
+  sh:class <http://www.dfg.de/dfg_profil/gremien/fachkollegien/faecher/> .
+
+coscineengmeta:created
+  sh:path dc:created ;
+  sh:node dc:created ;
+  sh:order 8 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:date ;
+  sh:name "Creation Date"@en, "Erstellungsdatum"@de .
+  
+coscineengmeta:issued
+  sh:path dc:issued ;
+  sh:node dc:issued ;
+  sh:order 9 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:date ;
+  sh:name "Publication Date"@en, "Veröffentlichungsdatum"@de .
+  
+coscineengmeta:available
+  sh:path dc:available ;
+  sh:node dc:available ;
+  sh:order 10 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:date ;
+  sh:name "Embargo End Date"@en, "Embargoablaufdatum"@de .
+  
+coscineengmeta:version
+  sh:path engmeta:version ;
+  sh:node engmeta:version ;
+  sh:order 11 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Version"@en, "Version"@de .
+  
+coscineengmeta:mode
+  sh:path engmeta:mode ;
+  sh:node engmeta:mode ;
+  sh:order 12 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:class coscine:mode ;
+  sh:name "Mode"@en, "Datenerzeugungsmethode"@de .
+ 
+coscineengmeta:measuredVariable
+  sh:path engmeta:measuredVariable ;
+  sh:node engmeta:measuredVariable ;
+  sh:order 13 ;
+  sh:datatype xsd:string ;
+  sh:name "Measured Variables"@en, "Gemessene Variablen"@de .
+
+coscineengmeta:controlledVariable
+  sh:path engmeta:controlledVariable ;
+  sh:node engmeta:controlledVariable ;
+  sh:order 14 ;
+  sh:datatype xsd:string ;
+  sh:name "Controlled Variables"@en, "Kontrollierte Variablen"@de .
+
+coscineengmeta:system
+  sh:path engmeta:system ;
+  sh:node engmeta:system ;
+  sh:order 15 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "System"@en, "System"@de .
+
+coscineengmeta:phase
+  sh:path engmeta:phase ;
+  sh:node engmeta:phase ;
+  sh:order 16 ;
+  sh:datatype xsd:string ;
+  sh:name "Phase"@en, "Phase"@de .
+
+coscineengmeta:component
+  sh:path engmeta:component ;
+  sh:node engmeta:component ;
+  sh:order 17 ;
+  sh:datatype xsd:string ;
+  sh:name "Component"@en, "Komponenten"@de .
+
+coscineengmeta:parameter
+  sh:path engmeta:parameter ;
+  sh:node engmeta:parameter ;
+  sh:order 18 ;
+  sh:datatype xsd:string ;
+  sh:name "Parameter"@en, "Parameter"@de .
+
+coscineengmeta:grid
+  sh:path engmeta:gird ;
+  sh:node engmeta:gird ;
+  sh:order 19 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Grid"@en, "Räumliche Auflösung"@de .
+
+coscineengmeta:temporalresolution
+  sh:path engmeta:temporalResolution ;
+  sh:node engmeta:temporalResolution ;
+  sh:order 20 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Temporal Resolution"@en, "Zeitliche Auflösung"@de .
+
+coscineengmeta:boundarycondition
+  sh:path engmeta:boundaryCondition ;
+  sh:node engmeta:boundaryCondition ;
+  sh:order 21 ;
+  sh:datatype xsd:string ;
+  sh:name "Boundaries"@en, "Ränder"@de .
+
+coscineengmeta:wasgeneratedby
+  sh:path prov:wasGeneratedBy ;
+  sh:node prov:wasGeneratedBy ;
+  sh:order 22 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Provenance"@en, "Herkunft"@de .
+
+coscineengmeta:step
+  sh:path engmeta:step ;
+  sh:node engmeta:step ;
+  sh:order 23 ;
+  sh:minCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Step"@en, "Verarbeitungsschritt"@de .  
+  
+coscineengmeta:license
+  sh:path dc:license ;
+  sh:node dc:license ;
+  sh:order 24 ;
+  sh:name "License"@en, "Lizenz"@de ;
+  sh:class <https://spdx.org/licenses/> .
+
+coscineengmeta:rights
+  sh:path dc:rights ;
+  sh:node dc:rights ;
+  sh:order 25 ;
+  sh:datatype xsd:string ;
+  sh:name "Rights"@en, "Rechte"@de .  
+  
+coscineengmeta:isreferencedby
+  sh:path dc:isReferencedBy ;
+  sh:node dc:isReferencedBy ;
+  sh:order 26 ;
+  sh:datatype xsd:string ;
+  sh:name "Publication"@en, "Publikation"@de .  
+  
+coscineengmeta:size					# differs from engmeta definition
+  sh:path pm:size ;
+  sh:node pm:size ;
+  sh:order 27 ;
+  sh:datatype xsd:string ;
+  sh:name "File Size"@en, "Dateigröße"@de .  
+
+coscineengmeta:storedAt				# differs from engmeta definition
+  sh:path pm:storedAt ;
+  sh:node pm:storedAt ;
+  sh:order 28 ;
+  sh:datatype xsd:string ;
+  sh:name "Storage"@en, "Dateiname"@de .  
+
+coscineengmeta:format				# differs from engmeta definition
+  sh:path dc:format ;
+  sh:node dc:format ;
+  sh:order 29 ;
+  sh:maxCount 1 ;
+  sh:class <https://www.iana.org/assignments/media-types/> ;
+  sh:name "Format"@en, "Dateityp"@de .
+  
+coscineengmeta:identifier			# differs from engmeta definition
+  sh:path dc:identifier ;
+  sh:node dc:identifier ;
+  sh:order 30 ;
+  sh:datatype xsd:string ;
+  sh:name "(P)ID"@en, "(P)ID"@de .  
+
+coscineengmeta:signature			# differs from engmeta definition
+  sh:path pm:signature ;
+  sh:node pm:signature ;
+  sh:order 31 ;
+  sh:datatype xsd:string ;
+  sh:name "Checksum"@en, "Hashwert"@de .  
+
+coscineengmeta:relation				# differs from engmeta definition
+  sh:path dc:relation ;
+  sh:node dc:relation ;
+  sh:order 32 ;
+  sh:datatype xsd:string ;
+  sh:name "Related Resource"@en, "Zugehörige Dateien"@de .    
