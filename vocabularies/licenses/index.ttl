@@ -1,90 +1,79 @@
-@base  <https://spdx.org/licenses/> .
+@base  <http://spdx.org/licenses/> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix coscineterms: <https://spdx.org/> .
-@prefix coscinelicense: <https://spdx.org/licenses/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix spdx:  <http://spdx.org/rdf/terms#> .
 
-<https://spdx.org/licenses/Apache-2.0>
-  rdf:about "https://spdx.org/licenses/Apache-2.0" ;
+<http://spdx.org/licenses/>
+  dcterms:license <http://spdx.org/licenses/CC-BY-3.0> ;
+  dcterms:publisher <http://spdx.org/> ;
+  dcterms:title "Licenses"@en .
+
+spdx:License
+  rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> ;
+  rdfs:subClassOf <http://purl.org/dc/terms/RightsDocument> .  
+
+<http://spdx.org/licenses/Apache-2.0>
   rdfs:label "Apache License 2.0"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
 
-<https://spdx.org/licenses/GPL-3.0+>
-  rdf:about "https://spdx.org/licenses/GPL-3.0+" ;
+<http://spdx.org/licenses/GPL-3.0+>
   rdfs:label "GNU General Public License v3.0"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
 
-<https://spdx.org/licenses/MIT>
-  rdf:about "https://spdx.org/licenses/MIT" ;
+<http://spdx.org/licenses/MIT>
   rdfs:label "MIT License"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
 
-<https://spdx.org/licenses/BSD-2-Clause>
-  rdf:about "https://spdx.org/licenses/BSD-2-Clause" ;
+<http://spdx.org/licenses/BSD-2-Clause>
   rdfs:label "BSD 2-clause 'Simplified' License"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
   
-<https://spdx.org/licenses/BSD-3-Clause>
-  rdf:about "https://spdx.org/licenses/BSD-3-Clause" ;
+<http://spdx.org/licenses/BSD-3-Clause>
   rdfs:label "BSD 3-clause 'New' or 'Revised' License"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
 
-<https://spdx.org/licenses/EPL-1.0>
-  rdf:about "https://spdx.org/licenses/EPL-1.0" ;
+<http://spdx.org/licenses/EPL-1.0>
   rdfs:label "Eclipse Public License 1.0"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
 
-<https://spdx.org/licenses/GPL-3.0>
-  rdf:about "https://spdx.org/licenses/AGPL-3.0" ;
+<http://spdx.org/licenses/GPL-3.0>
   rdfs:label "GNU Affero General Public License v3.0"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
 
-<https://spdx.org/licenses/GPL-2.0>
-  rdf:about "https://spdx.org/licenses/GPL-2.0" ;
+<http://spdx.org/licenses/GPL-2.0>
   rdfs:label "GNU General Public License v2.0"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
   
-<https://spdx.org/licenses/LGPL-2.1>
-  rdf:about "https://spdx.org/licenses/LGPL-2.1" ;
+<http://spdx.org/licenses/LGPL-2.1>
   rdfs:label "GNU Lesser General Public License v2.1"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
 
-<https://spdx.org/licenses/LGPL-3.0>
-  rdf:about "https://spdx.org/licenses/LGPL-3.0" ;
+<http://spdx.org/licenses/LGPL-3.0>
   rdfs:label "GNU Lesser General Public License v3.0"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
 
-<https://spdx.org/licenses/MPL-2.0>
-  rdf:about "https://spdx.org/licenses/MPL-2.0" ;
+<http://spdx.org/licenses/MPL-2.0>
   rdfs:label "Mozilla Public License 2.0"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
 
-<https://spdx.org/licenses/Unlicense>
-  rdf:about "https://spdx.org/licenses/Unlicense" ;
+<http://spdx.org/licenses/Unlicense>
   rdfs:label "The Unlicense"@en ;
-  rdf:resource "http://purl.org/dc/terms/LicenseDocument" ;
-  rdf:resource "http://purl.org/dc/terms/RightsDocument" ;
-  a <https://spdx.org/licenses/> .
+  a spdx:License .
+  
+<http://spdx.org/licenses/CC-BY-3.0>
+  rdfs:label "Creative Commons Attribution 3.0 Unported"@en ;
+  a spdx:License .
+
+<http://spdx.org/licenses/CC0-1.0>
+  rdfs:label "Creative Commons Zero v1.0 Universal"@en ;
+  a spdx:License .
+
+<http://spdx.org/licenses/CC-BY-1.0>
+  rdfs:label "Creative Commons Attribution 1.0 Generic"@en ;
+  a spdx:License .
+
+<http://spdx.org/licenses/CC-BY-4.0>
+  rdfs:label "CCreative Commons Attribution 4.0 International"@en ;
+  a spdx:License .

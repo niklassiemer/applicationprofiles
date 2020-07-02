@@ -1,0 +1,71 @@
+@base  <http://www.ub.uni-stuttgart.de/dipling#> .
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix engmeta: <http://www.ub.uni-stuttgart.de/dipling#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://www.ub.uni-stuttgart.de/dipling#>
+  dcterms:publisher <http://www.ub.uni-stuttgart.de/> ;
+  dcterms:license <http://spdx.org/licenses/CC-BY-4.0> ;
+  dcterms:rights "Copyright © 2020 Universität Stuttgart" ;
+  dcterms:title "DIPL-ING"@en .
+
+engmeta:worked
+  rdfs:label "Worked"@en ;
+  rdfs:label "Hat funktioniert"@de .
+ 
+engmeta:workednote
+  rdfs:label "Worked Note"@en ;
+  rdfs:label "Begründung"@de .
+
+engmeta:version
+  rdfs:label "Version"@en ;
+  rdfs:label "Version"@de .
+
+engmeta:mode
+  rdfs:label "Mode"@en ;
+  rdfs:label "Datenerzeugungsmethode"@de . 
+
+engmeta:measuredVariable
+  rdfs:label "Measured Variables"@en ;
+  rdfs:label "Gemessene Variablen"@de .
+
+engmeta:controlledVariable
+  rdfs:label "Controlled Variables"@en ;
+  rdfs:label "Kontrollierte Variablen"@de . 
+
+engmeta:system 
+  rdfs:label "System"@en ;
+  rdfs:label "System"@de . 
+
+engmeta:phase
+  rdfs:label "Phase"@en ;
+  rdfs:label "Phase"@de . 
+
+engmeta:component
+  rdfs:label "Component"@en ;
+  rdfs:label "Komponenten"@de . 
+
+engmeta:parameter
+  rdfs:label "Parameter"@en ;
+  rdfs:label "Parameter"@de . 
+
+engmeta:grid
+  rdfs:label "Grid"@en ;
+  rdfs:label "Räumliche Auflösung"@de . 
+
+engmeta:temporalResolution
+  rdfs:label "Temporal Resolution"@en ;
+  rdfs:label "Zeitliche Auflösung"@de . 
+
+engmeta:boundaryCondition
+  rdfs:label "Boundaries"@en ;
+  rdfs:label "Ränder"@de . 
+
+engmeta:step
+  rdfs:label "Step"@en ;
+  rdfs:label "Verarbeitungsschritt"@de . 
+
+engmeta:parameter
+  rdfs:label "Parameter"@en ;
+  rdfs:label "Parameter"@de . 
