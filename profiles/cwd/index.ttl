@@ -1,32 +1,28 @@
 @base <https://purl.org/coscine/ap/cwd/> .
 
-@prefix dash: <http://datashapes.org/dash#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix terms: <http://purl.org/dc/terms/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix coscine: <https://purl.org/coscine/terms/> .
-@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
-@prefix rwthform: <https://purl.org/rwth/md/form/1.0/> .
+@prefix rwthform: <https://purl.org/rwth/md/form/1.0/> . # deprecated
+@prefix coscinecwd: <https://purl.org/coscine/ap/cwd#> .
 
-@prefix coscinecwd: <https://purl.org/coscine/ap/cwd/> .
+<https://purl.org/coscine/ap/cwd/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title "cwd application profile"@en ;
 
-coscinecwd:
   a sh:NodeShape ;
-  sh:targetClass coscinecwd:;
-  sh:closed true ; #no additional properties are allowed
+  sh:targetClass <https://purl.org/coscine/ap/cwd/> ;
+  sh:closed true ; # no additional properties are allowed
 
   sh:property [
     sh:path rdf:type ;
-    sh:node rdf:type ;
   ] ;
 
-  sh:property coscinecwd:visibility ;
   sh:property coscinecwd:title ;
   sh:property coscinecwd:investigation_startDate ;  
   sh:property coscinecwd:creator ;
@@ -35,20 +31,10 @@ coscinecwd:
   sh:property coscinecwd:facility_name ;
   sh:property coscinecwd:SampleType_name ;
   sh:property coscinecwd:investigationtype_name .
-
-coscinecwd:visibility
-  sh:path coscine:visibility ;
-  sh:node coscine:visibility ;
-  sh:order 0 ;
-  sh:minCount 1 ;
-  sh:maxCount 1 ;
-  sh:class coscine:visibility ;
-  sh:name "Visibility"@en, "Sichtbarkeit"@de .
   
 coscinecwd:title
-  sh:path dc:title ;
-  sh:node dc:title ;
-  sh:order 1 ;
+  sh:path dcterms:title ;
+  sh:order 0 ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:minLength 1 ;
@@ -57,17 +43,15 @@ coscinecwd:title
   
 coscinecwd:investigation_startDate
   sh:path csmd:investigation_startDate ;
-  sh:node csmd:investigation_startDate ;
-  sh:order 2 ;
+  sh:order 1 ;
   sh:maxCount 1 ;
   sh:datatype xsd:date ;
   sh:defaultValue "{TODAY}" ;
   sh:name "Date"@en, "Datum"@de .
 
 coscinecwd:creator
-  sh:path dc:creator ;
-  sh:node dc:creator ;
-  sh:order 3 ;
+  sh:path dcterms:creator ;
+  sh:order 2 ;
   sh:minCount 1 ;
   sh:minLength 1 ;
   sh:datatype xsd:string ;
@@ -76,40 +60,35 @@ coscinecwd:creator
 
 coscinecwd:institute_unit
   sh:path rwthform:institute_unit ;
-  sh:node rwthform:institute_unit ;
-  sh:order 4 ;
+  sh:order 3 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Institute"@en, "Institutsbereich"@de .
   
 coscinecwd:project
   sh:path rwthform:project ;
-  sh:node rwthform:project ;
-  sh:order 5 ;
+  sh:order 4 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Project"@en, "Projekt"@de .
   
 coscinecwd:facility_name
   sh:path csmd:facility_name ;
-  sh:node csmd:facility_name ;
-  sh:order 6 ;
+  sh:order 5 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Test bench name"@en, "Prüfstandsname"@de .
   
 coscinecwd:SampleType_name
   sh:path csmd:SampleType_name ;
-  sh:node csmd:SampleType_name ;
-  sh:order 7 ;
+  sh:order 6 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Category of test piece"@en, "Kategorie Prüfling"@de .
   
 coscinecwd:investigationtype_name
   sh:path csmd:investigationtype_name ;
-  sh:node csmd:investigationtype_name ;
-  sh:order 8 ;
+  sh:order 7 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Category of experiment"@en, "Kategorie Versuch"@de .

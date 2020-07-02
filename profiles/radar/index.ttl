@@ -1,30 +1,27 @@
 @base <https://purl.org/coscine/ap/radar/> .
 
-@prefix dash: <http://datashapes.org/dash#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix terms: <http://purl.org/dc/terms/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix coscine: <https://purl.org/coscine/terms/> .
-@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
-@prefix coscineradar: <https://purl.org/coscine/ap/radar/> .
+@prefix coscineradar: <https://purl.org/coscine/ap/radar#> .
 
-coscineradar:
+<https://purl.org/coscine/ap/radar/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title "radar application profile"@en ;
+
   a sh:NodeShape ;
-  sh:targetClass coscineradar:;
-  sh:closed true ; #no additional properties are allowed
+  sh:targetClass <https://purl.org/coscine/ap/radar/> ;
+  sh:closed true ; # no additional properties are allowed
 
   sh:property [
     sh:path rdf:type ;
-    sh:node rdf:type ;
   ] ;
 
-  sh:property coscineradar:visibility ;
   sh:property coscineradar:creator ;
   sh:property coscineradar:title ;
   sh:property coscineradar:created ;  
@@ -33,19 +30,9 @@ coscineradar:
   sh:property coscineradar:rights ;
   sh:property coscineradar:rightsHolder .
 
-coscineradar:visibility
-  sh:path coscine:visibility ;
-  sh:node coscine:visibility ;
-  sh:order 0 ;
-  sh:minCount 1 ;
-  sh:maxCount 1 ;
-  sh:class coscine:visibility ;
-  sh:name "Visibility"@en, "Sichtbarkeit"@de .
-
 coscineradar:creator
-  sh:path dc:creator ;
-  sh:node dc:creator ;
-  sh:order 1 ;
+  sh:path dcterms:creator ;
+  sh:order 0 ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:minLength 1 ;
@@ -54,9 +41,8 @@ coscineradar:creator
   sh:name "Creator"@en, "Ersteller"@de .
 
 coscineradar:title
-  sh:path dc:title ;
-  sh:node dc:title ;
-  sh:order 2 ;
+  sh:path dcterms:title ;
+  sh:order 1 ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:minLength 1 ;
@@ -64,9 +50,8 @@ coscineradar:title
   sh:name "Title"@en, "Titel"@de .
 
 coscineradar:created
-  sh:path dc:created ;
-  sh:node dc:created ;
-  sh:order 3 ;
+  sh:path dcterms:created ;
+  sh:order 2 ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:datatype xsd:date ;
@@ -74,33 +59,29 @@ coscineradar:created
   sh:name "Production Date"@en, "Erstelldatum"@de .
 
 coscineradar:subject
-  sh:path dc:subject ;
-  sh:node dc:subject ;
-  sh:order 4 ;
+  sh:path dcterms:subject ;
+  sh:order 3 ;
   sh:maxCount 1 ;
   sh:name "Subject Area"@en, "Fachrichtung"@de ;
   sh:class <http://www.dfg.de/dfg_profil/gremien/fachkollegien/faecher/> .
 
 coscineradar:type
-  sh:path dc:type ;
-  sh:node dc:type ;
-  sh:order 5 ;
+  sh:path dcterms:type ;
+  sh:order 4 ;
   sh:maxCount 1 ;
   sh:name "Resource"@en, "Ressource"@de ;
   sh:class <http://purl.org/dc/dcmitype/> .
 
 coscineradar:rights
-  sh:path dc:rights ;
-  sh:node dc:rights ;
-  sh:order 6 ;
+  sh:path dcterms:rights ;
+  sh:order 5 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Rights"@en, "Berechtigung"@de .
 
 coscineradar:rightsHolder
-  sh:path dc:rightsHolder ;
-  sh:node dc:rightsHolder ;
-  sh:order 7 ;
+  sh:path dcterms:rightsHolder ;
+  sh:order 6 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Rightsholder"@en, "Rechteinhaber"@de .

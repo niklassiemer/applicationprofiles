@@ -1,24 +1,26 @@
-@base  <https://purl.org/coscine/terms/mode> .
+@base  <https://purl.org/coscine/terms/mode/> .
 
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix coscineterms: <https://purl.org/coscine/terms/> .
 @prefix coscinemode: <https://purl.org/coscine/terms/mode#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
-coscineterms:mode
-  rdf:type coscineterms:mode .
+<https://purl.org/coscine/terms/mode/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title "Mode"@en .
 
 coscinemode:simulation
   rdfs:label "Simulation"@en ;
   rdfs:label "Simulation"@de ;
-  a coscineterms:mode .
+  a <https://purl.org/coscine/terms/mode/> .
   
 coscinemode:experiment
   rdfs:label "Experiment"@en ;
   rdfs:label "Experiment"@de ;
-  a coscineterms:mode .
+  a <https://purl.org/coscine/terms/mode/> .
   
 coscinemode:analysis
   rdfs:label "Analysis"@en ;
   rdfs:label "Analyse"@de ;
-  a coscineterms:mode .
+  a <https://purl.org/coscine/terms/mode/> .
