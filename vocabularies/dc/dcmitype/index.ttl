@@ -1,135 +1,134 @@
 @base  <http://purl.org/dc/dcmitype/> .
 
-@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix ns0: <http://purl.org/dc/dcam/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
 
 <http://purl.org/dc/dcmitype/>
-  rdf:type <http://purl.org/dc/dcmitype/> ;
-  dc:title "DCMI Type Vocabulary"@en ;
-  dc:publisher <http://purl.org/dc/aboutdcmi#DCMI> ;
-  dc:modified "2012-06-14"^^xsd:date .
+  dcterms:license <http://spdx.org/licenses/CC-BY-3.0> ;
+  dcterms:title "DCMI Type Vocabulary"@en ;
+  dcterms:publisher <http://purl.org/dc/aboutdcmi#DCMI> ;
+  dcterms:modified "2012-06-14"^^xsd:date .
 
 <http://purl.org/dc/dcmitype/Collection>
   rdfs:label "Collection"@en, "Sammlung"@de ;
   rdfs:comment "An aggregation of resources."@en, "Eine Zusammenfassung von Ressourcen."@de ;
-  dc:description "A collection is described as a group; its parts may also be separately described."@en, "Eine Sammlung wird als Gruppe beschrieben. Ihre Teile können einzeln beschrieben werden."@de ;
+  dcterms:description "A collection is described as a group; its parts may also be separately described."@en, "Eine Sammlung wird als Gruppe beschrieben. Ihre Teile können einzeln beschrieben werden."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2000-07-11"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#Collection-003> ;
-  ns0:memberOf dc:DCMIType .
+  dcterms:issued "2000-07-11"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Collection-003> ;
+  dcam:memberOf dcterms:DCMIType .
 
 <http://purl.org/dc/dcmitype/Dataset>
   rdfs:label "Dataset"@en, "Datensatz"@de ;
   rdfs:comment "Data encoded in a defined structure."@en, "Daten, die in einer definierten Struktur kodiert sind."@de ;
-  dc:description "Examples include lists, tables, and databases.  A dataset may be useful for direct machine processing."@en, "Beispiele sind Listen, Tabellen und Datenbanken. Ein Datensatz kann für die automatische Verarbeitung geeignet sein."@de ;
+  dcterms:description "Examples include lists, tables, and databases.  A dataset may be useful for direct machine processing."@en, "Beispiele sind Listen, Tabellen und Datenbanken. Ein Datensatz kann für die automatische Verarbeitung geeignet sein."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2000-07-11"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#Dataset-003> ;
-  ns0:memberOf dc:DCMIType .
+  dcterms:issued "2000-07-11"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Dataset-003> ;
+  dcam:memberOf dcterms:DCMIType .
 
 <http://purl.org/dc/dcmitype/Event>
   rdfs:label "Event"@en, "Ereignis"@de ;
   rdfs:comment "A non-persistent, time-based occurrence."@en, "Eine zeitlich befristete Begebenheit."@de ;
-  dc:description "Metadata for an event provides descriptive information that is the basis for discovery of the purpose, location, duration, and responsible agents associated with an event. Examples include an exhibition, webcast, conference, workshop, open day, performance, battle, trial, wedding, tea party, conflagration."@en, "Metadaten zu einem Ereignis informieren über den Zweck, den Ort, die Dauer und die für das Ereignis verantwortlichen Personen. Beispiele sind Ausstellungen, Online-Konferenzen, Tagungen, Arbeitstreffen, Tag der offenen Tür, Aufführungen, Schlachten, Gerichtsverhandlungen, Hochzeiten, Teegesellschaften oder Brände."@de ;
+  dcterms:description "Metadata for an event provides descriptive information that is the basis for discovery of the purpose, location, duration, and responsible agents associated with an event. Examples include an exhibition, webcast, conference, workshop, open day, performance, battle, trial, wedding, tea party, conflagration."@en, "Metadaten zu einem Ereignis informieren über den Zweck, den Ort, die Dauer und die für das Ereignis verantwortlichen Personen. Beispiele sind Ausstellungen, Online-Konferenzen, Tagungen, Arbeitstreffen, Tag der offenen Tür, Aufführungen, Schlachten, Gerichtsverhandlungen, Hochzeiten, Teegesellschaften oder Brände."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2000-07-11"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#Event-003> ;
-  ns0:memberOf dc:DCMIType .
+  dcterms:issued "2000-07-11"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Event-003> ;
+  dcam:memberOf dcterms:DCMIType .
 
 <http://purl.org/dc/dcmitype/Image>
   rdfs:label "Image"@en, "Bild"@de ;
   rdfs:comment "A visual representation other than text."@en, "Eine nicht textgebundene visuelle Darstellung."@de ;
-  dc:description "Examples include images and photographs of physical objects, paintings, prints, drawings, other images and graphics, animations and moving pictures, film, diagrams, maps, musical notation.  Note that Image may include both electronic and physical representations."@en, "Beispiele sind Bilder und Fotografien von Gegenständen, Gemälde, Drucke, Zeichnungen, andere Bilder und Graphiken, Animationen und bewegte Bilder, Filme, Diagramme, Karten, Noten. Beachte, dass „Bild“ sowohl ein digitales als auch ein physisches Objekt sein kann."@de ;
+  dcterms:description "Examples include images and photographs of physical objects, paintings, prints, drawings, other images and graphics, animations and moving pictures, film, diagrams, maps, musical notation.  Note that Image may include both electronic and physical representations."@en, "Beispiele sind Bilder und Fotografien von Gegenständen, Gemälde, Drucke, Zeichnungen, andere Bilder und Graphiken, Animationen und bewegte Bilder, Filme, Diagramme, Karten, Noten. Beachte, dass „Bild“ sowohl ein digitales als auch ein physisches Objekt sein kann."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2000-07-11"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#Image-004> ;
-  ns0:memberOf dc:DCMIType .
+  dcterms:issued "2000-07-11"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Image-004> ;
+  dcam:memberOf dcterms:DCMIType .
 
 <http://purl.org/dc/dcmitype/InteractiveResource>
   rdfs:label "Interactive Resource"@en, "Interaktive Ressource"@de ;
   rdfs:comment "A resource requiring interaction from the user to be understood, executed, or experienced."@en, "Eine Ressource, die Interaktion mit dem Nutzer erfordert, um verstanden, ausgeführt oder erfahren zu werden."@de ;
-  dc:description "Examples include forms on Web pages, applets, multimedia learning objects, chat services, or virtual reality environments."@en, "Beispiele sind Formulare auf Webseiten, Applets, multimediale Lernobjekte, Chatdienste oder virtuelle Realitäten."@de ;
+  dcterms:description "Examples include forms on Web pages, applets, multimedia learning objects, chat services, or virtual reality environments."@en, "Beispiele sind Formulare auf Webseiten, Applets, multimediale Lernobjekte, Chatdienste oder virtuelle Realitäten."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2000-07-11"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#InteractiveResource-003> ;
-  ns0:memberOf dc:DCMIType .
+  dcterms:issued "2000-07-11"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#InteractiveResource-003> ;
+  dcam:memberOf dcterms:DCMIType .
 
 <http://purl.org/dc/dcmitype/Service>
   rdfs:label "Service"@en, "Dienst"@de ;
   rdfs:comment "A system that provides one or more functions."@en, "Ein System, das eine oder mehrere Funktionen bereitstellt."@de ;
-  dc:description "Examples include a photocopying service, a banking service, an authentication service, interlibrary loans, a Z39.50 or Web server."@en, "Beispiele sind Fotokopier-, Bank- oder Authentifizierungsdienste, Fernleihen, Z39.50-Schnittstellen oder Webserver."@de ;
+  dcterms:description "Examples include a photocopying service, a banking service, an authentication service, interlibrary loans, a Z39.50 or Web server."@en, "Beispiele sind Fotokopier-, Bank- oder Authentifizierungsdienste, Fernleihen, Z39.50-Schnittstellen oder Webserver."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2000-07-11"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#Service-003> ;
-  ns0:memberOf dc:DCMIType .
+  dcterms:issued "2000-07-11"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Service-003> ;
+  dcam:memberOf dcterms:DCMIType .
 
 <http://purl.org/dc/dcmitype/Software>
   rdfs:label "Software"@en, "Software "@de ;
   rdfs:comment "A computer program in source or compiled form."@en, "Ein Computerprogramm als Quellcode oder in kompilierter Form"@de ;
-  dc:description "Examples include a C source file, MS-Windows .exe executable, or Perl script."@en, "Beispiele sind Quellcode in C, unter MS-Windows ausführbare Dateien (.exe) oder Perl-Skripte."@de ;
+  dcterms:description "Examples include a C source file, MS-Windows .exe executable, or Perl script."@en, "Beispiele sind Quellcode in C, unter MS-Windows ausführbare Dateien (.exe) oder Perl-Skripte."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2000-07-11"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#Software-003> ;
-  ns0:memberOf dc:DCMIType .
+  dcterms:issued "2000-07-11"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Software-003> ;
+  dcam:memberOf dcterms:DCMIType .
 
 <http://purl.org/dc/dcmitype/Sound>
   rdfs:label "Sound"@en, "Ton"@de ;
   rdfs:comment "A resource primarily intended to be heard."@en, "Eine Ressource, die hauptsächlich dazu bestimmt ist, dass man sie hört."@de ;
-  dc:description "Examples include a music playback file format, an audio compact disc, and recorded speech or sounds."@en, "Beispiele sind Musikdateien, Audio-CDs, Sprach- und Tonaufzeichnungen."@de ;
+  dcterms:description "Examples include a music playback file format, an audio compact disc, and recorded speech or sounds."@en, "Beispiele sind Musikdateien, Audio-CDs, Sprach- und Tonaufzeichnungen."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2000-07-11"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#Sound-003> ;
-  ns0:memberOf dc:DCMIType .
+  dcterms:issued "2000-07-11"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Sound-003> ;
+  dcam:memberOf dcterms:DCMIType .
 
 <http://purl.org/dc/dcmitype/Text>
   rdfs:label "Text"@en, "Text"@de  ;
   rdfs:comment "A resource consisting primarily of words for reading."@en, "Eine Ressource, die hauptsächlich aus Wörtern zum Lesen besteht."@de ;
-  dc:description "Examples include books, letters, dissertations, poems, newspapers, articles, archives of mailing lists. Note that facsimiles or images of texts are still of the genre Text."@en, "Beispiele sind Bücher, Briefe, Dissertationen, Gedichte, Zeitungen, Artikel, Archive von Mailing-Listen. Beachte, dass Faksimiles oder Bilder von Texten weiterhin zum Typ „Text“ gehören."@de ;
+  dcterms:description "Examples include books, letters, dissertations, poems, newspapers, articles, archives of mailing lists. Note that facsimiles or images of texts are still of the genre Text."@en, "Beispiele sind Bücher, Briefe, Dissertationen, Gedichte, Zeitungen, Artikel, Archive von Mailing-Listen. Beachte, dass Faksimiles oder Bilder von Texten weiterhin zum Typ „Text“ gehören."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2000-07-11"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#Text-003> ;
-  ns0:memberOf dc:DCMIType .
+  dcterms:issued "2000-07-11"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Text-003> ;
+  dcam:memberOf dcterms:DCMIType .
 
 <http://purl.org/dc/dcmitype/PhysicalObject>
   rdfs:label "Physical Object"@en, "Physisches Objekt"@de ;
   rdfs:comment "An inanimate, three-dimensional object or substance."@en, "Ein unbelebtes dreidimensionales Objekt oder ein Stoff."@de ;
-  dc:description "Note that digital representations of, or surrogates for, these objects should use Image, Text or one of the other types."@en, "Beachte, dass für digitale Kopien oder Surrogate solcher Objekte der Typ „Bild“ oder „Text“ oder einer der anderen Typen verwendet wird."@de ;
+  dcterms:description "Note that digital representations of, or surrogates for, these objects should use Image, Text or one of the other types."@en, "Beachte, dass für digitale Kopien oder Surrogate solcher Objekte der Typ „Bild“ oder „Text“ oder einer der anderen Typen verwendet wird."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2002-07-13"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#PhysicalObject-003> ;
-  ns0:memberOf dc:DCMIType .
+  dcterms:issued "2002-07-13"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#PhysicalObject-003> ;
+  dcam:memberOf dcterms:DCMIType .
 
 <http://purl.org/dc/dcmitype/StillImage>
   rdfs:label "Still Image"@en, "Einzelbild"@de ;
   rdfs:comment "A static visual representation."@en, "Eine statische visuelle Darstellung."@de ;
-  dc:description "Examples include paintings, drawings, graphic designs, plans and maps. Recommended best practice is to assign the type Text to images of textual materials. Instances of the type Still Image must also be describable as instances of the broader type Image."@en, "Beispiele sind Gemälde, Zeichnungen, grafische Entwürfe, Pläne und Karten. Es wird empfohlen, Bildern von Text-Materialien den Typ „Text“ zuzuweisen. Objekte des Typs „Einzelbild“ entsprechen auch dem Typ „Bild“."@de ;
+  dcterms:description "Examples include paintings, drawings, graphic designs, plans and maps. Recommended best practice is to assign the type Text to images of textual materials. Instances of the type Still Image must also be describable as instances of the broader type Image."@en, "Beispiele sind Gemälde, Zeichnungen, grafische Entwürfe, Pläne und Karten. Es wird empfohlen, Bildern von Text-Materialien den Typ „Text“ zuzuweisen. Objekte des Typs „Einzelbild“ entsprechen auch dem Typ „Bild“."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2003-11-18"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#StillImage-003> ;
-  ns0:memberOf dc:DCMIType ;
+  dcterms:issued "2003-11-18"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#StillImage-003> ;
+  dcam:memberOf dcterms:DCMIType ;
   rdfs:subClassOf <http://purl.org/dc/dcmitype/Image> .
 
 <http://purl.org/dc/dcmitype/MovingImage>
   rdfs:label "Moving Image"@en, "Bewegte Bilder"@de ;
   rdfs:comment "A series of visual representations imparting an impression of motion when shown in succession."@en, "Eine Serie visueller Darstellungen, die den Eindruck von Bewegung vermitteln, wenn sie nacheinander gezeigt werden."@de ;
-  dc:description "Examples include animations, movies, television programs, videos, zoetropes, or visual output from a simulation.  Instances of the type Moving Image must also be describable as instances of the broader type Image."@en, "Beispiel sind Animationen, Filme, Fernsehprogramme, Videos, Zoetropen oder die visuelle Darstellung einer Simulation. Objekte des Typs „Bewegte Bilder“ entsprechen auch dem Typ „Bild“."@de ;
+  dcterms:description "Examples include animations, movies, television programs, videos, zoetropes, or visual output from a simulation.  Instances of the type Moving Image must also be describable as instances of the broader type Image."@en, "Beispiel sind Animationen, Filme, Fernsehprogramme, Videos, Zoetropen oder die visuelle Darstellung einer Simulation. Objekte des Typs „Bewegte Bilder“ entsprechen auch dem Typ „Bild“."@de ;
   a <http://purl.org/dc/dcmitype/> ;
-  dc:issued "2003-11-18"^^xsd:date ;
-  dc:modified "2008-01-14"^^xsd:date ;
-  dc:hasVersion <http://dublincore.org/usage/terms/history/#MovingImage-003> ;
-  ns0:memberOf dc:DCMIType ;
+  dcterms:issued "2003-11-18"^^xsd:date ;
+  dcterms:modified "2008-01-14"^^xsd:date ;
+  dcterms:hasVersion <http://dublincore.org/usage/terms/history/#MovingImage-003> ;
+  dcam:memberOf dcterms:DCMIType ;
   rdfs:subClassOf <http://purl.org/dc/dcmitype/Image> .
