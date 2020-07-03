@@ -2,6 +2,12 @@
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://www.iana.org/assignments/media-types/>
+  dcterms:publisher <https://www.iana.org/> ;
+  dcterms:rights "Copyright © 2020 Internet Corporation for Assigned Names and Numbers" ;
+  dcterms:title "Media types"@en .
 
 <https://www.iana.org/assignments/media-types/application/andrewinset>
   rdf:about "https://www.iana.org/assignments/media-types/application/andrew-inset" ;

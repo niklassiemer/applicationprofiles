@@ -1,0 +1,502 @@
+@base <http://www.loc.gov/premis/rdf/v3/>.
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix : <http://www.loc.gov/premis/rdf/v3/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+
+_:autos11 rdf:first :Bitstream;
+          rdf:rest _:autos12.
+_:autos12 rdf:first :File;
+          rdf:rest rdf:nil.
+_:autos14 rdf:first :Bitstream;
+          rdf:rest _:autos15.
+_:autos15 rdf:first :File;
+          rdf:rest _:autos16.
+_:autos16 rdf:first :Representation;
+          rdf:rest rdf:nil.
+_:autos18 rdf:first :RightsStatus;
+          rdf:rest _:autos19.
+_:autos19 rdf:first :Rule;
+          rdf:rest rdf:nil.
+_:autos2 rdf:first :Bitstream;
+         rdf:rest _:autos3.
+_:autos21 rdf:first :Inhibitor;
+          rdf:rest _:autos22.
+_:autos22 rdf:first :Signature;
+          rdf:rest rdf:nil.
+_:autos24 rdf:first :File;
+          rdf:rest _:autos25.
+_:autos25 rdf:first :IntellectualEntity;
+          rdf:rest _:autos26.
+_:autos26 rdf:first :Representation;
+          rdf:rest rdf:nil.
+_:autos28 rdf:first :Bitstream;
+          rdf:rest _:autos29.
+_:autos29 rdf:first :File;
+          rdf:rest rdf:nil.
+_:autos3 rdf:first :File;
+         rdf:rest rdf:nil.
+_:autos31 rdf:first dcterms:FileFormat;
+          rdf:rest _:autos32.
+_:autos32 rdf:first :HardwareAgent;
+          rdf:rest _:autos33.
+_:autos33 rdf:first :IntellectualEntity;
+          rdf:rest _:autos34.
+_:autos34 rdf:first :SoftwareAgent;
+          rdf:rest rdf:nil.
+_:autos36 rdf:first :RightsStatus;
+          rdf:rest _:autos37.
+_:autos37 rdf:first :Rule;
+          rdf:rest rdf:nil.
+_:autos5 rdf:first :Agent;
+         rdf:rest _:autos6.
+_:autos6 rdf:first :Object;
+         rdf:rest rdf:nil.
+_:autos8 rdf:first :Bitstream;
+         rdf:rest _:autos9.
+_:autos9 rdf:first :File;
+         rdf:rest rdf:nil.
+dcterms:FileFormat a owl:Class.
+<http://www.loc.gov/premis/rdf/v3/> dcterms:modified "2018-10-12"^^xsd:date;
+                                    a owl:Ontology;
+                                    rdfs:comment """Ontology for PREMIS 3, the international standard
+      for metadata to support the preservation of digital objects and ensure their
+      long-term usability."""@en;
+                                    rdfs:label "PREMIS 3 Ontology"@en;
+                                    dcterms:publisher <http://www.loc.gov>;
+                                    rdfs:seeAlso <http://www.loc.gov/standards/premis/>,
+                                                 <https://github.com/PREMIS-OWL-Revision-Team/revise-premis-owl/>;
+                                    owl:imports <http://www.w3.org/ns/prov-o-20130430>;
+                                    owl:versionIRI <http://www.loc.gov/premis/rdf/v3/2018/10/12/>;
+                                    owl:versionInfo "3.0.0"^^xsd:string.
+:Action a owl:Class;
+        rdfs:comment "Operation type to perform on an Object. Effectively performing this action may produce an Event."@en;
+        rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+        rdfs:label "Action"@en;
+        rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/actionsGranted>.
+:Agent a owl:Class;
+       rdfs:comment """Actor (human, machine, or software) associated with one or more Event and/or Rights
+      statement associated with a digital object."""@en;
+       rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+       rdfs:label "Agent"@en;
+       rdfs:subClassOf prov:Agent,
+                       foaf:Agent.
+:Bitstream a owl:Class;
+           rdfs:comment """Contiguous or non-contiguous data within a file that has meaningful properties for
+      preservation purposes."""@en;
+           rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+           rdfs:label "Bitstream"@en;
+           rdfs:subClassOf :Object;
+           owl:disjointWith :File,
+                            :IntellectualEntity,
+                            :Representation.
+:Copyright a owl:Class;
+           rdfs:comment "Copyright law."@en;
+           rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+           rdfs:label "Copyright"@en;
+           rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/copyrightStatus>;
+           rdfs:subClassOf :RightsBasis;
+           owl:disjointWith :InstitutionalPolicy,
+                            :License,
+                            :Statute.
+:Dependency a owl:Class;
+            rdfs:comment """Relationship where one Object requires another Object to support its function, delivery, or
+      the coherence of its content."""@en;
+            rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+            rdfs:label "Dependency"@en.
+:EnvironmentCharacteristic a owl:Class;
+                           rdfs:comment """An assessment of the extent to which the described environment supports its
+      purpose."""@en;
+                           rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                           rdfs:label "Environment characteristic"@en;
+                           rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/environmentCharacteristic>.
+:Event a owl:Class;
+       rdfs:comment "Action performed within or outside the repository that affects its capability to preserve Objects over the long term."@en;
+       rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+       rdfs:label "Event"@en;
+       rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventType>;
+       rdfs:subClassOf prov:Activity.
+:File a owl:Class;
+      rdfs:comment "Named and ordered sequence of bytes that is known to an operating system."@en;
+      rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+      rdfs:label "File"@en;
+      rdfs:subClassOf :Object;
+      owl:disjointWith :Bitstream,
+                       :IntellectualEntity,
+                       :Representation.
+:Fixity a owl:Class;
+        rdfs:comment """Information used to verify whether an object has been altered in an undocumented or
+      unauthorized way."""@en;
+        rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+        rdfs:label "Fixity"@en;
+        rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions>.
+:HardwareAgent a owl:Class;
+               rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+               rdfs:label "Hardware agent"@en;
+               rdfs:subClassOf :Agent;
+               owl:disjointWith :Organization,
+                                :Person,
+                                :SoftwareAgent;
+               owl:sameAs <http://id.loc.gov/vocabulary/preservation/agentType/har>.
+:Identifier a owl:Class;
+            rdfs:comment """An unambiguous reference to the PREMIS entity within the preservation
+      repository."""@en;
+            rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+            rdfs:label "Identifier"@en.
+:Inhibitor a owl:Class;
+           rdfs:comment """Feature of a Digital Object intended to inhibit access, copying, dissemination, or
+      migration. Common Inhibitors are encryption and password protection."""@en;
+           rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+           rdfs:label "Inhibitor"@en;
+           rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/inhibitorType>.
+:InstitutionalPolicy a owl:Class;
+                     rdfs:comment "A policy decision made by an organization."@en;
+                     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                     rdfs:label "Institutional policy"@en;
+                     rdfs:subClassOf :RightsBasis;
+                     owl:disjointWith :Copyright,
+                                      :License,
+                                      :Statute.
+:IntellectualEntity a owl:Class;
+                    rdfs:comment """A set of content that is considered a single intellectual unit for purposes of management and
+      description: for example, a particular book, map, photograph, database, or piece of hardware or
+      software. An Intellectual Entity can include other Intellectual Entities; for example, a web site can
+      include a web page; a web page can include an image. An Intellectual Entity may have one or more digital
+      representations. An Intellectual Entity may also describe an environment, defined as technology
+      supporting a digital object in some way (e.g. by rendering or executing it). Environments can consist of
+      software, hardware, or a combination of both."""@en;
+                    rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                    rdfs:label "Intellectual entity"@en;
+                    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/environmentFunctionType>;
+                    rdfs:subClassOf :Object;
+                    owl:disjointWith :Bitstream,
+                                     :File,
+                                     :Representation.
+:License a owl:Class;
+         rdfs:comment "A license agreement or other legal document that grants rights."@en;
+         rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+         rdfs:label "License"@en;
+         rdfs:subClassOf :RightsBasis;
+         owl:disjointWith :Copyright,
+                          :InstitutionalPolicy,
+                          :Statute.
+:Object a owl:Class;
+        rdfs:comment """Discrete unit of information subject to digital preservation. Subclasses of Object are
+      Intellectual Entity, Representation, File and Bitstream."""@en;
+        rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+        rdfs:label "Object"@en;
+        rdfs:subClassOf prov:Entity.
+:Organization a owl:Class;
+              rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+              rdfs:label "Organization"@en;
+              rdfs:subClassOf :Agent,
+                              foaf:Organization,
+                              prov:Organization;
+              owl:disjointWith :HardwareAgent,
+                               :Person,
+                               :SoftwareAgent.
+:OutcomeStatus a owl:Class;
+               rdfs:comment "Overall result of the Event in terms of success, partial success, or failure."@en;
+               rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+               rdfs:label "Outcome status"@en;
+               rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventOutcome>.
+:Person a owl:Class;
+        rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+        rdfs:label "Person"@en;
+        rdfs:subClassOf :Agent,
+                        prov:Person,
+                        foaf:Person;
+        owl:disjointWith :HardwareAgent,
+                         :Organization,
+                         :SoftwareAgent.
+:PreservationPolicy a owl:Class;
+                    rdfs:comment """Information indicating the decision or policy on the set of preservation functions to be
+      applied to an object and the context in which the decision or policy was made. Note that in addition to
+      subclasses declared at presLevType, SignificantProperties is also a subclass of PreservationPolicy.
+      Implementers may also wish to create locally-defined subclasses."""@en;
+                    rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                    rdfs:label "Preservation policy"@en;
+                    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/preservationLevelRole>;
+                    rdfs:subClassOf dcterms:Policy.
+:Representation a owl:Class;
+                rdfs:comment """Digital or physical Object instantiating or embodying an Intellectual Entity. A digital
+      representation is the set of stored digital files and structural metadata needed to provide a complete
+      and reasonable rendition of the Intellectual Entity. A physical representation is an item such as a
+      manuscript, video cassette, or printed document."""@en;
+                rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                rdfs:label "Representation"@en;
+                rdfs:subClassOf :Object;
+                owl:disjointWith :Bitstream,
+                                 :File,
+                                 :IntellectualEntity.
+:RightsBasis a owl:Class;
+             rdfs:comment "Designation of the basis for the right or permission governing the Object."@en;
+             rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+             rdfs:label "Rights basis"@en;
+             rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/rightsBasis>.
+:RightsStatus a owl:Class;
+              rdfs:comment "Information about how a RightsBasis applies to a particular object."@en;
+              rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+              rdfs:label "Rights status"@en.
+:Rule a owl:Class;
+      rdfs:comment """Statement about the Actions an Agent is permitted to undertake or prohibited from
+      undertaking with respect to an Object."""@en;
+      rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+      rdfs:label "Rule"@en.
+:Signature a owl:Class;
+           rdfs:comment """Mathematical technique used to validate the authenticity and integrity of a message,
+      software or digital document."""@en;
+           rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+           rdfs:label "Signature"@en;
+           rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/signatureMethod>.
+:SignatureEncoding a owl:Class;
+                   rdfs:comment "Encoding used for the signature value and key information."@en;
+                   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                   rdfs:label "Signature encoding"@en;
+                   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/signatureEncoding>.
+:SignificantProperties a owl:Class;
+                       rdfs:comment """Characteristics of a particular object subjectively determined to be important to maintain
+      through preservation actions."""@en;
+                       rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                       rdfs:label "Significant properties"@en;
+                       rdfs:subClassOf :PreservationPolicy.
+:SoftwareAgent a owl:Class;
+               rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+               rdfs:label "Software agent"@en;
+               rdfs:subClassOf :Agent,
+                               prov:SoftwareAgent;
+               owl:disjointWith :HardwareAgent,
+                                :Organization,
+                                :Person.
+:Statute a owl:Class;
+         rdfs:comment """A law that grants or revokes rights, such as laws governing privacy or orphan
+      works."""@en;
+         rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+         rdfs:label "Statute"@en;
+         rdfs:subClassOf :RightsBasis;
+         owl:disjointWith :Copyright,
+                          :License,
+                          :InstitutionalPolicy.
+:StorageLocation a owl:Class;
+                 rdfs:comment """Information needed to retrieve a physical item from its physical storage location or a file
+      from the storage system, or to access a bitstream within a file."""@en;
+                 rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                 rdfs:label "Storage location"@en;
+                 rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/contentLocationType>.
+:StorageMedium a owl:Class;
+               rdfs:comment """The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM,
+      DVD)."""@en;
+               rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+               rdfs:label "Storage medium"@en;
+               rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/storageMedium>.
+:act a owl:ObjectProperty;
+     rdfs:domain :Rule;
+     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+     rdfs:label "act"@en;
+     rdfs:range :Action.
+:allows a owl:ObjectProperty;
+        rdfs:domain :RightsBasis;
+        rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+        rdfs:label "allows"@en;
+        rdfs:range :Rule.
+:basis a owl:ObjectProperty;
+       rdfs:comment """Links from a RightsStatus to the RightsBasis instance that supports or documents
+      it."""@en;
+       rdfs:domain :RightsStatus;
+       rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+       rdfs:label "has basis"@en;
+       rdfs:range :RightsBasis.
+:characteristic a owl:ObjectProperty;
+                rdfs:domain :Dependency;
+                rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                rdfs:label "has characteristic"@en;
+                rdfs:range :EnvironmentCharacteristic.
+:citation a owl:DatatypeProperty;
+          rdfs:domain :RightsBasis;
+          rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+          rdfs:label "has citation"@en;
+          rdfs:range rdfs:Literal.
+:compositionLevel a owl:DatatypeProperty;
+                  rdfs:domain :File;
+                  rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                  rdfs:label "has composition level"@en;
+                  rdfs:range xsd:nonNegativeInteger.
+:dependency a owl:ObjectProperty;
+            rdfs:domain :Object;
+            rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+            rdfs:label "has dependency"@en;
+            rdfs:range :Dependency.
+:determinationDate a owl:DatatypeProperty;
+                   rdfs:domain :RightsStatus;
+                   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                   rdfs:label "has determination date"@en;
+                   rdfs:range xsd:date;
+                   rdfs:subPropertyOf dcterms:date.
+:documentation a owl:ObjectProperty;
+               rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+               rdfs:label "has documentation"@en;
+               rdfs:range rdfs:Resource.
+:encoding a owl:ObjectProperty;
+          rdfs:domain :Signature;
+          rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+          rdfs:label "has encoding"@en;
+          rdfs:range :SignatureEncoding.
+:endDate a owl:DatatypeProperty;
+         rdfs:domain [a owl:Class ; 
+                      owl:unionOf _:autos18];
+         rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+         rdfs:label "end date"@en;
+         rdfs:subPropertyOf dcterms:date.
+:fixity a owl:ObjectProperty;
+        rdfs:domain [a owl:Class ; 
+                     owl:unionOf _:autos2];
+        rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+        rdfs:label "has fixity"@en;
+        rdfs:range :Fixity.
+:governs a owl:ObjectProperty;
+         rdfs:domain :RightsBasis;
+         rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+         rdfs:label "governs"@en;
+         rdfs:range :Object.
+:identifier a owl:ObjectProperty;
+            rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+            rdfs:label "has identifier"@en;
+            rdfs:range :Identifier.
+:inhibitedBy a owl:ObjectProperty;
+             rdfs:domain [a owl:Class ; 
+                          owl:unionOf _:autos11];
+             rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+             rdfs:label "inhibited by"@en;
+             rdfs:range :Inhibitor.
+:inhibits a owl:ObjectProperty;
+          rdfs:domain :Inhibitor;
+          rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+          rdfs:label "inhibits"@en;
+          rdfs:range :Action.
+:jurisdiction a owl:ObjectProperty;
+              rdfs:domain :RightsBasis;
+              rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+              rdfs:label "has jurisdiction"@en;
+              rdfs:range rdfs:Resource.
+:key a owl:DatatypeProperty;
+     rdfs:domain [a owl:Class ; 
+                  owl:unionOf _:autos21];
+     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+     rdfs:label "has key"@en;
+     rdfs:range rdfs:Literal.
+:medium a owl:ObjectProperty;
+        rdfs:domain :StorageLocation;
+        rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+        rdfs:label "has medium"@en;
+        rdfs:range :StorageMedium.
+:note a owl:DatatypeProperty;
+      rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+      rdfs:label "has note"@en;
+      rdfs:range rdfs:Literal;
+      rdfs:subPropertyOf dcterms:description.
+:originalName a owl:DatatypeProperty;
+              rdfs:domain [a owl:Class ; 
+                           owl:unionOf _:autos24];
+              rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+              rdfs:label "has original name"@en;
+              rdfs:range rdfs:Literal.
+:outcome a owl:ObjectProperty;
+         rdfs:domain :Event;
+         rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+         rdfs:label "has outcome"@en;
+         rdfs:range :OutcomeStatus.
+:outcomeNote a owl:DatatypeProperty;
+             rdfs:domain :Event;
+             rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+             rdfs:label "has outcome note"@en;
+             rdfs:range rdfs:Literal;
+             rdfs:subPropertyOf :note.
+:policy a owl:ObjectProperty;
+        rdfs:domain :Object;
+        rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+        rdfs:label "has policy"@en;
+        rdfs:range :PreservationPolicy;
+        rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/preservationLevelRole>.
+:prohibits a owl:ObjectProperty;
+           rdfs:domain :RightsBasis;
+           rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+           rdfs:label "prohibits"@en;
+           rdfs:range :Rule.
+:purpose a owl:ObjectProperty;
+         rdfs:domain :Dependency;
+         rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+         rdfs:label "has purpose"@en;
+         rdfs:range :Action.
+:rationale a owl:DatatypeProperty;
+           rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+           rdfs:label "has rationale"@en;
+           rdfs:range rdfs:Literal;
+           rdfs:subPropertyOf :note.
+:relationship a owl:ObjectProperty;
+              rdfs:domain [a owl:Class ; 
+                           owl:unionOf _:autos5];
+              rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+              rdfs:label "has relationship"@en;
+              rdfs:range :Object;
+              rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/relationshipSubType>.
+:restriction a owl:DatatypeProperty;
+             rdfs:domain :Rule;
+             rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+             rdfs:label "has restriction"@en;
+             rdfs:range rdfs:Literal.
+:rightsStatus a owl:ObjectProperty;
+              rdfs:domain :Object;
+              rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+              rdfs:label "has rights status"@en;
+              rdfs:range :RightsStatus;
+              rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights>.
+:signature a owl:ObjectProperty;
+           rdfs:domain [a owl:Class ; 
+                        owl:unionOf _:autos8];
+           rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+           rdfs:label "has signature"@en;
+           rdfs:range :Signature.
+:size a owl:DatatypeProperty;
+      rdfs:domain [a owl:Class ; 
+                   owl:unionOf _:autos28];
+      rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+      rdfs:label "has size"@en;
+      rdfs:range xsd:nonNegativeInteger;
+      skos:narrowMatch <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileSize>.
+:startDate a owl:DatatypeProperty;
+           rdfs:domain [a owl:Class ; 
+                        owl:unionOf _:autos36];
+           rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+           rdfs:label "start date"@en;
+           rdfs:subPropertyOf dcterms:date.
+:storedAt a owl:ObjectProperty;
+          rdfs:domain [a owl:Class ; 
+                       owl:unionOf _:autos14];
+          rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+          rdfs:label "stored at"@en;
+          rdfs:range :StorageLocation.
+:terms a owl:DatatypeProperty;
+       rdfs:domain :RightsBasis;
+       rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+       rdfs:label "has terms"@en;
+       rdfs:range rdfs:Literal;
+       rdfs:subPropertyOf :note.
+:validationRules a owl:DatatypeProperty;
+                 rdfs:domain :Signature;
+                 rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+                 rdfs:label "has validation rules"@en;
+                 rdfs:range rdfs:Literal;
+                 rdfs:subPropertyOf :note.
+:version a owl:DatatypeProperty;
+         rdfs:domain [a owl:Class ; 
+                      owl:unionOf _:autos31];
+         rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/>;
+         rdfs:label "has version"@en;
+         rdfs:range rdfs:Literal.
