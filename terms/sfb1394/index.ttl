@@ -1,0 +1,60 @@
+@base  <http://purl.org/coscine/terms/sfb1394/> .
+@prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://purl.org/coscine/terms/sfb1394/>
+  dcterms:publisher <http://www.itc.rwth-aachen.de/> ;
+  dcterms:license <http://spdx.org/licenses/CC-BY-4.0> ;
+  dcterms:rights "Copyright © 2020 RWTH Aachen University" ;
+  dcterms:title "SFB1394 Metadata"@en .
+
+sfb1394:parentSample
+    rdfs:label "Parent Sample"@en, "Parent Sample"@de ;
+.
+
+sfb1394:liftOutRegion
+    rdfs:label "Lift-out region"@en, "Lift-out region"@de ;
+.
+
+sfb1394:annularMillingParameters
+    rdfs:label "Annular Milling Parameters"@en, "Annular Milling Parameters"@de ;
+.
+
+sfb1394:lowVoltageCleaning
+    rdfs:label "Low Voltage Cleaning"@en, "Low Voltage Cleaning"@de ;
+.
+
+sfb1394:mode
+    rdfs:label "Mode"@en, "Mode"@de ;
+.
+
+sfb1394:pulseFraction
+    rdfs:label "Pulse Fraction [%]"@en, "Pulse Fraction [%]"@de ;
+.
+
+sfb1394:laserPulseEnergy
+    rdfs:label "Laser Pulse Energy [pJ]"@en, "Laser Pulse Energy [pJ]"@de ;
+.
+
+sfb1394:pulseFreqency
+    rdfs:label "Pulse frequency [kHz]"@en, "Pulse frequency [kHz]"@de ;
+.
+
+sfb1394:baseTemperature
+    rdfs:label "Base temperature [K]"@en, "Base temperature [K]"@de ;
+.
+
+sfb1394:detectionRate
+    rdfs:label "Detection rate [%]"@en, "Detection rate [%]"@de ;
+.
+
+sfb1394:runTime
+    rdfs:label "Run time [hh:mm]"@en, "Run time [hh:mm]"@de ;
+.
+
+sfb1394:stopVoltage
+    rdfs:label "Stop voltage [kV]"@en, "Stop voltage [kV]"@de ;
+.
+

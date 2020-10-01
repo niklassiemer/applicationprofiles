@@ -1,0 +1,194 @@
+@base <https://purl.org/coscine/ap/sfb1394/tomography/> .
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+@prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
+
+@prefix coscineSfb1394Tomography: <https://purl.org/coscine/ap/sfb1394/tomography#> .
+
+<https://purl.org/coscine/ap/sfb1394/tomography/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title "SFB1394 Tomography"@en ;
+
+  a sh:NodeShape ;
+  sh:targetClass <https://purl.org/coscine/ap/sfb1394/tomography/> ;
+  sh:closed true;
+
+  sh:property [
+    sh:path rdf:type ;
+  ] ;
+
+  sh:property 
+    coscineSfb1394Tomography:experimentId,
+    coscineSfb1394Tomography:creator,
+    coscineSfb1394Tomography:created,
+    coscineSfb1394Tomography:specimenId,
+    coscineSfb1394Tomography:parentSample,
+    coscineSfb1394Tomography:liftOutRegion,
+    coscineSfb1394Tomography:annularMillingParameters,
+    coscineSfb1394Tomography:lowVoltageCleaning,
+    coscineSfb1394Tomography:Mode,
+    coscineSfb1394Tomography:pulseFraction,
+    coscineSfb1394Tomography:laserPulseEnergy,
+    coscineSfb1394Tomography:pulseFreqency,
+    coscineSfb1394Tomography:baseTemperature,
+    coscineSfb1394Tomography:detectionRate,
+    coscineSfb1394Tomography:runTime,
+    coscineSfb1394Tomography:stopVoltage,
+    coscineSfb1394Tomography:comments    
+  ;
+.
+
+coscineSfb1394Tomography:experimentId
+  sh:path dcterms:title;
+  sh:order 0 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Experiment ID"@en, "Experiment ID"@de ;
+.
+
+coscineSfb1394Tomography:creator
+  sh:path dcterms:creator ;
+  sh:order 1 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:defaultValue "{ME}" ;
+  sh:name "Creator"@en, "Creator"@de ;
+.
+
+coscineSfb1394Tomography:created
+  sh:path dcterms:created ;
+  sh:order 2 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:date ;
+  sh:defaultValue "{TODAY}" ;
+  sh:name "Production Date"@en, "Production Date"@de
+.
+
+coscineSfb1394Tomography:specimenId
+  sh:path csmd:investigation_sample ;
+  sh:order 3 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Specimen ID"@en, "Specimen ID"@de ;
+.
+
+coscineSfb1394Tomography:parentSample
+  sh:path sfb1394:parentSample ;
+  sh:order 4 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Parent Sample"@en, "Parent Sample"@de ;
+.
+
+coscineSfb1394Tomography:liftOutRegion
+  sh:path sfb1394:liftOutRegion ;
+  sh:order 5 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Lift-out region"@en, "Lift-out region"@de ;
+.
+
+coscineSfb1394Tomography:annularMillingParameters
+  sh:path sfb1394:annularMillingParameters ;
+  sh:order 6 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Annular Milling Parameters"@en, "Annular Milling Parameters"@de ;
+.
+
+coscineSfb1394Tomography:lowVoltageCleaning
+  sh:path sfb1394:lowVoltageCleaning ;
+  sh:order 7 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Low Voltage Cleaning"@en, "Low Voltage Cleaning"@de ;
+.
+
+coscineSfb1394Tomography:mode
+  sh:path sfb1394:mode ;
+  sh:order 8 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Mode"@en, "Mode"@de ;
+.
+
+coscineSfb1394Tomography:pulseFraction
+  sh:path sfb1394:pulseFraction ;
+  sh:order 9 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Pulse Fraction [%]"@en, "Pulse Fraction [%]"@de ;
+.
+
+coscineSfb1394Tomography:laserPulseEnergy
+  sh:path sfb1394:laserPulseEnergy ;
+  sh:order 10 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Laser Pulse Energy [pJ]"@en, "Laser Pulse Energy [pJ]"@de ;
+.
+
+coscineSfb1394Tomography:pulseFrequency
+  sh:path sfb1394:pulseFreqency ;
+  sh:order 11 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Pulse frequency [kHz]"@en, "Pulse frequency [kHz]"@de ;
+.
+
+coscineSfb1394Tomography:baseTemperature
+  sh:path sfb1394:baseTemperature ;
+  sh:order 12 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Base temperature [K]"@en, "Base temperature [K]"@de;
+.
+
+coscineSfb1394Tomography:detectionRate
+  sh:path sfb1394:detectionRate ;
+  sh:order 13 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Detection rate [%]"@en, "Detection rate [%]"@de ;
+.
+
+coscineSfb1394Tomography:runTime
+  sh:path sfb1394:runTime ;
+  sh:order 14 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Run time [hh:mm]"@en, "Run time [hh:mm]"@de ;
+.
+
+coscineSfb1394Tomography:stopVoltage
+  sh:path sfb1394:stopVoltage ;
+  sh:order 15 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Stop voltage [kV]"@en, "Stop voltage [kV]"@de ;
+.
+
+coscineSfb1394Tomography:comments
+  sh:path dcterms:description ;
+  sh:order 16 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Comments"@en, "Comments"@de ;
+.
