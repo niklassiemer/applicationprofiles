@@ -38,7 +38,7 @@ sfb1394:laserPulseEnergy
     rdfs:label "Laser Pulse Energy [pJ]"@en, "Laser Pulse Energy [pJ]"@de ;
 .
 
-sfb1394:pulseFreqency
+sfb1394:pulseFrequency
     rdfs:label "Pulse frequency [kHz]"@en, "Pulse frequency [kHz]"@de ;
 .
 

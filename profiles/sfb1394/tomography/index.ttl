@@ -26,26 +26,23 @@
     sh:path rdf:type ;
   ] ;
 
-  sh:property 
-    coscineSfb1394Tomography:experimentId,
-    coscineSfb1394Tomography:creator,
-    coscineSfb1394Tomography:created,
-    coscineSfb1394Tomography:specimenId,
-    coscineSfb1394Tomography:parentSample,
-    coscineSfb1394Tomography:liftOutRegion,
-    coscineSfb1394Tomography:annularMillingParameters,
-    coscineSfb1394Tomography:lowVoltageCleaning,
-    coscineSfb1394Tomography:Mode,
-    coscineSfb1394Tomography:pulseFraction,
-    coscineSfb1394Tomography:laserPulseEnergy,
-    coscineSfb1394Tomography:pulseFreqency,
-    coscineSfb1394Tomography:baseTemperature,
-    coscineSfb1394Tomography:detectionRate,
-    coscineSfb1394Tomography:runTime,
-    coscineSfb1394Tomography:stopVoltage,
-    coscineSfb1394Tomography:comments    
-  ;
-.
+  sh:property coscineSfb1394Tomography:experimentId ;
+  sh:property coscineSfb1394Tomography:creator ;
+  sh:property coscineSfb1394Tomography:created ;
+  sh:property coscineSfb1394Tomography:specimenId ;
+  sh:property coscineSfb1394Tomography:parentSample ;
+  sh:property coscineSfb1394Tomography:liftOutRegion ;
+  sh:property coscineSfb1394Tomography:annularMillingParameters ;
+  sh:property coscineSfb1394Tomography:lowVoltageCleaning ;
+  sh:property coscineSfb1394Tomography:mode ;
+  sh:property coscineSfb1394Tomography:pulseFraction ;
+  sh:property coscineSfb1394Tomography:laserPulseEnergy ;
+  sh:property coscineSfb1394Tomography:pulseFrequency ;
+  sh:property coscineSfb1394Tomography:baseTemperature ;
+  sh:property coscineSfb1394Tomography:detectionRate ;
+  sh:property coscineSfb1394Tomography:runTime ;
+  sh:property coscineSfb1394Tomography:stopVoltage ;
+  sh:property coscineSfb1394Tomography:comments .
 
 coscineSfb1394Tomography:experimentId
   sh:path dcterms:title;
@@ -145,7 +142,7 @@ coscineSfb1394Tomography:laserPulseEnergy
 .
 
 coscineSfb1394Tomography:pulseFrequency
-  sh:path sfb1394:pulseFreqency ;
+  sh:path sfb1394:pulseFrequency ;
   sh:order 11 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
