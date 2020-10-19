@@ -20,7 +20,7 @@
 
   a sh:NodeShape ;
   sh:targetClass <https://purl.org/coscine/ap/sfb1394/tomography/> ;
-  sh:closed true;
+  sh:closed true ;
 
   sh:property [
     sh:path rdf:type ;
