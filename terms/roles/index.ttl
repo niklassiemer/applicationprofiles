@@ -1,0 +1,16 @@
+@base <https://purl.org/coscine/terms/role/> .
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix coscinerole: <https://purl.org/coscine/terms/role#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://purl.org/coscine/terms/role/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title "Role"@en .
+
+coscinerole:supportAdmin
+  rdfs:label "Support Admin"@en ;
+  rdfs:label "Support Admin"@de ;
+  a <https://purl.org/coscine/terms/role/> .
