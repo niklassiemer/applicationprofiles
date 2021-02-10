@@ -10,7 +10,7 @@
 
 @prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
 
-@prefix coscineSfb1394NanoIndentaion: <https://purl.org/coscine/ap/sfb1394/nano-indentation#> .
+@prefix coscineSfb1394NanoIndentation: <https://purl.org/coscine/ap/sfb1394/nano-indentation#> .
 
 <https://purl.org/coscine/ap/sfb1394/nano-indentation/>
   dcterms:license <http://spdx.org/licenses/MIT> ;
@@ -26,20 +26,18 @@
     sh:path rdf:type ;
   ] ;
 
-# sh:property coscineSfb1394NanoIndentaion:creator ;
-# sh:property coscineSfb1394NanoIndentaion:created ;
-  sh:property coscineSfb1394NanoIndentaion:experimentId ;
-  sh:property coscineSfb1394NanoIndentaion:operator ;
-  sh:property coscineSfb1394NanoIndentaion:specimenId ;
-  sh:property coscineSfb1394NanoIndentaion:parentSample ;
-  sh:property coscineSfb1394NanoIndentaion:sampleLocation ;
-  sh:property coscineSfb1394NanoIndentaion:Instrument ;
-  sh:property coscineSfb1394NanoIndentaion:Tip ;
-  sh:property coscineSfb1394NanoIndentaion:comments .
+  sh:property coscineSfb1394NanoIndentation:experimentId ;
+  sh:property coscineSfb1394NanoIndentation:operator ;
+  sh:property coscineSfb1394NanoIndentation:specimenId ;
+  sh:property coscineSfb1394NanoIndentation:parentSample ;
+  sh:property coscineSfb1394NanoIndentation:sampleLocation ;
+  sh:property coscineSfb1394NanoIndentation:instrument ;
+  sh:property coscineSfb1394NanoIndentation:tip ;
+  sh:property coscineSfb1394NanoIndentation:comments .
 
-coscineSfb1394NanoIndentaion:experimentId
+coscineSfb1394NanoIndentation:experimentId
   sh:path dcterms:title;
-  sh:order 0 ;
+  sh:order 1 ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:minLength 1 ;
@@ -47,30 +45,9 @@ coscineSfb1394NanoIndentaion:experimentId
   sh:name "Experiment ID"@en, "Experiment ID"@de ;
 .
 
-#coscineSfb1394NanoIndentaion:creator
-#  sh:path dcterms:creator ;
-#  sh:order 1 ;
-#  sh:minCount 1 ;
-#  sh:maxCount 1 ;
-#  sh:minLength 1 ;
-#  sh:datatype xsd:string ;
-#  sh:defaultValue "{ME}" ;
-#  sh:name "Creator"@en, "Creator"@de ;
-#.
-#
-#coscineSfb1394NanoIndentaion:created
-#  sh:path dcterms:created ;
-#  sh:order 2 ;
-#  sh:minCount 1 ;
-#  sh:maxCount 1 ;
-#  sh:datatype xsd:date ;
-#  sh:defaultValue "{TODAY}" ;
-#  sh:name "Production Date"@en, "Production Date"@de
-#.
-
-coscineSfb1394NanoIndentaion:operator
+coscineSfb1394NanoIndentation:operator
   sh:path dcterms:creator ;
-  sh:order 1 ;
+  sh:order 0 ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:minLength 1 ;
@@ -79,49 +56,55 @@ coscineSfb1394NanoIndentaion:operator
   sh:name "Operator"@en, "Operator"@de ;
 .
 
-coscineSfb1394NanoIndentaion:specimenId
+coscineSfb1394NanoIndentation:specimenId
   sh:path csmd:investigation_sample ;
   sh:order 3 ;
+  sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Specimen ID"@en, "Specimen ID"@de ;
 .
 
-coscineSfb1394NanoIndentaion:parentSample
+coscineSfb1394NanoIndentation:parentSample
   sh:path sfb1394:parentSample ;
   sh:order 4 ;
+  sh:minCount 1 ;  
+  sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
-  sh:name "Parent Sample"@en, "Parent Sample"@de ;
+  sh:name "Parent sample specimen ID"@en, "Parent sample specimen ID"@de ;
 .
 
-coscineSfb1394NanoIndentaion:sampleLocation
+coscineSfb1394NanoIndentation:sampleLocation
   sh:path sfb1394:sampleLocation ;
-  sh:order 4 ;
+  sh:order 5 ;
+  sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Sample location"@en, "Sample location"@de ;
 .
 
-coscineSfb1394NanoIndentaion:Instrument
+coscineSfb1394NanoIndentation:instrument
   sh:path sfb1394:Instrument ;
-  sh:order 4 ;
+  sh:order 6 ;
+  sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Instrument used"@en, "Instrument used"@de ;
 .
 
-coscineSfb1394NanoIndentaion:Tip
+coscineSfb1394NanoIndentation:tip
   sh:path sfb1394:Tip ;
-  sh:order 4 ;
+  sh:order 7 ;
+  sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   sh:name "Tip used"@en, "Tip used"@de ;
 .
 
-coscineSfb1394NanoIndentaion:comments
+coscineSfb1394NanoIndentation:comments
   sh:path dcterms:description ;
-  sh:order 16 ;
+  sh:order 200 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   dash:singleLine false ;
