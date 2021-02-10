@@ -1,0 +1,167 @@
+@base <https://purl.org/coscine/ap/sfb1394/EDX/> .
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+@prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
+
+@prefix coscineSfb1394EDX: <https://purl.org/coscine/ap/sfb1394/EDX#> .
+
+<https://purl.org/coscine/ap/sfb1394/EDX/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title "SFB1394 EDX"@en ;
+
+  a sh:NodeShape ;
+  sh:targetClass <https://purl.org/coscine/ap/sfb1394/EDX/> ;
+  sh:closed true ;
+
+  sh:property [
+    sh:path rdf:type ;
+  ] ;
+
+  sh:property coscineSfb1394EDX:experimentId ;
+  sh:property coscineSfb1394EDX:operator ;
+  sh:property coscineSfb1394EDX:specimenId ;
+  sh:property coscineSfb1394EDX:parentSample ;
+  sh:property coscineSfb1394EDX:measurementPosition ;
+  sh:property coscineSfb1394EDX:instrument ;
+  sh:property coscineSfb1394EDX:detector ;
+  sh:property coscineSfb1394EDX:acceleratingVoltage ;
+  sh:property coscineSfb1394EDX:magnification ;
+  sh:property coscineSfb1394EDX:dwellTime ;
+  sh:property coscineSfb1394EDX:tilt ;
+  sh:property coscineSfb1394EDX:acquisitionMode ;
+  sh:property coscineSfb1394EDX:comments .
+
+coscineSfb1394EDX:experimentId
+  sh:path dcterms:title;
+  sh:order 1 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Experiment ID"@en, "Experiment ID"@de ;
+.
+
+coscineSfb1394EDX:operator
+  sh:path dcterms:creator ;
+  sh:order 0 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:defaultValue "{ME}" ;
+  sh:name "Operator"@en, "Operator"@de ;
+.
+
+coscineSfb1394EDX:specimenId
+  sh:path csmd:investigation_sample ;
+  sh:order 3 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Specimen ID"@en, "Specimen ID"@de ;
+.
+
+coscineSfb1394EDX:parentSample
+  sh:path sfb1394:parentSample ;
+  sh:order 4 ;
+  sh:minCount 1 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Parent sample specimen ID"@en, "Parent sample specimen ID"@de ;
+.
+
+coscineSfb1394EDX:measurementPosition
+  sh:path sfb1394:measurementPosition ;
+  sh:order 5 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Measurement Position"@en, "Measurement Position"@de ;
+.
+
+coscineSfb1394EDX:instrument
+  sh:path sfb1394:Instrument ;
+  sh:order 6 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Instrument used"@en, "Instrument used"@de ;
+.
+
+coscineSfb1394EDX:detector
+  sh:path sfb1394:Detector ;
+  sh:order 7 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Detector used"@en, "Detector used"@de ;
+.
+
+coscineSfb1394EDX:acceleratingVoltage 
+  sh:path sfb1394:acceleratingVoltage ;
+  sh:order 8 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  # sh:datatype xsd:float ;
+  sh:datatype xsd:string ;
+  sh:name "Accelerating Voltage"@en, "Accelerating Voltage"@de ;
+.
+
+coscineSfb1394EDX:magnification 
+  sh:path sfb1394:magnification ;
+  sh:order 9 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  # sh:datatype xsd:float ;
+  sh:datatype xsd:string ;
+  sh:name "Magnification"@en, "Magnification"@de ;
+.
+
+coscineSfb1394EDX:dwellTime 
+  sh:path sfb1394:dwellTime ;
+  sh:order 10 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  # sh:datatype xsd:float ;
+  sh:datatype xsd:string ;
+  sh:name "Dwell time"@en, "Dwell time"@de ;
+.
+
+coscineSfb1394EDX:tilt 
+  sh:path sfb1394:tilt ;
+  sh:order 11 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  # sh:datatype xsd:float ;
+  sh:datatype xsd:string ;
+  sh:name "Tilt"@en, "Tilt"@de ;
+.
+
+coscineSfb1394EDX:acquisitionMode
+  sh:path sfb1394:acquisitionMode ;
+  sh:order 12 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  # sh:datatype xsd:set ;
+  sh:datatype xsd:string ;
+  sh:name "Acquisition Mode"@en, "Acquisition Mode"@de ;
+.
+
+coscineSfb1394EDX:comments
+  sh:path dcterms:description ;
+  sh:order 200 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Comments"@en, "Comments"@de ;
+.
