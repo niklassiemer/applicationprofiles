@@ -10,7 +10,7 @@
 
 @prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
 
-@prefix coscineSfb1394Tomography: <https://purl.org/coscine/ap/sfb1394/nano-indentation#> .
+@prefix coscineSfb1394NanoIndentaion: <https://purl.org/coscine/ap/sfb1394/nano-indentation#> .
 
 <https://purl.org/coscine/ap/sfb1394/nano-indentation/>
   dcterms:license <http://spdx.org/licenses/MIT> ;
