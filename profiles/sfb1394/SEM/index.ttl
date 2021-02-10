@@ -1,0 +1,112 @@
+@base <https://purl.org/coscine/ap/sfb1394/SEM/> .
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+@prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
+
+@prefix coscineSfb1394SEM: <https://purl.org/coscine/ap/sfb1394/SEM#> .
+
+<https://purl.org/coscine/ap/sfb1394/SEM/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title "SFB1394 SEM"@en ;
+
+  a sh:NodeShape ;
+  sh:targetClass <https://purl.org/coscine/ap/sfb1394/SEM/> ;
+  sh:closed true ;
+
+  sh:property [
+    sh:path rdf:type ;
+  ] ;
+
+  sh:property coscineSfb1394SEM:experimentId ;
+  sh:property coscineSfb1394SEM:operator ;
+  sh:property coscineSfb1394SEM:specimenId ;
+  sh:property coscineSfb1394SEM:parentSample ;
+  sh:property coscineSfb1394SEM:sampleLocation ;
+  sh:property coscineSfb1394SEM:instrument ;
+  sh:property coscineSfb1394SEM:detector ;
+  sh:property coscineSfb1394SEM:comments .
+
+coscineSfb1394SEM:experimentId
+  sh:path dcterms:title;
+  sh:order 1 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Experiment ID"@en, "Experiment ID"@de ;
+.
+
+coscineSfb1394SEM:operator
+  sh:path dcterms:creator ;
+  sh:order 0 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:defaultValue "{ME}" ;
+  sh:name "Operator"@en, "Operator"@de ;
+.
+
+coscineSfb1394SEM:specimenId
+  sh:path csmd:investigation_sample ;
+  sh:order 3 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Specimen ID"@en, "Specimen ID"@de ;
+.
+
+coscineSfb1394SEM:parentSample
+  sh:path sfb1394:parentSample ;
+  sh:order 4 ;
+  sh:minCount 1 ;  
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Parent sample specimen ID"@en, "Parent sample specimen ID"@de ;
+.
+
+coscineSfb1394SEM:sampleLocation
+  sh:path sfb1394:sampleLocation ;
+  sh:order 5 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Sample location"@en, "Sample location"@de ;
+.
+
+coscineSfb1394SEM:instrument
+  sh:path sfb1394:Instrument ;
+  sh:order 6 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Instrument used"@en, "Instrument used"@de ;
+.
+
+coscineSfb1394SEM:detector
+  sh:path sfb1394:Detector ;
+  sh:order 7 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Detector used"@en, "Detector used"@de ;
+.
+
+coscineSfb1394SEM:comments
+  sh:path dcterms:description ;
+  sh:order 200 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Comments"@en, "Comments"@de ;
+.

@@ -1,0 +1,254 @@
+@base <https://purl.org/coscine/ap/sfb1394/EBSD/> .
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+@prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
+
+@prefix coscineSfb1394EBSD: <https://purl.org/coscine/ap/sfb1394/EBSD#> .
+
+<https://purl.org/coscine/ap/sfb1394/EBSD/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title "SFB1394 EBSD"@en ;
+
+  a sh:NodeShape ;
+  sh:targetClass <https://purl.org/coscine/ap/sfb1394/EBSD/> ;
+  sh:closed true ;
+
+  sh:property [
+    sh:path rdf:type ;
+  ] ;
+
+  sh:property coscineSfb1394EBSD:experimentId ;
+  sh:property coscineSfb1394EBSD:operator ;
+  sh:property coscineSfb1394EBSD:specimenId ;
+  sh:property coscineSfb1394EBSD:parentSample ;
+  sh:property coscineSfb1394EBSD:sampleLocation ;
+  sh:property coscineSfb1394EBSD:grit1 ;
+  sh:property coscineSfb1394EBSD:solventGrit1 ;
+  sh:property coscineSfb1394EBSD:grit2 ;
+  sh:property coscineSfb1394EBSD:solventGrit2 ;
+  sh:property coscineSfb1394EBSD:gritMaterial ;
+  sh:property coscineSfb1394EBSD:polishingSuspension ;
+  sh:property coscineSfb1394EBSD:materialSuspension ;
+  sh:property coscineSfb1394EBSD:FinePolishingSuspension ;
+  sh:property coscineSfb1394EBSD:solventPolishing ;
+  sh:property coscineSfb1394EBSD:etchingOperator ;
+  sh:property coscineSfb1394EBSD:etchant ;
+  sh:property coscineSfb1394EBSD:etchingParameter ;
+  sh:property coscineSfb1394EBSD:corrosion ;
+  sh:property 
+coscineSfb1394EBSD:immersionExperimentId ;
+  sh:property coscineSfb1394EBSD:instrument ;
+  sh:property coscineSfb1394EBSD:detector ;
+  sh:property coscineSfb1394EBSD:comments .
+
+coscineSfb1394EBSD:experimentId
+  sh:path dcterms:title;
+  sh:order 1 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Experiment ID"@en, "Experiment ID"@de ;
+.
+
+coscineSfb1394EBSD:operator
+  sh:path dcterms:creator ;
+  sh:order 0 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:defaultValue "{ME}" ;
+  sh:name "Operator"@en, "Operator"@de ;
+.
+
+coscineSfb1394EBSD:specimenId
+  sh:path csmd:investigation_sample ;
+  sh:order 3 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Specimen ID"@en, "Specimen ID"@de ;
+.
+
+coscineSfb1394EBSD:parentSample
+  sh:path sfb1394:parentSample ;
+  sh:order 4 ;
+  sh:minCount 1 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Parent sample specimen ID"@en, "Parent sample specimen ID"@de ;
+.
+
+coscineSfb1394EBSD:sampleLocation
+  sh:path sfb1394:sampleLocation ;
+  sh:order 5 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Sample location"@en, "Sample location"@de ;
+.
+
+coscineSfb1394EBSD:grit1 
+  sh:path sfb1394:grit ;
+  sh:order 6 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Grit 1"@en, "Grit 1"@de ;
+.
+
+coscineSfb1394EBSD:solventGrit1 
+  sh:path sfb1394:solventGrit ;
+  sh:order 7 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Solvent Grit 1"@en, "Solvent Grit 1"@de ;
+.
+
+coscineSfb1394EBSD:grit2 
+  sh:path sfb1394:grit ;
+  sh:order 8 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Grit 2"@en, "Grit 2"@de ;
+.
+
+coscineSfb1394EBSD:solventGrit2 
+  sh:path sfb1394:solventGrit ;
+  sh:order 9 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Solvent Grit 2"@en, "Solvent Grit 2"@de ;
+.
+
+coscineSfb1394EBSD:gritMaterial 
+  sh:path sfb1394:gritMaterial ;
+  sh:order 10 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Grit Material"@en, "Grit Material"@de ;
+.
+
+coscineSfb1394EBSD:polishingSuspension 
+  sh:path sfb1394:polishingSuspension ;
+  sh:order 11 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Polishing Suspension"@en, "Polishing Suspension"@de ;
+.
+
+coscineSfb1394EBSD:materialSuspension 
+  sh:path sfb1394:materialSuspension ;
+  sh:order 12 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Material Suspension"@en, "Material Suspension"@de ;
+.
+
+coscineSfb1394EBSD:FinePolishingSuspension 
+  sh:path sfb1394:polishingSuspension ;
+  sh:order 13 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Fine Polishing Suspension"@en, "Fine Polishing Suspension"@de ;
+.
+
+coscineSfb1394EBSD:solventPolishing 
+  sh:path sfb1394:solventPolishing ;
+  sh:order 14 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Solvent Polishing"@en, "Solvent Polishing"@de ;
+.
+
+coscineSfb1394EBSD:etchingOperator 
+  sh:path dcterms:creator ;
+  sh:order 15 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:defaultValue "{ME}" ;
+  sh:name "Operator"@en, "Operator"@de ;
+.
+
+coscineSfb1394EBSD:etchant 
+  sh:path sfb1394:etchant ;
+  sh:order 16 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Etchant"@en, "Etchant"@de ;
+.
+
+coscineSfb1394EBSD:etchingParameter 
+  sh:path sfb1394:etchingParameter ;
+  sh:order 17 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Parameter"@en, "Parameter"@de ;
+.
+
+coscineSfb1394EBSD:corrosion 
+  sh:path sfb1394:corrosion;
+  sh:order 18 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:boolean ;
+  sh:name "Corrosion"@en, "Corrosion"@de ;
+.
+
+coscineSfb1394EBSD:immersionExperimentId 
+  sh:path dcterms:title ;
+  sh:order 19 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Immersion Experiment ID"@en, "Immersion Experiment ID"@de ;
+.
+
+coscineSfb1394EBSD:instrument
+  sh:path sfb1394:Instrument ;
+  sh:order 100 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Instrument used"@en, "Instrument used"@de ;
+.
+
+coscineSfb1394EBSD:detector
+  sh:path sfb1394:Detector ;
+  sh:order 101 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Detector used"@en, "Detector used"@de ;
+.
+
+coscineSfb1394EBSD:comments
+  sh:path dcterms:description ;
+  sh:order 200 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Comments"@en, "Comments"@de ;
+.
