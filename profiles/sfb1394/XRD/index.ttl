@@ -1,0 +1,163 @@
+@base <https://purl.org/coscine/ap/sfb1394/XRD/> .
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+@prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
+
+@prefix coscineSfb1394XRD: <https://purl.org/coscine/ap/sfb1394/XRD#> .
+
+<https://purl.org/coscine/ap/sfb1394/XRD/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title "SFB1394 XRD"@en ;
+
+  a sh:NodeShape ;
+  sh:targetClass <https://purl.org/coscine/ap/sfb1394/XRD/> ;
+  sh:closed true ;
+
+  sh:property [
+    sh:path rdf:type ;
+  ] ;
+
+  sh:property coscineSfb1394XRD:experimentId ;
+  sh:property coscineSfb1394XRD:operator ;
+  sh:property coscineSfb1394XRD:specimenId ;
+  sh:property coscineSfb1394XRD:specimenType ;
+  sh:property coscineSfb1394XRD:measurementPosition ;
+  sh:property coscineSfb1394XRD:instrument ;
+  sh:property coscineSfb1394XRD:detector ;
+  sh:property coscineSfb1394XRD:radiationSource ;
+  sh:property coscineSfb1394XRD:voltage ;
+  sh:property coscineSfb1394XRD:current ;
+  sh:property coscineSfb1394XRD:scanMode ;
+  sh:property coscineSfb1394XRD:incidenceAngleOmega  ;
+  sh:property coscineSfb1394XRD:comments .
+
+coscineSfb1394XRD:experimentId
+  sh:path dcterms:title;
+  sh:order 1 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Experiment ID"@en, "Experiment ID"@de ;
+.
+
+coscineSfb1394XRD:operator
+  sh:path dcterms:creator ;
+  sh:order 0 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:datatype xsd:string ;
+  sh:defaultValue "{ME}" ;
+  sh:name "Operator"@en, "Operator"@de ;
+.
+
+coscineSfb1394XRD:specimenType 
+  sh:path csmd:investigation_sample ;
+  sh:order 4 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Specimen Type"@en, "Specimen Type"@de ;
+.
+
+coscineSfb1394XRD:specimenId
+  sh:path csmd:investigation_sample ;
+  sh:order 5 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Specimen ID"@en, "Specimen ID"@de ;
+.
+
+coscineSfb1394XRD:measurementPosition
+  sh:path sfb1394:measurementPosition ;
+  sh:order 10 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Measurement Position"@en, "Measurement Position"@de ;
+.
+
+coscineSfb1394XRD:instrument
+  sh:path sfb1394:Instrument ;
+  sh:order 3 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Instrument used"@en, "Instrument used"@de ;
+.
+
+coscineSfb1394XRD:detector
+  sh:path sfb1394:Detector ;
+  sh:order 7 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Detector"@en, "Detector"@de ;
+.
+
+coscineSfb1394XRD:radiationSource
+  sh:path sfb1394:radiationSource ;
+  sh:order 6 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Radiation Source"@en, "Radiation Source"@de ;
+.
+
+coscineSfb1394XRD:voltage 
+  sh:path sfb1394:voltage ;
+  sh:order 9 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  # sh:datatype xsd:float ;
+  sh:datatype xsd:string ;
+  sh:name "Voltage"@en, "Voltage"@de ;
+.
+
+coscineSfb1394XRD:current 
+  sh:path sfb1394:current ;
+  sh:order 8 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  # sh:datatype xsd:float ;
+  sh:datatype xsd:string ;
+  sh:name "Current"@en, "Current"@de ;
+.
+
+coscineSfb1394XRD:incidenceAngleOmega 
+  sh:path sfb1394:incidenceAngleOmega ;
+  sh:order 15 ;
+  sh:maxCount 1 ;
+  # sh:datatype xsd:float ;
+  sh:datatype xsd:string ;
+  sh:name "Incidence angle Omega"@en, "Incidence angle Omega"@de ;
+.
+
+coscineSfb1394XRD:scanMode
+  sh:path sfb1394:scanMode ;
+  sh:order 12 ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  # sh:datatype xsd:set ;
+  sh:datatype xsd:string ;
+  sh:name "Scan Mode"@en, "ScanMode"@de ;
+.
+
+coscineSfb1394XRD:comments
+  sh:path dcterms:description ;
+  sh:order 200 ;
+  sh:maxCount 1 ;
+  sh:datatype xsd:string ;
+  dash:singleLine false ;
+  sh:name "Comments"@en, "Comments"@de ;
+.
