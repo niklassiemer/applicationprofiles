@@ -68,6 +68,43 @@ class MetaDataField:
         return result
 
 
+class FieldList:
+    def __init__(self):
+        self._fields = []
+
+    @staticmethod
+    def enforce_type(obj, class_):
+        if not isinstance(obj, class_):
+            raise TypeError(f'Expected a {class_.__name__} but got {type(obj)}')
+
+    def append(self, item):
+        self.enforce_type(item, MetaDataField)
+        self._fields.append(item)
+
+    def add(self, label, **field_kwargs):
+        self._fields.append(MetaDataField(label, **field_kwargs))
+
+    def __getitem__(self, item):
+        return self._fields.__getitem__(item)
+
+    def __next__(self):
+        return self._fields.__next__()
+
+    def __add__(self, other):
+        self.enforce_type(other, FieldList)
+        new_list = FieldList()
+        new_list._fields = self._fields + other._fields
+        return new_list
+
+    def __iadd__(self, other):
+        self.enforce_type(other, FieldList)
+        self._fields += other._fields
+        return self
+
+    def __len__(self):
+        return self._fields.__len__()
+
+
 class MetaDataSchemes:
     def __init__(self, name):
         self.name = name
