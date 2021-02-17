@@ -105,6 +105,16 @@ class FieldList:
         return self._fields.__len__()
 
 
+class SFBFields(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="ID", required=True)  # Database ID for the object, be it sample, experiment, sim...
+        self.add(label="Operator", required=True)
+        self.add(label="Affiliation")
+        self.add(label="DOIs", long=True)  # To associate publications produced using this object
+        self.add(label="Comments", long=True)
+
+
 class MetaDataSchemes:
     def __init__(self, name):
         self.name = name
