@@ -37,13 +37,10 @@ EDX_green = [
 
 EDX = Scheme("EDX")
 EDX.fields = EDX_blue
-with open("EDX.ttl", "w") as f:
-    f.write(EDX.gen_scheme())
+EDX.write("EDX.ttl")
 
 EDX.fields = EDX_blue + EDX_grey
-with open('EDX_w_gray.ttl', 'w') as f:
-    f.write(EDX.gen_scheme())
+EDX.write('EDX_w_gray.ttl')
 
 EDX.fields = EDX_blue + EDX_green + EDX_grey + EDX_yellow
-with open('EDX_full.ttl', 'w', encoding='utf8') as f:
-    f.write(EDX.gen_scheme())
+EDX.write('EDX_full.ttl')

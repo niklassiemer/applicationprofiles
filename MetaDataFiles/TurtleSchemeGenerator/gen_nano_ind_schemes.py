@@ -42,13 +42,10 @@ nano_ind_green.append(Field(label="Tip temperature", unit="\u00b0C"))
 
 nano_ind = Scheme("NanoIndentation")
 nano_ind.fields = nano_ind_blue
-with open("Nano-intendation3.ttl", "w") as f:
-    f.write(nano_ind.gen_scheme())
+nano_ind.write("Nano-intendation3.ttl")
 
 nano_ind.fields = nano_ind_blue + nano_ind_grey
-with open('Nano-intendation_w_gray.ttl', 'w') as f:
-    f.write(nano_ind.gen_scheme())
+nano_ind.write('Nano-intendation_w_gray.ttl')
 
 nano_ind.fields = nano_ind_blue + nano_ind_green + nano_ind_grey + nano_ind_yellow
-with open('Nano-intendation_full.ttl', 'w') as f:
-    f.write(nano_ind.gen_scheme())
+nano_ind.write('Nano-intendation_full.ttl')

@@ -36,17 +36,13 @@ TEM_green = [
 
 TEM = Scheme("TEM")
 TEM.fields = TEM_blue
-with open("tem.ttl", "w") as f:
-    f.write(TEM.gen_scheme())
+TEM.write("tem.ttl")
 
 TEM.fields = TEM_blue + TEM_yellow
-with open('tem_w_yellow.ttl', 'w') as f:
-    f.write(TEM.gen_scheme())
+TEM.write('tem_w_yellow.ttl')
 
 TEM.fields = TEM_blue + TEM_green
-with open('tem_w_green.ttl', 'w') as f:
-    f.write(TEM.gen_scheme())
+TEM.write('tem_w_green.ttl')
 
 TEM.fields = TEM_blue + TEM_green + TEM_yellow
-with open('tem_full.ttl', 'w') as f:
-    f.write(TEM.gen_scheme())
+TEM.write('tem_full.ttl')

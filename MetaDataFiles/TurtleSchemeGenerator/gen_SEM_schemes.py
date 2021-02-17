@@ -40,13 +40,10 @@ SEM_green = [
 
 SEM = Scheme("SEM")
 SEM.fields = SEM_blue
-with open("SEM.ttl", "w") as f:
-    f.write(SEM.gen_scheme())
+SEM.write("SEM.ttl")
 
 SEM.fields = SEM_blue + SEM_grey
-with open('SEM_w_gray.ttl', 'w') as f:
-    f.write(SEM.gen_scheme())
+SEM.write('SEM_w_gray.ttl')
 
 SEM.fields = SEM_blue + SEM_green + SEM_grey + SEM_yellow
-with open('SEM_full.ttl', 'w', encoding='utf8') as f:
-    f.write(SEM.gen_scheme())
+SEM.write('SEM_full.ttl')
