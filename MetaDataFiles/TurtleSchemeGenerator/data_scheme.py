@@ -88,8 +88,7 @@ class MetaDataSchemes:
 
     def gen_scheme(self):
         if len(self.fields) == 0:
-            print("No Field specified")
-            return
+            raise TypeError("No Field specified")
         result = ""
         result += self.gen_preamble()
         result += self.gen_page()
