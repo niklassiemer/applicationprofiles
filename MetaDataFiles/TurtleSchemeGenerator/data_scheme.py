@@ -2,19 +2,59 @@
 
 
 class MetaDataField:
-    def __init__(self, label, name=None, ftype=None, required=False, long=False):
+    def __init__(self,
+                 label,
+                 name=None,
+                 field_type=None,
+                 required=False,
+                 unit=None,
+                 long=False):
         self.label = label
         if name is None:
             self.name = "".join(label.split(" "))
+            if '/' in self.name:
+                raise ValueError('Label contains special character and name cannot be derived: specify name= ')
         else:
             self.name = name
         self.long = long
-        if ftype is None:
-            self.ftype = 'xsd:string'
+        self.unit = unit
+        self._single_type=True
+        if field_type is None or field_type == "string":
+            self.field_type = 'xsd:string'
+        elif field_type == "date":
+            self.field_type = 'xsd:date'
+        elif field_type == 'bool' or field_type == 'boolean':
+            self.field_type = 'xsd:boolean'
+        elif field_type == "class" or field_type == "list":
+            self._single_type = False
         else:
-            self.ftype = ftype
+            self.field_type = field_type
         self.required = required
         self.sh_path = "sfb1394:" + self.name
+
+    def ttl_str(self, schema_name, order_number):
+        result = ''
+        result += 'coscineSfb1394' + schema_name + ':' + self.name + ' \n'
+        result += '  sh:path ' + self.sh_path + ' ;\n'
+        result += '  sh:order ' + str(order_number) + ' ;\n'
+        if self.required:
+            result += ' sh:minCount 1 ;\n'
+        if self.long:
+            result += ' dash:singleLine false ;\n'
+        if self._single_type:
+            result += '  sh:datatype ' + self.field_type + ' ;\n'
+        else:
+            result += '  sh:maxCount 1 ;\n'
+        if self.unit is None:
+            label = self.label
+        else:
+            label = self.label + ' [' + self.unit + ']'
+        result += '  sh:name "' + label + '"@en, "' + label + '"@de ;\n'
+        if self._single_type:
+            result += '. \n'
+        else:
+            result += '  sh:class <> . \n'
+        return result
 
 
 class MetaDataSchemes:
@@ -33,10 +73,10 @@ class MetaDataSchemes:
 
 @prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
 '''
-        self._properties = []
+        self.fields = []
 
     def gen_scheme(self):
-        if len(self._properties) == 0:
+        if len(self.fields) == 0:
             print("No Field specified")
             return
         result = ""
@@ -53,8 +93,8 @@ class MetaDataSchemes:
                   ": <https://purl.org/coscine/ap/sfb1394/" + self.name + "#> .\n"
         return result
 
-    def add_field(self, label, name=None, ftype=None, required=False, long=False):
-        self._properties.append(MetaDataField(label=label, name=name, ftype=ftype, required=required, long=long))
+    def add_field(self, *args, **kwargs):
+        self.fields.append(MetaDataField(*args, **kwargs))
 
     def gen_page(self):
         result = ""
@@ -75,24 +115,15 @@ class MetaDataSchemes:
   ] ;
 
 '''
-        for field in self._properties[0:-1]:
+        for field in self.fields[0:-1]:
             result += '  sh:property coscineSfb1394' + self.name + ':' + field.name + ' ;\n'
-        field = self._properties[-1]
+        field = self.fields[-1]
         result += '  sh:property coscineSfb1394' + self.name + ':' + field.name + ' .\n'
         return result
 
     def gen_nodes(self):
         result = ""
-        for i, field in enumerate(self._properties):
+        for i, field in enumerate(self.fields):
             result += '\n'
-            result += 'coscineSfb1394' + self.name + ':' + field.name + ' \n'
-            result += '  sh:path ' + field.sh_path + ' ;\n'
-            result += '  sh:order ' + str(i) + ' ;\n'
-            if field.required:
-                result += ' sh:minCount 1 ;\n'
-            if field.long:
-                result += ' dash:singleLine false ;\n'
-            result += '  sh:datatype ' + field.ftype + ' ;\n'
-            result += '  sh:name "' + field.label + '"@en, "' + field.label + '"@de ;\n'
-            result += '. \n'
+            result += field.ttl_str(schema_name=self.name, order_number=i)
         return result
