@@ -121,7 +121,7 @@ class MetaDataSchemes:
 
 @prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
 '''
-        self.fields = []
+        self.fields = FieldList()
 
     def gen_scheme(self):
         if len(self.fields) == 0:
@@ -139,9 +139,6 @@ class MetaDataSchemes:
         result += "@prefix coscineSfb1394" + self.name +\
                   ": <https://purl.org/coscine/ap/sfb1394/" + self.name + "#> .\n"
         return result
-
-    def add_field(self, *args, **kwargs):
-        self.fields.append(MetaDataField(*args, **kwargs))
 
     def gen_page(self):
         result = ""
