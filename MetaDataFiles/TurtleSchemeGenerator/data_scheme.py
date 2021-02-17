@@ -3,13 +3,15 @@
 
 
 class MetaDataField:
-    def __init__(self,
-                 label,
-                 name=None,
-                 field_type=None,
-                 required=False,
-                 unit=None,
-                 long=False):
+    def __init__(
+            self,
+            label,
+            name=None,
+            field_type=None,
+            required=False,
+            unit=None,
+            long=False
+    ):
         self.label = label
         if name is None:
             self.name = "".join(label.split(" "))
@@ -19,7 +21,8 @@ class MetaDataField:
             self.name = name
         self.long = long
         self.unit = unit
-        self._single_type=True
+        self._single_type = True
+
         if field_type is None or field_type == "string":
             self.field_type = 'xsd:string'
         elif field_type == "date":
@@ -30,6 +33,7 @@ class MetaDataField:
             self._single_type = False
         else:
             self.field_type = field_type
+
         self.required = required
         self.sh_path = "sfb1394:" + self.name
 
@@ -38,19 +42,25 @@ class MetaDataField:
         result += 'coscineSfb1394' + schema_name + ':' + self.name + ' \n'
         result += '  sh:path ' + self.sh_path + ' ;\n'
         result += '  sh:order ' + str(order_number) + ' ;\n'
+
         if self.required:
             result += ' sh:minCount 1 ;\n'
+
         if self.long:
             result += ' dash:singleLine false ;\n'
+
         if self._single_type:
             result += '  sh:datatype ' + self.field_type + ' ;\n'
         else:
             result += '  sh:maxCount 1 ;\n'
+
         if self.unit is None:
             label = self.label
         else:
             label = self.label + ' [' + self.unit + ']'
+
         result += '  sh:name "' + label + '"@en, "' + label + '"@de ;\n'
+
         if self._single_type:
             result += '. \n'
         else:
