@@ -60,17 +60,13 @@ EBSD_grey = [
 
 EBSD = Scheme("EBSD")
 EBSD.fields = EBSD_blue
-with open("ebsd.ttl", "w", encoding='utf8') as f:
-    f.write(EBSD.gen_scheme())
+EBSD.write("ebsd.ttl")
 
 EBSD.fields = EBSD_blue + EBSD_yellow
-with open('ebsd_w_yellow.ttl', 'w', encoding='utf8') as f:
-    f.write(EBSD.gen_scheme())
+EBSD.write('ebsd_w_yellow.ttl')
 
 EBSD.fields = EBSD_blue + EBSD_green
-with open('ebsd_w_green.ttl', 'w', encoding='utf8') as f:
-    f.write(EBSD.gen_scheme())
+EBSD.write('ebsd_w_green.ttl')
 
 EBSD.fields = EBSD_blue + EBSD_green + EBSD_yellow
-with open('ebsd_full.ttl', 'w', encoding='utf8') as f:
-    f.write(EBSD.gen_scheme())
+EBSD.write('ebsd_full.ttl')

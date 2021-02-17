@@ -138,3 +138,7 @@ class MetaDataSchemes:
             result += '\n'
             result += field.ttl_str(schema_name=self.name, order_number=i)
         return result
+
+    def write(self, filename, encoding='utf8'):
+        with open(filename, 'w', encoding=encoding) as f:
+            f.write(self.gen_scheme())

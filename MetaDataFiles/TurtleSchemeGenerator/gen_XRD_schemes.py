@@ -52,13 +52,10 @@ XRD_green = [
 
 XRD = Scheme("XRD")
 XRD.fields = XRD_blue
-with open("XRD.ttl", "w") as f:
-    f.write(XRD.gen_scheme())
+XRD.write("XRD.ttl")
 
 XRD.fields = XRD_blue + XRD_grey
-with open('XRD_w_gray.ttl', 'w') as f:
-    f.write(XRD.gen_scheme())
+XRD.write('XRD_w_gray.ttl')
 
 XRD.fields = XRD_blue + XRD_green + XRD_grey + XRD_yellow
-with open('XRD_full.ttl', 'w', encoding='utf8') as f:
-    f.write(XRD.gen_scheme())
+XRD.write('XRD_full.ttl')

@@ -42,13 +42,10 @@ micro_pillar_green.append(Field(label="Tip temperature", unit="\u00b0C"))
 
 micro_pillar = Scheme("Micropillar")
 micro_pillar.fields = micro_pillar_blue
-with open("micropillar.ttl", "w") as f:
-    f.write(micro_pillar.gen_scheme())
+micro_pillar.write("micropillar.ttl")
 
 micro_pillar.fields = micro_pillar_blue + micro_pillar_grey
-with open('micropillar_w_gray.ttl', 'w') as f:
-    f.write(micro_pillar.gen_scheme())
+micro_pillar.write('micropillar_w_gray.ttl')
 
 micro_pillar.fields = micro_pillar_blue + micro_pillar_green + micro_pillar_grey + micro_pillar_yellow
-with open('micropillar_full.ttl', 'w') as f:
-    f.write(micro_pillar.gen_scheme())
+micro_pillar.write('micropillar_full.ttl')

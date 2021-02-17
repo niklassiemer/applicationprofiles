@@ -32,13 +32,10 @@ scratch_green.append(Field(label="Profiling velocity", unit="um/s"))
 
 scratch = Scheme("Scratch")
 scratch.fields = scratch_blue
-with open("scratch.ttl", "w") as f:
-    f.write(scratch.gen_scheme())
+scratch.write("scratch.ttl")
 
 scratch.fields = scratch_blue + scratch_grey
-with open('scratch_w_gray.ttl', 'w') as f:
-    f.write(scratch.gen_scheme())
+scratch.write('scratch_w_gray.ttl')
 
 scratch.fields = scratch_blue + scratch_green + scratch_grey + scratch_yellow
-with open('scratch_full.ttl', 'w') as f:
-    f.write(scratch.gen_scheme())
+scratch.write('scratch_full.ttl')
