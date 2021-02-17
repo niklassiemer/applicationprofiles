@@ -31,6 +31,7 @@ class MetaDataField:
             self.field_type = 'xsd:boolean'
         elif field_type == "class" or field_type == "list":
             self._single_type = False
+            self.field_type = field_type
         else:
             self.field_type = field_type
 
@@ -66,6 +67,16 @@ class MetaDataField:
         else:
             result += '  sh:class <> . \n'
         return result
+
+    def copy(self):
+        return MetaDataField(
+            label=self.label,
+            name=self.name,
+            field_type=self.field_type,
+            required=self.required,
+            unit=self.unit,
+            long=self.long
+        )
 
 
 class FieldList:
@@ -103,6 +114,11 @@ class FieldList:
 
     def __len__(self):
         return self._fields.__len__()
+
+    def copy(self):
+        new_list = FieldList()
+        new_list._fields = [field.copy() for field in self._fields]
+        return new_list
 
 
 class SFBFields(FieldList):

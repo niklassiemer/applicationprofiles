@@ -51,3 +51,17 @@ class TestFieldList(unittest.TestCase):
         self.assertEqual(len(self.list), 0)
         self.list.add('foo')
         self.assertEqual(len(self.list), 1)
+
+    def test_copy(self):
+        self.list.add('foo')
+        self.list.add('bar')
+        new_list = self.list.copy()
+        self.assertListEqual(
+            [field.name for field in self.list],
+            [field.name for field in new_list]
+        )
+        new_list[0].field_type = 'boolean'
+        self.assertTrue('boolean' not in self.list[0].field_type)
+        new_list.add('baz')
+        self.assertEqual(len(self.list), 2)
+        self.assertEqual(len(new_list), 3)
