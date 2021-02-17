@@ -182,6 +182,8 @@ class MetaDataSchemes:
             result += field.ttl_str(schema_name=self.name, order_number=i)
         return result
 
-    def write(self, filename, encoding='utf8'):
+    def write(self, filename=None, encoding='utf8'):
+        if filename is None:
+            filename = self.name + '.ttl'
         with open(filename, 'w', encoding=encoding) as f:
             f.write(self.gen_scheme())
