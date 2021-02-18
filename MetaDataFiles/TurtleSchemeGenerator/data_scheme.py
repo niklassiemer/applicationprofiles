@@ -156,6 +156,7 @@ class MetaDataSchemes:
         result += self.gen_preamble()
         result += self.gen_page()
         result += self.gen_nodes()
+        result += " # Shape URL https://purl.org/coscine/ap/sfb1394/" + self.name + "/"
         return result
 
     def gen_preamble(self):
