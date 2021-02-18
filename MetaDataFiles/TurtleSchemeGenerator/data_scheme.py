@@ -31,6 +31,7 @@ class MetaDataField:
             self.field_type = 'xsd:boolean'
         elif field_type == "class" or field_type == "list":
             self._single_type = False
+            self.field_type = field_type
         else:
             self.field_type = field_type
 
@@ -67,6 +68,68 @@ class MetaDataField:
             result += '  sh:class <> . \n'
         return result
 
+    def copy(self):
+        return MetaDataField(
+            label=self.label,
+            name=self.name,
+            field_type=self.field_type,
+            required=self.required,
+            unit=self.unit,
+            long=self.long
+        )
+
+
+class FieldList:
+    def __init__(self):
+        self._fields = []
+
+    @staticmethod
+    def enforce_type(obj, class_):
+        if not isinstance(obj, class_):
+            raise TypeError(f'Expected a {class_.__name__} but got {type(obj)}')
+
+    def append(self, item):
+        self.enforce_type(item, MetaDataField)
+        self._fields.append(item)
+
+    def add(self, label, **field_kwargs):
+        self._fields.append(MetaDataField(label, **field_kwargs))
+
+    def __getitem__(self, item):
+        return self._fields.__getitem__(item)
+
+    def __next__(self):
+        return self._fields.__next__()
+
+    def __add__(self, other):
+        self.enforce_type(other, FieldList)
+        new_list = FieldList()
+        new_list._fields = self._fields + other._fields
+        return new_list
+
+    def __iadd__(self, other):
+        self.enforce_type(other, FieldList)
+        self._fields += other._fields
+        return self
+
+    def __len__(self):
+        return self._fields.__len__()
+
+    def copy(self):
+        new_list = FieldList()
+        new_list._fields = [field.copy() for field in self._fields]
+        return new_list
+
+
+class SFBFields(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="ID", required=True)  # Database ID for the object, be it sample, experiment, sim...
+        self.add(label="Operator", required=True)
+        self.add(label="Affiliation")
+        self.add(label="DOIs", long=True)  # To associate publications produced using this object
+        self.add(label="Comments", long=True)
+
 
 class MetaDataSchemes:
     def __init__(self, name):
@@ -84,7 +147,7 @@ class MetaDataSchemes:
 
 @prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
 '''
-        self.fields = []
+        self.fields = FieldList()
 
     def gen_scheme(self):
         if len(self.fields) == 0:
@@ -93,6 +156,7 @@ class MetaDataSchemes:
         result += self.gen_preamble()
         result += self.gen_page()
         result += self.gen_nodes()
+        result += " # Shape URL https://purl.org/coscine/ap/sfb1394/" + self.name + "/"
         return result
 
     def gen_preamble(self):
@@ -102,9 +166,6 @@ class MetaDataSchemes:
         result += "@prefix coscineSfb1394" + self.name +\
                   ": <https://purl.org/coscine/ap/sfb1394/" + self.name + "#> .\n"
         return result
-
-    def add_field(self, *args, **kwargs):
-        self.fields.append(MetaDataField(*args, **kwargs))
 
     def gen_page(self):
         result = ""
@@ -138,6 +199,8 @@ class MetaDataSchemes:
             result += field.ttl_str(schema_name=self.name, order_number=i)
         return result
 
-    def write(self, filename, encoding='utf8'):
+    def write(self, filename=None, encoding='utf8'):
+        if filename is None:
+            filename = self.name + '.ttl'
         with open(filename, 'w', encoding=encoding) as f:
             f.write(self.gen_scheme())
