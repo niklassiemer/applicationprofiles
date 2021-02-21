@@ -31,7 +31,7 @@ EDX_yellow = [
 ]
 
 EDX_green = [
-    Field(label="Measurement time/date"),
+    Field(label="Measurement time/date", name="measurementTime"),
     Field(label="Standard used"),
 ]
 

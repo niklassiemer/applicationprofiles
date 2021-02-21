@@ -47,7 +47,7 @@ XRD_yellow = [
 ]
 
 XRD_green = [
-    Field(label="Measurement time/date"),
+    Field(label="Measurement time/date", name="measurementTime"),
 ]
 
 XRD = Scheme("XRD")
