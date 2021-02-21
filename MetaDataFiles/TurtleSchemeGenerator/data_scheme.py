@@ -15,7 +15,7 @@ class MetaDataField:
         self.label = label
         if name is None:
             self.name = "".join(label.split(" "))
-            if '/' in self.name:
+            if '/' in self.name or '(' in self.name or ')' in self.name:
                 raise ValueError('Label contains special character and name cannot be derived: specify name= ')
         else:
             self.name = name
