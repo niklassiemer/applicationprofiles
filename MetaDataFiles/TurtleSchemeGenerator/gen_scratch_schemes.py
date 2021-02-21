@@ -1,6 +1,9 @@
 from data_scheme import MetaDataSchemes as Scheme
 from data_scheme import MetaDataField as Field
 
+micro = "\u03bc"
+deg = "\u00b0"
+
 scratch_blue = [
     Field(label="Experiment ID", required=True),
     Field(label="Operator", required=True),
@@ -13,9 +16,9 @@ scratch_blue = [
     ]
 
 scratch_grey = []
-scratch_grey.append(Field(label="Relative Humidity", unit='%'))
+#scratch_grey.append(Field(label="Relative Humidity", unit='%'))
 scratch_grey.append(Field(label="Temperature", unit="\u00b0C"))
-scratch_grey.append(Field(label="Test date", field_type="date"))
+#scratch_grey.append(Field(label="Test date", field_type="date"))
 
 scratch_yellow = []
 scratch_yellow.append(Field(label="Preparation routine", long=True))
@@ -26,13 +29,22 @@ scratch_green = []
 scratch_green.append(Field(label="Type of test"))
 scratch_green.append(Field(label="Scratch Length", unit="um"))
 scratch_green.append(Field(label="Scratch Velocity", unit="um/s"))
-scratch_green.append(Field(label="Scratch Orientation", unit='deg'))
+scratch_green.append(Field(label="Scratch Orientation", unit=deg))
 scratch_green.append(Field(label="Maximum scratch load", unit='mN'))
 scratch_green.append(Field(label="Profiling velocity", unit="um/s"))
 
 scratch = Scheme("Scratch")
 scratch.fields = scratch_blue
 scratch.write("scratch.ttl")
+
+scratch.fields = scratch_green
+scratch.write('scratch_green.ttl')
+
+scratch.fields = scratch_grey
+scratch.write('scratch_grey.ttl')
+
+scratch.fields = scratch_yellow
+scratch.write('scratch_yellow.ttl')
 
 scratch.fields = scratch_blue + scratch_grey
 scratch.write('scratch_w_gray.ttl')

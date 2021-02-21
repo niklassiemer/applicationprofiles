@@ -39,6 +39,12 @@ EDX = Scheme("EDX")
 EDX.fields = EDX_blue
 EDX.write("EDX.ttl")
 
+EDX.fields = EDX_green
+EDX.write('EDX_green.ttl')
+
+EDX.fields = EDX_grey
+EDX.write("EDX_grey.ttl")
+
 EDX.fields = EDX_blue + EDX_grey
 EDX.write('EDX_w_gray.ttl')
 

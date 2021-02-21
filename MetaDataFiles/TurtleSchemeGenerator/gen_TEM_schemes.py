@@ -32,11 +32,22 @@ TEM_green = [
     Field(label="1st dimension pixels"),
     Field(label="1st dimension unit scaling"),
     Field(label="1st dimension starting pixel"),
+    Field(label="2nd dimension unit"),
+    Field(label="2nd dimension pixels"),
+    Field(label="2nd dimension unit scaling"),
+    Field(label="2nd dimension starting pixel"),
     ]
 
 TEM = Scheme("TEM")
 TEM.fields = TEM_blue
 TEM.write("tem.ttl")
+
+TEM.fields = TEM_yellow
+TEM.write('tem_yellow.ttl')
+
+TEM.fields = TEM_green
+TEM.write("tem_green.ttl")
+
 
 TEM.fields = TEM_blue + TEM_yellow
 TEM.write('tem_w_yellow.ttl')

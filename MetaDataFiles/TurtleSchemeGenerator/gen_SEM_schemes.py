@@ -42,6 +42,15 @@ SEM = Scheme("SEM")
 SEM.fields = SEM_blue
 SEM.write("SEM.ttl")
 
+SEM.fields = SEM_green
+SEM.write('SEM_green.ttl')
+
+SEM.fields = SEM_grey
+SEM.write('SEM_grey.ttl')
+
+SEM.fields = SEM_yellow
+SEM.write('SEM_yellow.ttl')
+
 SEM.fields = SEM_blue + SEM_grey
 SEM.write('SEM_w_gray.ttl')
 

@@ -30,7 +30,7 @@ XRD_grey = [
     Field(label="Number of frames"),
     Field(label="Measurement time", unit='s'),
     Field(label="Start 2Theta", unit=deg),
-    Field(label="End 2Theta", unit=deg),
+#   Field(label="End 2Theta", unit=deg),
     Field(label="Start Theta", unit=deg),
     Field(label="End Theta", unit=deg),
     Field(label="Fixed 2Theta position", unit=deg),
@@ -53,6 +53,15 @@ XRD_green = [
 XRD = Scheme("XRD")
 XRD.fields = XRD_blue
 XRD.write("XRD.ttl")
+
+XRD.fields = XRD_green
+XRD.write('XRD_green.ttl')
+
+XRD.fields = XRD_grey
+XRD.write('XRD_grey.ttl')
+
+XRD.fields = XRD_yellow
+XRD.write('XRD_yellow.ttl')
 
 XRD.fields = XRD_blue + XRD_grey
 XRD.write('XRD_w_gray.ttl')

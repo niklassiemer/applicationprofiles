@@ -44,6 +44,15 @@ micro_pillar = Scheme("Micropillar")
 micro_pillar.fields = micro_pillar_blue
 micro_pillar.write("micropillar.ttl")
 
+micro_pillar.fields = micro_pillar_grey
+micro_pillar.write('micropillar_grey.ttl')
+
+micro_pillar.fields = micro_pillar_yellow
+micro_pillar.write('micropillar_yellow.ttl')
+
+micro_pillar.fields = micro_pillar_green
+micro_pillar.write('micropillar_green.ttl')
+
 micro_pillar.fields = micro_pillar_blue + micro_pillar_grey
 micro_pillar.write('micropillar_w_gray.ttl')
 

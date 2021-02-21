@@ -62,6 +62,15 @@ EBSD = Scheme("EBSD")
 EBSD.fields = EBSD_blue
 EBSD.write("ebsd.ttl")
 
+EBSD.fields = EBSD_grey
+EBSD.write("ebsd_grey.ttl")
+
+EBSD.fields = EBSD_yellow
+EBSD.write("ebsd_yellow.ttl")
+
+EBSD.fields = EBSD_green
+EBSD.write("ebsd_green.ttl")
+
 EBSD.fields = EBSD_blue + EBSD_yellow
 EBSD.write('ebsd_w_yellow.ttl')
 
