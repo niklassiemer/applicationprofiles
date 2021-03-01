@@ -18,14 +18,38 @@ class DropdownList:
 
         if name is None:
             self.name = "".join(label.split(" "))
-            if '/' in self.name or '(' in self.name or ')' in self.name:
-                raise ValueError('Label contains special character and name cannot be derived: specify name= ')
         else:
             self.name = name
         if isinstance(options, str):
             self.options = list(options)
         else:
             self.options = options
+
+    def ttl_preamble(self):
+        result = '@base <'
+        result += self.name + '>.\n\n'
+        result += """@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+
+        """
+        return result
+
+    def write(self, filename, encoding='utf8'):
+        with open(filename, 'w', encoding=encoding) as f:
+            f.write(self.ttl_preamble())
+            f.write(self.ttl_str())
+
+    def copy(self):
+        return DropdownList(
+            label=self.label,
+            options=self.options,
+            name=self.name,
+            title=self.title
+        )
 
     def ttl_str(self):
         result = "<" + self.name + "> "
@@ -84,7 +108,7 @@ class MetaDataField:
             self._class_name = ""
         elif isinstance(field_type, DropdownList):
             self._single_type = False
-            self.field_type = field_type
+            self.field_type = field_type.copy()
             self._class_name = field_type.name
         else:
             self.field_type = field_type
@@ -195,6 +219,7 @@ class MetaDataSchemes:
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
 @prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -208,9 +233,17 @@ class MetaDataSchemes:
             raise TypeError("No Field specified")
         result = ""
         result += self.gen_preamble()
+        result += self.gen_custom_input_fields()
         result += self.gen_page()
         result += self.gen_nodes()
         result += " # Shape URL https://purl.org/coscine/ap/sfb1394/" + self.name + "/"
+        return result
+
+    def gen_custom_input_fields(self):
+        result = ""
+        for field in self.fields:
+            if hasattr(field.field_type, 'ttl_str'):
+                result += field.field_type.ttl_str()
         return result
 
     def gen_preamble(self):
