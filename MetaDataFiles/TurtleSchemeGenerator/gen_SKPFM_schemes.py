@@ -16,8 +16,7 @@ blue = [
     Field(label="Working distance", unit='nm'),
     Field(label="Scan velocity", unit='Hz'),
     Field(label="Tip offset voltage", unit='V'),
-    # ???
-    Field(label="Tip offset voltage", name="tipOffsetVoltage2", field_type='class'),
+    Field(label="Applied offset voltage", field_type='class'),
     Field(label="Tip alternating Voltage", unit='V'),
     Field(label="Scan area", unit="nm x nm"),
     Field(label="Reference"),
