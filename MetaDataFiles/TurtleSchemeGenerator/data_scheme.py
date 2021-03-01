@@ -2,6 +2,55 @@
 """Meta Data Schemes """
 
 
+class DropdownList:
+    def __init__(
+        self,
+        label,
+        options,
+        name=None,
+        title=None,
+    ):
+        self.label = label
+        if title is None:
+            self.title = self.label
+        else:
+            self.title = title
+
+        if name is None:
+            self.name = "".join(label.split(" "))
+            if '/' in self.name or '(' in self.name or ')' in self.name:
+                raise ValueError('Label contains special character and name cannot be derived: specify name= ')
+        else:
+            self.name = name
+        if isinstance(options, str):
+            self.options = list(options)
+        else:
+            self.options = options
+
+    def ttl_str(self):
+        result = "<" + self.name + "> "
+        result += """
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title  """
+        result += '"' + self.title + '"@en ;\n'
+        result += '  rdfs:label '
+        result += '"' + self.label + '"@de ,\n'
+        result += '"' + self.label + '"@en .\n'
+
+        for idx, option in enumerate(self.options):
+            result += "<" + self.name + "#" + str(idx) + "> a "
+            result += "<" + self.name + "#" + str(idx) + ">;\n"
+            result += '  rdfs:label '
+            result += '"' + option + '"@de ,\n'
+            result += '"' + option + '"@en ;\n'
+            result += '  rdfs:subClassOf '
+            result += "<" + self.name + ">.\n"
+
+        return result
+
+
 class MetaDataField:
     def __init__(
             self,
@@ -32,6 +81,11 @@ class MetaDataField:
         elif field_type == "class" or field_type == "list":
             self._single_type = False
             self.field_type = field_type
+            self._class_name = ""
+        elif isinstance(field_type, DropdownList):
+            self._single_type = False
+            self.field_type = field_type
+            self._class_name = field_type.name
         else:
             self.field_type = field_type
 
@@ -65,7 +119,7 @@ class MetaDataField:
         if self._single_type:
             result += '. \n'
         else:
-            result += '  sh:class <> . \n'
+            result += '  sh:class <' + self._class_name + '> . \n'
         return result
 
     def copy(self):
