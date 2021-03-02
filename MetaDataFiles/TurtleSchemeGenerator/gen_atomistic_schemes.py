@@ -137,7 +137,7 @@ lammps_deform.fields = lammps_md.fields.copy() + sim_deform
 lammps_deform.write()
 
 lammps_indent = Scheme("AtomisticSim_LammpsIndentMD")
-lammps_indent.fields = lammps_md.fields.copy() + sim_deform
+lammps_indent.fields = lammps_md.fields.copy() + sim_indent
 lammps_indent.write()
 
 vasp_min = Scheme("AtomisticSim_VaspMin")
