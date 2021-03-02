@@ -210,11 +210,32 @@ class SFBFields(FieldList):
 
 
 class MetaDataSchemes:
-    def __init__(self, name):
-        self.name = name
-        self.base = "@base <https://purl.org/coscine/ap/sfb1394/" + self.name + "/> .\n"
+    def __init__(self, name, extends=None):
+        """
 
-        self.preamble = '''
+        Args:
+            name (str): Name of the meta data scheme
+            extends (str/:class:`MetaDataSchemes`/None): name or class of a parent meta data scheme
+
+            if extends is a string it adds the
+                rdfs:subClassOf the_provided_string
+            as parent class definition, i.e. the string has to point to the actual location of the parent
+            meta data scheme. TODO: verify this is working; it might crash the order parameter...
+            if extends is a MetaDataScheme the current scheme is appended to this parent scheme.
+        """
+        self.name = name
+        self.parent_class = None
+        self.parent_class_name = None
+        if isinstance(extends, str):
+            self.parent_class_name = extends
+        elif isinstance(extends, MetaDataSchemes):
+            self.parent_class = extends
+            self.parent_class_name = extends.class_name
+        elif extends is not None:
+            raise TypeError(f'Expected a MetaDataSchemes or str but got {type(extends)}')
+        self.fields = FieldList()
+        # Define strings for the ttl schema
+        self.preamble_prefixes = '''
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
@@ -226,35 +247,58 @@ class MetaDataSchemes:
 
 @prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
 '''
-        self.fields = FieldList()
+
+    @property
+    def n_fields(self):
+        result = len(self.fields)
+        if self.parent_class is not None:
+            result += self.parent_class.n_fields
+        return result
+
+    @property
+    def property_prefix(self):
+        result = "@prefix coscineSfb1394" + self.name
+        result += ": <https://purl.org/coscine/ap/sfb1394/" + self.name + "#> .\n"
+        return result
+
+    @property
+    def class_name(self):
+        return "<https://purl.org/coscine/ap/sfb1394/" + self.name + "/>"
 
     def gen_scheme(self):
         if len(self.fields) == 0:
             raise TypeError("No Field specified")
         result = ""
         result += self.gen_preamble()
-        result += self.gen_custom_input_fields()
-        result += self.gen_page()
-        result += self.gen_nodes()
+        result += self.ttl_str(target_class=True)
         result += " # Shape URL https://purl.org/coscine/ap/sfb1394/" + self.name + "/"
         return result
 
-    def gen_custom_input_fields(self):
+    def ttl_str(self, target_class=True):
         result = ""
+        result += self.property_prefix
+        result += self.gen_required_fields()
+        result += self.gen_page(target_class=target_class)
+        result += self.gen_nodes()
+        return result
+
+    def gen_preamble(self):
+        result = ""
+        result += "@base " + self.class_name + " .\n"
+        result += self.preamble_prefixes
+        return result
+
+    def gen_required_fields(self):
+        result = ""
+        if self.parent_class is not None:
+            result += "\n # " + self.parent_class.name + ' \n'
+            result += self.parent_class.ttl_str(target_class=False)
         for field in self.fields:
             if hasattr(field.field_type, 'ttl_str'):
                 result += field.field_type.ttl_str()
         return result
 
-    def gen_preamble(self):
-        result = ""
-        result += self.base
-        result += self.preamble
-        result += "@prefix coscineSfb1394" + self.name +\
-                  ": <https://purl.org/coscine/ap/sfb1394/" + self.name + "#> .\n"
-        return result
-
-    def gen_page(self):
+    def gen_page(self, target_class=True):
         result = ""
         result += "<https://purl.org/coscine/ap/sfb1394/" + self.name + "/>"
         result += """
@@ -264,7 +308,10 @@ class MetaDataSchemes:
   dcterms:title  """
         result += '"SFB1394 ' + self.name + '"@en ;\n\n'
         result += '  a sh:NodeShape ;\n'
-        result += '  sh:targetClass <https://purl.org/coscine/ap/sfb1394/' + self.name + '/> ;'
+        if self.parent_class_name is not None:
+            result += '  rdfs:subClassOf ' + self.parent_class_name + ' ;\n'
+        if target_class:
+            result += '  sh:targetClass <https://purl.org/coscine/ap/sfb1394/' + self.name + '/> ;'
         result += '''
   sh:closed true ;
 
@@ -281,9 +328,13 @@ class MetaDataSchemes:
 
     def gen_nodes(self):
         result = ""
+        if self.parent_class is not None:
+            offset = self.parent_class.n_fields
+        else:
+            offset = 0
         for i, field in enumerate(self.fields):
             result += '\n'
-            result += field.ttl_str(schema_name=self.name, order_number=i)
+            result += field.ttl_str(schema_name=self.name, order_number=i + offset)
         return result
 
     def write(self, filename=None, encoding='utf8'):
