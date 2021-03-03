@@ -251,21 +251,18 @@ class MetaDataSchemes:
         elif extends is not None:
             raise TypeError(f'Expected a MetaDataSchemes or str but got {type(extends)}')
         self.fields = FieldList()
-        # Define strings for the ttl schema
-        self.preamble_prefixes = '''
-@prefix dash: <http://datashapes.org/dash#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-
-@prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
-'''
+        self.preamble_prefixes = {
+            "dash": "<http://datashapes.org/dash#>",
+            "rdf": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+            "sh": "<http://www.w3.org/ns/shacl#>",
+            "xsd": "<http://www.w3.org/2001/XMLSchema#>",
+            "rdfs": "<http://www.w3.org/2000/01/rdf-schema#>",
+            "qudt": "<http://qudt.org/schema/qudt/>",
+            "unit": "<http://qudt.org/vocab/unit/>",
+            "csmd": "<http://www.purl.org/net/CSMD/4.0#>",
+            "dcterms": "<http://purl.org/dc/terms/>",
+            "sfb1394": "<http://purl.org/coscine/terms/sfb1394#>"
+        }
 
     @property
     def n_fields(self):
@@ -297,20 +294,21 @@ class MetaDataSchemes:
         result = ""
         result += self.property_prefix
         result += self.gen_required_fields()
+        result += "\n # " + self.name + ' \n'
         result += self.gen_page(target_class=target_class)
         result += self.gen_nodes()
         return result
 
     def gen_preamble(self):
         result = ""
-        result += "@base " + self.class_name + " .\n"
-        result += self.preamble_prefixes
+        result += "@base " + self.class_name + " .\n\n"
+        for key, value in self.preamble_prefixes.items():
+            result += "@prefix " + key + ": " + value + " .\n"
         return result
 
     def gen_required_fields(self):
         result = ""
         if self.parent_class is not None:
-            result += "\n # " + self.parent_class.name + ' \n'
             result += self.parent_class.ttl_str(target_class=False)
         for field in self.fields:
             if hasattr(field.field_type, 'ttl_str'):
