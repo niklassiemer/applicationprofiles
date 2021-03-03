@@ -83,7 +83,9 @@ class MetaDataField:
             field_type=None,
             required=False,
             unit=None,
-            long=False
+            long=False,
+            sh_path=None,
+            other_relations=None
     ):
         self.label = label
         if name is None:
@@ -117,7 +119,14 @@ class MetaDataField:
             self.field_type = field_type
 
         self.required = required
-        self.sh_path = "sfb1394:" + self.name
+        if sh_path is None:
+            self.sh_path = "sfb1394:" + self.name
+        else:
+            self.sh_path = sh_path
+        if other_relations is None:
+            self.other_relations = {}
+        else:
+            self.other_relations = other_relations
 
     def ttl_str(self, schema_name, order_number):
         result = ''
@@ -140,9 +149,11 @@ class MetaDataField:
             label = self.label
         else:
             label = self.label + ' [' + self.unit + ']'
-            # TODO: add unit ontology
 
         result += '  sh:name "' + label + '"@en, "' + label + '"@de ;\n'
+
+        for key, value in self.other_relations.items():
+            result += '  ' + key + ' ' + value + ' ;\n'
 
         if self._single_type:
             result += '. \n'
@@ -157,7 +168,9 @@ class MetaDataField:
             field_type=self.field_type,
             required=self.required,
             unit=self.unit,
-            long=self.long
+            long=self.long,
+            sh_path=self.sh_path,
+            other_relations=self.other_relations
         )
 
 
@@ -222,7 +235,7 @@ class MetaDataSchemes:
             extends (str/:class:`MetaDataSchemes`/None): name or class of a parent meta data scheme
 
             if extends is a string it adds the
-                rdfs:subClassOf the_provided_string
+                'rdfs:subClassOf the_provided_string'
             as parent class definition, i.e. the string has to point to the actual location of the parent
             meta data scheme. TODO: verify this is working; it might crash the order parameter...
             if extends is a MetaDataScheme the current scheme is appended to this parent scheme.
@@ -246,6 +259,8 @@ class MetaDataSchemes:
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
