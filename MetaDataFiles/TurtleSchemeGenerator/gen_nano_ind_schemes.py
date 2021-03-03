@@ -1,9 +1,10 @@
 from data_scheme import MetaDataSchemes as Scheme, FieldList
+from data_scheme import DropdownList, SFBFields, MetaDataField
 
 nano_ind_blue = FieldList()
 nano_ind_blue.add(label="Experiment ID", required=True)
 nano_ind_blue.add(label="Operator", required=True)
-nano_ind_blue.add(label="Specimen ID")
+nano_ind_blue.add(label="Specimen ID", sh_path="csmd:investigation_sample")
 nano_ind_blue.add(label="Parent sample specimen ID", name="parentSample")
 nano_ind_blue.add(label="Sample Location")
 nano_ind_blue.add(label="Instrument used", name="instrument")
@@ -11,7 +12,7 @@ nano_ind_blue.add(label="Tip used", name="tip")
 nano_ind_blue.add(label="Comments", long=True)
 
 nano_ind_grey = FieldList()
-nano_ind_grey.add(label="Relative Humidity", unit='%')
+nano_ind_grey.add(label="Relative Humidity", unit='%', other_relations={"qudt:Unit": "unit:PERCENT_RH"})
 nano_ind_grey.add(label="Environmental protection during specimen testing", name="TestingEnv")
 nano_ind_grey.add(label="Environmental gas")
 nano_ind_grey.add(label="Test date", field_type="date")
@@ -27,16 +28,16 @@ nano_ind_green.add(label="Type of test")
 nano_ind_green.add(label="Tip ID")
 nano_ind_green.add(label="Diamond area function")
 nano_ind_green.add(label="Date of Calibration", field_type="date")
-nano_ind_green.add(label="Frame stiffness", unit='N/m')
-nano_ind_green.add(label="Target load", unit="mN")
-nano_ind_green.add(label="Target depth", unit="nm")
-nano_ind_green.add(label="Target strain rate", unit='/s')
+nano_ind_green.add(label="Frame stiffness", unit='N/m', other_relations={"qudt:Unit": "unit:N-PER-M"})
+nano_ind_green.add(label="Target load", unit="mN", other_relations={"qudt:Unit": "unit:MilliN"})
+nano_ind_green.add(label="Target depth", unit="nm", other_relations={"qudt:Unit": "unit:NanoM"})
+nano_ind_green.add(label="Target strain rate", unit='/s', other_relations={"qudt:Unit": "unit:PER-SEC"})
 nano_ind_green.add(label="Continuous stiffness measurement", field_type='bool')
-nano_ind_green.add(label="Start of averaging depth", unit="nm")
-nano_ind_green.add(label="End of averaging depth", unit="nm")
+nano_ind_green.add(label="Start of averaging depth", unit="nm", other_relations={"qudt:Unit": "unit:NanoM"})
+nano_ind_green.add(label="End of averaging depth", unit="nm", other_relations={"qudt:Unit": "unit:NanoM"})
 nano_ind_green.add(label="Drift correction enabled", field_type="bool")
-nano_ind_green.add(label="Sample temperature", unit="\u00b0C")
-nano_ind_green.add(label="Tip temperature", unit="\u00b0C")
+nano_ind_green.add(label="Sample temperature", unit="\u00b0C", other_relations={"qudt:Unit": "unit:DEG_C"})
+nano_ind_green.add(label="Tip temperature", unit="\u00b0C", other_relations={"qudt:Unit": "unit:DEG_C"})
 
 nano_ind = Scheme("NanoIndentation")
 nano_ind.fields = nano_ind_blue
@@ -53,3 +54,23 @@ nano_ind.write("Nano-intendation_yellow.ttl")
 
 nano_ind.fields = nano_ind_blue + nano_ind_grey + nano_ind_green + nano_ind_yellow
 nano_ind.write("Nano-intendation_full.ttl")
+
+basic_scheme = Scheme("SFB_basic")
+basic_scheme.fields = SFBFields()
+
+# Missing blue fields:
+nano_ind_blue = FieldList()
+nano_ind_blue.add(label="Specimen ID", sh_path="csmd:investigation_sample")
+nano_ind_blue.add(label="Parent sample specimen ID", name="parentSample")
+nano_ind_blue.add(label="Sample Location")
+nano_ind_blue.add(label="Instrument used", name="instrument", sh_path="csmd:investigation_instrument")
+nano_ind_blue.add(label="Tip used", name="tip")
+
+sample_origin_scheme = Scheme("SampleOrigin", extends=basic_scheme)
+sample_origin_scheme.fields = nano_ind_yellow
+
+nano_ind_scheme = Scheme("NanoIndentation", extends=sample_origin_scheme)
+nano_ind_scheme.fields = nano_ind_blue + nano_ind_green + nano_ind_grey
+
+nano_ind_scheme.write()
+
