@@ -87,7 +87,10 @@ class MetaDataField:
     ):
         self.label = label
         if name is None:
-            self.name = "".join(label.split(" "))
+            name_list = label.split(" ")
+            name_list = [name.capitalize() for name in name_list]
+            self.name = "".join(name_list)
+            self.name = self.name[0].lower() + self.name[1:]
             if '/' in self.name or '(' in self.name or ')' in self.name:
                 raise ValueError('Label contains special character and name cannot be derived: specify name= ')
         else:
@@ -137,6 +140,7 @@ class MetaDataField:
             label = self.label
         else:
             label = self.label + ' [' + self.unit + ']'
+            # TODO: add unit ontology
 
         result += '  sh:name "' + label + '"@en, "' + label + '"@de ;\n'
 
