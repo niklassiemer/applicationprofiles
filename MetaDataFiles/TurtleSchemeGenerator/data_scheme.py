@@ -148,6 +148,22 @@ class MetaDataField:
         else:
             raise AttributeError
 
+    @property
+    def ttl_term_str(self):
+        result = ''
+        if not self.sh_path == "sfb1394:" + self.name:
+            return result
+
+        if self.unit is None:
+            label = self.label
+        else:
+            label = self.label + ' [' + self.unit + ']'
+
+        result += self.sh_path + ' \n'
+        result += '  rdfs:label "' + label + '"@en, "' + label + '"@de ;\n'
+        result += '. \n\n'
+        return result
+
     def ttl_str(self, schema_name, order_number):
         result = ''
         result += 'coscineSfb1394' + schema_name + ':' + self.name + ' \n'
