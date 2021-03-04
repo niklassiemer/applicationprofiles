@@ -55,7 +55,7 @@ nano_ind.write("Nano-intendation_yellow.ttl")
 nano_ind.fields = nano_ind_blue + nano_ind_grey + nano_ind_green + nano_ind_yellow
 nano_ind.write("Nano-intendation_full.ttl")
 
-basic_scheme = Scheme("SFB_basic")
+basic_scheme = Scheme("NanoIndentation/basic")
 basic_scheme.fields = SFBFields()
 
 # Missing blue fields:
@@ -66,7 +66,7 @@ nano_ind_blue.add(label="Sample Location")
 nano_ind_blue.add(label="Instrument used", name="instrument", sh_path="csmd:investigation_instrument")
 nano_ind_blue.add(label="Tip used", name="tip")
 
-sample_origin_scheme = Scheme("SampleOrigin", extends=basic_scheme)
+sample_origin_scheme = Scheme("NanoIndentation/SampleOrigin", extends=basic_scheme)
 sample_origin_scheme.fields = nano_ind_yellow
 
 nano_ind_scheme = Scheme("NanoIndentation", extends=sample_origin_scheme)
@@ -74,3 +74,6 @@ nano_ind_scheme.fields = nano_ind_blue + nano_ind_green + nano_ind_grey
 
 nano_ind_scheme.write()
 
+with open("nano_indentation_additional_terms.ttl", 'w') as f:
+    for field in nano_ind_scheme.full_field_list:
+        f.write(field.ttl_term_str)

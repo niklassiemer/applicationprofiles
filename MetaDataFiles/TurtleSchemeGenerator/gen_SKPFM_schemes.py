@@ -47,7 +47,7 @@ SKPFM.write("SKPFM_yellow.ttl")
 SKPFM.fields = blue + yellow
 SKPFM.write("SKPFM_full.ttl")
 
-basic_scheme = Scheme("SKPFM/SFB_basic")
+basic_scheme = Scheme("SKPFM/basic")
 basic_scheme.fields = SFBFields()
 
 sample_origin_scheme = Scheme("SKPFM/SampleOrigin", extends=basic_scheme)
@@ -57,3 +57,6 @@ SKPFM_scheme = Scheme("SKPFM", extends=sample_origin_scheme)
 SKPFM_scheme.fields = blue
 
 SKPFM_scheme.write()
+with open("SKPFM_additional_terms.ttl", 'w') as f:
+    for field in SKPFM_scheme.full_field_list:
+        f.write(field.ttl_term_str)
