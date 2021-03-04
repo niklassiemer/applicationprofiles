@@ -211,8 +211,13 @@ class MetaDataField:
 
 
 class FieldList:
-    def __init__(self):
-        self._fields = []
+    def __init__(self, field_list=None):
+        if field_list is not None:
+            for item in field_list:
+                self.enforce_type(item, MetaDataField)
+            self._fields = field_list
+        else:
+            self._fields = []
 
     @staticmethod
     def enforce_type(obj, class_):
@@ -291,7 +296,7 @@ class MetaDataSchemes:
             self.parent_class_name = extends.class_name
         elif extends is not None:
             raise TypeError(f'Expected a MetaDataSchemes or str but got {type(extends)}')
-        self.fields = FieldList()
+        self._fields = FieldList()
         self.preamble_prefixes = {
             "dash": "<http://datashapes.org/dash#>",
             "rdf": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
@@ -304,6 +309,14 @@ class MetaDataSchemes:
             "dcterms": "<http://purl.org/dc/terms/>",
             "sfb1394": "<http://purl.org/coscine/terms/sfb1394#>"
         }
+
+    @property
+    def fields(self):
+        return self._fields
+
+    @fields.setter
+    def fields(self, field_list):
+        self._fields = FieldList(field_list)
 
     @property
     def n_fields(self):
@@ -346,6 +359,14 @@ class MetaDataSchemes:
         for key, value in self.preamble_prefixes.items():
             result += "@prefix " + key + ": " + value + " .\n"
         return result
+
+    @property
+    def full_field_list(self):
+        full_list = FieldList()
+        if self.parent_class is not None:
+            full_list += self.parent_class.full_field_list
+        full_list += self.fields
+        return full_list
 
     def gen_required_fields(self):
         result = ""
