@@ -17,13 +17,21 @@ class DropdownList:
             self.title = title
 
         if name is None:
-            self.name = "".join(label.split(" "))
+            self._name = "".join(label.split(" "))
         else:
-            self.name = name
+            self._name = name
         if isinstance(options, str):
             self.options = list(options)
         else:
             self.options = options
+        self.base = ""
+
+    @property
+    def name(self):
+        if self.base == "":
+            return self._name
+        else:
+            return self.base + '/' + self._name
 
     def ttl_preamble(self):
         result = '@base <'
@@ -44,12 +52,14 @@ class DropdownList:
             f.write(self.ttl_str())
 
     def copy(self):
-        return DropdownList(
+        new = DropdownList(
             label=self.label,
             options=self.options,
             name=self.name,
             title=self.title
         )
+        new.base = self.base
+        return new
 
     def ttl_str(self):
         result = "<" + self.name + "> "
@@ -110,11 +120,12 @@ class MetaDataField:
         elif field_type == "class" or field_type == "list":
             self._single_type = False
             self.field_type = field_type
-            self._class_name = ""
         elif isinstance(field_type, DropdownList):
             self._single_type = False
             self.field_type = field_type.copy()
-            self._class_name = field_type.name
+        elif isinstance(field_type, list):
+            self._single_type = False
+            self.field_type = DropdownList(label=self.label, options=field_type)
         else:
             self.field_type = field_type
 
@@ -127,6 +138,15 @@ class MetaDataField:
             self.other_relations = {}
         else:
             self.other_relations = other_relations
+
+    @property
+    def _class_name(self):
+        if isinstance(self.field_type, str):
+            return self.field_type
+        elif isinstance(self.field_type, DropdownList):
+            return self.field_type.name
+        else:
+            raise AttributeError
 
     def ttl_str(self, schema_name, order_number):
         result = ''
@@ -240,7 +260,12 @@ class MetaDataSchemes:
             meta data scheme. TODO: verify this is working; it might crash the order parameter...
             if extends is a MetaDataScheme the current scheme is appended to this parent scheme.
         """
-        self.name = name
+        self._path_and_name = name
+        if '/' in name:
+            self.name = name.split('/')[-1]
+        else:
+            self.name = name
+
         self.parent_class = None
         self.parent_class_name = None
         if isinstance(extends, str):
@@ -274,12 +299,12 @@ class MetaDataSchemes:
     @property
     def property_prefix(self):
         result = "@prefix coscineSfb1394" + self.name
-        result += ": <https://purl.org/coscine/ap/sfb1394/" + self.name + "#> .\n"
+        result += ": <https://purl.org/coscine/ap/sfb1394/" + self._path_and_name + "#> .\n"
         return result
 
     @property
     def class_name(self):
-        return "<https://purl.org/coscine/ap/sfb1394/" + self.name + "/>"
+        return "<https://purl.org/coscine/ap/sfb1394/" + self._path_and_name + "/>"
 
     def gen_scheme(self):
         if len(self.fields) == 0:
@@ -287,7 +312,7 @@ class MetaDataSchemes:
         result = ""
         result += self.gen_preamble()
         result += self.ttl_str(target_class=True)
-        result += " # Shape URL https://purl.org/coscine/ap/sfb1394/" + self.name + "/"
+        result += " # Shape URL https://purl.org/coscine/ap/sfb1394/" + self._path_and_name + "/"
         return result
 
     def ttl_str(self, target_class=True):
@@ -312,12 +337,13 @@ class MetaDataSchemes:
             result += self.parent_class.ttl_str(target_class=False)
         for field in self.fields:
             if hasattr(field.field_type, 'ttl_str'):
+                field.field_type.base = "https://purl.org/coscine/ap/sfb1394/" + self._path_and_name
                 result += field.field_type.ttl_str()
         return result
 
     def gen_page(self, target_class=True):
         result = ""
-        result += "<https://purl.org/coscine/ap/sfb1394/" + self.name + "/>"
+        result += self.class_name
         result += """
   dcterms:license <http://spdx.org/licenses/MIT> ;
   dcterms:publisher <https://itc.rwth-aachen.de/> ;
@@ -328,7 +354,7 @@ class MetaDataSchemes:
         if self.parent_class_name is not None:
             result += '  rdfs:subClassOf ' + self.parent_class_name + ' ;\n'
         if target_class:
-            result += '  sh:targetClass <https://purl.org/coscine/ap/sfb1394/' + self.name + '/> ;'
+            result += '  sh:targetClass <https://purl.org/coscine/ap/sfb1394/' + self._path_and_name + '/> ;'
         result += '''
   sh:closed true ;
 
