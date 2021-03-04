@@ -58,3 +58,183 @@ sfb1394:stopVoltage
     rdfs:label "Stop voltage [kV]"@en, "Stop voltage [kV]"@de ;
 .
 
+sfb1394:id
+    rdfs:label "ID"@en, "ID"@de ;
+.
+
+sfb1394:operator
+    rdfs:label "Operator"@en, "Operator"@de ;
+.
+
+sfb1394:affiliation
+    rdfs:label "Affiliation"@en, "Affiliation"@de ;
+.
+
+sfb1394:dois
+    rdfs:label "DOIs"@en, "DOIs"@de ;
+.
+
+sfb1394:comments
+    rdfs:label "Comments"@en, "Comments"@de ;
+.
+
+sfb1394:preparationRoutine
+    rdfs:label "Preparation routine"@en, "Preparation routine"@de ;
+.
+
+sfb1394:preparationDate
+    rdfs:label "Preparation Date"@en, "Preparation Date"@de ;
+.
+
+sfb1394:sampleStorage
+    rdfs:label "Sample storage"@en, "Sample storage"@de ;
+.
+
+sfb1394:sampleOrientation
+    rdfs:label "Sample Orientation"@en, "Sample Orientation"@de ;
+.
+
+sfb1394:sampleLocation
+    rdfs:label "Sample Location"@en, "Sample Location"@de ;
+.
+
+sfb1394:tip
+    rdfs:label "Tip used"@en, "Tip used"@de ;
+.
+
+sfb1394:typeOfTest
+    rdfs:label "Type of test"@en, "Type of test"@de ;
+.
+
+sfb1394:tipId
+    rdfs:label "Tip ID"@en, "Tip ID"@de ;
+.
+
+sfb1394:diamondAreaFunction
+    rdfs:label "Diamond area function"@en, "Diamond area function"@de ;
+.
+
+sfb1394:dateOfCalibration
+    rdfs:label "Date of Calibration"@en, "Date of Calibration"@de ;
+.
+
+sfb1394:frameStiffness
+    rdfs:label "Frame stiffness [N/m]"@en, "Frame stiffness [N/m]"@de ;
+.
+
+sfb1394:targetLoad
+    rdfs:label "Target load [mN]"@en, "Target load [mN]"@de ;
+.
+
+sfb1394:targetDepth
+    rdfs:label "Target depth [nm]"@en, "Target depth [nm]"@de ;
+.
+
+sfb1394:targetStrainRate
+    rdfs:label "Target strain rate [/s]"@en, "Target strain rate [/s]"@de ;
+.
+
+sfb1394:continuousStiffnessMeasurement
+    rdfs:label "Continuous stiffness measurement"@en, "Continuous stiffness measurement"@de ;
+.
+
+sfb1394:startOfAveragingDepth
+    rdfs:label "Start of averaging depth [nm]"@en, "Start of averaging depth [nm]"@de ;
+.
+
+sfb1394:endOfAveragingDepth
+    rdfs:label "End of averaging depth [nm]"@en, "End of averaging depth [nm]"@de ;
+.
+
+sfb1394:driftCorrectionEnabled
+    rdfs:label "Drift correction enabled"@en, "Drift correction enabled"@de ;
+.
+
+sfb1394:sampleTemperature
+    rdfs:label "Sample temperature [�C]"@en, "Sample temperature [�C]"@de ;
+.
+
+sfb1394:tipTemperature
+    rdfs:label "Tip temperature [�C]"@en, "Tip temperature [�C]"@de ;
+.
+
+sfb1394:relativeHumidity
+    rdfs:label "Relative Humidity [%]"@en, "Relative Humidity [%]"@de ;
+.
+
+sfb1394:TestingEnv
+    rdfs:label "Environmental protection during specimen testing"@en, "Environmental protection during specimen testing"@de ;
+.
+
+sfb1394:environmentalGas
+    rdfs:label "Environmental gas"@en, "Environmental gas"@de ;
+.
+
+sfb1394:testDate
+    rdfs:label "Test date"@en, "Test date"@de ;
+.
+
+sfb1394:parentSampleSpecimenId
+    rdfs:label "Parent sample specimen ID"@en, "Parent sample specimen ID"@de ;
+.
+
+sfb1394:specimenId
+    rdfs:label "Specimen ID"@en, "Specimen ID"@de ;
+.
+
+sfb1394:immersionExperimentId
+    rdfs:label "Immersion Experiment ID"@en, "Immersion Experiment ID"@de ;
+.
+
+sfb1394:dateOfPreparation
+    rdfs:label "Date of preparation"@en, "Date of preparation"@de ;
+.
+
+sfb1394:pre-treatment
+    rdfs:label "Pre-treatment"@en, "Pre-treatment"@de ;
+.
+
+sfb1394:afmMode
+    rdfs:label "AFM mode"@en, "AFM mode"@de ;
+.
+
+sfb1394:kpfmMode
+    rdfs:label "KPFM mode"@en, "KPFM mode"@de ;
+.
+
+sfb1394:tipName
+    rdfs:label "Tip name"@en, "Tip name"@de ;
+.
+
+sfb1394:workingDistance
+    rdfs:label "Working distance [nm]"@en, "Working distance [nm]"@de ;
+.
+
+sfb1394:scanVelocity
+    rdfs:label "Scan velocity [Hz]"@en, "Scan velocity [Hz]"@de ;
+.
+
+sfb1394:tipOffsetVoltage
+    rdfs:label "Tip offset voltage [V]"@en, "Tip offset voltage [V]"@de ;
+.
+
+sfb1394:appliedOffsetVoltage
+    rdfs:label "Applied offset voltage"@en, "Applied offset voltage"@de ;
+.
+
+sfb1394:tipAlternatingVoltage
+    rdfs:label "Tip alternating Voltage [V]"@en, "Tip alternating Voltage [V]"@de ;
+.
+
+sfb1394:scanArea
+    rdfs:label "Scan area [nm x nm]"@en, "Scan area [nm x nm]"@de ;
+.
+
+sfb1394:reference
+    rdfs:label "Reference"@en, "Reference"@de ;
+.
+
+sfb1394:experimentCondition
+    rdfs:label "Experiment condition"@en, "Experiment condition"@de ;
+.
+

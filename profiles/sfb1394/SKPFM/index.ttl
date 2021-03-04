@@ -1,0 +1,291 @@
+@base <https://purl.org/coscine/ap/sfb1394/SKPFM/> .
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix csmd: <http://www.purl.org/net/CSMD/4.0#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
+@prefix coscineSfb1394SKPFM: <https://purl.org/coscine/ap/sfb1394/SKPFM#> .
+@prefix coscineSfb1394SampleOrigin: <https://purl.org/coscine/ap/sfb1394/SKPFM/SampleOrigin#> .
+@prefix coscineSfb1394basic: <https://purl.org/coscine/ap/sfb1394/SKPFM/basic#> .
+
+ # basic 
+<https://purl.org/coscine/ap/sfb1394/SKPFM/basic/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title  "SFB1394 basic"@en ;
+
+  a sh:NodeShape ;
+
+  sh:closed true ;
+
+  sh:property [
+    sh:path rdf:type ;
+  ] ;
+
+  sh:property coscineSfb1394basic:id ;
+  sh:property coscineSfb1394basic:operator ;
+  sh:property coscineSfb1394basic:affiliation ;
+  sh:property coscineSfb1394basic:dois ;
+  sh:property coscineSfb1394basic:comments .
+
+coscineSfb1394basic:id 
+  sh:path sfb1394:id ;
+  sh:order 0 ;
+ sh:minCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "ID"@en, "ID"@de ;
+. 
+
+coscineSfb1394basic:operator 
+  sh:path sfb1394:operator ;
+  sh:order 1 ;
+ sh:minCount 1 ;
+  sh:datatype xsd:string ;
+  sh:name "Operator"@en, "Operator"@de ;
+. 
+
+coscineSfb1394basic:affiliation 
+  sh:path sfb1394:affiliation ;
+  sh:order 2 ;
+  sh:datatype xsd:string ;
+  sh:name "Affiliation"@en, "Affiliation"@de ;
+. 
+
+coscineSfb1394basic:dois 
+  sh:path sfb1394:dois ;
+  sh:order 3 ;
+ dash:singleLine false ;
+  sh:datatype xsd:string ;
+  sh:name "DOIs"@en, "DOIs"@de ;
+. 
+
+coscineSfb1394basic:comments 
+  sh:path sfb1394:comments ;
+  sh:order 4 ;
+ dash:singleLine false ;
+  sh:datatype xsd:string ;
+  sh:name "Comments"@en, "Comments"@de ;
+. 
+
+ # SampleOrigin 
+<https://purl.org/coscine/ap/sfb1394/SKPFM/SampleOrigin/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title  "SFB1394 SampleOrigin"@en ;
+
+  a sh:NodeShape ;
+  rdfs:subClassOf <https://purl.org/coscine/ap/sfb1394/SKPFM/basic/> ;
+
+  sh:closed true ;
+
+  sh:property [
+    sh:path rdf:type ;
+  ] ;
+
+  sh:property coscineSfb1394SampleOrigin:parentSampleSpecimenId ;
+  sh:property coscineSfb1394SampleOrigin:specimenId ;
+  sh:property coscineSfb1394SampleOrigin:preparationRoutine ;
+  sh:property coscineSfb1394SampleOrigin:immersionExperimentId .
+
+coscineSfb1394SampleOrigin:parentSampleSpecimenId 
+  sh:path sfb1394:parentSampleSpecimenId ;
+  sh:order 5 ;
+  sh:datatype xsd:string ;
+  sh:name "Parent sample specimen ID"@en, "Parent sample specimen ID"@de ;
+. 
+
+coscineSfb1394SampleOrigin:specimenId 
+  sh:path sfb1394:specimenId ;
+  sh:order 6 ;
+  sh:datatype xsd:string ;
+  sh:name "Specimen ID"@en, "Specimen ID"@de ;
+. 
+
+coscineSfb1394SampleOrigin:preparationRoutine 
+  sh:path sfb1394:preparationRoutine ;
+  sh:order 7 ;
+  sh:datatype xsd:string ;
+  sh:name "Preparation routine"@en, "Preparation routine"@de ;
+. 
+
+coscineSfb1394SampleOrigin:immersionExperimentId 
+  sh:path sfb1394:immersionExperimentId ;
+  sh:order 8 ;
+  sh:datatype xsd:string ;
+  sh:name "Immersion Experiment ID"@en, "Immersion Experiment ID"@de ;
+. 
+<https://purl.org/coscine/ap/sfb1394/SKPFM/KPFMmode> 
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title  "KPFM mode"@en ;
+  rdfs:label "KPFM mode"@de ,
+"KPFM mode"@en .
+<https://purl.org/coscine/ap/sfb1394/SKPFM/KPFMmode#0> a <https://purl.org/coscine/ap/sfb1394/SKPFM/KPFMmode#0>;
+  rdfs:label "AM"@de ,
+"AM"@en ;
+  rdfs:subClassOf <https://purl.org/coscine/ap/sfb1394/SKPFM/KPFMmode>.
+<https://purl.org/coscine/ap/sfb1394/SKPFM/KPFMmode#1> a <https://purl.org/coscine/ap/sfb1394/SKPFM/KPFMmode#1>;
+  rdfs:label "FM"@de ,
+"FM"@en ;
+  rdfs:subClassOf <https://purl.org/coscine/ap/sfb1394/SKPFM/KPFMmode>.
+<https://purl.org/coscine/ap/sfb1394/SKPFM/Appliedoffsetvoltage> 
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title  "Applied offset voltage"@en ;
+  rdfs:label "Applied offset voltage"@de ,
+"Applied offset voltage"@en .
+<https://purl.org/coscine/ap/sfb1394/SKPFM/Appliedoffsetvoltage#0> a <https://purl.org/coscine/ap/sfb1394/SKPFM/Appliedoffsetvoltage#0>;
+  rdfs:label "sample"@de ,
+"sample"@en ;
+  rdfs:subClassOf <https://purl.org/coscine/ap/sfb1394/SKPFM/Appliedoffsetvoltage>.
+<https://purl.org/coscine/ap/sfb1394/SKPFM/Appliedoffsetvoltage#1> a <https://purl.org/coscine/ap/sfb1394/SKPFM/Appliedoffsetvoltage#1>;
+  rdfs:label "tip"@de ,
+"tip"@en ;
+  rdfs:subClassOf <https://purl.org/coscine/ap/sfb1394/SKPFM/Appliedoffsetvoltage>.
+
+ # SKPFM 
+<https://purl.org/coscine/ap/sfb1394/SKPFM/>
+  dcterms:license <http://spdx.org/licenses/MIT> ;
+  dcterms:publisher <https://itc.rwth-aachen.de/> ;
+  dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
+  dcterms:title  "SFB1394 SKPFM"@en ;
+
+  a sh:NodeShape ;
+  rdfs:subClassOf <https://purl.org/coscine/ap/sfb1394/SKPFM/SampleOrigin/> ;
+  sh:targetClass <https://purl.org/coscine/ap/sfb1394/SKPFM/> ;
+  sh:closed true ;
+
+  sh:property [
+    sh:path rdf:type ;
+  ] ;
+
+  sh:property coscineSfb1394SKPFM:dateOfPreparation ;
+  sh:property coscineSfb1394SKPFM:sampleStorage ;
+  sh:property coscineSfb1394SKPFM:pre-treatment ;
+  sh:property coscineSfb1394SKPFM:afmMode ;
+  sh:property coscineSfb1394SKPFM:kpfmMode ;
+  sh:property coscineSfb1394SKPFM:tipName ;
+  sh:property coscineSfb1394SKPFM:workingDistance ;
+  sh:property coscineSfb1394SKPFM:scanVelocity ;
+  sh:property coscineSfb1394SKPFM:tipOffsetVoltage ;
+  sh:property coscineSfb1394SKPFM:appliedOffsetVoltage ;
+  sh:property coscineSfb1394SKPFM:tipAlternatingVoltage ;
+  sh:property coscineSfb1394SKPFM:scanArea ;
+  sh:property coscineSfb1394SKPFM:reference ;
+  sh:property coscineSfb1394SKPFM:experimentCondition .
+
+coscineSfb1394SKPFM:dateOfPreparation 
+  sh:path sfb1394:dateOfPreparation ;
+  sh:order 9 ;
+  sh:datatype xsd:date ;
+  sh:name "Date of preparation"@en, "Date of preparation"@de ;
+. 
+
+coscineSfb1394SKPFM:sampleStorage 
+  sh:path sfb1394:sampleStorage ;
+  sh:order 10 ;
+  sh:datatype xsd:string ;
+  sh:name "Sample storage"@en, "Sample storage"@de ;
+. 
+
+coscineSfb1394SKPFM:pre-treatment 
+  sh:path sfb1394:pre-treatment ;
+  sh:order 11 ;
+  sh:datatype xsd:string ;
+  sh:name "Pre-treatment"@en, "Pre-treatment"@de ;
+. 
+
+coscineSfb1394SKPFM:afmMode 
+  sh:path sfb1394:afmMode ;
+  sh:order 12 ;
+  sh:datatype xsd:string ;
+  sh:name "AFM mode"@en, "AFM mode"@de ;
+. 
+
+coscineSfb1394SKPFM:kpfmMode 
+  sh:path sfb1394:kpfmMode ;
+  sh:order 13 ;
+  sh:maxCount 1 ;
+  sh:name "KPFM mode"@en, "KPFM mode"@de ;
+  sh:class <https://purl.org/coscine/ap/sfb1394/SKPFM/KPFMmode> . 
+
+coscineSfb1394SKPFM:tipName 
+  sh:path sfb1394:tipName ;
+  sh:order 14 ;
+  sh:datatype xsd:string ;
+  sh:name "Tip name"@en, "Tip name"@de ;
+. 
+
+coscineSfb1394SKPFM:workingDistance 
+  sh:path sfb1394:workingDistance ;
+  sh:order 15 ;
+  sh:datatype xsd:string ;
+  sh:name "Working distance [nm]"@en, "Working distance [nm]"@de ;
+  qudt:Unit unit:NanoM ;
+. 
+
+coscineSfb1394SKPFM:scanVelocity 
+  sh:path sfb1394:scanVelocity ;
+  sh:order 16 ;
+  sh:datatype xsd:string ;
+  sh:name "Scan velocity [Hz]"@en, "Scan velocity [Hz]"@de ;
+  qudt:Unit unit:HZ ;
+. 
+
+coscineSfb1394SKPFM:tipOffsetVoltage 
+  sh:path sfb1394:tipOffsetVoltage ;
+  sh:order 17 ;
+  sh:datatype xsd:string ;
+  sh:name "Tip offset voltage [V]"@en, "Tip offset voltage [V]"@de ;
+  qudt:Unit unit:V ;
+. 
+
+coscineSfb1394SKPFM:appliedOffsetVoltage 
+  sh:path sfb1394:appliedOffsetVoltage ;
+  sh:order 18 ;
+  sh:maxCount 1 ;
+  sh:name "Applied offset voltage"@en, "Applied offset voltage"@de ;
+  sh:class <https://purl.org/coscine/ap/sfb1394/SKPFM/Appliedoffsetvoltage> . 
+
+coscineSfb1394SKPFM:tipAlternatingVoltage 
+  sh:path sfb1394:tipAlternatingVoltage ;
+  sh:order 19 ;
+  sh:datatype xsd:string ;
+  sh:name "Tip alternating Voltage [V]"@en, "Tip alternating Voltage [V]"@de ;
+  qudt:Unit unit:V ;
+. 
+
+coscineSfb1394SKPFM:scanArea 
+  sh:path sfb1394:scanArea ;
+  sh:order 20 ;
+  sh:datatype xsd:string ;
+  sh:name "Scan area [nm x nm]"@en, "Scan area [nm x nm]"@de ;
+  # ideally this would be two float inputs ;
+  #qudt:Unit unit:NanoM2  Does not yet exist ;
+. 
+
+coscineSfb1394SKPFM:reference 
+  sh:path sfb1394:reference ;
+  sh:order 21 ;
+  sh:datatype xsd:string ;
+  sh:name "Reference"@en, "Reference"@de ;
+. 
+
+coscineSfb1394SKPFM:experimentCondition 
+  sh:path sfb1394:experimentCondition ;
+  sh:order 22 ;
+ dash:singleLine false ;
+  sh:datatype xsd:string ;
+  sh:name "Experiment condition"@en, "Experiment condition"@de ;
+. 
+ # Shape URL https://purl.org/coscine/ap/sfb1394/SKPFM/
