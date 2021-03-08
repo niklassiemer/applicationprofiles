@@ -47,6 +47,10 @@ sim_blue.add(label="Status", field_type="list")  # Choice ('initialized', 'runni
 sim_blue.add(label="Last status update")  # timestamp
 sim_blue.add(label="pyiron version")
 sim_blue.add(label="Other software versions")
+sim_blue.add(label="External ID")
+sim_blue.add(label="Simulation type")
+# We have DOI and References, DOI is for papers about this and references for what?!
+sim_blue.add(label="References")
 
 sim_technical = FieldList()
 sim_technical.add(label="Cluster")
