@@ -1,6 +1,17 @@
 # -*- coding: utf-8 -*-
 """Meta Data Schemes """
 
+unit_relations = {
+    "mm": "MilliM",
+    "nm": "NanoM"
+}
+
+
+def _gen_unit_relation(unit, qudt=False):
+    if qudt:
+        return ["qudt:Unit", "unit:"+unit]
+    return ["qudt:Unit", "unit:"+unit_relations[unit]]
+
 
 class DropdownList:
     def __init__(
@@ -93,6 +104,7 @@ class MetaDataField:
             field_type=None,
             required=False,
             unit=None,
+            qudt=None,
             long=False,
             sh_path=None,
             other_relations=None
@@ -107,8 +119,20 @@ class MetaDataField:
                 raise ValueError('Label contains special character and name cannot be derived: specify name= ')
         else:
             self.name = name
+        if other_relations is None:
+            self.other_relations = {}
+        else:
+            self.other_relations = other_relations
+
         self.long = long
+        if qudt is not None:
+            self.other_relations[_gen_unit_relation(qudt, qudt=True)[0]] = _gen_unit_relation(qudt, qudt=True)[1]
         self.unit = unit
+        if unit is not None and "qudt:Unit" not in self.other_relations:
+            try:
+                self.other_relations[_gen_unit_relation(self.unit)[0]] = _gen_unit_relation(self.unit)[1]
+            except KeyError:
+                pass
         self._single_type = True
 
         if field_type is None or field_type == "string":
@@ -134,10 +158,7 @@ class MetaDataField:
             self.sh_path = "sfb1394:" + self.name
         else:
             self.sh_path = sh_path
-        if other_relations is None:
-            self.other_relations = {}
-        else:
-            self.other_relations = other_relations
+
 
     @property
     def _class_name(self):
