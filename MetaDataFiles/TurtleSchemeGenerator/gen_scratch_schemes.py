@@ -13,12 +13,17 @@ scratch_blue = [
     Field(label="Instrument used", name="instrument"),
     Field(label="Tip used", name="tip"),
     Field(label="Comments", long=True),
+    Field(label="Scratch crystallographic orientation"),
+    Field(label="Scratch surface plane"),
+    Field(label="Loading type")
     ]
 
-scratch_grey = []
-#scratch_grey.append(Field(label="Relative Humidity", unit='%'))
-scratch_grey.append(Field(label="Temperature", unit="\u00b0C"))
-#scratch_grey.append(Field(label="Test date", field_type="date"))
+scratch_grey = [
+    Field(label="Relative Humidity", unit='%'),
+    Field(label="Temperature", unit="\u00b0C"),
+    Field(label="Environmental gas"),
+    Field(label="Test date", field_type="date")
+]
 
 scratch_yellow = []
 scratch_yellow.append(Field(label="Preparation routine", long=True))
@@ -27,11 +32,11 @@ scratch_yellow.append(Field(label="Sample storage"))
 
 scratch_green = []
 scratch_green.append(Field(label="Type of test"))
-scratch_green.append(Field(label="Scratch Length", unit="um"))
-scratch_green.append(Field(label="Scratch Velocity", unit="um/s"))
+scratch_green.append(Field(label="Scratch Length", unit=micro+"m"))
+scratch_green.append(Field(label="Scratch Velocity", unit=micro+"m/s"))
 scratch_green.append(Field(label="Scratch Orientation", unit=deg))
 scratch_green.append(Field(label="Maximum scratch load", unit='mN'))
-scratch_green.append(Field(label="Profiling velocity", unit="um/s"))
+scratch_green.append(Field(label="Profiling velocity", unit=micro+"m/s"))
 
 scratch = Scheme("Scratch")
 scratch.fields = scratch_blue
