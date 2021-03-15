@@ -280,10 +280,15 @@ class MetaDataField:
 
 class FieldList:
     def __init__(self, field_list=None):
+        """
+        List of meta data fields
+        Params:
+            field_list(list/None): list containing only MetaDataFields.
+        """
         if field_list is not None:
             for item in field_list:
                 self.enforce_type(item, MetaDataField)
-            self._fields = field_list
+            self._fields = field_list.copy()
         else:
             self._fields = []
 

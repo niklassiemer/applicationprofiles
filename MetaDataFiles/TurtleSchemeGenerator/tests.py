@@ -1,5 +1,5 @@
 import unittest
-from data_scheme import FieldList
+from data_scheme import FieldList, MetaDataSchemes
 from data_scheme import MetaDataField as Field
 
 
@@ -17,6 +17,17 @@ class TestFieldList(unittest.TestCase):
         self.list.add('bar', name='bar_name')
         self.assertRaises(TypeError, self.list.add, 'baz', not_a_kwarg=42)
         self.assertRaises(TypeError, self.list.add)
+
+    def test___init__(self):
+        list_of_fields = [Field('foo'), Field('bar')]
+        field_list = FieldList(list_of_fields)
+        self.assertEqual(field_list[0].name, 'foo')
+        self.assertEqual(field_list[-1].name, 'bar')
+        self.assertEqual(len(field_list), 2)
+        list_of_fields.append('NotAField')
+        self.assertEqual(len(field_list), 2)
+        self.assertRaises(TypeError, FieldList, list_of_fields)
+
 
     def test___getitem__(self):
         self.list.add('foo')
@@ -38,6 +49,7 @@ class TestFieldList(unittest.TestCase):
         added = self.list + other
         self.assertListEqual([field.name for field in added], ['foo', 'bar'])
         self.assertRaises(TypeError, self.list.__add__, 'not_a_field_list')
+        self.assertTrue(type(added._fields) == list)
 
     def test___iadd__(self):
         self.list.add('foo')
@@ -46,6 +58,7 @@ class TestFieldList(unittest.TestCase):
         self.list += other
         self.assertListEqual([field.name for field in self.list], ['foo', 'bar'])
         self.assertRaises(TypeError, self.list.__iadd__, 'not_a_field_list')
+        self.assertTrue(type(self.list._fields) == list)
 
     def test___len__(self):
         self.assertEqual(len(self.list), 0)
