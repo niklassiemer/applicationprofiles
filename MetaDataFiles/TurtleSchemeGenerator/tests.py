@@ -28,7 +28,6 @@ class TestFieldList(unittest.TestCase):
         self.assertEqual(len(field_list), 2)
         self.assertRaises(TypeError, FieldList, list_of_fields)
 
-
     def test___getitem__(self):
         self.list.add('foo')
         self.list.add('bar')
@@ -90,3 +89,17 @@ class TestFieldList(unittest.TestCase):
         self.list.sort_fields_by_order_priority()
         self.assertEqual([field.order_priority for field in self.list], [1, 2, None, None, -2, -1])
 
+
+class TestMetaDataScheme(unittest.TestCase):
+    def setUp(self):
+        self.list = FieldList()
+        self.list.add('foo')
+        self.list.add('bar')
+        self.scheme = MetaDataSchemes('MyScheme')
+        self.scheme.fields = self.list
+
+    def test___init__(self):
+        self.assertTrue(type(self.scheme.fields) == FieldList)
+
+    def test_sort_fields_by_order_parameter(self):
+        self.scheme.fields._fields.sort()

@@ -393,7 +393,10 @@ class MetaDataSchemes:
 
     @fields.setter
     def fields(self, field_list):
-        self._fields = FieldList(field_list)
+        if isinstance(field_list, list):
+            self._fields = FieldList(field_list)
+        else:
+            self._fields = field_list
 
     @property
     def n_fields(self):
