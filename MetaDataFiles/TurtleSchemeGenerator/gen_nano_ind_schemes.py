@@ -78,6 +78,7 @@ sample_origin_scheme = Scheme("NanoIndentation/SampleOrigin", extends=basic_sche
 sample_origin_scheme.fields = nano_ind_yellow
 
 nano_ind_scheme = Scheme("NanoIndentation", extends=sample_origin_scheme)
+nano_ind_scheme.order_fields_by_priority = True
 nano_ind_scheme.fields = nano_ind_blue + nano_ind_green + nano_ind_grey
 
 nano_ind_scheme.write()

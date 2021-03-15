@@ -146,6 +146,7 @@ class MetaDataField:
             self.other_relations = other_relations
 
         self.order_priority = order_priority
+        self._order_number = None
 
         self.long = long
         if qudt is not None:
@@ -207,11 +208,12 @@ class MetaDataField:
         result += '. \n\n'
         return result
 
-    def ttl_str(self, schema_name, order_number):
+    def ttl_str(self, schema_name, order_number=None):
+        _order_number = order_number if order_number is not None else self._order_number
         result = ''
         result += 'coscineSfb1394' + schema_name + ':' + self.name + ' \n'
         result += '  sh:path ' + self.sh_path + ' ;\n'
-        result += '  sh:order ' + str(order_number) + ' ;\n'
+        result += '  sh:order ' + str(_order_number) + ' ;\n'
 
         if self.required:
             result += ' sh:minCount 1 ;\n'
@@ -341,7 +343,7 @@ class SFBFields(FieldList):
         self.add(label="Operator", required=True)
         self.add(label="Affiliation")
         self.add(label="DOIs", long=True)  # To associate publications produced using this object
-        self.add(label="Comments", long=True)
+        self.add(label="Comments", long=True, order_priority=-1)
 
 
 class MetaDataSchemes:
@@ -364,6 +366,7 @@ class MetaDataSchemes:
         else:
             self.name = name
 
+        self.order_fields_by_priority = False
         self.parent_class = None
         self.parent_class_name = None
         if isinstance(extends, str):
@@ -418,20 +421,21 @@ class MetaDataSchemes:
     def gen_scheme(self):
         if len(self.fields) == 0:
             raise TypeError("No Field specified")
+        if self.order_fields_by_priority:
+            self._order_all_fields()
         result = ""
         result += self.gen_preamble()
-        result += self.ttl_str(target_class=True)
+        result += self.ttl_str(target_class=True, ordered_fields=self.order_fields_by_priority)
         result += " # Shape URL https://purl.org/coscine/ap/sfb1394/" + self._path_and_name + "/"
         return result
 
-    def ttl_str(self, target_class=True):
+    def ttl_str(self, target_class=True, ordered_fields=False):
         result = ""
-        self.fields.sort_fields_by_order_priority()
         result += self.property_prefix
-        result += self.gen_required_fields()
+        result += self.gen_required_fields(ordered_fields=ordered_fields)
         result += "\n # " + self.name + ' \n'
         result += self.gen_page(target_class=target_class)
-        result += self.gen_nodes()
+        result += self.gen_nodes(ordered_fields=ordered_fields)
         return result
 
     def gen_preamble(self):
@@ -449,10 +453,16 @@ class MetaDataSchemes:
         full_list += self.fields
         return full_list
 
-    def gen_required_fields(self):
+    def _order_all_fields(self):
+        full_list = self.full_field_list
+        full_list.sort_fields_by_order_priority()
+        for i, field in enumerate(full_list):
+            field._order_number = i
+
+    def gen_required_fields(self, ordered_fields=False):
         result = ""
         if self.parent_class is not None:
-            result += self.parent_class.ttl_str(target_class=False)
+            result += self.parent_class.ttl_str(target_class=False, ordered_fields=ordered_fields)
         for field in self.fields:
             if hasattr(field.field_type, 'ttl_str'):
                 field.field_type.base = "https://purl.org/coscine/ap/sfb1394/" + self._path_and_name
@@ -487,8 +497,14 @@ class MetaDataSchemes:
         result += '  sh:property coscineSfb1394' + self.name + ':' + field.name + ' .\n'
         return result
 
-    def gen_nodes(self):
+    def gen_nodes(self, ordered_fields=False):
         result = ""
+        if ordered_fields:
+            for field in self.fields:
+                result += '\n'
+                result += field.ttl_str(schema_name=self.name)
+            return result
+
         if self.parent_class is not None:
             offset = self.parent_class.n_fields
         else:
