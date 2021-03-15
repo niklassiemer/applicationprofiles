@@ -110,8 +110,26 @@ class MetaDataField:
             qudt=None,
             long=False,
             sh_path=None,
+            order_priority=None,
             other_relations=None
     ):
+        """
+        Single Field of a meta data scheme
+        Params:
+            label(str): Displayed label
+            name(str): Internal name - required if the label contains special characters, i.e  '/', '(', ')'
+            field_type(str/obj/None): 'string', 'bool', field_type_object; 'string' is default
+            required(bool): if True this Field is required; False is default
+            unit(str/None): unit of the quantity; e.g. 'm/s'
+            qudt(str/None): qudt unit name of the unit; e.g. 'M-PER-SEC'
+            long(bool): If True this fiels may contain more than one line/ value
+            sh_path(str/None): value for the 'sh:path' property; default is 'sfb1394:' + name
+            order_priority(int/None): Priority for the order of fields:
+                fields with smaller positive numbers are displayed first.
+                fields without priority (0 or None) are displayed second.
+                fields with negative priority are displayed last; -1 is lowest possible priority
+            other_relations{dict/None): other ontology relations; e.g. {"qudt:Unit": "unit:M-PER-SEC"}
+        """
         self.label = label
         if name is None:
             name_list = label.split(" ")
@@ -126,6 +144,8 @@ class MetaDataField:
             self.other_relations = {}
         else:
             self.other_relations = other_relations
+
+        self.order_priority = order_priority
 
         self.long = long
         if qudt is not None:
@@ -161,7 +181,6 @@ class MetaDataField:
             self.sh_path = "sfb1394:" + self.name
         else:
             self.sh_path = sh_path
-
 
     @property
     def _class_name(self):
@@ -230,8 +249,33 @@ class MetaDataField:
             unit=self.unit,
             long=self.long,
             sh_path=self.sh_path,
+            order_priority=self.order_priority,
             other_relations=self.other_relations
         )
+
+    def __lt__(self, other):
+        self_order_prio = self.order_priority if self.order_priority is not None else 0
+        other_order_prio = other.order_priority if other.order_priority is not None else 0
+
+        # Same sign and none is zero: normal comparison
+        if self_order_prio * other_order_prio > 0:
+            return self_order_prio < other_order_prio
+
+        # Different signs or at least one is zero:
+        # positive number < 0 < negative number thus:
+        return self_order_prio > other_order_prio
+
+    def __gt__(self, other):
+        self_order_prio = self.order_priority if self.order_priority is not None else 0
+        other_order_prio = other.order_priority if other.order_priority is not None else 0
+
+        # Same sign and none is zero: normal comparison
+        if self_order_prio * other_order_prio > 0:
+            return self_order_prio > other_order_prio
+
+        # Different signs or at least one is zero:
+        # positive number < 0 < negative number thus:
+        return self_order_prio < other_order_prio
 
 
 class FieldList:
@@ -254,6 +298,10 @@ class FieldList:
 
     def add(self, label, **field_kwargs):
         self._fields.append(MetaDataField(label, **field_kwargs))
+
+    def sort_fields_by_order_priority(self):
+        """Sorts the fields in the FieldList by their order_parameter"""
+        self._fields.sort()
 
     def __getitem__(self, item):
         return self._fields.__getitem__(item)
@@ -284,7 +332,7 @@ class FieldList:
 class SFBFields(FieldList):
     def __init__(self, id_name="ID"):
         super().__init__()
-        self.add(label=id_name, required=True)  # Database ID for the object, be it sample, experiment, sim...
+        self.add(label=id_name, name='ID', required=True)  # Database ID for the object, be it sample, experiment, sim...
         self.add(label="Operator", required=True)
         self.add(label="Affiliation")
         self.add(label="DOIs", long=True)  # To associate publications produced using this object
@@ -370,6 +418,7 @@ class MetaDataSchemes:
 
     def ttl_str(self, target_class=True):
         result = ""
+        self.fields.sort_fields_by_order_priority()
         result += self.property_prefix
         result += self.gen_required_fields()
         result += "\n # " + self.name + ' \n'

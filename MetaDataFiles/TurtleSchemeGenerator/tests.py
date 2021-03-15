@@ -65,3 +65,15 @@ class TestFieldList(unittest.TestCase):
         new_list.add('baz')
         self.assertEqual(len(self.list), 2)
         self.assertEqual(len(new_list), 3)
+
+    def test_sort_fields_by_order_parameter(self):
+        self.list.add('foo')
+        self.list.add('bar')
+        self.list.add('foo1', order_priority=1)
+        self.list.add('foo2', order_priority=2)
+        self.list.add('foo-1', order_priority=-1)
+        self.list.add('foo-2', order_priority=-2)
+        self.assertEqual([field.order_priority for field in self.list], [None, None, 1, 2, -1, -2])
+        self.list.sort_fields_by_order_priority()
+        self.assertEqual([field.order_priority for field in self.list], [1, 2, None, None, -2, -1])
+
