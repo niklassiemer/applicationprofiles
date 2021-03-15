@@ -339,8 +339,8 @@ class FieldList:
 class SFBFields(FieldList):
     def __init__(self, id_name="ID"):
         super().__init__()
-        self.add(label=id_name, name='ID', required=True)  # Database ID for the object, be it sample, experiment, sim...
-        self.add(label="Operator", required=True)
+        self.add(label=id_name, name='ID', required=True, order_priority=1)  # Database ID for the object, be it sample, experiment, sim...
+        self.add(label="Operator", required=True, order_priority=1)
         self.add(label="Affiliation")
         self.add(label="DOIs", long=True)  # To associate publications produced using this object
         self.add(label="Comments", long=True, order_priority=-1)

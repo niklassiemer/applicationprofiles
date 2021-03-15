@@ -68,11 +68,18 @@ basic_scheme.fields = SFBFields(id_name="Experiment ID")
 
 # Missing blue fields:
 nano_ind_blue = FieldList()
-nano_ind_blue.add(label="Specimen ID", sh_path="csmd:investigation_sample")
-nano_ind_blue.add(label="Parent sample specimen ID", name="parentSample")
-nano_ind_blue.add(label="Sample Location")
+nano_ind_blue.add(label="Specimen ID", sh_path="csmd:investigation_sample", order_priority=2)
+nano_ind_blue.add(label="Parent sample specimen ID", name="parentSample", order_priority=2)
+nano_ind_blue.add(label="Sample Location", order_priority=2)
 nano_ind_blue.add(label="Instrument used", name="instrument", sh_path="csmd:investigation_instrument")
 nano_ind_blue.add(label="Tip used", name="tip")
+nano_ind_blue.add(label="Test location on sample")
+nano_ind_blue.add(label="Type of test")
+nano_ind_blue.add(label="Control method")
+nano_ind_blue.add(label="Tip ID")
+nano_ind_blue.add(label="Diamond area function")
+nano_ind_blue.add(label="Date of Calibration", field_type="date")
+nano_ind_blue.add(label="Frame stiffness", unit='N/m', other_relations={"qudt:Unit": "unit:N-PER-M"})
 
 sample_origin_scheme = Scheme("NanoIndentation/SampleOrigin", extends=basic_scheme)
 sample_origin_scheme.fields = nano_ind_yellow
