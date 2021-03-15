@@ -3,7 +3,10 @@
 
 unit_relations = {
     "mm": "MilliM",
-    "nm": "NanoM"
+    "nm": "NanoM",
+    "\u00b0C": "Deg_C",
+    "V": "V",
+    "Hz": "Hz",
 }
 
 
@@ -279,9 +282,9 @@ class FieldList:
 
 
 class SFBFields(FieldList):
-    def __init__(self):
+    def __init__(self, id_name="ID"):
         super().__init__()
-        self.add(label="ID", required=True)  # Database ID for the object, be it sample, experiment, sim...
+        self.add(label=id_name, required=True)  # Database ID for the object, be it sample, experiment, sim...
         self.add(label="Operator", required=True)
         self.add(label="Affiliation")
         self.add(label="DOIs", long=True)  # To associate publications produced using this object
