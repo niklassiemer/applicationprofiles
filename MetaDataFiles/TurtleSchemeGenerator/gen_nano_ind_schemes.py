@@ -42,7 +42,7 @@ nano_ind_green.add(label="Target displacement rate", unit="nm/s", other_relation
 nano_ind_green.add(label="Continuous stiffness measurement", field_type='bool')
 nano_ind_green.add(label="Start of averaging depth", unit="nm", other_relations={"qudt:Unit": "unit:NanoM"})
 nano_ind_green.add(label="End of averaging depth", unit="nm", other_relations={"qudt:Unit": "unit:NanoM"})
-nano_ind_green.add(label="Hold time at maximum load", unit='s', other_relation={"qudt:Unit": "unit:SEC"})
+nano_ind_green.add(label="Hold time at maximum load", unit='s', other_relations={"qudt:Unit": "unit:SEC"})
 nano_ind_green.add(label="Drift correction enabled", field_type="bool")
 nano_ind_green.add(label="Sample temperature", unit="\u00b0C", other_relations={"qudt:Unit": "unit:DEG_C"})
 nano_ind_green.add(label="Tip temperature", unit="\u00b0C", other_relations={"qudt:Unit": "unit:DEG_C"})
@@ -64,7 +64,7 @@ nano_ind.fields = nano_ind_blue + nano_ind_grey + nano_ind_green + nano_ind_yell
 nano_ind.write("Nano-intendation_full.ttl")
 
 basic_scheme = Scheme("NanoIndentation/basic")
-basic_scheme.fields = SFBFields()
+basic_scheme.fields = SFBFields(id_name="Experiment ID")
 
 # Missing blue fields:
 nano_ind_blue = FieldList()
