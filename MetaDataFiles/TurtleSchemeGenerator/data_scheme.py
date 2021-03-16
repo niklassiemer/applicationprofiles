@@ -7,6 +7,7 @@ unit_relations = {
     "\u00b0C": "Deg_C",
     "V": "V",
     "Hz": "Hz",
+    "s": "SEC"
 }
 
 
