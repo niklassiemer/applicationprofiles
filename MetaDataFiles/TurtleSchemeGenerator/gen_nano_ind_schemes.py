@@ -47,6 +47,19 @@ nano_ind_green.add(label="Drift correction enabled", field_type="bool")
 nano_ind_green.add(label="Sample temperature", unit="\u00b0C", other_relations={"qudt:Unit": "unit:DEG_C"})
 nano_ind_green.add(label="Tip temperature", unit="\u00b0C", other_relations={"qudt:Unit": "unit:DEG_C"})
 
+nano_ind_green_SRJ = FieldList()
+nano_ind_green_SRJ.add(label="Target load", unit="mN", other_relations={"qudt:Unit": "unit:MilliN"})
+nano_ind_green_SRJ.add(label="Target depth", unit="nm", other_relations={"qudt:Unit": "unit:NanoM"})
+nano_ind_green_SRJ.add(label="Initial strain rate", unit='/s', other_relations={"qudt:Unit": "unit:PER-SEC"})
+nano_ind_green_SRJ.add(label="Initial displacement", unit="nm", other_relations={"qudt:Unit": "unit:NanoM"})
+nano_ind_green_SRJ.add(label="No. of cycles", name="NoOfCycles")
+nano_ind_green_SRJ.add(label="Final strain rate", unit='/s', other_relations={"qudt:Unit": "unit:PER-SEC"})
+nano_ind_green_SRJ.add(label="Displacement range for strain rate ", unit="nm", other_relations={"qudt:Unit": "unit:NanoM"})
+nano_ind_green_SRJ.add(label="Continuous stiffness measurement", field_type='bool')
+nano_ind_green_SRJ.add(label="Drift correction enabled", field_type="bool")
+nano_ind_green_SRJ.add(label="Sample temperature", unit="\u00b0C", other_relations={"qudt:Unit": "unit:DEG_C"})
+nano_ind_green_SRJ.add(label="Tip temperature", unit="\u00b0C", other_relations={"qudt:Unit": "unit:DEG_C"})
+
 nano_ind = Scheme("NanoIndentation")
 nano_ind.fields = nano_ind_blue
 nano_ind.write("Nano-intendation.ttl")
@@ -77,16 +90,21 @@ nano_ind_blue.add(label="Test location on sample")
 nano_ind_blue.add(label="Type of test")
 nano_ind_blue.add(label="Control method")
 nano_ind_blue.add(label="Tip ID")
-nano_ind_blue.add(label="Diamond area function")
-nano_ind_blue.add(label="Date of Calibration", field_type="date")
-nano_ind_blue.add(label="Frame stiffness", unit='N/m', other_relations={"qudt:Unit": "unit:N-PER-M"})
+
+nano_ind_blue_creep = FieldList()
+nano_ind_blue_creep.add(label="Creep dwell period", unit='s')
+
+nano_ind_blue2 = FieldList()
+nano_ind_blue2.add(label="Diamond area function")
+nano_ind_blue2.add(label="Date of Calibration", field_type="date")
+nano_ind_blue2.add(label="Frame stiffness", unit='N/m', other_relations={"qudt:Unit": "unit:N-PER-M"})
 
 sample_origin_scheme = Scheme("NanoIndentation/SampleOrigin", extends=basic_scheme)
 sample_origin_scheme.fields = nano_ind_yellow
 
 nano_ind_scheme = Scheme("NanoIndentation", extends=sample_origin_scheme)
 nano_ind_scheme.order_fields_by_priority = True
-nano_ind_scheme.fields = nano_ind_blue + nano_ind_green + nano_ind_grey
+nano_ind_scheme.fields = nano_ind_blue + nano_ind_blue2 + nano_ind_green + nano_ind_grey
 
 nano_ind_scheme.write()
 
