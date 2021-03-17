@@ -12,7 +12,7 @@ applied_offset_V_dropdown = DropdownList(label="Applied offset voltage", options
 blue = [
 #    Field(label="Operator"),
 #    Field(label="Experiment ID"),
-    Field(label="Date of preparation", field_type='date'),
+    Field(label="Date of preparation", sh_path="dcterms:created", field_type='date'),
     Field(label='Sample storage'),
     Field(label="Pre-treatment"),
     Field(label='AFM mode'),
