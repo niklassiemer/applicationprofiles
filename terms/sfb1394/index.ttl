@@ -220,16 +220,8 @@ sfb1394:specimenId
     rdfs:label "Specimen ID"@en, "Specimen ID"@de ;
 .
 
-sfb1394:preparationRoutine 
-  rdfs:label "Preparation routine"@en, "Preparation routine"@de ;
-. 
-
-sfb1394:immersionExperimentId 
+sfb1394:immersionExperimentId
   rdfs:label "Immersion Experiment ID"@en, "Immersion Experiment ID"@de ;
-. 
-
-sfb1394:sampleStorage 
-  rdfs:label "Sample storage"@en, "Sample storage"@de ;
 . 
 
 sfb1394:pre-treatment
