@@ -29,18 +29,18 @@
     sh:path rdf:type ;
   ] ;
 
-  sh:property coscineSfb1394basic:id ;
+  sh:property coscineSfb1394basic:ID ;
   sh:property coscineSfb1394basic:operator ;
   sh:property coscineSfb1394basic:affiliation ;
   sh:property coscineSfb1394basic:dois ;
   sh:property coscineSfb1394basic:comments .
 
-coscineSfb1394basic:id 
-  sh:path sfb1394:id ;
+coscineSfb1394basic:ID 
+  sh:path sfb1394:ID ;
   sh:order 0 ;
  sh:minCount 1 ;
   sh:datatype xsd:string ;
-  sh:name "ID"@en, "ID"@de ;
+  sh:name "Experiment ID"@en, "Experiment ID"@de ;
 . 
 
 coscineSfb1394basic:operator 
@@ -53,14 +53,14 @@ coscineSfb1394basic:operator
 
 coscineSfb1394basic:affiliation 
   sh:path sfb1394:affiliation ;
-  sh:order 2 ;
+  sh:order 5 ;
   sh:datatype xsd:string ;
   sh:name "Affiliation"@en, "Affiliation"@de ;
 . 
 
 coscineSfb1394basic:dois 
   sh:path sfb1394:dois ;
-  sh:order 3 ;
+  sh:order 6 ;
  dash:singleLine false ;
   sh:datatype xsd:string ;
   sh:name "DOIs"@en, "DOIs"@de ;
@@ -68,7 +68,7 @@ coscineSfb1394basic:dois
 
 coscineSfb1394basic:comments 
   sh:path sfb1394:comments ;
-  sh:order 4 ;
+  sh:order 39 ;
  dash:singleLine false ;
   sh:datatype xsd:string ;
   sh:name "Comments"@en, "Comments"@de ;
@@ -91,39 +91,65 @@ coscineSfb1394basic:comments
   ] ;
 
   sh:property coscineSfb1394SampleOrigin:preparationRoutine ;
-  sh:property coscineSfb1394SampleOrigin:preparationDate ;
   sh:property coscineSfb1394SampleOrigin:sampleStorage ;
-  sh:property coscineSfb1394SampleOrigin:sampleOrientation .
+  sh:property coscineSfb1394SampleOrigin:preparationDate ;
+  sh:property coscineSfb1394SampleOrigin:etchingRoutine ;
+  sh:property coscineSfb1394SampleOrigin:sampleOrientation ;
+  sh:property coscineSfb1394SampleOrigin:experimentIdsOfOtherTestsPerformedOnTheSameSpecimen ;
+  sh:property coscineSfb1394SampleOrigin:anyDataSetToBeLinkedWithThisExperiment .
 
 coscineSfb1394SampleOrigin:preparationRoutine 
   sh:path sfb1394:preparationRoutine ;
-  sh:order 5 ;
+  sh:order 7 ;
  dash:singleLine false ;
   sh:datatype xsd:string ;
   sh:name "Preparation routine"@en, "Preparation routine"@de ;
 . 
 
+coscineSfb1394SampleOrigin:sampleStorage 
+  sh:path sfb1394:sampleStorage ;
+  sh:order 8 ;
+  sh:datatype xsd:string ;
+  sh:name "Sample storage"@en, "Sample storage"@de ;
+. 
+
 coscineSfb1394SampleOrigin:preparationDate 
   sh:path sfb1394:preparationDate ;
-  sh:order 6 ;
+  sh:order 9 ;
  dash:singleLine false ;
   sh:datatype xsd:date ;
   sh:name "Preparation Date"@en, "Preparation Date"@de ;
 . 
 
-coscineSfb1394SampleOrigin:sampleStorage 
-  sh:path sfb1394:sampleStorage ;
-  sh:order 7 ;
+coscineSfb1394SampleOrigin:etchingRoutine 
+  sh:path sfb1394:etchingRoutine ;
+  sh:order 10 ;
   sh:datatype xsd:string ;
-  sh:name "Sample storage"@en, "Sample storage"@de ;
+  sh:name "Etching routine"@en, "Etching routine"@de ;
 . 
 
 coscineSfb1394SampleOrigin:sampleOrientation 
   sh:path sfb1394:sampleOrientation ;
-  sh:order 8 ;
+  sh:order 11 ;
  dash:singleLine false ;
   sh:datatype xsd:string ;
   sh:name "Sample Orientation"@en, "Sample Orientation"@de ;
+. 
+
+coscineSfb1394SampleOrigin:experimentIdsOfOtherTestsPerformedOnTheSameSpecimen 
+  sh:path sfb1394:experimentIdsOfOtherTestsPerformedOnTheSameSpecimen ;
+  sh:order 12 ;
+ dash:singleLine false ;
+  sh:datatype xsd:string ;
+  sh:name "Experiment IDs of other tests performed on the same specimen"@en, "Experiment IDs of other tests performed on the same specimen"@de ;
+. 
+
+coscineSfb1394SampleOrigin:anyDataSetToBeLinkedWithThisExperiment 
+  sh:path sfb1394:anyDataSetToBeLinkedWithThisExperiment ;
+  sh:order 13 ;
+ dash:singleLine false ;
+  sh:datatype xsd:string ;
+  sh:name "Any data set to be linked with this experiment"@en, "Any data set to be linked with this experiment"@de ;
 . 
 
  # NanoIndentation 
@@ -147,7 +173,9 @@ coscineSfb1394SampleOrigin:sampleOrientation
   sh:property coscineSfb1394NanoIndentation:sampleLocation ;
   sh:property coscineSfb1394NanoIndentation:instrument ;
   sh:property coscineSfb1394NanoIndentation:tip ;
+  sh:property coscineSfb1394NanoIndentation:testLocationOnSample ;
   sh:property coscineSfb1394NanoIndentation:typeOfTest ;
+  sh:property coscineSfb1394NanoIndentation:controlMethod ;
   sh:property coscineSfb1394NanoIndentation:tipId ;
   sh:property coscineSfb1394NanoIndentation:diamondAreaFunction ;
   sh:property coscineSfb1394NanoIndentation:dateOfCalibration ;
@@ -155,9 +183,12 @@ coscineSfb1394SampleOrigin:sampleOrientation
   sh:property coscineSfb1394NanoIndentation:targetLoad ;
   sh:property coscineSfb1394NanoIndentation:targetDepth ;
   sh:property coscineSfb1394NanoIndentation:targetStrainRate ;
+  sh:property coscineSfb1394NanoIndentation:targetLoadingRate ;
+  sh:property coscineSfb1394NanoIndentation:targetDisplacementRate ;
   sh:property coscineSfb1394NanoIndentation:continuousStiffnessMeasurement ;
   sh:property coscineSfb1394NanoIndentation:startOfAveragingDepth ;
   sh:property coscineSfb1394NanoIndentation:endOfAveragingDepth ;
+  sh:property coscineSfb1394NanoIndentation:holdTimeAtMaximumLoad ;
   sh:property coscineSfb1394NanoIndentation:driftCorrectionEnabled ;
   sh:property coscineSfb1394NanoIndentation:sampleTemperature ;
   sh:property coscineSfb1394NanoIndentation:tipTemperature ;
@@ -168,70 +199,84 @@ coscineSfb1394SampleOrigin:sampleOrientation
 
 coscineSfb1394NanoIndentation:specimenId 
   sh:path csmd:investigation_sample ;
-  sh:order 9 ;
+  sh:order 2 ;
   sh:datatype xsd:string ;
   sh:name "Specimen ID"@en, "Specimen ID"@de ;
 . 
 
 coscineSfb1394NanoIndentation:parentSample 
   sh:path sfb1394:parentSample ;
-  sh:order 10 ;
+  sh:order 3 ;
   sh:datatype xsd:string ;
   sh:name "Parent sample specimen ID"@en, "Parent sample specimen ID"@de ;
 . 
 
 coscineSfb1394NanoIndentation:sampleLocation 
   sh:path sfb1394:sampleLocation ;
-  sh:order 11 ;
+  sh:order 4 ;
   sh:datatype xsd:string ;
   sh:name "Sample Location"@en, "Sample Location"@de ;
 . 
 
 coscineSfb1394NanoIndentation:instrument 
   sh:path csmd:investigation_instrument ;
-  sh:order 12 ;
+  sh:order 14 ;
   sh:datatype xsd:string ;
   sh:name "Instrument used"@en, "Instrument used"@de ;
 . 
 
 coscineSfb1394NanoIndentation:tip 
   sh:path sfb1394:tip ;
-  sh:order 13 ;
+  sh:order 15 ;
   sh:datatype xsd:string ;
   sh:name "Tip used"@en, "Tip used"@de ;
 . 
 
+coscineSfb1394NanoIndentation:testLocationOnSample 
+  sh:path sfb1394:testLocationOnSample ;
+  sh:order 16 ;
+  sh:datatype xsd:string ;
+  sh:name "Test location on sample"@en, "Test location on sample"@de ;
+. 
+
 coscineSfb1394NanoIndentation:typeOfTest 
   sh:path sfb1394:typeOfTest ;
-  sh:order 14 ;
+  sh:order 17 ;
   sh:datatype xsd:string ;
   sh:name "Type of test"@en, "Type of test"@de ;
 . 
 
+coscineSfb1394NanoIndentation:controlMethod 
+  sh:path sfb1394:controlMethod ;
+  sh:order 18 ;
+  sh:datatype xsd:string ;
+  sh:name "Control method"@en, "Control method"@de ;
+. 
+
 coscineSfb1394NanoIndentation:tipId 
   sh:path sfb1394:tipId ;
-  sh:order 15 ;
+  sh:order 19 ;
   sh:datatype xsd:string ;
   sh:name "Tip ID"@en, "Tip ID"@de ;
 . 
 
 coscineSfb1394NanoIndentation:diamondAreaFunction 
   sh:path sfb1394:diamondAreaFunction ;
-  sh:order 16 ;
+  sh:order 20 ;
   sh:datatype xsd:string ;
   sh:name "Diamond area function"@en, "Diamond area function"@de ;
 . 
 
 coscineSfb1394NanoIndentation:dateOfCalibration 
   sh:path sfb1394:dateOfCalibration ;
-  sh:order 17 ;
+  sh:order 21 ;
   sh:datatype xsd:date ;
   sh:name "Date of Calibration"@en, "Date of Calibration"@de ;
 . 
 
 coscineSfb1394NanoIndentation:frameStiffness 
   sh:path sfb1394:frameStiffness ;
-  sh:order 18 ;
+  sh:order 22 ;
   sh:datatype xsd:string ;
   sh:name "Frame stiffness [N/m]"@en, "Frame stiffness [N/m]"@de ;
   qudt:Unit unit:N-PER-M ;
@@ -239,7 +284,7 @@ coscineSfb1394NanoIndentation:frameStiffness
 
 coscineSfb1394NanoIndentation:targetLoad 
   sh:path sfb1394:targetLoad ;
-  sh:order 19 ;
+  sh:order 23 ;
   sh:datatype xsd:string ;
   sh:name "Target load [mN]"@en, "Target load [mN]"@de ;
   qudt:Unit unit:MilliN ;
@@ -247,7 +292,7 @@ coscineSfb1394NanoIndentation:targetLoad
 
 coscineSfb1394NanoIndentation:targetDepth 
   sh:path sfb1394:targetDepth ;
-  sh:order 20 ;
+  sh:order 24 ;
   sh:datatype xsd:string ;
   sh:name "Target depth [nm]"@en, "Target depth [nm]"@de ;
   qudt:Unit unit:NanoM ;
@@ -255,22 +300,38 @@ coscineSfb1394NanoIndentation:targetDepth
 
 coscineSfb1394NanoIndentation:targetStrainRate 
   sh:path sfb1394:targetStrainRate ;
-  sh:order 21 ;
+  sh:order 25 ;
   sh:datatype xsd:string ;
   sh:name "Target strain rate [/s]"@en, "Target strain rate [/s]"@de ;
   qudt:Unit unit:PER-SEC ;
 . 
 
+coscineSfb1394NanoIndentation:targetLoadingRate 
+  sh:path sfb1394:targetLoadingRate ;
+  sh:order 26 ;
+  sh:datatype xsd:string ;
+  sh:name "Target loading rate [mN/s]"@en, "Target loading rate [mN/s]"@de ;
+  qudt:Unit unit:MilliN-PER-SEC ;
+. 
+
+coscineSfb1394NanoIndentation:targetDisplacementRate 
+  sh:path sfb1394:targetDisplacementRate ;
+  sh:order 27 ;
+  sh:datatype xsd:string ;
+  sh:name "Target displacement rate [nm/s]"@en, "Target displacement rate [nm/s]"@de ;
+  qudt:Unit unit:NanoM-PER-SEC ;
+. 
+
 coscineSfb1394NanoIndentation:continuousStiffnessMeasurement 
   sh:path sfb1394:continuousStiffnessMeasurement ;
-  sh:order 22 ;
+  sh:order 28 ;
   sh:datatype xsd:boolean ;
   sh:name "Continuous stiffness measurement"@en, "Continuous stiffness measurement"@de ;
 . 
 
 coscineSfb1394NanoIndentation:startOfAveragingDepth 
   sh:path sfb1394:startOfAveragingDepth ;
-  sh:order 23 ;
+  sh:order 29 ;
   sh:datatype xsd:string ;
   sh:name "Start of averaging depth [nm]"@en, "Start of averaging depth [nm]"@de ;
   qudt:Unit unit:NanoM ;
@@ -278,22 +339,30 @@ coscineSfb1394NanoIndentation:startOfAveragingDepth
 
 coscineSfb1394NanoIndentation:endOfAveragingDepth 
   sh:path sfb1394:endOfAveragingDepth ;
-  sh:order 24 ;
+  sh:order 30 ;
   sh:datatype xsd:string ;
   sh:name "End of averaging depth [nm]"@en, "End of averaging depth [nm]"@de ;
   qudt:Unit unit:NanoM ;
 . 
 
+coscineSfb1394NanoIndentation:holdTimeAtMaximumLoad 
+  sh:path sfb1394:holdTimeAtMaximumLoad ;
+  sh:order 31 ;
+  sh:datatype xsd:string ;
+  sh:name "Hold time at maximum load [s]"@en, "Hold time at maximum load [s]"@de ;
+  qudt:Unit unit:SEC ;
+. 
+
 coscineSfb1394NanoIndentation:driftCorrectionEnabled 
   sh:path sfb1394:driftCorrectionEnabled ;
-  sh:order 25 ;
+  sh:order 32 ;
   sh:datatype xsd:boolean ;
   sh:name "Drift correction enabled"@en, "Drift correction enabled"@de ;
 . 
 
 coscineSfb1394NanoIndentation:sampleTemperature 
   sh:path sfb1394:sampleTemperature ;
-  sh:order 26 ;
+  sh:order 33 ;
   sh:datatype xsd:string ;
   sh:name "Sample temperature [°C]"@en, "Sample temperature [°C]"@de ;
   qudt:Unit unit:DEG_C ;
@@ -301,7 +370,7 @@ coscineSfb1394NanoIndentation:sampleTemperature
 
 coscineSfb1394NanoIndentation:tipTemperature 
   sh:path sfb1394:tipTemperature ;
-  sh:order 27 ;
+  sh:order 34 ;
   sh:datatype xsd:string ;
   sh:name "Tip temperature [°C]"@en, "Tip temperature [°C]"@de ;
   qudt:Unit unit:DEG_C ;
@@ -309,7 +378,7 @@ coscineSfb1394NanoIndentation:tipTemperature
 
 coscineSfb1394NanoIndentation:relativeHumidity 
   sh:path sfb1394:relativeHumidity ;
-  sh:order 28 ;
+  sh:order 35 ;
   sh:datatype xsd:string ;
   sh:name "Relative Humidity [%]"@en, "Relative Humidity [%]"@de ;
   qudt:Unit unit:PERCENT_RH ;
@@ -317,21 +386,21 @@ coscineSfb1394NanoIndentation:relativeHumidity
 
 coscineSfb1394NanoIndentation:TestingEnv 
   sh:path sfb1394:TestingEnv ;
-  sh:order 29 ;
+  sh:order 36 ;
   sh:datatype xsd:string ;
   sh:name "Environmental protection during specimen testing"@en, "Environmental protection during specimen testing"@de ;
 . 
 
 coscineSfb1394NanoIndentation:environmentalGas 
   sh:path sfb1394:environmentalGas ;
-  sh:order 30 ;
+  sh:order 37 ;
   sh:datatype xsd:string ;
   sh:name "Environmental gas"@en, "Environmental gas"@de ;
 . 
 
 coscineSfb1394NanoIndentation:testDate 
   sh:path sfb1394:testDate ;
-  sh:order 31 ;
+  sh:order 38 ;
   sh:datatype xsd:date ;
   sh:name "Test date"@en, "Test date"@de ;
 . 
