@@ -29,14 +29,14 @@
     sh:path rdf:type ;
   ] ;
 
-  sh:property coscineSfb1394basic:id ;
+  sh:property coscineSfb1394basic:ID ;
   sh:property coscineSfb1394basic:operator ;
   sh:property coscineSfb1394basic:affiliation ;
   sh:property coscineSfb1394basic:dois ;
   sh:property coscineSfb1394basic:comments .
 
-coscineSfb1394basic:id 
-  sh:path sfb1394:id ;
+coscineSfb1394basic:ID 
+  sh:path sfb1394:ID ;
   sh:order 0 ;
  sh:minCount 1 ;
   sh:datatype xsd:string ;
@@ -185,7 +185,7 @@ coscineSfb1394SampleOrigin:immersionExperimentId
   sh:property coscineSfb1394SKPFM:experimentCondition .
 
 coscineSfb1394SKPFM:dateOfPreparation 
-  sh:path sfb1394:dateOfPreparation ;
+  sh:path dcterms:created ;
   sh:order 9 ;
   sh:datatype xsd:date ;
   sh:name "Date of preparation"@en, "Date of preparation"@de ;
