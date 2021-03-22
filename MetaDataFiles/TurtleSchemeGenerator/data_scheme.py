@@ -108,10 +108,11 @@ class MetaDataField:
             field_type=None,
             required=False,
             unit=None,
-            qudt=None,
             long=False,
-            sh_path=None,
+            example_input="",
             order_priority=None,
+            qudt=None,
+            sh_path=None,
             other_relations=None
     ):
         """
@@ -146,6 +147,7 @@ class MetaDataField:
         else:
             self.other_relations = other_relations
 
+        self.example_input = example_input
         self.order_priority = order_priority
         self._order_number = None
 
@@ -160,13 +162,7 @@ class MetaDataField:
                 pass
         self._single_type = True
 
-        if field_type is None or field_type == "string":
-            self.field_type = 'xsd:string'
-        elif field_type == "date":
-            self.field_type = 'xsd:date'
-        elif field_type == 'bool' or field_type == 'boolean':
-            self.field_type = 'xsd:boolean'
-        elif field_type == "class" or field_type == "list":
+        if field_type == 'class' or field_type == 'list':
             self._single_type = False
             self.field_type = field_type
         elif isinstance(field_type, DropdownList):
@@ -183,6 +179,31 @@ class MetaDataField:
             self.sh_path = "sfb1394:" + self.name
         else:
             self.sh_path = sh_path
+
+    @property
+    def ttl_field_type(self):
+        if self.field_type is None or self.field_type == "string":
+            return 'xsd:string'
+        elif self.field_type == "date":
+            return 'xsd:date'
+        elif self.field_type == 'bool' or self.field_type == 'boolean':
+            return 'xsd:boolean'
+        else:
+            return ''
+
+    @property
+    def txt_field_type(self):
+        if self.field_type is None or self.field_type == "string":
+            return 'string'
+        elif self.field_type == "date":
+            return 'date'
+        elif self.field_type == 'bool' or self.field_type == 'boolean':
+            return 'boolean'
+        elif isinstance(self.field_type, DropdownList) or self.field_type == 'class' or self.field_type == 'list':
+            return 'list'
+        else:
+            return self.field_type
+
 
     @property
     def _class_name(self):
@@ -223,16 +244,11 @@ class MetaDataField:
             result += ' dash:singleLine false ;\n'
 
         if self._single_type:
-            result += '  sh:datatype ' + self.field_type + ' ;\n'
+            result += '  sh:datatype ' + self.ttl_field_type + ' ;\n'
         else:
             result += '  sh:maxCount 1 ;\n'
 
-        if self.unit is None:
-            label = self.label
-        else:
-            label = self.label + ' [' + self.unit + ']'
-
-        result += '  sh:name "' + label + '"@en, "' + label + '"@de ;\n'
+        result += '  sh:name "' + self.label_w_unit + '"@en, "' + self.label_w_unit + '"@de ;\n'
 
         for key, value in self.other_relations.items():
             result += '  ' + key + ' ' + value + ' ;\n'
@@ -241,6 +257,24 @@ class MetaDataField:
             result += '. \n'
         else:
             result += '  sh:class <' + self._class_name + '> . \n'
+        return result
+
+    @property
+    def label_w_unit(self):
+        if self.unit is None:
+            label = self.label
+        else:
+            label = self.label + ' [' + self.unit + ']'
+        return label
+
+    @property
+    def txt(self):
+        indent = '   '
+        result = self.label_w_unit
+        if self.required:
+            result += '*'
+        result += '  : \n'
+        result += indent + self.txt_field_type + indent + '"' + self.example_input + '"  \n'
         return result
 
     def copy(self):

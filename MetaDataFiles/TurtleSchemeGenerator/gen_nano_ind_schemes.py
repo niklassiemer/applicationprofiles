@@ -108,6 +108,6 @@ nano_ind_scheme.fields = nano_ind_blue + nano_ind_blue2 + nano_ind_green + nano_
 
 nano_ind_scheme.write()
 
-with open("nano_indentation_additional_terms.ttl", 'w') as f:
+with open("nano_indentation_additional_terms.ttl", 'w', encoding='utf8') as f:
     for field in nano_ind_scheme.full_field_list:
         f.write(field.ttl_term_str)
