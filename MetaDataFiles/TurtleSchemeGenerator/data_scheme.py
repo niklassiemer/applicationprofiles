@@ -1,20 +1,33 @@
 # -*- coding: utf-8 -*-
 """Meta Data Schemes """
 
-unit_relations = {
+deg = "\u00b0"
+angstrom = "\u212B"
+micro = "\u03bc"
+qudt_unit_relations = {
     "mm": "MilliM",
     "nm": "NanoM",
-    "\u00b0C": "Deg_C",
+    deg+"C": "Deg_C",
     "V": "V",
-    "Hz": "Hz",
-    "s": "SEC"
+    "Hz": "HZ",
+    "s": "SEC",
+    "N/m": "N-PER-M",
+    "mN": "MilliN",
+    "/s": "PER-SEC",
+    "mN/s": "MilliN-PER-SEC",
+    "nm/s": "NanoM-PER-SEC",
+    "nm x nm": "NanoM2",
+    "fs": "FemtoSEC",
+    "eV": "EV",
+    "eV/"+angstrom: "EV-PER-ANGSTROM",
+    'ps': "PicoSEC"
 }
 
 
 def _gen_unit_relation(unit, qudt=False):
     if qudt:
         return ["qudt:Unit", "unit:"+unit]
-    return ["qudt:Unit", "unit:"+unit_relations[unit]]
+    return ["qudt:Unit", "unit:" + qudt_unit_relations[unit]]
 
 
 class DropdownList:
@@ -114,7 +127,7 @@ class MetaDataField:
             order_priority=None,
             qudt=None,
             sh_path=None,
-            other_relations=None
+            other_ttl_relations=None
     ):
         """
         Single Field of a meta data scheme
@@ -131,7 +144,7 @@ class MetaDataField:
                 fields with smaller positive numbers are displayed first.
                 fields without priority (0 or None) are displayed second.
                 fields with negative priority are displayed last; -1 is lowest possible priority
-            other_relations{dict/None): other ontology relations; e.g. {"qudt:Unit": "unit:M-PER-SEC"}
+            other_ttl_relations{dict/None): other ontology relations; e.g. {"qudt:Unit": "unit:M-PER-SEC"}
         """
         self.label = label
         if name is None:
@@ -143,10 +156,10 @@ class MetaDataField:
                 raise ValueError('Label contains special character and name cannot be derived: specify name= ')
         else:
             self.name = name
-        if other_relations is None:
-            self.other_relations = {}
+        if other_ttl_relations is None:
+            self.ttl_relations = {}
         else:
-            self.other_relations = other_relations
+            self.ttl_relations = other_ttl_relations
 
         self.comment = comment
         self.example_input = example_input
@@ -155,13 +168,13 @@ class MetaDataField:
 
         self.long = long
         if qudt is not None:
-            self.other_relations[_gen_unit_relation(qudt, qudt=True)[0]] = _gen_unit_relation(qudt, qudt=True)[1]
+            self.ttl_relations[_gen_unit_relation(qudt, qudt=True)[0]] = _gen_unit_relation(qudt, qudt=True)[1]
         self.unit = unit
-        if unit is not None and "qudt:Unit" not in self.other_relations:
+        if unit is not None and "qudt:Unit" not in self.ttl_relations:
             try:
-                self.other_relations[_gen_unit_relation(self.unit)[0]] = _gen_unit_relation(self.unit)[1]
+                self.ttl_relations[_gen_unit_relation(self.unit)[0]] = _gen_unit_relation(self.unit)[1]
             except KeyError:
-                pass
+                raise ValueError("Unit is not linked to qudt ontology.")
         self._single_type = True
 
         if field_type == 'class' or field_type == 'list':
@@ -177,10 +190,10 @@ class MetaDataField:
             self.field_type = field_type
 
         self.required = required
-        if sh_path is None:
-            self.sh_path = "sfb1394:" + self.name
+        if sh_path is None and "sh:path" not in self.ttl_relations.keys():
+            self.ttl_relations["sh:path"] = "sfb1394:" + self.name
         else:
-            self.sh_path = sh_path
+            self.ttl_relations["sh:path"] = sh_path
 
     @property
     def ttl_field_type(self):
@@ -220,7 +233,7 @@ class MetaDataField:
     @property
     def ttl_term_str(self):
         result = ''
-        if not self.sh_path == "sfb1394:" + self.name:
+        if not self.ttl_relations["sh:path"] == "sfb1394:" + self.name:
             return result
 
         if self.unit is None:
@@ -228,7 +241,7 @@ class MetaDataField:
         else:
             label = self.label + ' [' + self.unit + ']'
 
-        result += self.sh_path + ' \n'
+        result += self.ttl_relations["sh:path"] + ' \n'
         result += '  rdfs:label "' + label + '"@en, "' + label + '"@de ;\n'
         result += '. \n\n'
         return result
@@ -237,7 +250,7 @@ class MetaDataField:
         _order_number = order_number if order_number is not None else self._order_number
         result = ''
         result += 'coscineSfb1394' + schema_name + ':' + self.name + ' \n'
-        result += '  sh:path ' + self.sh_path + ' ;\n'
+        result += '  sh:path ' + self.ttl_relations["sh:path"] + ' ;\n'
         result += '  sh:order ' + str(_order_number) + ' ;\n'
 
         if self.required:
@@ -253,7 +266,7 @@ class MetaDataField:
 
         result += '  sh:name "' + self.label_w_unit + '"@en, "' + self.label_w_unit + '"@de ;\n'
 
-        for key, value in self.other_relations.items():
+        for key, value in self.ttl_relations.items():
             result += '  ' + key + ' ' + value + ' ;\n'
 
         if self._single_type:
@@ -289,11 +302,11 @@ class MetaDataField:
             unit=self.unit,
             long=self.long,
             comment=self.comment,
-            qudt=None,  # stored in self.other_relations
             example_input=self.example_input,
-            sh_path=self.sh_path,
+            qudt=None,  # stored in self.ttl_relations
+            sh_path=None,  # stored in self.ttl_relations
             order_priority=self.order_priority,
-            other_relations=self.other_relations
+            other_ttl_relations=self.ttl_relations
         )
 
     def __lt__(self, other):
