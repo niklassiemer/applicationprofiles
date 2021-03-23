@@ -110,6 +110,7 @@ class MetaDataField:
             unit=None,
             long=False,
             example_input="",
+            comment="",
             order_priority=None,
             qudt=None,
             sh_path=None,
@@ -147,6 +148,7 @@ class MetaDataField:
         else:
             self.other_relations = other_relations
 
+        self.comment = comment
         self.example_input = example_input
         self.order_priority = order_priority
         self._order_number = None
@@ -286,6 +288,9 @@ class MetaDataField:
             required=self.required,
             unit=self.unit,
             long=self.long,
+            comment=self.comment,
+            qudt=None,  # stored in self.other_relations
+            example_input=self.example_input,
             sh_path=self.sh_path,
             order_priority=self.order_priority,
             other_relations=self.other_relations
@@ -375,11 +380,12 @@ class FieldList:
 class SFBFields(FieldList):
     def __init__(self, id_name="ID"):
         super().__init__()
-        self.add(label=id_name, name='ID', required=True, order_priority=1)  # Database ID for the object, be it sample, experiment, sim...
+        self.add(label=id_name, name='ID', required=True, order_priority=1,
+                 comment="ID for the, be it sample, experiment, sim...")
         self.add(label="Operator", required=True, order_priority=1)
         self.add(label="Affiliation")
-        self.add(label="DOIs", long=True)  # To associate publications produced using this object
-        self.add(label="Comments", long=True, order_priority=-1)
+        self.add(label="DOIs", long=True, comment="To associate publications produced using this object.")
+        self.add(label="Comments", long=True, order_priority=-1)  # Last entry in the Scheme
 
 
 class MetaDataSchemes:
