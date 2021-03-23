@@ -289,9 +289,14 @@ class MetaDataField:
         result = self.label_w_unit
         if self.required:
             result += '*'
-        result += '  : \n'
-        result += indent + self.txt_field_type + indent + '"' + self.example_input + '"  \n'
-        return result
+        result = result.ljust(40)
+        result += ': '
+        result += indent + '(' + self.txt_field_type + ')' + indent
+        if len(self.example_input) > 0:
+            result += '"' + self.example_input + '" '
+        if len(self.comment) > 0:
+            result += indent + self.comment + ' '
+        return result + '\n'
 
     def copy(self):
         return MetaDataField(
@@ -389,12 +394,22 @@ class FieldList:
         new_list._fields = [field.copy() for field in self._fields]
         return new_list
 
+    def to_txt(self):
+        result = ''
+        for field in self._fields:
+            result += field.txt
+        return result
+
+    def write(self, filename, encoding='utf8'):
+        with open(filename, 'w', encoding=encoding) as f:
+            f.write(self.to_txt())
+
 
 class SFBFields(FieldList):
     def __init__(self, id_name="ID"):
         super().__init__()
         self.add(label=id_name, name='ID', required=True, order_priority=1,
-                 comment="ID for the, be it sample, experiment, sim...")
+                 comment="ID for the object, be it sample, experiment, sim...")
         self.add(label="Operator", required=True, order_priority=1)
         self.add(label="Affiliation")
         self.add(label="DOIs", long=True, comment="To associate publications produced using this object.")
