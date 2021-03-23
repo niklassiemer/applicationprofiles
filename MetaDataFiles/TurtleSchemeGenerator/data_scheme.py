@@ -199,11 +199,12 @@ class MetaDataField:
             return 'date'
         elif self.field_type == 'bool' or self.field_type == 'boolean':
             return 'boolean'
-        elif isinstance(self.field_type, DropdownList) or self.field_type == 'class' or self.field_type == 'list':
-            return 'list'
+        elif isinstance(self.field_type, DropdownList):
+            return str(self.field_type.options)
+        elif self.field_type == 'class' or self.field_type == 'list':
+            return 'undefined list'
         else:
             return self.field_type
-
 
     @property
     def _class_name(self):
