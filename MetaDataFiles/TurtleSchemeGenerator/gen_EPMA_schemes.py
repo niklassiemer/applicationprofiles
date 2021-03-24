@@ -1,48 +1,56 @@
 from data_scheme import MetaDataSchemes as Scheme
 from data_scheme import MetaDataField as Field
+from data_scheme import SFBFields, FieldList
 
 micro = "\u03bc"
 deg = "\u00b0"
 
-EPMA_blue = [
-    Field(label="Experiment ID", required=True),
-    Field(label="Operator", required=True),
-    Field(label="Instrument used", name="instrument"),
-    Field(label="Specimen ID"),
-    Field(label="Parent sample specimen ID", name="parentSample"),
-    Field(label="Acquisition mode", field_type="class"),
-    Field(label="Comments", long=True),
-    Field(label="Elements included/Peak ID", name='elementsIncluded'),
-]
 
-EPMA_grey = [
-    Field(label="Count rate", unit='cps'),
-    Field(label="Spot size"),
-    Field(label="Measurement time/date", name="measurementTime"),
-    Field(label="Background method")
-]
+class EPMABasic(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Instrument used", name="instrument")
+        self.add(label="Specimen ID")
+        self.add(label="Parent sample specimen ID", name="parentSample")
+        self.add(label="Acquisition mode", field_type="class")
+        self.add(label="Elements included/Peak ID", name='elementsIncluded')
 
-EPMA_yellow = [
-]
 
-EPMA_green = [
-    Field(label="Accelerating voltage", unit="kV"),
-    Field(label="Standard used"),
-    Field(label="Magnification"),
-    Field(label="Dwell time", unit='s'),
-    Field(label="Working distance", unit='mm'),
-    Field(label="Tilt", unit=deg),
-]
+class Grey(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Count rate", unit='cps', qudt='NUM-PER-SEC')
+        self.add(label="Spot size")
+        self.add(label="Measurement time/date", name="measurementTime")
+        self.add(label="Background method")
 
-EPMA = Scheme("EPMA")
-EPMA.fields = EPMA_blue
-EPMA.write()
 
-EPMA.fields = EPMA_green
-EPMA.write('EPMA_green.ttl')
+class Green(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Accelerating voltage", unit="kV")
+        self.add(label="Standard used")
+        self.add(label="Magnification")
+        self.add(label="Dwell time", unit='s')
+        self.add(label="Working distance", unit='mm')
+        self.add(label="Tilt", unit=deg)
 
-EPMA.fields = EPMA_grey
-EPMA.write("EPMA_grey.ttl")
 
-EPMA.fields = EPMA_blue + EPMA_green + EPMA_grey + EPMA_yellow
-EPMA.write('EPMA_full.ttl')
+class EPMA(Grey, Green, EPMABasic):
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
+
+
+EPMA_scheme = Scheme("EPMA")
+EPMA_scheme.fields = EPMABasic()
+EPMA_scheme.write()
+
+EPMA_scheme.fields = Green()
+EPMA_scheme.write('EPMA_green.ttl')
+
+EPMA_scheme.fields = Grey()
+EPMA_scheme.write("EPMA_grey.ttl")
+
+EPMA_scheme.fields = EPMA()
+EPMA_scheme.write('EPMA_full.ttl')
