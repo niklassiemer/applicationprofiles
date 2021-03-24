@@ -4,6 +4,8 @@
 deg = "\u00b0"
 angstrom = "\u212B"
 micro = "\u03bc"
+squared = '\u00B2'
+cubic = '\u00B3'
 qudt_unit_relations = {
     "mm": "MilliM",
     "nm": "NanoM",
@@ -20,7 +22,11 @@ qudt_unit_relations = {
     "fs": "FemtoSEC",
     "eV": "EV",
     "eV/"+angstrom: "EV-PER-ANGSTROM",
-    'ps': "PicoSEC"
+    'ps': "PicoSEC",
+    'GPa': "GigaPA",
+    'K': 'K',
+    'm/s': 'M-PER-SEC',
+    'eV/'+angstrom+squared: "EV-PER-ANGSTROM2"
 }
 
 
