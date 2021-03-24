@@ -215,7 +215,7 @@ class MetaDataField:
         elif self.field_type == 'bool' or self.field_type == 'boolean':
             return 'boolean'
         elif isinstance(self.field_type, DropdownList):
-            return str(self.field_type.options)
+            return 'choice: ' + str(self.field_type.options)
         elif self.field_type == 'class' or self.field_type == 'list':
             return 'undefined list'
         else:
@@ -291,11 +291,11 @@ class MetaDataField:
             result += '*'
         result = result.ljust(40)
         result += ': '
-        result += indent + '(' + self.txt_field_type + ')' + indent
         if len(self.example_input) > 0:
-            result += '"' + self.example_input + '" '
+            result += indent + '"' + self.example_input + '" '
+        result += indent + '(' + self.txt_field_type + ')' + indent
         if len(self.comment) > 0:
-            result += indent + self.comment + ' '
+            result += '#' + indent + self.comment + ' '
         return result + '\n'
 
     def copy(self):
