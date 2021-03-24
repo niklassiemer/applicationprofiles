@@ -26,7 +26,12 @@ qudt_unit_relations = {
     'GPa': "GigaPA",
     'K': 'K',
     'm/s': 'M-PER-SEC',
-    'eV/'+angstrom+squared: "EV-PER-ANGSTROM2"
+    'eV/'+angstrom+squared: "EV-PER-ANGSTROM2",
+    "GB": "GigaBYTE",
+    'h': 'HR',
+    'Pa': 'PA',
+    '1/m'+squared: 'PER-M2',
+    'm': 'M'
 }
 
 
@@ -180,7 +185,7 @@ class MetaDataField:
             try:
                 self.ttl_relations[_gen_unit_relation(self.unit)[0]] = _gen_unit_relation(self.unit)[1]
             except KeyError:
-                raise ValueError("Unit is not linked to qudt ontology.")
+                raise ValueError(f"Unit '{unit}' is not linked to qudt ontology.")
         self._single_type = True
 
         if field_type == 'class' or field_type == 'list':
