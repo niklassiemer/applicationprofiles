@@ -1,53 +1,68 @@
 from data_scheme import MetaDataSchemes as Scheme
 from data_scheme import MetaDataField as Field
+from data_scheme import SFBFields, FieldList
 
 micro = "\u03bc"
 deg = "\u00b0"
 
-blue = [
-    Field(label="Operator"),
-    Field(label="Experiment ID"),
-    Field(label="Date of preparation", field_type='date'),
-    Field(label='Sample storage'),
-    Field(label="Pre-treatment"),
-    Field(label="Mode"),
-    Field(label="Alternating Current", unit='mA'),
-    Field(label="Alternating Voltage", unit='mV'),
-    Field(label="Reference electrode potential", unit='mV(SHE)'),
-    Field(label="Counter electrode"),
-    Field(label="Comment", long=True)
-]
 
-yellow = [
-    Field(label="Parent sample specimen ID"),
-    Field(label="Specimen ID"),
-    Field(label="Preparation routine"),
-    Field(label="Immersion Experiment ID")
-]
+class ElChemImpedSpecBasic(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Date of preparation", field_type='date')
+        self.add(label='Sample storage')
+        self.add(label="Pre-treatment")
+        self.add(label="Mode")
+        self.add(label="Alternating Current", unit='mA')
+        self.add(label="Alternating Voltage", unit='mV')
+        self.add(label="Reference electrode potential", unit='mV(SHE)', qudt="MilliV")
+        self.add(label="Counter electrode")
 
-green = [
-    Field(label="Potentiostat"),
-    Field(label="Time OCP", unit='s'),
-    Field(label="Frequency Start", unit='Hz'),
-    Field(label="Frequency End", unit='Hz'),
-]
 
-grey = [Field(label="Time of measurement", unit='min')]
+class Yellow(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Parent sample specimen ID")
+        self.add(label="Specimen ID")
+        self.add(label="Preparation routine")
+        self.add(label="Immersion Experiment ID")
 
-ElChemImpedSpec = Scheme("ElChemImpedSpec")
-ElChemImpedSpec.fields = blue
-ElChemImpedSpec.write()
 
-ElChemImpedSpec.fields = yellow
-ElChemImpedSpec.write("ElChemImpedSpec_yellow.ttl")
+class Green(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Potentiostat")
+        self.add(label="Time OCP", unit='s')
+        self.add(label="Frequency Start", unit='Hz')
+        self.add(label="Frequency End", unit='Hz')
 
-ElChemImpedSpec.fields = green
-ElChemImpedSpec.write("ElChemImpedSpec_green.ttl")
 
-ElChemImpedSpec.fields = grey
-ElChemImpedSpec.write("ElChemImpedSpec_grey.ttl")
+class Grey(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Time of measurement", unit='min')
 
-ElChemImpedSpec.fields = blue + yellow + green + grey
-ElChemImpedSpec.write("ElChemImpedSpec_full.ttl")
+
+class ElChemImpedSpec(Grey, Green, Yellow, ElChemImpedSpecBasic):
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
+
+
+ElChemImpedSpec_scheme = Scheme("ElChemImpedSpec")
+ElChemImpedSpec_scheme.fields = ElChemImpedSpecBasic()
+ElChemImpedSpec_scheme.write()
+
+ElChemImpedSpec_scheme.fields = Yellow()
+ElChemImpedSpec_scheme.write("ElChemImpedSpec_yellow.ttl")
+
+ElChemImpedSpec_scheme.fields = Green()
+ElChemImpedSpec_scheme.write("ElChemImpedSpec_green.ttl")
+
+ElChemImpedSpec_scheme.fields = Grey()
+ElChemImpedSpec_scheme.write("ElChemImpedSpec_grey.ttl")
+
+ElChemImpedSpec_scheme.fields = ElChemImpedSpec()
+ElChemImpedSpec_scheme.write("ElChemImpedSpec_full.ttl")
 
 

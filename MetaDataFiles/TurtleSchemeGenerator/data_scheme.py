@@ -37,6 +37,9 @@ qudt_unit_relations = {
     micro+'m': 'MicroM',
     micro+'m(width) x '+micro+'m(height)': "MicroM2",
     deg: "DEG",
+    'mA': "MilliA",
+    'mV': "MilliV",
+    'min': "MIN"
 }
 
 
