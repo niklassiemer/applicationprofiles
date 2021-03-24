@@ -1,52 +1,56 @@
 from data_scheme import MetaDataSchemes as Scheme
-from data_scheme import MetaDataField as Field
+from data_scheme import SFBFields, FieldList
 
 micro = "\u03bc"
 deg = "\u00b0"
 
-EDX_blue = [
-    Field(label="Experiment ID", required=True),
-    Field(label="Operator", required=True),
-    Field(label="Instrument used", name="instrument"),
-    Field(label="Specimen ID"),
-    Field(label="Parent sample specimen ID", name="parentSample"),
-    Field(label="Measurement position"),
-    Field(label="Accelerating voltage", unit="kV"),
-    Field(label="Magnification"),
-    Field(label="Dwell time", unit='s'),
-    Field(label="Tilt", unit=deg),
-    Field(label="Acquisition mode", field_type="class"),
-    Field(label="Comments", long=True),
-]
 
-EDX_grey = [
-    Field(label="Count rate", unit='cps'),
-    Field(label="Spot size"),
-    Field(label="Working distance", unit='mm'),
-    Field(label="Elements included/Peak ID", name='elementsIncluded'),
-    Field(label="Background method")
-]
+class EDXBasic(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Instrument used", name="instrument")
+        self.add(label="Specimen ID")
+        self.add(label="Parent sample specimen ID", name="parentSample")
+        self.add(label="Measurement position")
+        self.add(label="Accelerating voltage", unit="kV")
+        self.add(label="Magnification")
+        self.add(label="Dwell time", unit='s')
+        self.add(label="Tilt", unit=deg)
+        self.add(label="Acquisition mode", field_type=["Point scan", "Line scan", "Mapping"])
 
-EDX_yellow = [
-]
 
-EDX_green = [
-    Field(label="Measurement time/date", name="measurementTime"),
-    Field(label="Standard used"),
-]
+class EDXGrey(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Count rate", unit='cps', qudt='NUM-PER-SEC')
+        self.add(label="Spot size")
+        self.add(label="Working distance", unit='mm')
+        self.add(label="Elements included/Peak ID", name='elementsIncluded')
+        self.add(label="Background method")
 
-EDX = Scheme("EDX")
-EDX.fields = EDX_blue
-EDX.write("EDX.ttl")
 
-EDX.fields = EDX_green
-EDX.write('EDX_green.ttl')
+class EDXGreen(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Measurement time/date", name="measurementTime")
+        self.add(label="Standard used")
 
-EDX.fields = EDX_grey
-EDX.write("EDX_grey.ttl")
 
-EDX.fields = EDX_blue + EDX_grey
-EDX.write('EDX_w_gray.ttl')
+class EDX(EDXGrey, EDXGreen, EDXBasic):
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
 
-EDX.fields = EDX_blue + EDX_green + EDX_grey + EDX_yellow
-EDX.write('EDX_full.ttl')
+
+EDX_scheme = Scheme("EDX")
+EDX_scheme.fields = EDXBasic()
+EDX_scheme.write("EDX.ttl")
+
+EDX_scheme.fields = EDXGreen()
+EDX_scheme.write('EDX_green.ttl')
+
+EDX_scheme.fields = EDXGrey()
+EDX_scheme.write("EDX_grey.ttl")
+
+EDX_scheme.fields = EDX()
+EDX_scheme.write('EDX_full.ttl')
