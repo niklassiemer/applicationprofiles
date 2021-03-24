@@ -31,7 +31,12 @@ qudt_unit_relations = {
     'h': 'HR',
     'Pa': 'PA',
     '1/m'+squared: 'PER-M2',
-    'm': 'M'
+    'm': 'M',
+    'kV': 'KiloV',
+    'nA': 'NanoA',
+    micro+'m': 'MicroM',
+    micro+'m(width) x '+micro+'m(height)': "MicroM2",
+    deg: "DEG",
 }
 
 
