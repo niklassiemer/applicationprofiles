@@ -192,7 +192,7 @@ class MetaDataField:
         self.required = required
         if sh_path is None and "sh:path" not in self.ttl_relations.keys():
             self.ttl_relations["sh:path"] = "sfb1394:" + self.name
-        else:
+        elif sh_path is not None:
             self.ttl_relations["sh:path"] = sh_path
 
     @property
