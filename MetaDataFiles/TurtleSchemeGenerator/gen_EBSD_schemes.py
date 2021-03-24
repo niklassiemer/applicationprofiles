@@ -1,81 +1,93 @@
 from data_scheme import MetaDataSchemes as Scheme
 from data_scheme import MetaDataField as Field
+from data_scheme import SFBFields, FieldList
 
 micro = "\u03bc"
 deg = "\u00b0"
 
-EBSD_blue = [
-    Field(label="Experiment ID", required=True),
-    Field(label="Operator", required=True),
-    Field(label="Parent sample specimen ID", name="parentSample"),
-    Field(label="Sample location"),
-    Field(label="Grit 1"),
-    Field(label="Solvent grit 1"),
-    Field(label="Grit 2"),
-    Field(label="Solvent grit 2"),
-    Field(label="Grit material"),
-    Field(label="Polishing Suspension", unit=micro+'m'),
-    Field(label="Material Suspension"),
-    Field(label="Fine polishing Suspension"),
-    Field(label="Solvent Polishing"),
-    Field(label="Operator", name="etchingOperator"),
-    Field(label="Etchant"),
-    Field(label="Parameter"),
-    Field(label="Corrosion", field_type="bool"),
-    Field(label="Immersion Experiment ID"),
-    Field(label="Instrument used"),
-    Field(label='Detectors used'),
-    Field(label="Comments", long=True),
-    ]
 
-EBSD_yellow = [
-    Field(label="Specimen ID"),
-    Field(label="Preparation routine", long=True),
-    Field(label="Sample storage"),
-    Field(label="Date of preparation", field_type='date'),
-    Field(label="Etching routine"),
-]
+class EBSDBasic(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Specimen ID")
+        self.add(label="Parent sample specimen ID", name="parentSample")
+        self.add(label="Sample location")
+        self.add(label="Corrosion", field_type="bool")
+        self.add(label="Instrument used")
+        self.add(label='Detectors used')
+        self.add(label='Location on sample')
 
-EBSD_green = [
-    Field(label="Accelerating voltage", unit="kV"),
-    Field(label="Current", unit="nA"),
-    Field(label="Magnification"),
-    Field(label="Step size", unit=micro+"m"),
-    Field(label="Raster size", unit=micro+"m(width) x "+micro+"m(height)"),
-    Field(label="Acquisition mode", field_type="class"),
-    Field(label="No. of points"),
-    Field(label="Working distance"),
-    Field(label="Tilt angle", unit=deg),
-    Field(label="Software used for data analysis"),
-    ]
 
-EBSD_grey = [
-    Field(label="Temperature", unit=deg+'C'),
-    Field(label="Relative Humidity", unit='%'),
-    Field(label="Temperature"),
-    Field(label="Environmental protection during specimen testing", name="TestingEnv"),
-    Field(label="Environmental gas"),
-    Field(label="Test date", field_type="date"),
-]
+class EBSDYellow(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Preparation routine", long=True)
+        self.add(label="Sample storage")
+        self.add(label="Date of preparation", field_type='date')
+        self.add(label="Etching routine")
+        self.add(label="Immersion Experiment ID")
+        self.add(label="Experiment IDs of other tests performed on the same specimen", long=True)
+        self.add(label='Any data set to be linked with this experiment', long=True,
+                 comment="e.g. EBSD_scheme map etc.")
 
-EBSD = Scheme("EBSD")
-EBSD.fields = EBSD_blue
-EBSD.write("ebsd.ttl")
+#    Field(label="Grit 1"),
+#    Field(label="Solvent grit 1"),
+#    Field(label="Grit 2"),
+#    Field(label="Solvent grit 2"),
+#    Field(label="Grit material"),
+#    Field(label="Polishing Suspension", unit=micro + 'm'),
+#    Field(label="Material Suspension"),
+#    Field(label="Fine polishing Suspension"),
+#    Field(label="Solvent Polishing"),
+#    Field(label="Operator", name="etchingOperator"),
+#    Field(label="Etchant"),
+#    Field(label="Parameter"),
+#    Field(label="Comments", long=True),
 
-EBSD.fields = EBSD_grey
-EBSD.write("ebsd_grey.ttl")
 
-EBSD.fields = EBSD_yellow
-EBSD.write("ebsd_yellow.ttl")
+class EBSDGreen(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Accelerating voltage", unit="kV")
+        self.add(label="Current", unit="nA")
+        self.add(label="Magnification")
+        self.add(label="Step size", unit=micro+"m")
+        self.add(label="Raster size", unit=micro+"m(width) x "+micro+"m(height)")
+        self.add(label="Acquisition mode", field_type="class")
+        self.add(label="No. of points")
+        self.add(label="Working distance", unit='mm')
+        self.add(label="Tilt angle", unit=deg)
+        self.add(label="Software used for data analysis")
 
-EBSD.fields = EBSD_green
-EBSD.write("ebsd_green.ttl")
 
-EBSD.fields = EBSD_blue + EBSD_yellow
-EBSD.write('ebsd_w_yellow.ttl')
+class EBSDGrey(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Temperature", unit=deg+'C')
+        self.add(label="Relative Humidity", unit='%',
+                 other_ttl_relations={"qudt:Unit": "unit:PERCENT_RH"})
+        self.add(label="Environmental protection during specimen testing", name="TestingEnv")
+        self.add(label="Environmental gas")
+        self.add(label="Test date", field_type="date")
 
-EBSD.fields = EBSD_blue + EBSD_green
-EBSD.write('ebsd_w_green.ttl')
 
-EBSD.fields = EBSD_blue + EBSD_green + EBSD_yellow
-EBSD.write('ebsd_full.ttl')
+class EBSD(EBSDGrey, EBSDGreen, EBSDYellow, EBSDBasic):
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
+
+EBSD_scheme = Scheme("EBSD")
+EBSD_scheme.fields = EBSDBasic()
+EBSD_scheme.write("ebsd.ttl")
+
+EBSD_scheme.fields = EBSDGrey()
+EBSD_scheme.write("ebsd_grey.ttl")
+
+EBSD_scheme.fields = EBSDYellow()
+EBSD_scheme.write("ebsd_yellow.ttl")
+
+EBSD_scheme.fields = EBSDGreen()
+EBSD_scheme.write("ebsd_green.ttl")
+
+EBSD_scheme.fields = EBSD()
+EBSD_scheme.write('ebsd_full.ttl')
