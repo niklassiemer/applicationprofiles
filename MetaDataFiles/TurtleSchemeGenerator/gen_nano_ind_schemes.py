@@ -1,4 +1,5 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes, SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 
 
 class PreparationRoutine(SFBFields):
