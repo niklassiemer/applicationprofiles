@@ -1,5 +1,5 @@
-from data_scheme import MetaDataSchemes as Scheme
-from data_scheme import FieldList, SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList, SFBFields
 
 micro = "\u03bc"
 deg = "\u00b0"

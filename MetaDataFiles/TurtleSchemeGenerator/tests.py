@@ -1,6 +1,6 @@
 import unittest
-from data_scheme import FieldList, MetaDataSchemes
-from data_scheme import MetaDataField as Field
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList, MetaDataSchemes
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataField as Field
 
 
 class TestFieldList(unittest.TestCase):

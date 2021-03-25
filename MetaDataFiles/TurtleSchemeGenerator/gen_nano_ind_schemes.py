@@ -1,4 +1,4 @@
-from data_scheme import MetaDataSchemes, SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes, SFBFields
 
 
 class PreparationRoutine(SFBFields):

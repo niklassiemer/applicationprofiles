@@ -1,5 +1,4 @@
-from data_scheme import MetaDataSchemes as Scheme, \
-    MetaDataField as Field, \
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme, \
     DropdownList, \
     SFBFields
 

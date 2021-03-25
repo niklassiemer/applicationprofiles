@@ -1,4 +1,4 @@
-from data_scheme import MetaDataSchemes as Scheme, FieldList, SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme, SFBFields
 
 generic_SFB = SFBFields()
 
