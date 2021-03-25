@@ -1,82 +1,95 @@
 from data_scheme import MetaDataSchemes as Scheme
 from data_scheme import MetaDataField as Field
+from data_scheme import SFBFields, FieldList
 
 micro = "\u03bc"
 deg = "\u00b0"
 
-blue_parent = [
-    Field(label="Parent sample specimen ID", name="parentSample"),
-    Field(label="Designation"),
-    Field(label="Chemical composition"),
-    Field(label="Production batch designation"),
-]
 
-blue_sample = [
-    Field(label="Specimen ID"),
-    Field(label="Parent sample specimen ID", name="parentSample"),
-    Field(label="Sample Location"),
-    ]
+class SampleBasic(SFBFields):
+    def __init__(self):
+        super().__init__()
+        # This should be the ID!?
+        # self.add(label="Specimen ID")
+        self.add(label="Parent sample specimen ID", name="parentSample")
+        self.add(label="Sample Location")
 
-blue_sample_preparation = [
-    Field(label="Preparation routine"),
-    Field(label="Grit 1"),
-    Field(label="Solvent grit 1"),
-    Field(label="Grit 2"),
-    Field(label="Solvent grit 2"),
-    Field(label="Grit material"),
-    Field(label="Polishing Suspension", unit=micro + 'm'),
-    Field(label="Material Suspension"),
-    Field(label="Solvent"),
-]
 
-blue_immersion = [
-    Field(label='Immersion experiment ID'),
-    Field(label='Immersion experiment routine'),
-    Field(label="Electrolyte pH"),
-    Field(label="Electrolyte condition"),
-    Field(label="Flow rate", unit="ml/h"),
-    Field(label="Revolutions per minute", unit='rpm'),
-    Field(label="Volume", unit='ml')
-]
-grey_immersion = [Field(label="Temperature", unit=deg+'C')]
+class ParentSample(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Parent sample specimen ID", name="parentSample")
+        self.add(label="Designation")
+        # Why is this not at the Sample level?
+        self.add(label="Chemical composition")
+        self.add(label="Production batch designation")
 
-blue_etching = [
-    Field(label="Etching routine"),
-    Field(label="Operator"),
-    Field(label="Chemicals"),
-    Field(label="Duration", unit="s")
-]
+
+class SamplePreparation(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Preparation routine")
+        self.add(label="Grit 1")
+        self.add(label="Solvent grit 1")
+        self.add(label="Grit 2")
+        self.add(label="Solvent grit 2")
+        self.add(label="Grit material")
+        self.add(label="Polishing Suspension", unit=micro + 'm')
+        self.add(label="Material Suspension")
+        self.add(label="Solvent")
+
+
+class Immersion(SFBFields):
+    def __init__(self):
+        super().__init__()
+        # This should be the ID?!
+        # self.add(label='Immersion experiment ID')
+        self.add(label='Immersion experiment routine')
+        self.add(label="Electrolyte pH", qudt='PH')
+        self.add(label="Electrolyte condition")
+        self.add(label="Flow rate", unit="ml/h")
+        self.add(label="Revolutions per minute", unit='rpm', qudt='PER-MIN')
+        self.add(label="Volume", unit='ml')
+        # grey
+        self.add(label="Temperature", unit=deg+'C')
+
+
+class Etching(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Etching routine")
+        self.add(label="Operator")
+        self.add(label="Chemicals")
+        self.add(label="Duration", unit="s")
+
+
+class Sample(Etching, Immersion, SamplePreparation, ParentSample, SampleBasic):
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
+
 
 parent = Scheme('Parent_sample')
-parent.fields = blue_parent
+parent.fields = ParentSample()
 parent.write()
 
 sample_info = Scheme('Sample_info')
-sample_info.fields = blue_sample
+sample_info.fields = SampleBasic()
 sample_info.write()
 
 sample_prep = Scheme('Sample_preparation')
-sample_prep.fields = blue_sample_preparation
+sample_prep.fields = SamplePreparation()
 sample_prep.write()
 
 immersion = Scheme("Immersion")
-immersion.fields = blue_immersion
+immersion.fields = Immersion()
 immersion.write()
 
-immersion.fields = grey_immersion
-immersion.write("Immersion_grey.ttl")
-
 etching = Scheme("Etching")
-etching.fields = blue_etching
+etching.fields = Etching()
 etching.write()
 
 sample = Scheme("Sample")
-sample.fields = blue_parent + blue_sample + blue_sample_preparation + blue_etching + blue_immersion
+sample.fields = Sample()
 sample.write()
 
-# same as Immersion_grey
-# sample.fields = grey_immersion
-# sample.write("Sample_grey.ttl")
-
-sample.fields = blue_parent + blue_sample + blue_sample_preparation + blue_etching + blue_immersion + grey_immersion
-sample.write("Sample_full.ttl")

@@ -41,7 +41,9 @@ qudt_unit_relations = {
     'mV': "MilliV",
     'min': "MIN",
     'mV/s': "MilliV-PER-SEC",
-    'mm'+squared: "MilliM2"
+    'mm'+squared: "MilliM2",
+    'ml': 'MilliL',
+    'ml/h': "MilliL-PER-HR"
 }
 
 
