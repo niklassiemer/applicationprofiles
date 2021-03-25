@@ -297,7 +297,8 @@ class MetaDataField:
         result += '  sh:name "' + self.label_w_unit + '"@en, "' + self.label_w_unit + '"@de ;\n'
 
         for key, value in self.ttl_relations.items():
-            result += '  ' + key + ' ' + value + ' ;\n'
+            if not (key == 'qudt:Unit' and value == 'unit:None'):
+                result += '  ' + key + ' ' + value + ' ;\n'
 
         if self._single_type:
             result += '. \n'
