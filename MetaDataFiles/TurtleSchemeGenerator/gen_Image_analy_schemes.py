@@ -3,15 +3,11 @@ from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaData
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 
-micro = "\u03bc"
-deg = "\u00b0"
-
 
 class ImageAnalysisBasic(SFBFields):
     def __init__(self):
         super().__init__()
         self._fields += [
-            Field(label="Operator"),
             Field(label="Python function"),
             Field(label="Python module"),
             Field(label="Git repository"),
@@ -19,7 +15,6 @@ class ImageAnalysisBasic(SFBFields):
             Field(label="Python version"),
             Field(label="Python package versions"),
             Field(label="Parameters", long=True),
-            Field(label="Comment", long=True),
             # Parameter file
             Field(label="Input image(s)", name="inputImages"),
             Field(label="Minimization algorithm"),
