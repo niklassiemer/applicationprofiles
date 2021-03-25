@@ -1,70 +1,77 @@
 from data_scheme import MetaDataSchemes as Scheme
-from data_scheme import MetaDataField as Field
+from data_scheme import SFBFields, FieldList, micro, deg
 
-micro = "\u03bc"
-deg = "\u00b0"
 
-XRD_blue = [
-    Field(label="Experiment ID", required=True),
-    Field(label="Operator", required=True),
-    Field(label="Instrument used", name="instrument"),
-    Field(label="Specimen type", field_type='class'),
-    Field(label="Specimen ID"),
-    Field(label="Radiation source"),
-    Field(label="Detector"),
-    Field(label="Current", unit='mA'),
-    Field(label="Voltage", unit='kV'),
-    Field(label="Measurement position"),
-    Field(label="Scan Mode", field_type='class'),
-    Field(label="Incidence angle Omega", unit=deg),
-    Field(label="Comments", long=True),
-]
+class XRDBasic(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Instrument used", name="instrument")
+        self.add(label="Specimen type", field_type='class')
+        self.add(label="Specimen ID")
+        self.add(label="Radiation source")
+        self.add(label="Detector")
+        self.add(label="Current", unit='mA')
+        self.add(label="Voltage", unit='kV')
+        self.add(label="Measurement position")
+        self.add(label="Scan Mode", field_type='class')
+        self.add(label="Incidence angle Omega", unit=deg)
 
-XRD_grey = [
-    Field(label="Filter"),
-    Field(label="Mask size", unit='mm'),
-    Field(label="Scan axis", field_type='class'),
-    Field(label="Diffraction angle 2Theta", name='diffractionAngle', unit=deg),
-    Field(label="Rotation angle phi", unit=deg),
-    Field(label="Rotation angle chi", unit=deg),
-    Field(label="Number of frames"),
-    Field(label="Measurement time", unit='s'),
-    Field(label="Start 2Theta", unit=deg),
-#   Field(label="End 2Theta", unit=deg),
-    Field(label="Start Theta", unit=deg),
-    Field(label="End Theta", unit=deg),
-    Field(label="Fixed 2Theta position", unit=deg),
-    Field(label="Step size", unit=deg),
-    Field(label="Time per step", unit='s'),
-]
 
-XRD_yellow = [
-    Field(label="Parent sample specimen ID", name="parentSample"),
-    Field(label="Preparation routine"),
-    Field(label='Pre-treatment', field_type='class'),
-    Field(label="Sample storage"),
-    Field(label="Immersion Experiment ID")
-]
+class Grey(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Filter")
+        self.add(label="Mask size", unit='mm')
+        self.add(label="Scan axis", field_type='class')
+        self.add(label="Diffraction angle 2Theta", name='diffractionAngle', unit=deg)
+        self.add(label="Rotation angle phi", unit=deg)
+        self.add(label="Rotation angle chi", unit=deg)
+        self.add(label="Number of frames")
+        self.add(label="Measurement time", unit='s')
+        self.add(label="Start 2Theta", unit=deg)
+        # TODO: check if there is a End 2Theta missing in the docx.
+        # self.add(label="End 2Theta", unit=deg)
+        self.add(label="Start Theta", unit=deg)
+        self.add(label="End Theta", unit=deg)
+        self.add(label="Fixed 2Theta position", unit=deg)
+        self.add(label="Step size", unit=deg)
+        self.add(label="Time per step", unit='s')
 
-XRD_green = [
-    Field(label="Measurement time/date", name="measurementTime"),
-]
 
-XRD = Scheme("XRD")
-XRD.fields = XRD_blue
-XRD.write("XRD.ttl")
+class Yellow(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Parent sample specimen ID", name="parentSample")
+        self.add(label="Preparation routine")
+        self.add(label='Pre-treatment', field_type='class')
+        self.add(label="Sample storage")
+        self.add(label="Immersion Experiment ID")
 
-XRD.fields = XRD_green
-XRD.write('XRD_green.ttl')
 
-XRD.fields = XRD_grey
-XRD.write('XRD_grey.ttl')
+class Green(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Measurement time/date", name="measurementTime")
 
-XRD.fields = XRD_yellow
-XRD.write('XRD_yellow.ttl')
 
-XRD.fields = XRD_blue + XRD_grey
-XRD.write('XRD_w_gray.ttl')
+class XRD(Grey, Green, Yellow, XRDBasic):
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
 
-XRD.fields = XRD_blue + XRD_green + XRD_grey + XRD_yellow
-XRD.write('XRD_full.ttl')
+
+XRD_scheme = Scheme("XRD")
+XRD_scheme.fields = XRDBasic()
+XRD_scheme.write("XRD.ttl")
+
+XRD_scheme.fields = Green()
+XRD_scheme.write('XRD_green.ttl')
+
+XRD_scheme.fields = Grey()
+XRD_scheme.write('XRD_grey.ttl')
+
+XRD_scheme.fields = Yellow()
+XRD_scheme.write('XRD_yellow.ttl')
+
+XRD_scheme.fields = XRD()
+XRD_scheme.write('XRD_full.ttl')
