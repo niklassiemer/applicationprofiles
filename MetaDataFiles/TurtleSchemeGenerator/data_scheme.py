@@ -39,7 +39,9 @@ qudt_unit_relations = {
     deg: "DEG",
     'mA': "MilliA",
     'mV': "MilliV",
-    'min': "MIN"
+    'min': "MIN",
+    'mV/s': "MilliV-PER-SEC",
+    'mm'+squared: "MilliM2"
 }
 
 
