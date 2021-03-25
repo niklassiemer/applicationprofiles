@@ -8,6 +8,7 @@ squared = '\u00B2'
 cubic = '\u00B3'
 qudt_unit_relations = {
     "mm": "MilliM",
+    "ms": "MilliSec",
     "nm": "NanoM",
     deg+"C": "Deg_C",
     "V": "V",

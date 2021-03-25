@@ -1,59 +1,64 @@
 from data_scheme import MetaDataSchemes as Scheme
-from data_scheme import MetaDataField as Field
+from data_scheme import SFBFields, FieldList
 
-TEM_blue = [
-    Field(label="Experiment ID", required=True),
-    Field(label="Operator", required=True),
-    Field(label="Parent sample specimen ID", name="parentSample"),
-    Field(label="Sample Pre-treatment"),
-    Field(label="Comments", long=True),
-    ]
-
-TEM_yellow = [
-    Field(label="Specimen ID"),
-    Field(label="Pre-Preparation routine", long=True),
-    Field(label="Immersion Experiment ID", long=True),
-    Field(label="TEM preparation routine"),
-    Field(label="TEM preparation date", field_type="date"),
-    Field(label="Operator for sample preparation"),
-    Field(label="Sample storage location"),
-    Field(label="Sample storage conditions"),
-]
-
-TEM_green = [
-    Field(label="Microscope"),
-    Field(label="Experiment Date", field_type='date'),
-    Field(label="Accelerating voltage", unit="kV"),
-    Field(label="Magnification / Camera length", name='magnefication', unit='mm'),
-    Field(label="Electron dose", unit='e/nm**2'),
-    Field(label="Dwell time", unit="ms"),
-    Field(label="Data dimension"),
-    Field(label="1st dimension unit"),
-    Field(label="1st dimension pixels"),
-    Field(label="1st dimension unit scaling"),
-    Field(label="1st dimension starting pixel"),
-    Field(label="2nd dimension unit"),
-    Field(label="2nd dimension pixels"),
-    Field(label="2nd dimension unit scaling"),
-    Field(label="2nd dimension starting pixel"),
-    ]
-
-TEM = Scheme("TEM")
-TEM.fields = TEM_blue
-TEM.write("tem.ttl")
-
-TEM.fields = TEM_yellow
-TEM.write('tem_yellow.ttl')
-
-TEM.fields = TEM_green
-TEM.write("tem_green.ttl")
+squared = '\u00B2'
 
 
-TEM.fields = TEM_blue + TEM_yellow
-TEM.write('tem_w_yellow.ttl')
+class TEMBasic(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Parent sample specimen ID", name="parentSample")
+        self.add(label="Sample Pre-treatment"),
 
-TEM.fields = TEM_blue + TEM_green
-TEM.write('tem_w_green.ttl')
 
-TEM.fields = TEM_blue + TEM_green + TEM_yellow
-TEM.write('tem_full.ttl')
+class Yellow(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Specimen ID")
+        self.add(label="Pre-Preparation routine", long=True)
+        self.add(label="Immersion Experiment ID", long=True)
+        self.add(label="TEM preparation routine")
+        self.add(label="TEM preparation date", field_type="date")
+        self.add(label="Operator for sample preparation")
+        self.add(label="Sample storage location")
+        self.add(label="Sample storage conditions")
+
+
+class Green(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Microscope")
+        self.add(label="Experiment Date", field_type='date')
+        self.add(label="Accelerating voltage", unit="kV")
+        self.add(label="Magnification / Camera length", name='magnefication', unit='mm')
+        self.add(label="Electron dose", unit='e/nm'+squared, qudt="E-PER-NanoM2")
+        self.add(label="Dwell time", unit="ms")
+        self.add(label="Data dimension")
+        self.add(label="1st dimension unit")
+        self.add(label="1st dimension pixels")
+        self.add(label="1st dimension unit scaling")
+        self.add(label="1st dimension starting pixel")
+        self.add(label="2nd dimension unit")
+        self.add(label="2nd dimension pixels")
+        self.add(label="2nd dimension unit scaling")
+        self.add(label="2nd dimension starting pixel")
+
+
+class TEM(Green, Yellow, TEMBasic):
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
+
+
+TEM_scheme = Scheme("TEM")
+TEM_scheme.fields = TEMBasic()
+TEM_scheme.write("tem.ttl")
+
+TEM_scheme.fields = Yellow()
+TEM_scheme.write('tem_yellow.ttl')
+
+TEM_scheme.fields = Green()
+TEM_scheme.write("tem_green.ttl")
+
+TEM_scheme.fields = TEM()
+TEM_scheme.write('tem_full.ttl')
