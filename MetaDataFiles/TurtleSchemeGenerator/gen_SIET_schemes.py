@@ -1,36 +1,45 @@
 from data_scheme import MetaDataSchemes as Scheme
-from data_scheme import MetaDataField as Field
+from data_scheme import SFBFields, FieldList
 
 micro = "\u03bc"
 deg = "\u00b0"
 
-blue = [
-    Field(label="Operator"),
-    Field(label="Experiment ID"),
-    Field(label="Date of preparation", field_type='date'),
-    Field(label='Sample storage'),
-    Field(label="Pre-treatment"),
-    Field(label="Reference electrode potential", unit='mV(SHE)'),
-    Field(label="Counter electrode"),
-    Field(label="Ion selective electrode solution"),
-    Field(label="Ion selective membrane"),
-    Field(label="Reference solution")
-]
 
-yellow = [
-    Field(label="Parent sample specimen ID"),
-    Field(label="Specimen ID"),
-    Field(label="Preparation routine"),
-    Field(label="Immersion Experiment ID")
-]
+class SIETBasic(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Date of preparation", field_type='date')
+        self.add(label='Sample storage')
+        self.add(label="Pre-treatment")
+        self.add(label="Reference electrode potential", unit='mV(SHE)', qudt='MilliV')
+        self.add(label="Counter electrode")
+        self.add(label="Ion selective electrode solution")
+        self.add(label="Ion selective membrane")
+        self.add(label="Reference solution")
 
-SIET = Scheme("SIET")
-SIET.fields = blue
-SIET.write()
 
-SIET.fields = yellow
-SIET.write("SIET_yellow.ttl")
+class Yellow(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Parent sample specimen ID")
+        self.add(label="Specimen ID")
+        self.add(label="Preparation routine")
+        self.add(label="Immersion Experiment ID")
 
-SIET.fields = blue + yellow
-SIET.write("SIET_full.ttl")
+
+class SIET(Yellow, SIETBasic):
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
+
+
+SIET_scheme = Scheme("SIET")
+SIET_scheme.fields = SIETBasic()
+SIET_scheme.write()
+
+SIET_scheme.fields = Yellow()
+SIET_scheme.write("SIET_yellow.ttl")
+
+SIET_scheme.fields = SIET()
+SIET_scheme.write("SIET_full.ttl")
 
