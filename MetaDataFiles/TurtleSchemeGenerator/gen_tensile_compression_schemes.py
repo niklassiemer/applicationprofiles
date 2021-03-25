@@ -1,5 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import SFBFields, FieldList, deg
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import SFBFields, FieldList
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
 
 
 class TensileCompressionBasic(SFBFields):
