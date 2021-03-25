@@ -1,42 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-
-micro = "\u03bc"
-deg = "\u00b0"
-
-
-class CalphadDBBasic(SFBFields):
-    def __init__(self):
-        super().__init__()
-        # This will not be unique:
-        self.add(label="Database filename")
-        self.add(label="Elements included")
-        self.add(label="Element data")
-        self.add(label="Date", field_type='date')
-        self.add(label="Licence")
-        self.add(label="Software used to test")
-        # TODO: What is the purpose?
-        self.add(label="References")
-
-
-class CalphadDBGreen(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Phases and models")
-
-
-class CalphadDBGrey(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Crystal structure", long=True)
-        self.add(label="Compounds", long=True)
-
-
-class CalphadDB(CalphadDBGrey, CalphadDBGreen, CalphadDBBasic):
-    def __init__(self):
-        super().__init__()
-        self.sort_fields_by_order_priority()
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.calphad_db import CalphadDBBasic, CalphadDBGreen, CalphadDBGrey, \
+    CalphadDB
 
 CALPHAD_DB = Scheme("Calphad_db")
 CALPHAD_DB.fields = CalphadDBBasic()
