@@ -44,7 +44,8 @@ qudt_unit_relations = {
     'mm'+squared: "MilliM2",
     'ml': 'MilliL',
     'ml/h': "MilliL-PER-HR",
-    micro+'m/s': 'MicroM-PER-SEC'
+    micro+'m/s': 'MicroM-PER-SEC',
+    micro+'m'+squared: 'MicroM2'
 }
 
 
