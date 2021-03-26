@@ -12,7 +12,6 @@ class SimBasic(SFBFields):
         self.add(label="Last status update", field_type="date")
         self.add(label="pyiron version")
         self.add(label="Other software versions")
-        self.add(label="External ID")
         self.add(label="Simulation type")
         # We have DOI and References, DOI is for papers about this and references for what?!
         self.add(label="References")
