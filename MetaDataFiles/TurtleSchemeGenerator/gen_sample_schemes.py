@@ -1,9 +1,9 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Sample
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import Polish, Immersion, Etching
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import Polishing, Immersion, Etching
 
 sample_prep = Scheme('Sample_preparation')
-sample_prep.fields = Polish()
+sample_prep.fields = Polishing()
 sample_prep.write()
 
 immersion = Scheme("Immersion")
