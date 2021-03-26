@@ -1,6 +1,11 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.computational.image_analysis import ImageAnalysisBasic, Yellow, Green, Grey, \
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.image_analysis import (
+    ImageAnalysisBasic,
+    Yellow,
+    Green,
+    Grey,
     ImageAnalysis
+)
 
 SchemeName = "ImageAnalysis"
 ImageAnalysis_scheme = Scheme(SchemeName)

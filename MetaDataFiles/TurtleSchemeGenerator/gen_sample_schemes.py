@@ -2,14 +2,6 @@ from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaData
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Sample
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import Polish, Immersion, Etching
 
-parent = Scheme('Sample')
-parent.fields = ParentSample()
-parent.write()
-
-sample_info = Scheme('Sample_info')
-sample_info.fields = SampleBasic()
-sample_info.write()
-
 sample_prep = Scheme('Sample_preparation')
 sample_prep.fields = Polish()
 sample_prep.write()

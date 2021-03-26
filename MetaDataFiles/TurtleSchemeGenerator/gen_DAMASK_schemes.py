@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.computational.damask import DamaskCoScInE, Damask
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.damask import DamaskCoScInE, Damask
 
 DAMASK = Scheme("DAMASK")
 DAMASK.fields = DamaskCoScInE()

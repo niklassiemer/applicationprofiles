@@ -1,8 +1,9 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.computational.atomistic_simulation import SampleCoScInE, SimBasic, SimTechnical, \
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import SampleCoScInE
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.simulation import SimBasic, SimTechnical, \
     SimUniversal, SimLammps, SimVasp, SimMD, SimMinimize, SimDeform, SimIndent, SimHess, SimTI, LammpsMin, \
-    AtomisticOutputCoScInE, AtomisticOutput, AtomisticSnapshotCoScInE, AtomisticSnapshotGreen, AtomisticSnapshot, \
-    MLPotCoScInE, MLPotGreen, MLPot
+    AtomisticOutputCoScInE, AtomisticOutput, AtomisticSnapshotCoScInE, AtomisticSnapshotGreen, AtomisticSnapshot
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.potential import MLPotCoScInE, MLPotGreen, MLPot
 
 sample_scheme = Scheme("AtomisticSample")
 sample_scheme.fields = SampleCoScInE()
