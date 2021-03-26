@@ -14,6 +14,8 @@ class EBSDBasic(SFBFields):
         self.add(label="Instrument used")
         self.add(label='Detectors used')
         self.add(label='Location on sample')
+        self.add(label='Any data set to be linked with this experiment', long=True,
+                 comment="e.g. EBSD_scheme map etc.")
 
 
 class EBSDGreen(FieldList):
@@ -40,6 +42,7 @@ class EBSDGrey(FieldList):
         self.add(label="Environmental protection during specimen testing", name="TestingEnv")
         self.add(label="Environmental gas")
         self.add(label="Test date", field_type="date")
+        self.add(label="Pillar Orientation", long=True)
 
 
 class EBSD(EBSDGrey, EBSDGreen, EBSDYellow, EBSDBasic):

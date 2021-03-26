@@ -99,8 +99,7 @@ class EBSDYellow(FieldList):
         self.add(label="Etching routine")
         self.add(label="Immersion Experiment ID")
         self.add(label="Experiment IDs of other tests performed on the same specimen", long=True)
-        self.add(label='Any data set to be linked with this experiment', long=True,
-                 comment="e.g. EBSD_scheme map etc.")
+
 
         #    Field(label="Grit 1"),
         #    Field(label="Solvent grit 1"),
@@ -153,7 +152,6 @@ class MicroPillarYellow(FieldList):
         self.add(label="Preparation routine", long=True)
         self.add(label="Preparation Date", field_type="date", long=True)
         self.add(label="Sample storage")
-        self.add(label="Pillar Orientation", long=True)
 
 
 class PotentioDynPolarYellow(FieldList):
