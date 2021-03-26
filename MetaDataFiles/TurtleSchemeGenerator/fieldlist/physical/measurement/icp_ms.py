@@ -1,5 +1,5 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import IcpMsYellow
 
 
 class IcpMsBasic(SFBFields):
@@ -16,16 +16,7 @@ class IcpMsBasic(SFBFields):
         self.add(label="Instrument used")
 
 
-class Yellow(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Parent sample specimen ID")
-        self.add(label="Specimen ID")
-        self.add(label="Preparation routine")
-        self.add(label="Immersion Experiment ID")
-
-
-class IcpMS(Yellow, IcpMsBasic):
+class IcpMS(IcpMsYellow, IcpMsBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

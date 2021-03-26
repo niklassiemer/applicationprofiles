@@ -1,6 +1,6 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import SVETYellow
 
 
 class SVETBasic(SFBFields):
@@ -18,16 +18,7 @@ class SVETBasic(SFBFields):
         self.add(label="Working distance", unit=micro+'m')
 
 
-class Yellow(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Parent sample specimen ID")
-        self.add(label="Specimen ID")
-        self.add(label="Preparation routine")
-        self.add(label="Immersion Experiment ID")
-
-
-class SVET(Yellow, SVETBasic):
+class SVET(SVETYellow, SVETBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

@@ -1,5 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.EBSD import EBSDBasic, EBSDYellow, EBSDGreen, EBSDGrey, EBSD
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.EBSD import EBSDBasic, EBSDGreen, EBSDGrey, EBSD
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import EBSDYellow
 
 EBSD_scheme = Scheme("EBSD")
 EBSD_scheme.fields = EBSDBasic()

@@ -1,6 +1,7 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, deg
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import ScratchYellow
 
 
 class ScratchBasic(SFBFields):
@@ -25,14 +26,6 @@ class Grey(FieldList):
         self.add(label="Test date", field_type="date")
 
 
-class Yellow(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Preparation routine", long=True)
-        self.add(label="Preparation Date", field_type="date", long=True)
-        self.add(label="Sample storage")
-
-
 class Green(FieldList):
     def __init__(self):
         super().__init__()
@@ -44,7 +37,7 @@ class Green(FieldList):
         self.add(label="Profiling velocity", unit=micro+"m/s")
 
 
-class Scratch(Grey, Green, Yellow, ScratchBasic):
+class Scratch(Grey, Green, ScratchYellow, ScratchBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

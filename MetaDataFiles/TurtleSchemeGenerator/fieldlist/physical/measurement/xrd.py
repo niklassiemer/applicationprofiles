@@ -1,6 +1,7 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import XRDYellow
 
 
 class XRDBasic(SFBFields):
@@ -39,23 +40,13 @@ class Grey(FieldList):
         self.add(label="Time per step", unit='s')
 
 
-class Yellow(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Parent sample specimen ID", name="parentSample")
-        self.add(label="Preparation routine")
-        self.add(label='Pre-treatment', field_type='class')
-        self.add(label="Sample storage")
-        self.add(label="Immersion Experiment ID")
-
-
 class Green(FieldList):
     def __init__(self):
         super().__init__()
         self.add(label="Measurement time/date", name="measurementTime")
 
 
-class XRD(Grey, Green, Yellow, XRDBasic):
+class XRD(Grey, Green, XRDYellow, XRDBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

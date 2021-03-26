@@ -1,5 +1,5 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import XPSYellow
 
 
 class XPSBasic(SFBFields):
@@ -22,16 +22,7 @@ class XPSBasic(SFBFields):
         self.add(label="Energy resolution", unit='eV')
 
 
-class Yellow(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Parent sample specimen ID", name="parentSample")
-        self.add(label="Specimen ID")
-        self.add(label="Preparation routine")
-        self.add(label="Immersion Experiment ID")
-
-
-class XPS(Yellow, XPSBasic):
+class XPS(XPSYellow, XPSBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

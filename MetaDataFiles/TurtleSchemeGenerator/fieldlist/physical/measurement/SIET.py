@@ -1,5 +1,5 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import SIETYellow
 
 
 class SIETBasic(SFBFields):
@@ -15,16 +15,7 @@ class SIETBasic(SFBFields):
         self.add(label="Reference solution")
 
 
-class Yellow(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Parent sample specimen ID")
-        self.add(label="Specimen ID")
-        self.add(label="Preparation routine")
-        self.add(label="Immersion Experiment ID")
-
-
-class SIET(Yellow, SIETBasic):
+class SIET(SIETYellow, SIETBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

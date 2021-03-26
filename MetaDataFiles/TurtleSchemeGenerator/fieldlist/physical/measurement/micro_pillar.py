@@ -1,5 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import MicroPillarYellow
 
 
 class MicroPillarBasic(SFBFields):
@@ -22,15 +23,6 @@ class Grey(FieldList):
         self.add(label="Test date", field_type="date")
 
 
-class Yellow(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Preparation routine", long=True)
-        self.add(label="Preparation Date", field_type="date", long=True)
-        self.add(label="Sample storage")
-        self.add(label="Pillar Orientation", long=True)
-
-
 class Green(FieldList):
     def __init__(self):
         super().__init__()
@@ -49,7 +41,7 @@ class Green(FieldList):
         self.add(label="Tip temperature", unit="\u00b0C")
 
 
-class MicroPillar(Grey, Green, Yellow, MicroPillarBasic):
+class MicroPillar(Grey, Green, MicroPillarYellow, MicroPillarBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

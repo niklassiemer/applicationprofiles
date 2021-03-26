@@ -1,6 +1,7 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import squared
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import TEMYellow
 
 
 class TEMBasic(SFBFields):
@@ -8,19 +9,6 @@ class TEMBasic(SFBFields):
         super().__init__()
         self.add(label="Parent sample specimen ID", name="parentSample")
         self.add(label="Sample Pre-treatment"),
-
-
-class Yellow(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Specimen ID")
-        self.add(label="Pre-Preparation routine", long=True)
-        self.add(label="Immersion Experiment ID", long=True)
-        self.add(label="TEM preparation routine")
-        self.add(label="TEM preparation date", field_type="date")
-        self.add(label="Operator for sample preparation")
-        self.add(label="Sample storage location")
-        self.add(label="Sample storage conditions")
 
 
 class Green(FieldList):
@@ -43,7 +31,7 @@ class Green(FieldList):
         self.add(label="2nd dimension starting pixel")
 
 
-class TEM(Green, Yellow, TEMBasic):
+class TEM(Green, TEMYellow, TEMBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

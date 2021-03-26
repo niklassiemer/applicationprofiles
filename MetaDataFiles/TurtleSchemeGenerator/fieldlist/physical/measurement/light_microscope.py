@@ -1,6 +1,7 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataField as Field, FieldList
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataField as Field
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import LightMicroscopeYellow
 
 
 class LightMicroscopeBasic(SFBFields):
@@ -18,18 +19,7 @@ class LightMicroscopeBasic(SFBFields):
         ]
 
 
-class Yellow(FieldList):
-    def __init__(self):
-        super().__init__()
-        self._fields += [
-            Field(label="Parent sample specimen ID"),
-            Field(label="Specimen ID"),
-            Field(label="Preparation routine"),
-            Field(label="Immersion Experiment ID")
-        ]
-
-
-class LightMicroscope(Yellow, LightMicroscopeBasic):
+class LightMicroscope(LightMicroscopeYellow, LightMicroscopeBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

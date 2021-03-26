@@ -1,6 +1,6 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, squared
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import SynchrotronYellow
 
 
 class SynchrotronBasic(SFBFields):
@@ -18,16 +18,7 @@ class SynchrotronBasic(SFBFields):
         self.add(label="Detector")
 
 
-class Yellow(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Parent sample specimen ID", name="parentSample")
-        self.add(label="Specimen ID")
-        self.add(label="Preparation routine")
-        self.add(label="Immersion Experiment ID")
-
-
-class Synchrotron(Yellow, SynchrotronBasic):
+class Synchrotron(SynchrotronYellow, SynchrotronBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()
