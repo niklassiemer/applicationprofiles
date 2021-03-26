@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.SIET import SIETBasic, Yellow, SIET
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.SIET import SIETBasic, Yellow, SIET
 
 SIET_scheme = Scheme("SIET")
 SIET_scheme.fields = SIETBasic()

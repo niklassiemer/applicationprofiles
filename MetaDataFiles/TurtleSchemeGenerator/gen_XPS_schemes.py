@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.xps import XPSBasic, Yellow, XPS
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.xps import XPSBasic, Yellow, XPS
 
 XPS_scheme = Scheme("XPS")
 XPS_scheme.fields = XPSBasic()

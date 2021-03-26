@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.ElChemImpedSPec import ElChemImpedSpecBasic, Yellow, Green, Grey, \
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.ElChemImpedSPec import ElChemImpedSpecBasic, Yellow, Green, Grey, \
     ElChemImpedSpec
 
 ElChemImpedSpec_scheme = Scheme("ElChemImpedSpec")

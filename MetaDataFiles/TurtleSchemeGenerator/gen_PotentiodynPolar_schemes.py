@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.PotentioDynPolar import PotentioDynPolarBasic, Yellow, Green, \
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.PotentioDynPolar import PotentioDynPolarBasic, Yellow, Green, \
     PotentioDynPolar
 
 potentio_dyn_polar = Scheme("PotentiodynPolar")

@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.tensile_compression import TensileCompressionBasic, Grey, Yellow, \
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.tensile_compression import TensileCompressionBasic, Grey, Yellow, \
     Green, TensileCompression
 
 tensile_compression = Scheme("Tensile_Compression")

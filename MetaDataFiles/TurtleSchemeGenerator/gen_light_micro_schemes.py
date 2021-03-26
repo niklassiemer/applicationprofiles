@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.light_microscope import LightMicroscopeBasic, Yellow, LightMicroscope
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.light_microscope import LightMicroscopeBasic, Yellow, LightMicroscope
 
 LightMicro_scheme = Scheme("LightMicroscope")
 LightMicro_scheme.fields = LightMicroscopeBasic()

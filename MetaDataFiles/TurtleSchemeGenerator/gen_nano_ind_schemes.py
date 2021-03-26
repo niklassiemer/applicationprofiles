@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.nano_indentation import NanoIndentation
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.nano_indentation import NanoIndentation
 
 nano_ind_scheme = MetaDataSchemes("NanoIndentation")
 nano_ind_scheme.fields = NanoIndentation()

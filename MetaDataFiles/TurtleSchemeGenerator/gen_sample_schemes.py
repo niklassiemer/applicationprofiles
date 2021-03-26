@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.sample import SampleBasic, ParentSample, SamplePreparation, \
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.sample import SampleBasic, ParentSample, SamplePreparation, \
     Immersion, Etching, Sample
 
 parent = Scheme('Parent_sample')

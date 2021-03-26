@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.xrd import XRDBasic, Grey, Yellow, Green, XRD
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.xrd import XRDBasic, Grey, Yellow, Green, XRD
 
 XRD_scheme = Scheme("XRD")
 XRD_scheme.fields = XRDBasic()

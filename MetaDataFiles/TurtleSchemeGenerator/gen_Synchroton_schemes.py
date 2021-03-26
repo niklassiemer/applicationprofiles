@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.synchrotron import SynchrotronBasic, Yellow, Synchrotron
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.synchrotron import SynchrotronBasic, Yellow, Synchrotron
 
 Synchro = Scheme("Synchrotron")
 Synchro.fields = SynchrotronBasic()

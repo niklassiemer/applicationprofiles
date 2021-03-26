@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.micro_pillar import MicroPillarBasic, Grey, Yellow, Green, \
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.micro_pillar import MicroPillarBasic, Grey, Yellow, Green, \
     MicroPillar
 
 micro_pillar = Scheme("Micropillar")

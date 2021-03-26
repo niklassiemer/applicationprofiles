@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.EDX import EDXBasic, EDXGrey, EDXGreen, EDX
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.EDX import EDXBasic, EDXGrey, EDXGreen, EDX
 
 EDX_scheme = Scheme("EDX")
 EDX_scheme.fields = EDXBasic()

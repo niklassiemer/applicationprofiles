@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.scratch import ScratchBasic, Grey, Yellow, Green, Scratch
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.scratch import ScratchBasic, Grey, Yellow, Green, Scratch
 
 scratch = Scheme("Scratch")
 scratch.fields = ScratchBasic()

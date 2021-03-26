@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.EPMA import EPMABasic, Grey, Green, EPMA
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.EPMA import EPMABasic, Grey, Green, EPMA
 
 EPMA_scheme = Scheme("EPMA")
 EPMA_scheme.fields = EPMABasic()

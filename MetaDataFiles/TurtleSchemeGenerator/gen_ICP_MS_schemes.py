@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.icp_ms import IcpMsBasic, Yellow, IcpMS
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.icp_ms import IcpMsBasic, Yellow, IcpMS
 
 ICP_MS = Scheme("ICP_MS")
 ICP_MS.fields = IcpMsBasic()

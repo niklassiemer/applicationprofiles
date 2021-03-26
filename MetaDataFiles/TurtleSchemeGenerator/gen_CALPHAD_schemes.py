@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.calphad_db import CalphadDBBasic, CalphadDBGreen, CalphadDBGrey, \
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.computational.calphad_db import CalphadDBBasic, CalphadDBGreen, CalphadDBGrey, \
     CalphadDB
 
 CALPHAD_DB = Scheme("Calphad_db")
