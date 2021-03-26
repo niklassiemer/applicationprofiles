@@ -11,7 +11,7 @@ class ImageAnalysisBasic(SFBFields):
             Field(label="Git repository"),
             Field(label="Commit hash"),
             Field(label="Python version"),
-            Field(label="Python package versions"),
+            Field(label="Python package versions"),  # TODO: shouldn't this be stored in the git repo dependencies?
             Field(label="Parameters", long=True),
             # Parameter file
             Field(label="Input image(s)", name="inputImages"),
@@ -57,6 +57,7 @@ class Grey(FieldList):
             Field(label='Required RAM', unit='GB'),
             Field(label="Runtime", unit='h'),
         ]
+        # TODO: Synchronize with technical fields for atomistics
 
 
 class ImageAnalysis(Grey, Green, Yellow, ImageAnalysisBasic):

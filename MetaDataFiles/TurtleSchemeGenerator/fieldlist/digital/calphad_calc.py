@@ -9,7 +9,7 @@ class CalphadCalc(SFBFields):
         self.add(label="Software used")
         self.add(label="Elements selected")
         self.add(label="Type of calculation")
-        self.add(label="Conditions", long=True)
+        self.add(label="Conditions", long=True)  # TODO: So vague a noun with `long=True` scares me
         self.add(label="Axes used for stepping or mapping", long=True)
         self.add(label="Fixed phases")
         self.add(label="Rejected phases")
