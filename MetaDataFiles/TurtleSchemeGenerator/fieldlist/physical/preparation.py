@@ -8,6 +8,7 @@ class Cast(PhysicalActivity):
     def __init__(self):
         super().__init__()
         self.add(label="Nominal composition", required=True)
+        self.add(label="Production batch designation")
         raise NotImplementedError("We don't have information from the S-project.")
 
 

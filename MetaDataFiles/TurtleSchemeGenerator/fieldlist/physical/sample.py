@@ -3,25 +3,6 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalObject
 
 
-class SampleBasic(SFBFields):
-    def __init__(self):
-        super().__init__()
-        # This should be the ID!?
-        # self.add(label="Specimen ID")
-        self.add(label="Parent sample specimen ID", name="parentSample")
-        self.add(label="Sample Location")
-
-
-class ParentSample(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Parent sample specimen ID", name="parentSample")
-        self.add(label="Designation")
-        # Why is this not at the Sample level?
-        self.add(label="Chemical composition")
-        self.add(label="Production batch designation")
-
-
 class Sample(PhysicalObject):
     def __init__(self):
         super().__init__()
