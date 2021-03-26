@@ -12,8 +12,6 @@ class TensileCompressionBasic(PhysicalActivity):
 class Grey(FieldList):
     def __init__(self):
         super().__init__()
-        self.add(label="Relative Humidity", unit='%', qudt="PERCENT_RH")
-        self.add(label="Temperature", unit="\u00b0C")
 
 
 class Green(FieldList):

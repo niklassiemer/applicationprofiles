@@ -1,7 +1,17 @@
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
 
 
-class PhysicalActivity(SFBFields):
+class PhysicalEnvironment(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Temperature", unit=deg+'C')
+        self.add(label="Relative Humidity", unit='%', other_ttl_relations={"qudt:Unit": "unit:PERCENT_RH"})
+        self.add(label="Environmental protection during specimen testing", name="TestingEnv")
+        self.add(label="Environmental gas")
+
+
+class PhysicalActivity(PhysicalEnvironment):
     def __init__(self):
         super().__init__()
         self.add(label="Operator", comment="The person who did the physical work. Default is the user.")

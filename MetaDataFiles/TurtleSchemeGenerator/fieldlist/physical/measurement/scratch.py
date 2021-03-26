@@ -15,9 +15,6 @@ class ScratchBasic(PhysicalActivity):
 class Grey(FieldList):
     def __init__(self):
         super().__init__()
-        self.add(label="Relative Humidity", unit='%', qudt="PERCENT_RH")
-        self.add(label="Temperature", unit="\u00b0C")
-        self.add(label="Environmental gas")
 
 
 class Green(FieldList):

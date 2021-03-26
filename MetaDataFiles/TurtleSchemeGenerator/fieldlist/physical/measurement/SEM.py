@@ -12,10 +12,6 @@ class SEMBasic(PhysicalActivity):
 class Grey(FieldList):
     def __init__(self):
         super().__init__()
-        self.add(label="Temperature", unit=deg+'C')
-        self.add(label="Relative Humidity", unit='%', qudt="PERCENT_RH")
-        self.add(label="Environmental protection during specimen transfer", name="TestingEnv")
-        self.add(label="Environmental gas")
 
 
 class Green(FieldList):

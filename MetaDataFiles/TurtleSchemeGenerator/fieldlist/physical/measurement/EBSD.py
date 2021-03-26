@@ -31,11 +31,6 @@ class EBSDGreen(FieldList):
 class EBSDGrey(FieldList):
     def __init__(self):
         super().__init__()
-        self.add(label="Temperature", unit=deg+'C')
-        self.add(label="Relative Humidity", unit='%',
-                 other_ttl_relations={"qudt:Unit": "unit:PERCENT_RH"})
-        self.add(label="Environmental protection during specimen testing", name="TestingEnv")
-        self.add(label="Environmental gas")
         self.add(label="Pillar Orientation", long=True)
 
 
