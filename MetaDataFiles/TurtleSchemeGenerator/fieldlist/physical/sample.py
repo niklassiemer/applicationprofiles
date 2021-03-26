@@ -1,6 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import Polish, Immersion
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalObject
 
 
 class SampleBasic(SFBFields):
@@ -31,7 +31,9 @@ class Etching(SFBFields):
         self.add(label="Duration", unit="s")
 
 
-class Sample(Etching, Immersion, Polish, ParentSample, SampleBasic):
+class Sample(PhysicalObject):
     def __init__(self):
         super().__init__()
+        self.add(label="Parent ID", name="parentSample", comment="The super-sample from which this came.")
+        self.add(label="Preparation ID", comment="What was done to this sample that differentiates it from its parent")
         self.sort_fields_by_order_priority()
