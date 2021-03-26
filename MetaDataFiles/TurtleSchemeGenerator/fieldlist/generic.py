@@ -11,9 +11,3 @@ class SFBFields(FieldList):
         self.add(label="Affiliation")
         self.add(label="DOIs", long=True, comment="To associate publications produced using this object.")
         self.add(label="Comments", long=True, order_priority=-1)  # Last entry in the Scheme
-
-
-class SFBExperimental(SFBFields):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Operator", comment="The person who did the work. Default is the user.")
