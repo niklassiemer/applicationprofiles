@@ -29,6 +29,12 @@ class Anneal(PhysicalActivity):
         raise NotImplementedError("We don't have information from the S-project.")
 
 
+class Storage(Anneal):
+    # Honestly, unless you're doing weird storage it really is long-time ambient condition annealing!
+    # But the subclass reveals the intent of the processing, and could have different defaults
+    pass
+
+
 class Divide(PhysicalActivity):
     def __init__(self):
         super().__init__()
