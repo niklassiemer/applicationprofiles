@@ -1,7 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg, micro
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import SEMYellow
 
 
 class SEMBasic(SFBFields):
@@ -35,7 +34,7 @@ class Green(FieldList):
         self.add(label="Storage Tilt", unit=deg)
 
 
-class SEM(Grey, Green, SEMYellow, SEMBasic):
+class SEM(Grey, Green, SEMBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

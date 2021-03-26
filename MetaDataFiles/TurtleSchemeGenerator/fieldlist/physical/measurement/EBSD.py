@@ -1,7 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, deg
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import EBSDYellow
 
 
 class EBSDBasic(SFBFields):
@@ -45,7 +44,7 @@ class EBSDGrey(FieldList):
         self.add(label="Pillar Orientation", long=True)
 
 
-class EBSD(EBSDGrey, EBSDGreen, EBSDYellow, EBSDBasic):
+class EBSD(EBSDGrey, EBSDGreen, EBSDBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

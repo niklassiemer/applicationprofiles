@@ -1,7 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, deg
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import ScratchYellow
 
 
 class ScratchBasic(SFBFields):
@@ -37,7 +36,7 @@ class Green(FieldList):
         self.add(label="Profiling velocity", unit=micro+"m/s")
 
 
-class Scratch(Grey, Green, ScratchYellow, ScratchBasic):
+class Scratch(Grey, Green, ScratchBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

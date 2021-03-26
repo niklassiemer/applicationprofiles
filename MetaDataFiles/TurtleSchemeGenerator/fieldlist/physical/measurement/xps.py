@@ -1,5 +1,4 @@
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import XPSYellow
 
 
 class XPSBasic(SFBFields):
@@ -22,7 +21,7 @@ class XPSBasic(SFBFields):
         self.add(label="Energy resolution", unit='eV')
 
 
-class XPS(XPSYellow, XPSBasic):
+class XPS(XPSBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

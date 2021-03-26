@@ -1,6 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, squared
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import SynchrotronYellow
 
 
 class SynchrotronBasic(SFBFields):
@@ -18,7 +17,7 @@ class SynchrotronBasic(SFBFields):
         self.add(label="Detector")
 
 
-class Synchrotron(SynchrotronYellow, SynchrotronBasic):
+class Synchrotron(SynchrotronBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

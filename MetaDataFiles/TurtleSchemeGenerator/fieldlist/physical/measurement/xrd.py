@@ -1,7 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import XRDYellow
 
 
 class XRDBasic(SFBFields):
@@ -46,7 +45,7 @@ class Green(FieldList):
         self.add(label="Measurement time/date", name="measurementTime")
 
 
-class XRD(Grey, Green, XRDYellow, XRDBasic):
+class XRD(Grey, Green, XRDBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

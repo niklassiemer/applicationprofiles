@@ -1,7 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataField as Field
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import LightMicroscopeYellow
 
 
 class LightMicroscopeBasic(SFBFields):
@@ -19,7 +18,7 @@ class LightMicroscopeBasic(SFBFields):
         ]
 
 
-class LightMicroscope(LightMicroscopeYellow, LightMicroscopeBasic):
+class LightMicroscope(LightMicroscopeBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

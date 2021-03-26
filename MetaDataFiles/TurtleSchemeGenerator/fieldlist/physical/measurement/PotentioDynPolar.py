@@ -1,7 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import squared
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import PotentioDynPolarYellow
 
 
 class PotentioDynPolarBasic(SFBFields):
@@ -27,7 +26,7 @@ class Green(FieldList):
         self.add(label="Potentiostat")
 
 
-class PotentioDynPolar(Green, PotentioDynPolarYellow, PotentioDynPolarBasic):
+class PotentioDynPolar(Green, PotentioDynPolarBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

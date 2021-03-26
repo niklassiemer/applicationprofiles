@@ -1,5 +1,4 @@
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import IcpMsYellow
 
 
 class IcpMsBasic(SFBFields):
@@ -16,7 +15,7 @@ class IcpMsBasic(SFBFields):
         self.add(label="Instrument used")
 
 
-class IcpMS(IcpMsYellow, IcpMsBasic):
+class IcpMS(IcpMsBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

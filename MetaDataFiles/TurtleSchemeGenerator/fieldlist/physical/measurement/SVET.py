@@ -1,6 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import SVETYellow
 
 
 class SVETBasic(SFBFields):
@@ -18,7 +17,7 @@ class SVETBasic(SFBFields):
         self.add(label="Working distance", unit=micro+'m')
 
 
-class SVET(SVETYellow, SVETBasic):
+class SVET(SVETBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

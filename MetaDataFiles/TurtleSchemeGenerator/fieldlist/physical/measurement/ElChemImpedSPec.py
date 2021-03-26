@@ -1,6 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import ElChemImpedSpecYellow
 
 
 class ElChemImpedSpecBasic(SFBFields):
@@ -31,7 +30,7 @@ class Grey(FieldList):
         self.add(label="Time of measurement", unit='min')
 
 
-class ElChemImpedSpec(Grey, Green, ElChemImpedSpecYellow, ElChemImpedSpecBasic):
+class ElChemImpedSpec(Grey, Green, ElChemImpedSpecBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

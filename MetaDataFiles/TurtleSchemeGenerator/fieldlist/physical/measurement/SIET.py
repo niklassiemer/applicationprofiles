@@ -1,5 +1,4 @@
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import SIETYellow
 
 
 class SIETBasic(SFBFields):
@@ -15,7 +14,7 @@ class SIETBasic(SFBFields):
         self.add(label="Reference solution")
 
 
-class SIET(SIETYellow, SIETBasic):
+class SIET(SIETBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()
