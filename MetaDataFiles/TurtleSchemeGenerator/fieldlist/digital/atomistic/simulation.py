@@ -9,7 +9,7 @@ class SimBasic(SFBFields):
     def __init__(self):
         super().__init__()
         self.add(label="Status", field_type="list")  # Choice ('initialized', 'running', etc)
-        self.add(label="Last status update")  # timestamp
+        self.add(label="Last status update", field_type="date")
         self.add(label="pyiron version")
         self.add(label="Other software versions")
         self.add(label="External ID")
@@ -25,8 +25,8 @@ class SimTechnical(FieldList):
         self.add(label="Node")
         self.add(label="Cores")
         self.add(label="Runtime")
-        self.add(label="Submission time")
-        self.add(label="Stop time")
+        self.add(label="Submission time", field_type="date")
+        self.add(label="Stop time", field_type="date")
 
 
 # Inherit from SimTechnical first since then its fields are added to the SimBasic.
