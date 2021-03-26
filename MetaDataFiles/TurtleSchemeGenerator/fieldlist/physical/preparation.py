@@ -37,7 +37,6 @@ class Divide(PhysicalActivity):
 class ThinFilm(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label='Instrument used')
         self.add(label="Substrate rotation", field_type='bool')
         self.add(label="Substrate temperature", unit=deg + 'C')
         self.add(label="Capping Layer")
