@@ -26,5 +26,9 @@ class Sample(PhysicalObject):
     def __init__(self):
         super().__init__()
         self.add(label="Parent ID", name="parentSample", comment="The super-sample from which this came.")
-        self.add(label="Preparation ID", comment="What was done to this sample that differentiates it from its parent")
+        self.add(
+            label="Preparation IDs",
+            comment="What was done to this sample that differentiates it from its parent, in order of operation. "
+                    "Multiple routines should only be given for perfectly contiguous sample chains."
+        )
         self.sort_fields_by_order_priority()

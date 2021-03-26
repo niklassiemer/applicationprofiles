@@ -1,6 +1,37 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList, MetaDataField as Field
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, deg
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+
+
+class Cast(PhysicalActivity):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Nominal composition", required=True)
+        raise NotImplementedError("We don't have information from the S-project.")
+
+
+class Roll(PhysicalActivity):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Roller diameter")
+        self.add(label="Speed")
+        self.add(label="Temperature")
+        raise NotImplementedError("We don't have information from the S-project.")
+
+
+class Anneal(PhysicalActivity):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Temperature")
+        self.add(label="Time")
+        raise NotImplementedError("We don't have information from the S-project.")
+
+
+class Divide(PhysicalActivity):
+    def __init__(self):
+        super().__init__()
+        raise NotImplementedError("We don't have information from the S-project.")
 
 
 class EBSDYellow(FieldList):
