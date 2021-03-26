@@ -1,7 +1,7 @@
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class XPSBasic(PhysicalActivity):
+class XPS(PhysicalActivity):
     def __init__(self):
         super().__init__()
         self.add(label="Energy range start", unit='eV')
@@ -16,9 +16,4 @@ class XPSBasic(PhysicalActivity):
         self.add(label="Pass energy", unit='eV')
         self.add(label="Working pressure", unit='lg(Torr)', qudt='None')
         self.add(label="Energy resolution", unit='eV')
-
-
-class XPS(XPSBasic):
-    def __init__(self):
-        super().__init__()
         self.sort_fields_by_order_priority()

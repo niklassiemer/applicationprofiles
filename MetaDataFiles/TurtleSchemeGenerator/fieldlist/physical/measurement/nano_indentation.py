@@ -39,9 +39,8 @@ class NanoIndentation(NanoIndentationBasic):
         self.add(label="Tip temperature", unit="\u00b0C")
         # Listed later in case of creep test in the docx
         self.add(label="Diamond area function")
-        self.add(label="Date of Calibration", field_type="date")
+        self.add(label="Date of Calibration", field_type="date")  # TODO: Do we need a tip calibration activity?
         self.add(label="Frame stiffness", unit='N/m')
-
         self.sort_fields_by_order_priority()
 
 
@@ -59,7 +58,6 @@ class NanoIndentationSRJ(NanoIndentationBasic):
         self.add(label="Drift correction enabled", field_type="bool")
         self.add(label="Sample temperature", unit="\u00b0C")
         self.add(label="Tip temperature", unit="\u00b0C")
-
         self.sort_fields_by_order_priority()
 
 
@@ -67,3 +65,4 @@ class NanoIndentationCreep(NanoIndentationBasic):
     def __init__(self):
         super().__init__()
         self.add(label="Creep dwell period", unit='s')
+        self.sort_fields_by_order_priority()

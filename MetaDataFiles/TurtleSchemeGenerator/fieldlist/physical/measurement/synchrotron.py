@@ -2,7 +2,7 @@ from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, squared
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class SynchrotronBasic(PhysicalActivity):
+class Synchrotron(PhysicalActivity):
     def __init__(self):
         super().__init__()
         self.add(label="Radiation type")
@@ -12,9 +12,4 @@ class SynchrotronBasic(PhysicalActivity):
         self.add(label="Incoming beam focus", unit=micro+'m'+squared)
         self.add(label="Deflected beam focus", unit=micro+'m'+squared)
         self.add(label="Detector")
-
-
-class Synchrotron(SynchrotronBasic):
-    def __init__(self):
-        super().__init__()
         self.sort_fields_by_order_priority()

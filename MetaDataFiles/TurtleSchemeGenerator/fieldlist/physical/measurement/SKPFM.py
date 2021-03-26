@@ -18,5 +18,4 @@ class SKPFM(PhysicalActivity):
         self.add(label="Reference")  #???
         self.add(label="Experiment condition", long=True)  #??? This
         # TODO: We haven't gotten enough info from the SKPFM team, those last two are brutally vague
-
         self.sort_fields_by_order_priority()

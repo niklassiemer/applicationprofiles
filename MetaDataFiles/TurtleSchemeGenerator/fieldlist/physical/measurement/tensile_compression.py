@@ -9,11 +9,6 @@ class TensileCompressionBasic(PhysicalActivity):
         self.add(label="Type of loading", field_type="class")
 
 
-class Grey(FieldList):
-    def __init__(self):
-        super().__init__()
-
-
 class Green(FieldList):
     def __init__(self):
         super().__init__()
@@ -23,7 +18,7 @@ class Green(FieldList):
         self.add(label='Software used for data analysis')
 
 
-class TensileCompression(Grey, Green, TensileCompressionBasic):
+class TensileCompression(Green, TensileCompressionBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

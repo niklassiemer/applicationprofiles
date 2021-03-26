@@ -9,11 +9,6 @@ class SEMBasic(PhysicalActivity):
         self.add(label="Detector(s) used", name="detector")
 
 
-class Grey(FieldList):
-    def __init__(self):
-        super().__init__()
-
-
 class Green(FieldList):
     def __init__(self):
         super().__init__()
@@ -26,7 +21,7 @@ class Green(FieldList):
         self.add(label="Storage Tilt", unit=deg)  # Does this belong in `physical.preparation.Storage`?
 
 
-class SEM(Grey, Green, SEMBasic):
+class SEM(Green, SEMBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

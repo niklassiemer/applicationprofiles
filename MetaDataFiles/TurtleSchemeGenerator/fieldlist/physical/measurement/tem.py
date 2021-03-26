@@ -3,11 +3,6 @@ from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import squared
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class TEMBasic(PhysicalActivity):
-    def __init__(self):
-        super().__init__()
-
-
 class Green(FieldList):
     def __init__(self):
         super().__init__()
@@ -28,7 +23,7 @@ class Green(FieldList):
         self.add(label="2nd dimension starting pixel")
 
 
-class TEM(Green, TEMBasic):
+class TEM(PhysicalActivity, Green):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

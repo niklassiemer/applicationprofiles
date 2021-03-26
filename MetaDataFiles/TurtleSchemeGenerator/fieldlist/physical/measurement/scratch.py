@@ -12,11 +12,6 @@ class ScratchBasic(PhysicalActivity):
         self.add(label="Loading type")
 
 
-class Grey(FieldList):
-    def __init__(self):
-        super().__init__()
-
-
 class Green(FieldList):
     def __init__(self):
         super().__init__()
@@ -28,7 +23,7 @@ class Green(FieldList):
         self.add(label="Profiling velocity", unit=micro+"m/s")
 
 
-class Scratch(Grey, Green, ScratchBasic):
+class Scratch(Green, ScratchBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()
