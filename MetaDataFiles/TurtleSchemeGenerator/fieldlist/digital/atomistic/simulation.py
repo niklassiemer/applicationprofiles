@@ -3,40 +3,6 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import angstrom, squared
 
 
-class SampleBasic(SFBFields):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Parent ID")
-
-
-class SampleCoScInE(SampleBasic):
-    def __init__(self):
-        super().__init__()
-        # yellow
-        self.add(label="Generator ID")
-        self.add(label="Generator frame")  # int
-        self.add(label="Construction method", long=True)  # i.e. pyiron command
-        # grey
-        self.add(label="Defects contained")
-        self.add(label="Mechanical treatment")
-        self.add(label="Heat treatment")  # aka temperature
-        self.add(label="Point group")
-        self.add(label="Sublattices")
-
-        self.sort_fields_by_order_priority()
-
-
-class Sample(SampleCoScInE):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Chemical formula")  # str
-        self.add(label="Chemical species")  # list(str)
-        self.add(label="Number of atoms")  # int
-        self.add(label="Chemical species count")  # dict
-
-        self.sort_fields_by_order_priority()
-
-
 class SimBasic(SFBFields):
     # TODO: discuss: This is listed in green for simulations!
     # sim_blue.add(label="Sample ID", required=True)
@@ -213,28 +179,4 @@ class AtomisticSnapshotGreen(FieldList):
 
 
 class AtomisticSnapshot(AtomisticSnapshotGreen, AtomisticSnapshotCoScInE):
-    pass
-
-
-class MLPotCoScInE(SFBFields):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Potential ID")
-        self.add("Potential type/ format", name="potentialID")
-        self.add("Software used")
-        self.add("References")
-        # Training metadata
-        self.add("Parent Potential")
-        self.add("Training data")
-        self.add("Optimizer parameters")
-
-
-class MLPotGreen(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Species treated")
-        self.add(label='Structure types treated')
-
-
-class MLPot(MLPotGreen, MLPotCoScInE):
     pass
