@@ -115,8 +115,10 @@ class SimHess(FieldList):
 class SimTI(FieldList):
     def __init__(self):
         super().__init__()
-        self.add(label="Reference A, B", name="TIRefJobs")
-        self.add(label="Sample Reference", name="TISampleRef")
+        self.add(label="Reference A ID", name="TIRefJobA")
+        self.add(label="Reference B ID", name="TIRefJobB")
+        self.add(label="Sample Reference A ID", name="TISampleRefA")
+        self.add(label="Sample Reference B ID", name="TISampleRefB")  # Optional
         self.add(label="Thermalization Steps")
         self.add(label="Number of lambda points")
         self.add(label="Custom lambda points")
