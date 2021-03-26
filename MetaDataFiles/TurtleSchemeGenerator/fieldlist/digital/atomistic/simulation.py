@@ -12,7 +12,7 @@ class SimBasic(SFBFields):
         self.add(label="Last status update", field_type="date")
         self.add(label="pyiron version")
         self.add(label="Other software versions")
-        # We have DOI and References, DOI is for papers about this and references for what?!
+        # TODO: We have DOI and References, DOI is for papers about this and references for what?!
         self.add(label="References")
 
 
@@ -49,7 +49,7 @@ class SimVasp(FieldList):
         self.add(label="Kpoint mesh")
         self.add(label="Pseudopotential")
         self.add(label="Spin polarization", field_type="bool")
-        # ...etc?
+        # TODO: ...etc? Vasp has so many options...
 
 
 class SimMD(FieldList):
@@ -77,10 +77,10 @@ class SimMinimize(FieldList):
         super().__init__()
         self.add(label="Force convergence criterion", unit='eV/'+angstrom)
         self.add(label="Force convergence criterion norm type")
-        self.add(label="Minimization scheme parameter")
+        self.add(label="Minimization scheme parameter")  # TODO: What is this?
         self.add(label="Energy convergence criterion", unit='eV')
         self.add(label="Max steps")
-        self.add(label="Max steps force evaluation")
+        self.add(label="Max steps force evaluation")  # TODO: What is this? Why not only limiting steps?
         self.add(label="Minimization scheme", field_type="list")
         self.add(label="Pressure", unit="GPa")
         self.add(label="Print detail", name="calcMinPrintDetail")
@@ -109,7 +109,7 @@ class SimHess(FieldList):
     def __init__(self):
         super().__init__()
         self.add(label="Spring constant", unit="eV/"+angstrom+squared)
-        self.add(label="Reference Job")
+        self.add(label="Reference Job")  # TODO: What is this?
 
 
 class SimTI(FieldList):
@@ -130,12 +130,14 @@ class LammpsMin(SimMinimize, SimLammps, SimUniversal):
 
 
 class AtomisticOutputCoScInE(SFBFields):
+    # TODO: Are we really storing output separate from jobs? If so it needs it's own field
+    #       But somehow I really expect that we want to specify a calculation ID,
+    #       then say calculation.output.positions[frame]
     def __init__(self):
         super().__init__()
         self.add(label="Sample ID", required=True)
         self.add(label="Trajectory ID")
         self.add(label="Simulation ID")
-        self.add(label="External ID")
         self.add(label="Configuration format")
         self.add(label="References")
 
