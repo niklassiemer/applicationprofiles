@@ -188,3 +188,12 @@ class Immersion(SFBFields):
         self.add(label="Volume", unit='ml')
         # grey
         self.add(label="Temperature", unit=deg+'C')
+
+
+class Etching(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Etching routine")
+        self.add(label="Operator")
+        self.add(label="Chemicals")
+        self.add(label="Duration", unit="s")
