@@ -1,12 +1,9 @@
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class XPSBasic(SFBFields):
+class XPSBasic(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label="Date of preparation", field_type='date')
-        self.add(label="Sample storage")
-        self.add(label="Pre-treatment")
         self.add(label="Energy range start", unit='eV')
         self.add(label="Energy range end", unit='eV')
         self.add(label="Etching source")

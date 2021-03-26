@@ -1,14 +1,11 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class XRDBasic(SFBFields):
+class XRDBasic(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label="Instrument used", name="instrument")
-        self.add(label="Specimen type", field_type='class')
-        self.add(label="Specimen ID")
         self.add(label="Radiation source")
         self.add(label="Detector")
         self.add(label="Current", unit='mA')
@@ -39,13 +36,7 @@ class Grey(FieldList):
         self.add(label="Time per step", unit='s')
 
 
-class Green(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Measurement time/date", name="measurementTime")
-
-
-class XRD(Grey, Green, XRDBasic):
+class XRD(Grey, XRDBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

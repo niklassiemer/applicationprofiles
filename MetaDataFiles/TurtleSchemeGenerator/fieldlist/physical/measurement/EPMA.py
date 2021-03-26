@@ -1,14 +1,11 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class EPMABasic(SFBFields):
+class EPMABasic(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label="Instrument used", name="instrument")
-        self.add(label="Specimen ID")
-        self.add(label="Parent sample specimen ID", name="parentSample")
         self.add(label="Acquisition mode", field_type="class")
         self.add(label="Elements included/Peak ID", name='elementsIncluded')
 

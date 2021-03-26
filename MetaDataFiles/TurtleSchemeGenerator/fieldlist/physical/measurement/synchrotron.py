@@ -1,13 +1,10 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, squared
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class SynchrotronBasic(SFBFields):
+class SynchrotronBasic(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label="Date of preparation", field_type='date')
-        self.add(label="Sample storage")
-        self.add(label="Pre-treatment")
         self.add(label="Radiation type")
         self.add(label="Beam size", unit=micro+'m')
         self.add(label="Photon flux", unit="Photons/s x 10^", qudt='NUM-PER-SEC')

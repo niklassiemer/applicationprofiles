@@ -1,14 +1,11 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class EDXBasic(SFBFields):
+class EDXBasic(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label="Instrument used", name="instrument")
-        self.add(label="Specimen ID")
-        self.add(label="Parent sample specimen ID", name="parentSample")
         self.add(label="Measurement position")
         self.add(label="Accelerating voltage", unit="kV")
         self.add(label="Magnification")
@@ -30,7 +27,6 @@ class EDXGrey(FieldList):
 class EDXGreen(FieldList):
     def __init__(self):
         super().__init__()
-        self.add(label="Measurement time/date", name="measurementTime")
         self.add(label="Standard used")
 
 

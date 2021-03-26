@@ -1,15 +1,11 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class MicroPillarBasic(SFBFields):
+class MicroPillarBasic(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label="Specimen ID")
-        self.add(label="Parent sample specimen ID", name="parentSample")
-        self.add(label="Sample Location")
-        self.add(label="Instrument used", name="instrument")
-        self.add(label="Tip used", name="tip")
+        self.add(label="Tip ID", name="tip")  # TODO: Make a Tip object
 
 
 class Grey(FieldList):
@@ -19,14 +15,12 @@ class Grey(FieldList):
         self.add(label="Environmental protection during specimen testing", name="TestingEnv")
         self.add(label="Environmental gas")
         self.add(label="Test duration")
-        self.add(label="Test date", field_type="date")
 
 
 class Green(FieldList):
     def __init__(self):
         super().__init__()
         self.add(label="Type of test")
-        self.add(label="Tip ID")
         self.add(label="Diamond area function")
         self.add(label="Date of Calibration", field_type="date")
         self.add(label="Frame stiffness", unit='N/m')

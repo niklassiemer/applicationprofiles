@@ -1,13 +1,11 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import squared
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class TEMBasic(SFBFields):
+class TEMBasic(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label="Parent sample specimen ID", name="parentSample")
-        self.add(label="Sample Pre-treatment"),
 
 
 class Green(FieldList):

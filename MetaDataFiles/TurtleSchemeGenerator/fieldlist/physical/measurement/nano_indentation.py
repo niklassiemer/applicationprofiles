@@ -1,37 +1,25 @@
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class PreparationRoutine(SFBFields):
+class PreparationRoutine(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        # yellow fields
-        self.add(label="Preparation routine", long=True)
-        self.add(label="Sample storage")
-        self.add(label="Preparation Date", field_type="date", long=True)
-        self.add(label="Etching routine")
         self.add(label="Sample Orientation", long=True)
-        self.add(label="Experiment IDs of other tests performed on the same specimen", long=True)
         self.add(label='Any data set to be linked with this experiment', long=True)
 
 
 class NanoIndentationBasic(PreparationRoutine):
     def __init__(self):
         super().__init__()
-        self.add(label="Specimen ID", sh_path="csmd:investigation_sample", order_priority=2)
-        self.add(label="Parent sample specimen ID", name="parentSample", order_priority=2)
-        self.add(label="Sample Location", order_priority=2)
-        self.add(label="Instrument used", name="instrument", sh_path="csmd:investigation_instrument")
-        self.add(label="Tip used", name="tip")
         self.add(label="Test location on sample")
         self.add(label="Type of test")
         self.add(label="Control method")
-        self.add(label="Tip ID")
+        self.add(label="Tip ID", name="tip")
         # grey fields (with negative priority to have them at the end of the scheme)
         self.add(label="Relative Humidity", unit='%', other_ttl_relations={"qudt:Unit": "unit:PERCENT_RH"},
                  order_priority=-50)
         self.add(label="Environmental protection during specimen testing", name="TestingEnv", order_priority=-50)
         self.add(label="Environmental gas", order_priority=-50)
-        self.add(label="Test date", field_type="date", order_priority=-50)
 
 
 class NanoIndentation(NanoIndentationBasic):

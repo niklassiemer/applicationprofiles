@@ -5,7 +5,8 @@ class PhysicalActivity(SFBFields):
     def __init__(self):
         super().__init__()
         self.add(label="Operator", comment="The person who did the physical work. Default is the user.")
-        self.add(label="Instrument ID", comment="Which device was used for this activity.")
+        self.add(label="Instrument ID", comment="Which device was used for this activity.",
+                 sh_path="csmd:investigation_instrument")
 
 
 class PhysicalObject(SFBFields):
@@ -30,3 +31,9 @@ class Sample(PhysicalObject):
                     "Multiple routines should only be given for perfectly contiguous sample chains."
         )
         self.sort_fields_by_order_priority()
+
+
+class Tip(PhysicalObject):
+    def __init__(self):
+        super().__init__()
+        raise NotImplementedError("We don't have any info on this.")

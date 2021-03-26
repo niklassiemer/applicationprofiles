@@ -1,25 +1,21 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg, micro
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
-class SEMBasic(SFBFields):
+class SEMBasic(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label="Specimen ID")
-        self.add(label="Parent sample specimen ID", name="parentSample")
-        self.add(label="Sample Location")
-        self.add(label="Instrument used", name="instrument")
-        self.add(label="Detector used", name="detector")
+        self.add(label="Detector(s) used", name="detector")
 
 
 class Grey(FieldList):
     def __init__(self):
         super().__init__()
-        self.add(label="Temperature", unit=deg+'C'),
-        self.add(label="Relative Humidity", unit='%', qudt="PERCENT_RH"),
-        self.add(label="Environmental protection during specimen transfer", name="TestingEnv"),
-        self.add(label="Environmental gas"),
+        self.add(label="Temperature", unit=deg+'C')
+        self.add(label="Relative Humidity", unit='%', qudt="PERCENT_RH")
+        self.add(label="Environmental protection during specimen transfer", name="TestingEnv")
+        self.add(label="Environmental gas")
 
 
 class Green(FieldList):
@@ -31,7 +27,7 @@ class Green(FieldList):
         self.add(label="Image width", unit=micro + "m")
         self.add(label="Image size", unit="px(width) x px(height)", qudt="NUM")
         self.add(label="Acquisition mode", field_type="class")
-        self.add(label="Storage Tilt", unit=deg)
+        self.add(label="Storage Tilt", unit=deg)  # Does this belong in `physical.preparation.Storage`?
 
 
 class SEM(Grey, Green, SEMBasic):
