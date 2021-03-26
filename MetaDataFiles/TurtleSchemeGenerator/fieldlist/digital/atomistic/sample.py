@@ -1,13 +1,7 @@
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 
 
-class SampleBasic(SFBFields):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Parent ID")
-
-
-class SampleCoScInE(SampleBasic):
+class SampleCoScInE(SFBFields):
     def __init__(self):
         super().__init__()
         # yellow
