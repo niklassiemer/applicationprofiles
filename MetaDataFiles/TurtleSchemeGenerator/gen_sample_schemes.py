@@ -1,8 +1,8 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.sample import SampleBasic, ParentSample, Sample
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Sample
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import Polish, Immersion, Etching
 
-parent = Scheme('Parent_sample')
+parent = Scheme('Sample')
 parent.fields = ParentSample()
 parent.write()
 
