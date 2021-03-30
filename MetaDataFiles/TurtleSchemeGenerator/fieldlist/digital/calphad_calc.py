@@ -5,7 +5,6 @@ class CalphadCalc(SFBFields):
     def __init__(self):
         super().__init__()
         self.add(label="Database")
-        self.add(label="Date", field_type='date')
         self.add(label="Software used")
         self.add(label="Elements selected")
         self.add(label="Type of calculation")
