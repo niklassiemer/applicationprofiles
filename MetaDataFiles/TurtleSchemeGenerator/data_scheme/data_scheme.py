@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Meta Data Schemes """
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import _gen_unit_relation
+import pandas as pd
 
 
 class DropdownList:
@@ -272,6 +273,10 @@ class MetaDataField:
             result += '#' + indent + self.comment + ' '
         return result + '\n'
 
+    @property
+    def list(self):
+        return [self.label_w_unit, self.required, self.example_input, self.txt_field_type, self.comment]
+
     def copy(self):
         return MetaDataField(
             label=self.label,
@@ -373,6 +378,15 @@ class FieldList:
         for field in self._fields:
             result += field.txt
         return result
+
+    def to_list(self):
+        result = []
+        for field in self._fields:
+            result.append(field.list)
+        return result
+
+    def to_pandas(self):
+        return pd.DataFrame(self.to_list(), columns=['name', 'required', 'example_input', 'type', 'comment'])
 
     def write(self, filename, encoding='utf8'):
         with open(filename, 'w', encoding=encoding) as f:
