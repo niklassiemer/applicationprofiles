@@ -91,7 +91,6 @@ class ThinFilm(PhysicalActivity):
 class Polishing(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label="Preparation routine")
         self.add(label="Grit 1")
         self.add(label="Solvent grit 1")
         self.add(label="Grit 2")
@@ -120,7 +119,5 @@ class Immersion(PhysicalActivity):
 class Etching(PhysicalActivity):
     def __init__(self):
         super().__init__()
-        self.add(label="Etching routine")
-        self.add(label="Operator")
         self.add(label="Chemicals")
         self.add(label="Duration", unit="s")
