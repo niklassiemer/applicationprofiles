@@ -157,19 +157,23 @@ class AtomisticOutputGreen(FieldList):
 
 
 class AtomisticOutput(AtomisticOutputGreen, AtomisticOutputCoScInE):
-    pass
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
 
 
 class AtomisticSnapshotCoScInE(SFBFields):
     def __init__(self):
         super().__init__()
-        self.add(label="Snapshot ID")
+        # This is the ID: self.add(label="Snapshot ID")
         self.add(label="Sample ID")
         self.add(label="External ID")
         self.add(label="Snapshot format")
         self.add(label="Visualization program")
         self.add(label="Visualization program command")
         self.add(label="References")
+
+        self.sort_fields_by_order_priority()
 
 
 class AtomisticSnapshotGreen(FieldList):
@@ -181,4 +185,6 @@ class AtomisticSnapshotGreen(FieldList):
 
 
 class AtomisticSnapshot(AtomisticSnapshotGreen, AtomisticSnapshotCoScInE):
-    pass
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
