@@ -28,6 +28,7 @@ class PhysicalObject(SFBFields):
 class Instrument(PhysicalObject):
     def __init__(self):
         super().__init__()
+        self.add(label="Manufacturer")
         raise NotImplementedError("We have never even talked about this. Maybe it's perfectly a `PhysicalObject`.")
 
 
