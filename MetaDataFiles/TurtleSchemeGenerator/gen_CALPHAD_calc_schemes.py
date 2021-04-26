@@ -3,4 +3,4 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_calc import C
 
 Calphad_calc = Scheme("Calphad_calc")
 Calphad_calc.fields = CalphadCalc()
-Calphad_calc.write()
+Calphad_calc.write(file_extension='.txt')

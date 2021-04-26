@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Meta Data Schemes """
+import os.path
+
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import _gen_unit_relation
 import pandas as pd
 
@@ -561,8 +563,38 @@ class MetaDataSchemes:
             result += field.ttl_str(schema_name=self.name, order_number=i + offset)
         return result
 
-    def write(self, filename=None, encoding='utf8'):
-        if filename is None:
-            filename = self.name + '.ttl'
-        with open(filename, 'w', encoding=encoding) as f:
-            f.write(self.gen_scheme())
+    def write(self, filename=None, encoding='utf8', file_extension=None):
+        """write the whole schema to a file.
+
+        Args:
+            filename(str): name of the file written; defaults to schema name + file_extension
+                           if given with file extension, the corresponding file_extension is used.
+            encoding(str): encoding used to write the file; defaults to 'utf8'
+            file_extension(str/None): extension of the file to write. Possible extensions are:
+                '.ttl' (default): write a turtle schema
+                '.txt': write a plain text list
+        """
+        _ext = ""
+        _filename = self.name
+
+        if filename is not None:
+            _filename, _ext = os.path.splitext(filename)
+
+        if file_extension is not None and not _ext == "":
+            if not file_extension == _ext:
+                raise ValueError("File extension from filename and file_extension do not match!")
+
+        _ext = file_extension or _ext
+
+        if _ext == '':
+            _ext = '.ttl'
+
+        _filename = _filename + _ext
+
+        if _ext == '.ttl':
+            with open(_filename, 'w', encoding=encoding) as f:
+                f.write(self.gen_scheme())
+        elif _ext == '.txt':
+            self.fields.write(_filename, encoding=encoding)
+        else:
+            raise ValueError(f"File extension {_ext} is not known.")
