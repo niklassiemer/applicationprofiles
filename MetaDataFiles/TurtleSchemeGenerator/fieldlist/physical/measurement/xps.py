@@ -1,7 +1,7 @@
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
 
 
-class XPS(PhysicalActivity):
+class XPS(Experiment):
     def __init__(self):
         super().__init__()
         self.add(label="Energy range start", unit='eV')
