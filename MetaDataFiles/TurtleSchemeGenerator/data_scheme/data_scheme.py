@@ -418,6 +418,7 @@ class MetaDataSchemes:
         self.order_fields_by_priority = False
         self.parent_class = None
         self.parent_class_name = None
+        self.external_vocabulary = None  # This is a file name to be used to store the DropDownList vocab.
         if isinstance(extends, str):
             self.parent_class_name = extends
         elif isinstance(extends, MetaDataSchemes):
@@ -513,9 +514,11 @@ class MetaDataSchemes:
         if self.parent_class is not None:
             result += self.parent_class.ttl_str(target_class=False, ordered_fields=ordered_fields)
         for field in self.fields:
-            if hasattr(field.field_type, 'ttl_str'):
+            if self.external_vocabulary is None and hasattr(field.field_type, 'ttl_str'):
                 field.field_type.base = "https://purl.org/coscine/ap/sfb1394/" + self._path_and_name
                 result += field.field_type.ttl_str()
+            elif self.external_vocabulary is not None and hasattr(field.field_type, 'ttl_str'):
+                field.field_type.base = 'TODO'  # ToDo: derive this from   self.external_vocabulary
         return result
 
     def gen_page(self, target_class=True):
