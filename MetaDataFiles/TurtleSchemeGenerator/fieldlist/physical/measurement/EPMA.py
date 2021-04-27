@@ -1,9 +1,9 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
 
 
-class EPMABasic(PhysicalActivity):
+class EPMABasic(Experiment):
     def __init__(self):
         super().__init__()
         self.add(label="Acquisition mode", field_type="class")
