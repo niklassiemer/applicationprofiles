@@ -71,11 +71,12 @@ class ThinFilm(PhysicalActivity):
         self.add(label="Working gas pressure", unit='Pa')
         self.add(label="Deposition time", unit='min')
         # Magnetron settings
-        self.add(label="Magnetron A: Target type", name="MagnATarget")
-        self.add(label="Magnetron A: Power generator", name="MagnAPowerGen")
+        self.add(label="Magnetron ID")
+        self.add(label="Magnetron: Target type", name="MagnTarget")
+        self.add(label="Magnetron: Power generator", name="MagnPowerGen")
         # 2:
-        self.add(label="Magnetron A: Power mode", name="MagnAPowerMode", field_type="class")
-        self.add(label="Magnetron A: Set power", name="MagnAPowerSet", unit='W')
+        self.add(label="Magnetron: Power mode", name="MagnPowerMode", field_type="class")
+        self.add(label="Magnetron: Set power", name="MagnPowerSet", unit='W')
         # depending on 2 if DC is chosen
         self.add(label='Frequency', unit='kHz')
         self.add(label="Pulse time", unit=us)
