@@ -580,6 +580,9 @@ class MetaDataSchemes:
         if filename is not None:
             _filename, _ext = os.path.splitext(filename)
 
+        if file_extension is not None and not file_extension[0] == '.':
+            file_extension = '.' + file_extension
+
         if file_extension is not None and not _ext == "":
             if not file_extension == _ext:
                 raise ValueError("File extension from filename and file_extension do not match!")

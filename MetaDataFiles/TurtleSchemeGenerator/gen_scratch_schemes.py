@@ -10,3 +10,4 @@ scratch.write('scratch_green.ttl')
 
 scratch.fields = Scratch()
 scratch.write('scratch_full.ttl')
+scratch.write(file_extension='.txt')

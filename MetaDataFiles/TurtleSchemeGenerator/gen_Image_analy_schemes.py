@@ -23,4 +23,5 @@ ImageAnalysis_scheme.write(SchemeName+"_yellow.ttl")
 
 ImageAnalysis_scheme.fields = ImageAnalysis()
 ImageAnalysis_scheme.write(SchemeName+"_full.ttl")
+ImageAnalysis_scheme.write(file_extension='txt')
 

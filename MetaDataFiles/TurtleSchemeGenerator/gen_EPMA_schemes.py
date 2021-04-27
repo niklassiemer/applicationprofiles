@@ -13,3 +13,4 @@ EPMA_scheme.write("EPMA_grey.ttl")
 
 EPMA_scheme.fields = EPMA()
 EPMA_scheme.write('EPMA_full.ttl')
+EPMA_scheme.write(file_extension='txt')

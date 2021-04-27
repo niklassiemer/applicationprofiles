@@ -12,4 +12,4 @@ potentio_dyn_polar.write("PotentiodynPolar_green.ttl")
 
 potentio_dyn_polar.fields = PotentioDynPolar()
 potentio_dyn_polar.write("PotentiodynPolar_full.ttl")
-
+potentio_dyn_polar.write(file_extension='.txt')

@@ -14,4 +14,5 @@ CALPHAD_DB.write("Calphad_db_grey.ttl")
 
 CALPHAD_DB.fields = CalphadDB()
 CALPHAD_DB.write("Calphad_db_full.ttl")
+CALPHAD_DB.write(file_extension='.txt')
 

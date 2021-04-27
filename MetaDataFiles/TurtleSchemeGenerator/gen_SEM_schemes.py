@@ -10,3 +10,5 @@ SEM_scheme.write('SEM_green.ttl')
 
 SEM_scheme.fields = SEM()
 SEM_scheme.write('SEM_full.ttl')
+SEM_scheme.write(file_extension='.txt')
+

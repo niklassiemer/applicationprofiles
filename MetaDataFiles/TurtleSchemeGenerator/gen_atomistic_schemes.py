@@ -53,6 +53,7 @@ scheme_name = "Atomistic_output"
 output = Scheme(scheme_name)
 output.fields = AtomisticOutputCoScInE()
 output.write()
+output.write(file_extension='txt')
 
 output.fields = AtomisticOutput()
 output.write(scheme_name+"_full.ttl")
@@ -61,6 +62,7 @@ scheme_name = "Atomistic_snapshot"
 snapshot = Scheme(scheme_name)
 snapshot.fields = AtomisticSnapshotCoScInE()
 snapshot.write()
+snapshot.write(file_extension='txt')
 
 snapshot.fields = AtomisticSnapshotGreen()
 snapshot.write(scheme_name+"_green.ttl")
@@ -72,6 +74,7 @@ scheme_name = "ML_potential"
 ML_pot = Scheme(scheme_name)
 ML_pot.fields = MLPotCoScInE()
 ML_pot.write()
+ML_pot.write(file_extension='txt')
 
 ML_pot.fields = MLPotGreen()
 ML_pot.write(scheme_name+"_green.ttl")

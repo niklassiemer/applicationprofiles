@@ -13,3 +13,4 @@ EDX_scheme.write("EDX_grey.ttl")
 
 EDX_scheme.fields = EDX()
 EDX_scheme.write('EDX_full.ttl')
+EDX_scheme.write(file_extension='.txt')

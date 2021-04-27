@@ -14,3 +14,4 @@ tensile_compression.write("tensile_compression_green.ttl")
 
 tensile_compression.fields = TensileCompression()
 tensile_compression.write('tensile_compression_full.ttl')
+tensile_compression.write(file_extension='txt')
