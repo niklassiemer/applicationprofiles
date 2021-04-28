@@ -565,10 +565,15 @@ class MetaDataSchemes:
 
     @staticmethod
     def _parse_extension(implicit_extension, explicit_extension):
-        if implicit_extension is not None and len(implicit_extension) > 0 and implicit_extension[0] != '.':
-            implicit_extension = '.' + implicit_extension
+        if explicit_extension is not None and len(explicit_extension) > 0 and explicit_extension[0] != '.':
+            explicit_extension = '.' + explicit_extension
 
-        if explicit_extension is not None and implicit_extension != '' and explicit_extension != implicit_extension:
+        if (
+                implicit_extension is not None
+                and explicit_extension is not None
+                and implicit_extension != ''
+                and explicit_extension != implicit_extension
+        ):
             raise ValueError(f'Implicit ({implicit_extension}) and explicit ({explicit_extension}) extensions were '
                              f'both provided and do not match!')
 
