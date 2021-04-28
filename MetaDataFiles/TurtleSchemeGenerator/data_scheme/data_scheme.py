@@ -75,7 +75,7 @@ class DropdownList:
         result += '"' + self.title + '"@en ;\n'
         result += '  rdfs:label '
         result += '"' + self.label + '"@de ,\n'
-        result += '"' + self.label + '"@en .\n\n'
+        result += '  "' + self.label + '"@en .\n\n'
 
         for idx, option in enumerate(self.options):
             result += "<" + self.name + "#" + str(idx) + "> a "
@@ -230,10 +230,10 @@ class MetaDataField:
         result += '  sh:order ' + str(_order_number) + ' ;\n'
 
         if self.required:
-            result += ' sh:minCount 1 ;\n'
+            result += '  sh:minCount 1 ;\n'
 
         if self.long:
-            result += ' dash:singleLine false ;\n'
+            result += '  dash:singleLine false ;\n'
 
         if self._single_type:
             result += '  sh:datatype ' + self.ttl_field_type + ' ;\n'
