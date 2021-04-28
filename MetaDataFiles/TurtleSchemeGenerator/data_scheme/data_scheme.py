@@ -590,12 +590,7 @@ class MetaDataSchemes:
                 '.ttl' (default): write a turtle schema
                 '.txt': write a plain text list
         """
-
-        if filename is not None:
-            _filename, _ext = os.path.splitext(filename)
-        else:
-            _filename = self.name
-            _ext = ""
+        _filename, _ext = os.path.splitext(filename) if filename is not None else (self.name, '')
 
         _ext = self._parse_extension(_ext, file_extension)
         _filename = _filename + _ext
