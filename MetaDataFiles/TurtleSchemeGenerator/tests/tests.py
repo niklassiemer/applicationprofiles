@@ -105,6 +105,13 @@ class TestMetaDataScheme(unittest.TestCase):
     def test_sort_fields_by_order_parameter(self):
         self.scheme.fields._fields.sort()
 
+    def test_parse_extension(self):
+        self.assertEqual('.txt', self.scheme._parse_extension(None, 'txt'), msg='Expected a "." to get prepended.')
+        self.assertRaises(ValueError, self.scheme._parse_extension, 'txt', 'not_txt')
+        self.scheme._parse_extension('', 'txt')  # Both provided, but implicit is empty
+        self.scheme._parse_extension('.txt', 'txt')  # Both provided, but matching
+        self.assertEqual('.ttl', self.scheme._parse_extension(None, None), msg='Expected default to be .ttl')
+
     def test_write(self):
         with open('tests/static_test_MyScheme_ttl') as f:
             compare_lines = f.readlines()
