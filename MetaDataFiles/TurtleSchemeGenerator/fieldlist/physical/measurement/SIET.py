@@ -1,7 +1,7 @@
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
 
 
-class SIET(PhysicalActivity):
+class SIET(Experiment):
     def __init__(self):
         super().__init__()
         self.add(label="Reference electrode potential", unit='mV(SHE)', qudt='MilliV')

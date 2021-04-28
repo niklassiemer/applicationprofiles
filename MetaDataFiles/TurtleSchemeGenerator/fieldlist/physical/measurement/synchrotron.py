@@ -1,8 +1,8 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, squared
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
 
 
-class Synchrotron(PhysicalActivity):
+class Synchrotron(Experiment):
     def __init__(self):
         super().__init__()
         self.add(label="Radiation type")

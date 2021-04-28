@@ -19,6 +19,15 @@ class PhysicalActivity(PhysicalEnvironment):
                  sh_path="csmd:investigation_instrument")
 
 
+class Experiment(PhysicalActivity):
+    """An experiment is a PhysicalActivity on a sample"""
+    def __init__(self):
+        super().__init__()
+        self.add(label='Sample ID')  # In an ideal world, this would keep track of everything, however:
+        self.add(label="Parent Sample ID")
+        self.add(label='Any data set to be linked with this experiment', long=True)
+
+
 class PhysicalObject(SFBFields):
     def __init__(self):
         super().__init__()

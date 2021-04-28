@@ -1,9 +1,9 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
 
 
-class TensileCompressionBasic(PhysicalActivity):
+class TensileCompressionBasic(Experiment):
     def __init__(self):
         super().__init__()
         self.add(label="Type of loading", field_type="class")

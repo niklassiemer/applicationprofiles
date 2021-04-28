@@ -1,8 +1,8 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import DropdownList
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
 
 
-class SKPFM(PhysicalActivity):
+class SKPFM(Experiment):
     def __init__(self):
         super().__init__()
         KPFM_dropdown = DropdownList(label="KPFM mode", options=['AM', 'FM'])

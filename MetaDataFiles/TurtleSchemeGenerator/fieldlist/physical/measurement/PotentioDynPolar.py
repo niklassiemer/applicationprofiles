@@ -1,9 +1,9 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import squared
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
 
 
-class PotentioDynPolarBasic(PhysicalActivity):
+class PotentioDynPolarBasic(Experiment):
     def __init__(self):
         super().__init__()
         self.add(label="Potential Measurement")

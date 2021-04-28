@@ -4,4 +4,4 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.light_mi
 LightMicro_scheme = Scheme("LightMicroscope")
 LightMicro_scheme.fields = LightMicroscope()
 LightMicro_scheme.write("LightMicroscope_full.ttl")
-
+LightMicro_scheme.write(file_extension='.txt')

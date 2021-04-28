@@ -13,3 +13,4 @@ EBSD_scheme.write("ebsd_green.ttl")
 
 EBSD_scheme.fields = EBSD()
 EBSD_scheme.write('ebsd_full.ttl')
+EBSD_scheme.write(file_extension='.txt')

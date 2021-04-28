@@ -1,8 +1,9 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
 
 
-class MicroPillarBasic(PhysicalActivity):
+class MicroPillarBasic(Experiment):
     def __init__(self):
         super().__init__()
         self.add(label="Tip ID", name="tip")  # TODO: Make a Tip object
@@ -27,8 +28,8 @@ class Green(FieldList):
         self.add(label="Target loading rate", unit='mN/s')
         self.add(label="Continuous stiffness measurement", field_type='bool')
         self.add(label="Drift correction enabled", field_type="bool")
-        self.add(label="Sample temperature", unit="\u00b0C")
-        self.add(label="Tip temperature", unit="\u00b0C")
+        self.add(label="Sample temperature", unit=deg+"C")
+        self.add(label="Tip temperature", unit=deg+"C")
 
 
 class MicroPillar(Grey, Green, MicroPillarBasic):

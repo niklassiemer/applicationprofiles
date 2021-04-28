@@ -16,3 +16,4 @@ micro_pillar.write('micropillar_green.ttl')
 
 micro_pillar.fields = MicroPillar()
 micro_pillar.write('micropillar_full.ttl')
+micro_pillar.write(file_extension='.txt')

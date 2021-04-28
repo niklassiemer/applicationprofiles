@@ -4,6 +4,7 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.damask import DamaskC
 DAMASK = Scheme("DAMASK")
 DAMASK.fields = DamaskCoScInE()
 DAMASK.write()
+DAMASK.write(file_extension='.txt')
 
 DAMASK.fields = Damask()
 DAMASK.write("DAMASK_full.ttl")

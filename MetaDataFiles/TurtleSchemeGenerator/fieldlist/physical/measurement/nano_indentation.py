@@ -1,11 +1,11 @@
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
 
 
-class PreparationRoutine(PhysicalActivity):
+class PreparationRoutine(Experiment):
     def __init__(self):
         super().__init__()
         self.add(label="Sample Orientation", long=True)
-        self.add(label='Any data set to be linked with this experiment', long=True)
 
 
 class NanoIndentationBasic(PreparationRoutine):
@@ -15,11 +15,6 @@ class NanoIndentationBasic(PreparationRoutine):
         self.add(label="Type of test")
         self.add(label="Control method")
         self.add(label="Tip ID", name="tip")
-        # grey fields (with negative priority to have them at the end of the scheme)
-        self.add(label="Relative Humidity", unit='%', other_ttl_relations={"qudt:Unit": "unit:PERCENT_RH"},
-                 order_priority=-50)
-        self.add(label="Environmental protection during specimen testing", name="TestingEnv", order_priority=-50)
-        self.add(label="Environmental gas", order_priority=-50)
 
 
 class NanoIndentation(NanoIndentationBasic):
@@ -35,8 +30,8 @@ class NanoIndentation(NanoIndentationBasic):
         self.add(label="End of averaging depth", unit="nm")
         self.add(label="Hold time at maximum load", unit='s')
         self.add(label="Drift correction enabled", field_type="bool")
-        self.add(label="Sample temperature", unit="\u00b0C")
-        self.add(label="Tip temperature", unit="\u00b0C")
+        self.add(label="Sample temperature", unit=deg+"C")
+        self.add(label="Tip temperature", unit=deg+"C")
         # Listed later in case of creep test in the docx
         self.add(label="Diamond area function")
         self.add(label="Date of Calibration", field_type="date")  # TODO: Do we need a tip calibration activity?
@@ -56,8 +51,8 @@ class NanoIndentationSRJ(NanoIndentationBasic):
         self.add(label="Displacement range for strain rate ", unit="nm")
         self.add(label="Continuous stiffness measurement", field_type='bool')
         self.add(label="Drift correction enabled", field_type="bool")
-        self.add(label="Sample temperature", unit="\u00b0C")
-        self.add(label="Tip temperature", unit="\u00b0C")
+        self.add(label="Sample temperature", unit=deg+"C")
+        self.add(label="Tip temperature", unit=deg+"C")
         self.sort_fields_by_order_priority()
 
 

@@ -5,16 +5,20 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import P
 sample_prep = Scheme('Sample_preparation')
 sample_prep.fields = Polishing()
 sample_prep.write()
+sample_prep.write(file_extension='.txt')
 
 immersion = Scheme("Immersion")
 immersion.fields = Immersion()
 immersion.write()
+immersion.write(file_extension='.txt')
 
 etching = Scheme("Etching")
 etching.fields = Etching()
 etching.write()
+etching.write(file_extension='.txt')
 
 sample = Scheme("Sample")
 sample.fields = Sample()
 sample.write()
+sample.write(file_extension='.txt')
 

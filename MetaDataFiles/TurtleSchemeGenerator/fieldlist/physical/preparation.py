@@ -44,7 +44,6 @@ class ThinFilm(PhysicalActivity):
         super().__init__()
         self.add(label="Substrate rotation", field_type='bool')
         self.add(label="Substrate temperature", unit=deg + 'C')
-        self.add(label="Capping Layer")
 
         # Grey fields
         us = micro+'s'  # TODO: clarify! In the docx this is 'us'
@@ -52,16 +51,22 @@ class ThinFilm(PhysicalActivity):
         self.add(label="Substrate material")
         self.add(label="Substrate geometry and size")
         # 1:
-        self.add(label="Substrate bias type")
+        self.add(label="Substrate bias type", field_type=['floating', 'DC', 'pulsed DC', 'RF', 'HPPMS', 'grounded'])
         # depending on 1 : If pulsed DC, pulsed DC, RF or HPPMS is chosen
-        self.add(label="Bias power generator")
-        self.add(label="Substrate voltage", unit='V')
+        self.add(label="Bias power generator",
+                 comment="If 'Substrate bias type' is 'DC', 'pulsed DC', 'RF', or 'HPPMS' (not applicable in CoScInE)")
+        self.add(label="Substrate voltage", unit='V',
+                 comment="If 'Substrate bias type' is 'DC', 'pulsed DC', 'RF', or 'HPPMS' (not applicable in CoScInE)")
         # depending on 1 if pulsed DC is chosen
-        self.add(label="Frequency", unit='kHz')
-        self.add(label="Pulse time", unit=us)
+        self.add(label="Frequency", unit='kHz',
+                 comment="If 'Substrate bias type' is 'pulsed DC' (not applicable in CoScInE)")
+        self.add(label="Pulse time", unit=us,
+                 comment="If 'Substrate bias type' is 'pulsed DC' (not applicable in CoScInE)")
         # depending on 1 if HPPMS is chosen
-        self.add(label='On-time', unit=us)
-        self.add(label='Off-time', unit=us)
+        self.add(label='On-time', unit=us,
+                 comment="If 'Substrate bias type' is 'HPPMS' (not applicable in CoScInE)")
+        self.add(label='Off-time', unit=us,
+                 comment="If 'Substrate bias type' is 'HPPMS' (not applicable in CoScInE)")
         # Deposition parameters
         self.add(label="Base pressure (at room temperature)", name="BaseTatRT", unit='mbar')
         self.add(label="Base pressure (at synthesis temperature)", name="BaseTatST", unit='mbar')
@@ -71,18 +76,26 @@ class ThinFilm(PhysicalActivity):
         self.add(label="Working gas pressure", unit='Pa')
         self.add(label="Deposition time", unit='min')
         # Magnetron settings
-        self.add(label="Magnetron A: Target type", name="MagnATarget")
-        self.add(label="Magnetron A: Power generator", name="MagnAPowerGen")
+        self.add(label="Magnetron ID")
+        self.add(label="Magnetron: Target type", name="MagnTarget")
+        self.add(label="Magnetron: Power generator", name="MagnPowerGen")
         # 2:
-        self.add(label="Magnetron A: Power mode", name="MagnAPowerMode", field_type="class")
-        self.add(label="Magnetron A: Set power", name="MagnAPowerSet", unit='W')
+        self.add(label="Magnetron: Power mode", name="MagnPowerMode",
+                 field_type=['DC', 'pulsed DC', 'RF', 'HPPMS'])
+        self.add(label="Magnetron: Set power", name="MagnPowerSet", unit='W')
         # depending on 2 if DC is chosen
-        self.add(label='Frequency', unit='kHz')
-        self.add(label="Pulse time", unit=us)
+        self.add(label='Frequency', unit='kHz',
+                 comment="if DC is chosen for Magnetron Power mode (not applicable on CoScInE)")
+        self.add(label="Pulse time", unit=us,
+                comment="if DC is chosen for Magnetron Power mode (not applicable on CoScInE)")
         # depending on 2 if HPPMS is chosen
-        self.add(label="On-time", unit=us)
-        self.add(label="Off-time", unit=us)
+        self.add(label="On-time", unit=us,
+                comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
+        self.add(label="Off-time", unit=us,
+                comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
         # To be implemented also for Magnetron B and C ???
+        # Added Magnetron ID field - I hope this captures this! TODO: clarify!
+        self.add(label="Capping Layer")
         self.add(label="Capping thickness", unit='nm')
 
         self.sort_fields_by_order_priority()

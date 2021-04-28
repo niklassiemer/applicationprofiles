@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Meta Data Schemes """
+import os.path
+
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import _gen_unit_relation
 import pandas as pd
 
@@ -561,8 +563,42 @@ class MetaDataSchemes:
             result += field.ttl_str(schema_name=self.name, order_number=i + offset)
         return result
 
-    def write(self, filename=None, encoding='utf8'):
-        if filename is None:
-            filename = self.name + '.ttl'
-        with open(filename, 'w', encoding=encoding) as f:
-            f.write(self.gen_scheme())
+    @staticmethod
+    def _parse_extension(implicit_extension, explicit_extension):
+        if explicit_extension is not None and len(explicit_extension) > 0 and explicit_extension[0] != '.':
+            explicit_extension = '.' + explicit_extension
+
+        if (
+                implicit_extension is not None
+                and explicit_extension is not None
+                and implicit_extension != ''
+                and explicit_extension != implicit_extension
+        ):
+            raise ValueError(f'Implicit ({implicit_extension}) and explicit ({explicit_extension}) extensions were '
+                             f'both provided and do not match!')
+
+        return explicit_extension or implicit_extension or '.ttl'
+
+    def write(self, filename=None, encoding='utf8', file_extension=None):
+        """write the whole schema to a file.
+
+        Args:
+            filename(str): name of the file written; defaults to schema name + file_extension
+                           if given with file extension, the corresponding file_extension is used.
+            encoding(str): encoding used to write the file; defaults to 'utf8'
+            file_extension(str/None): extension of the file to write. Possible extensions are:
+                '.ttl' (default): write a turtle schema
+                '.txt': write a plain text list
+        """
+        _filename, _ext = os.path.splitext(filename) if filename is not None else (self.name, '')
+
+        _ext = self._parse_extension(_ext, file_extension)
+        _filename += _ext
+
+        if _ext == '.ttl':
+            with open(_filename, 'w', encoding=encoding) as f:
+                f.write(self.gen_scheme())
+        elif _ext == '.txt':
+            self.fields.write(_filename, encoding=encoding)
+        else:
+            raise ValueError(f"File extension {_ext} is not known.")

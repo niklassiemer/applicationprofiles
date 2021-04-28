@@ -7,3 +7,4 @@ TEM_scheme.write("tem_green.ttl")
 
 TEM_scheme.fields = TEM()
 TEM_scheme.write('tem_full.ttl')
+TEM_scheme.write(file_extension='.txt')

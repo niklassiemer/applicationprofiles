@@ -1,3 +1,4 @@
+import os.path
 import unittest
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList, MetaDataSchemes
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataField as Field
@@ -73,7 +74,7 @@ class TestFieldList(unittest.TestCase):
             [field.name for field in new_list]
         )
         new_list[0].field_type = 'boolean'
-        self.assertTrue('boolean' not in self.list[0].field_type)
+        self.assertFalse('boolean' == self.list[0].field_type)
         new_list.add('baz')
         self.assertEqual(len(self.list), 2)
         self.assertEqual(len(new_list), 3)
@@ -103,3 +104,52 @@ class TestMetaDataScheme(unittest.TestCase):
 
     def test_sort_fields_by_order_parameter(self):
         self.scheme.fields._fields.sort()
+
+    def test_parse_extension(self):
+        self.assertEqual('.txt', self.scheme._parse_extension(None, 'txt'), msg='Expected a "." to get prepended.')
+        self.assertRaises(ValueError, self.scheme._parse_extension, 'txt', 'not_txt')
+        self.scheme._parse_extension('', 'txt')  # Both provided, but implicit is empty
+        self.scheme._parse_extension('.txt', 'txt')  # Both provided, but matching
+        self.assertEqual('.ttl', self.scheme._parse_extension(None, None), msg='Expected default to be .ttl')
+
+    def test_write(self):
+        with open('tests/static_test_MyScheme_ttl') as f:
+            compare_lines = f.readlines()
+
+        self.assertFalse(os.path.isfile('MyScheme.ttl'))
+        self.scheme.write()
+        with open('MyScheme.ttl') as f:
+            lines = f.readlines()
+        self.assertEqual(lines, compare_lines)
+        os.remove('MyScheme.ttl')
+
+        self.assertFalse(os.path.isfile('testWriteMyScheme.ttl'))
+        self.scheme.write('testWriteMyScheme')
+        with open('testWriteMyScheme.ttl') as f:
+            lines = f.readlines()
+        self.assertEqual(lines, compare_lines)
+        os.remove('testWriteMyScheme.ttl')
+
+        self.assertFalse(os.path.isfile('MyScheme.txt'))
+        self.scheme.write(file_extension='.txt')
+        with open('MyScheme.txt') as f:
+            lines = f.readlines()
+        self.assertEqual(len(lines), 2)
+        self.assertEqual(lines[0].split(), ['foo', ':', '(string)'])
+        self.assertEqual(lines[1].split(), ['bar', ':', '(string)'])
+        os.remove('MyScheme.txt')
+
+        self.assertFalse(os.path.isfile('MyScheme.txt'))
+        self.scheme.write(filename='MyScheme.txt')
+        with open('MyScheme.txt') as f:
+            lines = f.readlines()
+        self.assertEqual(len(lines), 2)
+        self.assertEqual(lines[0].split(), ['foo', ':', '(string)'])
+        self.assertEqual(lines[1].split(), ['bar', ':', '(string)'])
+        os.remove('MyScheme.txt')
+
+        with self.assertRaises(ValueError):
+            self.scheme.write(filename='some.txt', file_extension='.ttl')
+
+        with self.assertRaises(ValueError):
+            self.scheme.write(filename='some_file_without_valid.extension')
