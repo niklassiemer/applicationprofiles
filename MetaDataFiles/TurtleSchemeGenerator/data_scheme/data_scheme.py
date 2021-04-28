@@ -75,7 +75,7 @@ class DropdownList:
         result += '"' + self.title + '"@en ;\n'
         result += '  rdfs:label '
         result += '"' + self.label + '"@de ,\n'
-        result += '"' + self.label + '"@en .\n'
+        result += '"' + self.label + '"@en .\n\n'
 
         for idx, option in enumerate(self.options):
             result += "<" + self.name + "#" + str(idx) + "> a "
@@ -84,7 +84,7 @@ class DropdownList:
             result += '"' + option + '"@de ,\n'
             result += '"' + option + '"@en ;\n'
             result += '  rdfs:subClassOf '
-            result += "<" + self.name + ">.\n"
+            result += "<" + self.name + ">.\n\n"
 
         return result
 
@@ -418,7 +418,10 @@ class MetaDataSchemes:
         self.order_fields_by_priority = False
         self.parent_class = None
         self.parent_class_name = None
-        self.external_vocabulary = None  # This is a file name to be used to store the DropDownList vocab.
+        self._external_vocabulary = {"filename": None, "content": ""}
+        # The _external_vocabulary is used to store filename and link be used to write the
+        # DropDownList vocab. The content of the file has to be appended to the vocabularies/sfb1394/index.ttl
+        self.external_vocabulary = True
         if isinstance(extends, str):
             self.parent_class_name = extends
         elif isinstance(extends, MetaDataSchemes):
@@ -439,6 +442,20 @@ class MetaDataSchemes:
             "dcterms": "<http://purl.org/dc/terms/>",
             "sfb1394": "<http://purl.org/coscine/terms/sfb1394#>"
         }
+
+    @property
+    def external_vocabulary(self):
+        return self._external_vocabulary["filename"]
+
+    @external_vocabulary.setter
+    def external_vocabulary(self, value):
+        self._external_vocabulary["sfb1394vocab"] = "http://purl.org/coscine/vocabularies/sfb1394"
+        if value is None or value is False:
+            del self._external_vocabulary["sfb1394vocab"]  # delete the vocab prefix if not needed.
+        elif value is True:
+            self._external_vocabulary["filename"] = self.name + "_vocab.ttl"
+        else:
+            self._external_vocabulary["filename"] = value
 
     @property
     def fields(self):
@@ -511,6 +528,7 @@ class MetaDataSchemes:
 
     def gen_required_fields(self, ordered_fields=False):
         result = ""
+        external_vocab = ""
         if self.parent_class is not None:
             result += self.parent_class.ttl_str(target_class=False, ordered_fields=ordered_fields)
         for field in self.fields:
@@ -518,7 +536,12 @@ class MetaDataSchemes:
                 field.field_type.base = "https://purl.org/coscine/ap/sfb1394/" + self._path_and_name
                 result += field.field_type.ttl_str()
             elif self.external_vocabulary is not None and hasattr(field.field_type, 'ttl_str'):
-                field.field_type.base = 'TODO'  # ToDo: derive this from   self.external_vocabulary
+                field.field_type.base = self._external_vocabulary['sfb1394vocab']
+                external_vocab += field.field_type.ttl_str()
+                external_vocab += '\n'
+
+        if external_vocab != "":
+            self._external_vocabulary["content"] = external_vocab
         return result
 
     def gen_page(self, target_class=True):
@@ -604,3 +627,7 @@ class MetaDataSchemes:
             self.fields.write(_filename, encoding=encoding)
         else:
             raise ValueError(f"File extension {_ext} is not known.")
+
+        if self.external_vocabulary is not None:
+            with open(self.external_vocabulary, 'w', encoding='utf8') as f:
+                f.write(self._external_vocabulary["content"])
