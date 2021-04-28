@@ -593,7 +593,7 @@ class MetaDataSchemes:
         _filename, _ext = os.path.splitext(filename) if filename is not None else (self.name, '')
 
         _ext = self._parse_extension(_ext, file_extension)
-        _filename = _filename + _ext
+        _filename += _ext
 
         if _ext == '.ttl':
             with open(_filename, 'w', encoding=encoding) as f:
