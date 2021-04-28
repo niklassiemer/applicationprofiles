@@ -574,11 +574,12 @@ class MetaDataSchemes:
                 '.ttl' (default): write a turtle schema
                 '.txt': write a plain text list
         """
-        _ext = ""
-        _filename = self.name
 
         if filename is not None:
             _filename, _ext = os.path.splitext(filename)
+        else:
+            _filename = self.name
+            _ext = ""
 
         if file_extension is not None and not file_extension[0] == '.':
             file_extension = '.' + file_extension
