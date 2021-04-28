@@ -563,6 +563,17 @@ class MetaDataSchemes:
             result += field.ttl_str(schema_name=self.name, order_number=i + offset)
         return result
 
+    @staticmethod
+    def _parse_extension(implicit_extension, explicit_extension):
+        if implicit_extension is not None and len(implicit_extension) > 0 and implicit_extension[0] != '.':
+            implicit_extension = '.' + implicit_extension
+
+        if explicit_extension is not None and implicit_extension != '' and explicit_extension != implicit_extension:
+            raise ValueError(f'Implicit ({implicit_extension}) and explicit ({explicit_extension}) extensions were '
+                             f'both provided and do not match!')
+
+        return explicit_extension or implicit_extension or '.ttl'
+
     def write(self, filename=None, encoding='utf8', file_extension=None):
         """write the whole schema to a file.
 
@@ -581,18 +592,7 @@ class MetaDataSchemes:
             _filename = self.name
             _ext = ""
 
-        if file_extension is not None and not file_extension[0] == '.':
-            file_extension = '.' + file_extension
-
-        if file_extension is not None and not _ext == "":
-            if not file_extension == _ext:
-                raise ValueError("File extension from filename and file_extension do not match!")
-
-        _ext = file_extension or _ext
-
-        if _ext == '':
-            _ext = '.ttl'
-
+        _ext = self._parse_extension(_ext, file_extension)
         _filename = _filename + _ext
 
         if _ext == '.ttl':
