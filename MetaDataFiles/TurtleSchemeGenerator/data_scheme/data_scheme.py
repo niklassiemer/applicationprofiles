@@ -415,6 +415,7 @@ class MetaDataSchemes:
         else:
             self.name = name
 
+        self.coscine_demo = False
         self.order_fields_by_priority = False
         self.parent_class = None
         self.parent_class_name = None
@@ -452,6 +453,7 @@ class MetaDataSchemes:
         self._external_vocabulary["sfb1394vocab"] = "http://purl.org/coscine/vocabularies/sfb1394"
         if value is None or value is False:
             del self._external_vocabulary["sfb1394vocab"]  # delete the vocab prefix if not needed.
+            self._external_vocabulary["filename"] = None
         elif value is True:
             self._external_vocabulary["filename"] = self.name + "_vocab.ttl"
         else:
@@ -493,7 +495,8 @@ class MetaDataSchemes:
         result = ""
         result += self.gen_preamble()
         result += self.ttl_str(target_class=True, ordered_fields=self.order_fields_by_priority)
-        result += " # Shape URL https://purl.org/coscine/ap/sfb1394/" + self._path_and_name + "/"
+        if self.coscine_demo:
+            result += "\n # Shape URL https://purl.org/coscine/ap/sfb1394/" + self._path_and_name + "/"
         return result
 
     def ttl_str(self, target_class=True, ordered_fields=False):
