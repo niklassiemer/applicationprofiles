@@ -75,16 +75,16 @@ class DropdownList:
         result += '"' + self.title + '"@en ;\n'
         result += '  rdfs:label '
         result += '"' + self.label + '"@de ,\n'
-        result += '  "' + self.label + '"@en .\n\n'
+        result += '  "' + self.label + '"@en \n.\n\n'
 
         for idx, option in enumerate(self.options):
             result += "<" + self.name + "#" + str(idx) + "> a "
             result += "<" + self.name + "#" + str(idx) + ">;\n"
             result += '  rdfs:label '
             result += '"' + option + '"@de ,\n'
-            result += '"' + option + '"@en ;\n'
+            result += '  "' + option + '"@en ;\n'
             result += '  rdfs:subClassOf '
-            result += "<" + self.name + ">.\n\n"
+            result += "<" + self.name + ">\n.\n\n"
 
         return result
 
@@ -243,7 +243,7 @@ class MetaDataField:
         result += '  sh:name "' + self.label_w_unit + '"@en, "' + self.label_w_unit + '"@de ;\n'
 
         for key, value in self.ttl_relations.items():
-            if not (key == 'qudt:Unit' and value == 'unit:None'):
+            if not ((key == 'qudt:Unit' and value == 'unit:None') or key == 'sh:path'):
                 result += '  ' + key + ' ' + value + ' ;\n'
 
         if self._single_type:
@@ -566,10 +566,9 @@ class MetaDataSchemes:
   ] ;
 
 '''
-        for field in self.fields[0:-1]:
+        for field in self.fields:
             result += '  sh:property coscineSfb1394' + self.name + ':' + field.name + ' ;\n'
-        field = self.fields[-1]
-        result += '  sh:property coscineSfb1394' + self.name + ':' + field.name + ' .\n'
+        result += '.\n'
         return result
 
     def gen_nodes(self, ordered_fields=False):
