@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity, Experiment
 
 
 class Casting(PhysicalActivity):
@@ -134,3 +134,9 @@ class Etching(PhysicalActivity):
         super().__init__()
         self.add(label="Chemicals")
         self.add(label="Duration", unit="s")
+
+
+class SamplePreparation(Etching, Immersion, Polishing, Experiment):
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()
