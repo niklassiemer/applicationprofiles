@@ -11,5 +11,5 @@ class Synchrotron(Experiment):
         self.add(label="Energy bandwidth", unit='%', qudt="PERCENT")
         self.add(label="Incoming beam focus", unit=micro+'m'+squared)
         self.add(label="Deflected beam focus", unit=micro+'m'+squared)
-        self.add(label="Detector")
+        self.add(label="Detector ID")
         self.sort_fields_by_order_priority()
