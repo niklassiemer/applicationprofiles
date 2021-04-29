@@ -3,6 +3,7 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.nano_ind
 
 nano_ind_scheme = MetaDataSchemes("NanoIndentation")
 nano_ind_scheme.fields = NanoIndentation()
+nano_ind_scheme.external_vocabulary = True
 nano_ind_scheme.write()
 
 nano_ind_scheme.fields.write('NanoIndentation.txt')
