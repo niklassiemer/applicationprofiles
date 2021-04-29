@@ -112,6 +112,7 @@ class Polishing(PhysicalActivity):
         self.add(label="Polishing Suspension", unit=micro + 'm')
         self.add(label="Material Suspension")
         self.add(label="Solvent")
+        self.sort_fields_by_order_priority()
 
 
 class Immersion(PhysicalActivity):
@@ -125,6 +126,7 @@ class Immersion(PhysicalActivity):
         self.add(label="Flow rate", unit="ml/h")
         self.add(label="Revolutions per minute", unit='rpm', qudt='PER-MIN')
         self.add(label="Volume", unit='ml')
+        self.sort_fields_by_order_priority()
 
 
 class Etching(PhysicalActivity):
@@ -132,6 +134,7 @@ class Etching(PhysicalActivity):
         super().__init__()
         self.add(label="Chemicals")
         self.add(label="Duration", unit="s")
+        self.sort_fields_by_order_priority()
 
 
 class SamplePreparation(Etching, Immersion, Polishing, Experiment):
