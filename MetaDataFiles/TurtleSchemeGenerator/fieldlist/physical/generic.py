@@ -7,7 +7,6 @@ class PhysicalEnvironment(SFBFields):
         super().__init__()
         self.add(label="Temperature", unit=deg+'C')
         self.add(label="Relative Humidity", unit='%', other_ttl_relations={"qudt:Unit": "unit:PERCENT_RH"})
-        self.add(label="Environmental protection during specimen testing", name="TestingEnv")
         self.add(label="Environmental gas")
 
 
@@ -26,6 +25,8 @@ class Experiment(PhysicalActivity):
         self.add(label='Sample ID')  # In an ideal world, this would keep track of everything, however:
         self.add(label="Parent Sample ID")
         self.add(label='Any data set to be linked with this experiment', long=True)
+        self.add(label="Environmental protection during sample processing", name="TestingEnv")
+        self.add(label="Pre-treatment")
 
 
 class PhysicalObject(SFBFields):
