@@ -1,4 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import SimTechnical
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import angstrom, squared
 
@@ -8,23 +9,13 @@ class SimBasic(SFBFields):
     # sim_blue.add(label="Sample ID", required=True)
     def __init__(self):
         super().__init__()
-        self.add(label="Status", field_type="list")  # Choice ('initialized', 'running', etc)
+        self.add(label="Status", field_type=['initialized', 'created', 'submitted', 'running',
+                 'collect', 'finished', 'refresh', 'suspended'])
         self.add(label="Last status update", field_type="date")
         self.add(label="pyiron version")
         self.add(label="Other software versions")
         # TODO: We have DOI and References, DOI is for papers about this and references for what?!
         self.add(label="References")
-
-
-class SimTechnical(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Cluster")
-        self.add(label="Node")
-        self.add(label="Cores")
-        self.add(label="Runtime")
-        self.add(label="Submission time", field_type="date")
-        self.add(label="Stop time", field_type="date")
 
 
 # Inherit from SimTechnical first since then its fields are added to the SimBasic.

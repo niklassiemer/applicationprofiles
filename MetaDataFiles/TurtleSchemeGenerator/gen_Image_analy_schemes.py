@@ -3,9 +3,9 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.image_analysis import
     ImageAnalysisBasic,
     Yellow,
     Green,
-    Grey,
     ImageAnalysis
 )
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import SimTechnical
 
 SchemeName = "ImageAnalysis"
 ImageAnalysis_scheme = Scheme(SchemeName)
@@ -15,7 +15,7 @@ ImageAnalysis_scheme.write()
 ImageAnalysis_scheme.fields = Green()
 ImageAnalysis_scheme.write(SchemeName+"_green.ttl")
 
-ImageAnalysis_scheme.fields = Grey()
+ImageAnalysis_scheme.fields = SimTechnical()
 ImageAnalysis_scheme.write(SchemeName+"_grey.ttl")
 
 ImageAnalysis_scheme.fields = Yellow()

@@ -1,5 +1,6 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import squared
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import SimTechnical
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 
 
@@ -47,25 +48,13 @@ class DamaskNumerical(FieldList):
         self.add(label="Maximum cutbacks")
 
 
-class DamaskGrey(FieldList):
-    def __init__(self):
-        super().__init__()
-        self.add(label="Cluster name")
-        self.add(label='CPU info')
-        self.add(label='cores')
-        self.add(label='Required RAM', unit='GB')
-        self.add(label="Runtime", unit='h')
-        self.add(label="Submission time")
-        self.add(label="Stop time")
-
-
-class DamaskCoScInE(DamaskGrey, DamaskBasic):
+class DamaskCoScInE(SimTechnical, DamaskBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()
 
 
-class Damask(DamaskGrey, DamaskNumerical, DamaskBoundaryConditions, DamaskGeometry, DamaskMaterial, DamaskBasic):
+class Damask(SimTechnical, DamaskNumerical, DamaskBoundaryConditions, DamaskGeometry, DamaskMaterial, DamaskBasic):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()
