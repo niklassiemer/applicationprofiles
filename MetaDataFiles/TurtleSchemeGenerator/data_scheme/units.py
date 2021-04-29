@@ -21,6 +21,7 @@ qudt_unit_relations = {
     "eV": "EV",
     "eV/"+angstrom: "EV-PER-ANGSTROM",
     'ps': "PicoSEC",
+    'pJ': "PicoJ",
     'GPa': "GigaPA",
     'K': 'K',
     'm/s': 'M-PER-SEC',
