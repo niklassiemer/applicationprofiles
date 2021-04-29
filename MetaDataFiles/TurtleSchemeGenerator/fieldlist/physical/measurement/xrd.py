@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
+from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg, squared
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
 
 
@@ -27,13 +27,14 @@ class Grey(FieldList):
         self.add(label="Number of frames")
         self.add(label="Measurement time", unit='s')
         self.add(label="Start 2Theta", unit=deg)
-        # TODO: check if there is a End 2Theta missing in the docx.
-        # self.add(label="End 2Theta", unit=deg)
+        self.add(label="End 2Theta", unit=deg)
         self.add(label="Start Theta", unit=deg)
         self.add(label="End Theta", unit=deg)
         self.add(label="Fixed 2Theta position", unit=deg)
         self.add(label="Step size", unit=deg)
         self.add(label="Time per step", unit='s')
+        self.add(label="Filter")
+        self.add(label="Mask size", unit='mm'+squared)
 
 
 class XRD(Grey, XRDBasic):
