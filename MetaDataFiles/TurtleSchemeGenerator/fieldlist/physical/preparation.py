@@ -125,8 +125,6 @@ class Immersion(PhysicalActivity):
         self.add(label="Flow rate", unit="ml/h")
         self.add(label="Revolutions per minute", unit='rpm', qudt='PER-MIN')
         self.add(label="Volume", unit='ml')
-        # grey
-        self.add(label="Temperature", unit=deg+'C')
 
 
 class Etching(PhysicalActivity):
