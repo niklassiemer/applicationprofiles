@@ -15,7 +15,7 @@ class Grey(FieldList):
         super().__init__()
         self.add(label="Count rate", unit='cps', qudt='NUM-PER-SEC')
         self.add(label="Spot size")
-        self.add(label="Measurement time/date", name="measurementTime")
+        self.add(label="Measurement time/date", name="measurementDateTime")
         self.add(label="Background method")
 
 
