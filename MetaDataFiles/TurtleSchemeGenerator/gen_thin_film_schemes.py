@@ -3,6 +3,6 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import T
 
 thin_film = Scheme("ThinFilm")
 thin_film.fields = ThinFilm()
-thin_film.write("ThinFilm_full.ttl")
+thin_film.write()
 thin_film.write(file_extension='txt')
 

@@ -3,7 +3,6 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.SKPFM im
 
 SKPFM_scheme = Scheme('SKPFM')
 SKPFM_scheme.fields = SKPFM()
-#SKPFM_scheme.fields.write('SKPFM_full.txt')
-SKPFM_scheme.coscine_demo = True
+#SKPFM_scheme.coscine_demo = True
 SKPFM_scheme.write()
 SKPFM_scheme.write(file_extension="txt")

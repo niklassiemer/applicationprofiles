@@ -3,6 +3,6 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.SVET imp
 
 SVET_scheme = Scheme("SVET")
 SVET_scheme.fields = SVET()
-SVET_scheme.write("SVET_full.ttl")
+SVET_scheme.write()
 SVET_scheme.write(file_extension='.txt')
 
