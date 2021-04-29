@@ -25,7 +25,7 @@ class Experiment(PhysicalActivity):
         self.add(label='Sample ID')  # In an ideal world, this would keep track of everything, however:
         self.add(label="Parent Sample ID")
         self.add(label='Any data set to be linked with this experiment', long=True)
-        self.add(label="Environmental protection during specimen testing", name="TestingEnv")
+        self.add(label="Environmental protection during sample processing", name="TestingEnv")
 
 
 class PhysicalObject(SFBFields):
