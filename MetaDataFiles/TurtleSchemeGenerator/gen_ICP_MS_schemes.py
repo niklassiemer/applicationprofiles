@@ -3,6 +3,6 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.icp_ms i
 
 ICP_MS = Scheme("ICP_MS")
 ICP_MS.fields = IcpMS()
-ICP_MS.write("ICP_MS_full.ttl")
+ICP_MS.write()
 ICP_MS.write(file_extension='txt')
 

@@ -58,3 +58,4 @@ class Tip(PhysicalObject):
     def __init__(self):
         super().__init__()
         raise NotImplementedError("We don't have any info on this.")
+

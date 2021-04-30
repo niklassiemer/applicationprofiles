@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity, Experiment
 
 
 class Casting(PhysicalActivity):
@@ -112,6 +112,7 @@ class Polishing(PhysicalActivity):
         self.add(label="Polishing Suspension", unit=micro + 'm')
         self.add(label="Material Suspension")
         self.add(label="Solvent")
+        self.sort_fields_by_order_priority()
 
 
 class Immersion(PhysicalActivity):
@@ -125,8 +126,7 @@ class Immersion(PhysicalActivity):
         self.add(label="Flow rate", unit="ml/h")
         self.add(label="Revolutions per minute", unit='rpm', qudt='PER-MIN')
         self.add(label="Volume", unit='ml')
-        # grey
-        self.add(label="Temperature", unit=deg+'C')
+        self.sort_fields_by_order_priority()
 
 
 class Etching(PhysicalActivity):
@@ -134,3 +134,10 @@ class Etching(PhysicalActivity):
         super().__init__()
         self.add(label="Chemicals")
         self.add(label="Duration", unit="s")
+        self.sort_fields_by_order_priority()
+
+
+class SamplePreparation(Etching, Immersion, Polishing, Experiment):
+    def __init__(self):
+        super().__init__()
+        self.sort_fields_by_order_priority()

@@ -249,7 +249,7 @@ class MetaDataField:
         if self._single_type:
             result += '. \n'
         else:
-            result += '  sh:class <' + self._class_name + '> . \n'
+            result += '  sh:class <' + self._class_name + '> ; \n. \n'
         return result
 
     @property

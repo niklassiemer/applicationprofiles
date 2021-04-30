@@ -3,6 +3,6 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.SIET imp
 
 SIET_scheme = Scheme("SIET")
 SIET_scheme.fields = SIET()
-SIET_scheme.write("SIET_full.ttl")
+SIET_scheme.write()
 SIET_scheme.write(file_extension='.txt')
 

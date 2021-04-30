@@ -1,4 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataField as Field, FieldList
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import SimTechnical
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 
 
@@ -48,19 +49,8 @@ class Green(FieldList):
         ]
 
 
-class Grey(FieldList):
+class ImageAnalysis(SimTechnical, Green, Yellow, ImageAnalysisBasic):
     def __init__(self):
         super().__init__()
-        self._fields += [
-            Field(label='CPU info'),
-            Field(label='Used codes'),
-            Field(label='Required RAM', unit='GB'),
-            Field(label="Runtime", unit='h'),
-        ]
-        # TODO: Synchronize with technical fields for atomistics
-
-
-class ImageAnalysis(Grey, Green, Yellow, ImageAnalysisBasic):
-    def __init__(self):
-        super().__init__()
+        self.add(label="Codes used")
         self.sort_fields_by_order_priority()

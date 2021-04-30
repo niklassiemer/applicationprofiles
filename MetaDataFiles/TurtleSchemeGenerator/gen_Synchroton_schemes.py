@@ -3,5 +3,5 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.synchrot
 
 Synchro = Scheme("Synchrotron")
 Synchro.fields = Synchrotron()
-Synchro.write("Synchrotron_full.ttl")
+Synchro.write()
 Synchro.write(file_extension='.txt')

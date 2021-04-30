@@ -3,5 +3,5 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.xps impo
 
 XPS_scheme = Scheme("XPS")
 XPS_scheme.fields = XPS()
-XPS_scheme.write("XPS_full.ttl")
+XPS_scheme.write()
 XPS_scheme.write(file_extension='txt')
