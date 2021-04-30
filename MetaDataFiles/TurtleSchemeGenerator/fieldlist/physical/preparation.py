@@ -138,7 +138,8 @@ class Etching(PhysicalActivity):
         self.sort_fields_by_order_priority()
 
 
-class Sample(Etching, Immersion, Polishing, Cut, PreSample):
+class Sample(Etching, Immersion, Polishing,  # ToDo: include:  Cut, etc.,
+             PreSample):
     def __init__(self):
         super().__init__()
         self.add(label="Order of operation", comment='If multiple modifications to the sample are performed ('

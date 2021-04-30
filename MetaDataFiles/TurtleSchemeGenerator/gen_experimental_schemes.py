@@ -29,9 +29,9 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.nano_ind
                                                                                                  NanoIndentationCreep)
 
 sample_prep = Scheme('Sample_preparation')
-# sample_prep.fields = SamplePreparation()
-# sample_prep.write()
-# sample_prep.write(file_extension='.txt')
+sample_prep.fields = SamplePreparation()
+sample_prep.write()
+sample_prep.write(file_extension='.txt')
 
 immersion = Scheme("Immersion")
 immersion.fields = Immersion()
