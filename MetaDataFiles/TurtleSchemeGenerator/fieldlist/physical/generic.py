@@ -27,7 +27,7 @@ class Experiment(PhysicalActivity):
         self.add(label='Any data set to be linked with this experiment', long=True)
         self.add(label="Environmental protection during sample processing", name="TestingEnv")
         self.add(label="Pre-treatment", comment="Any modifications to the sample as part of the experiment itself.")
-        self.add(label="Measurement time/date", name="measurementDateTime", order_priority=-10)
+        self.add(label="Measurement date", field_type='date', name="measurementDateTime", order_priority=-10)
 
 
 class SpotMeasurement(Experiment):
