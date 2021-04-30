@@ -23,6 +23,15 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.xrd impo
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import Polishing, Immersion, Etching, \
     Sample as SamplePreparation, ThinFilm
 
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import SampleCoScInE
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.simulation import SimUniversal, \
+    AtomisticOutputCoScInE, AtomisticSnapshotCoScInE
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.potential import MLPotCoScInE
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_db import CalphadDB
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_calc import CalphadCalc
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.image_analysis import ImageAnalysis
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.damask import DamaskCoScInE
+
 
 # Break MRO issues:
 class C0(ThinFilm, Immersion):
@@ -55,6 +64,14 @@ class C6(C5, XRD, EBSD, EDX, ElChemImpedSpec, EPMA, NanoIndentation, NanoIndenta
 
 # Finally
 class ExpMasterScheme(C6, NanoIndentationCreep):
+    pass
+
+
+class SimMasterScheme(SampleCoScInE, SimUniversal, AtomisticOutputCoScInE, AtomisticSnapshotCoScInE, MLPotCoScInE):
+    pass
+
+
+class MasterScheme(ExpMasterScheme, SimMasterScheme, DamaskCoScInE, ImageAnalysis, CalphadCalc, CalphadDB):
     pass
 
 
@@ -95,7 +112,7 @@ def remove_duplications(term_list):
     return list(set(term_list))
 
 
-MasterScheme = ExpMasterScheme()
+MasterScheme = MasterScheme()
 
 sfb_terms = [field.ttl_term_str for field in MasterScheme if field.ttl_term_str != ""]
 sfb_terms = remove_duplications(sfb_terms)

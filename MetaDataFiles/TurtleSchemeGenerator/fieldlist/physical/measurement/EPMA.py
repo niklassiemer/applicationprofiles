@@ -6,7 +6,7 @@ class EPMA(Experiment):
     def __init__(self):
         super().__init__()
         self.add(label="Acquisition mode", field_type=["Point scan", "Line scan", "Mapping"])
-        self.add(label="Elements included/Peak ID", name='elementsIncluded')
+        self.add(label="Elements included/Peak ID", name='peakID')
 
         # grey
         self.add(label="Count rate", unit='cps', qudt='NUM-PER-SEC')

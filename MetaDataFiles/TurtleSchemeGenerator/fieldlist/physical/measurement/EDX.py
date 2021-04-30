@@ -15,7 +15,7 @@ class EDX(SpotMeasurement):
         self.add(label="Count rate", unit='cps', qudt='NUM-PER-SEC')
         self.add(label="Spot size")
         self.add(label="Working distance", unit='mm')
-        self.add(label="Elements included/Peak ID", name='elementsIncluded')
+        self.add(label="Elements included/Peak ID", name='peakID')
         self.add(label="Background method")
 
         # green

@@ -24,6 +24,7 @@ class SimUniversal(SimTechnical, SimBasic):
         super().__init__()
         # Since I took it out of the blue:
         self.add(label="Sample ID") #, required=True)
+        self.add(label="Simulation type")
 
 
 class SimLammps(FieldList):
