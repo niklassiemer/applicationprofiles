@@ -8,9 +8,9 @@ class MicroPillar(SpotMeasurement):
         self.add(label="Tip ID", name="tip")  # TODO: Make a Tip object
         self.add(label="Test duration")
         self.add(label="Type of test")
-        self.add(label="Control Method")
+        self.add(label="Control method")
         self.add(label="Diamond area function")
-        self.add(label="Date of Calibration", field_type="date")
+        self.add(label="Date of calibration", field_type="date")
         self.add(label="Frame stiffness", unit='N/m')
         self.add(label="Target load", unit="mN")
         self.add(label="Target depth", unit="nm")

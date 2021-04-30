@@ -11,7 +11,7 @@ class NanoIndentationBasic(SpotMeasurement):
         self.add(label="Control method")
         self.add(label="Tip ID", name="tip")
         self.add(label="Diamond area function")
-        self.add(label="Date of Calibration", field_type="date")  # TODO: Do we need a tip calibration activity?
+        self.add(label="Date of calibration", field_type="date")  # TODO: Do we need a tip calibration activity?
         self.add(label="Frame stiffness", unit='N/m')
 
         self.add(label="Target load", unit="mN")

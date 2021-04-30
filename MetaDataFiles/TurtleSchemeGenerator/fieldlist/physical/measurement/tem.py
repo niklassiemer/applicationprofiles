@@ -15,7 +15,7 @@ class TEM(SpotMeasurement):
         self.add(label="Working distance", unit='mm')
         self.add(label="Lighting mode", field_type=['bright field', 'high angle annular dark-field', 'dark field'])
         self.add(label="Operation Mode")
-        self.add(label="Magnification / Camera length", name='magnification', unit='mm')
+        self.add(label="Magnification / Camera length", name='magnificationTEM', unit='mm')
         self.add(label="Electron source")
         self.add(label="Electron dose", unit='e/nm'+squared, qudt="E-PER-NanoM2")
         self.add(label="Dwell time", unit="ms")
