@@ -2,7 +2,7 @@ from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaData
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Sample
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import Polishing, Immersion, Etching, \
-    SamplePreparation
+    Sample as SamplePreparation
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import ThinFilm
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.apt import AtomProbeTomography

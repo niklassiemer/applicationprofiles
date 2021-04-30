@@ -1,19 +1,16 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import SpotMeasurement
 
 
-class MicroPillar(Experiment):
+class MicroPillar(SpotMeasurement):
     def __init__(self):
         super().__init__()
         self.add(label="Tip ID", name="tip")  # TODO: Make a Tip object
         self.add(label="Test duration")
-        self.add(label="Sample location", example_input="Longitudinal cross-section; from top surface")
-        self.add(label='Location on sample', example_input="5mm in X and 4 mm in Y from lower left corner")
         self.add(label="Type of test")
-        self.add(label="Control Method")
+        self.add(label="Control method")
         self.add(label="Diamond area function")
-        self.add(label="Date of Calibration", field_type="date")
+        self.add(label="Date of calibration", field_type="date")
         self.add(label="Frame stiffness", unit='N/m')
         self.add(label="Target load", unit="mN")
         self.add(label="Target depth", unit="nm")
