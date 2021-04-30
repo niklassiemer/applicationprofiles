@@ -27,6 +27,15 @@ class Experiment(PhysicalActivity):
         self.add(label='Any data set to be linked with this experiment', long=True)
         self.add(label="Environmental protection during sample processing", name="TestingEnv")
         self.add(label="Pre-treatment", comment="Any modifications to the sample as part of the experiment itself.")
+        self.add(label="Measurement time/date", name="measurementDateTime", priority=-10)
+
+
+class SpotMeasurement(Experiment):
+    def __init__(self):
+        super().__init__()
+        # ToDo Move this to? Sample? SamplePreparation?
+        # self.add(label="Sample location", example_input="Longitudinal cross-section; from top surface")
+        self.add(label='Measurement position', example_input="5mm in X and 4 mm in Y from lower left corner")
 
 
 class PhysicalObject(SFBFields):

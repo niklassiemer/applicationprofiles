@@ -37,7 +37,6 @@ class Cut(PhysicalActivity):
     def __init__(self):
         super().__init__()
         self.add(label="Cutting position")
-        self.add(label="Instrument ID")
         raise NotImplementedError("We don't have information from the S-project.")
 
 

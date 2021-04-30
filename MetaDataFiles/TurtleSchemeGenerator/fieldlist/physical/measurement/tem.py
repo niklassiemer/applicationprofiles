@@ -1,14 +1,14 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import squared
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import SpotMeasurement
 
 
-class Green(FieldList):
+class TEM(SpotMeasurement):
     def __init__(self):
         super().__init__()
-        self.add(label="Microscope")
-        self.add(label="Sample location", example_input="Top View")
-        self.add(label="Experiment Date", field_type='date')
+
+        # green
+        # instrument: self.add(label="Microscope")
         self.add(label="Accelerating voltage", unit="kV")
         self.add(label="Current", unit='mA')
         self.add(label="Acquisition mode")
@@ -29,8 +29,6 @@ class Green(FieldList):
         self.add(label="2nd dimension unit scaling")
         self.add(label="2nd dimension starting pixel")
 
-
-class TEM(Green, Experiment):
-    def __init__(self):
-        super().__init__()
         self.sort_fields_by_order_priority()
+
+
