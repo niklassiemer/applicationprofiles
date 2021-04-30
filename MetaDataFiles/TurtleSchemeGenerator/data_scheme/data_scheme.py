@@ -630,6 +630,6 @@ class MetaDataSchemes:
         else:
             raise ValueError(f"File extension {_ext} is not known.")
 
-        if self.external_vocabulary is not None:
+        if self.external_vocabulary is not None and len(self._external_vocabulary["content"]) > 0:
             with open(self.external_vocabulary, 'w', encoding='utf8') as f:
                 f.write(self._external_vocabulary["content"])
