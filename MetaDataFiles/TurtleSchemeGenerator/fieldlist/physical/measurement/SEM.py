@@ -2,7 +2,7 @@ from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg, micro
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import SpotMeasurement
 
 
-class SEMBasic(SpotMeasurement):
+class SEM(SpotMeasurement):
     def __init__(self):
         super().__init__()
         self.add(label="Detector ID(s)", name="detectorID")
