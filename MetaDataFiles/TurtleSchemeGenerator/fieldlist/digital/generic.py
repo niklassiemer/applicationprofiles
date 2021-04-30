@@ -13,3 +13,15 @@ class SimTechnical(FieldList):
         self.add(label="Runtime", unit='h')
         self.add(label="Submission time", field_type="date")
         self.add(label="Stop time", field_type="date")
+
+
+class ComputeEnvironment(FieldList):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Python version")
+        self.add(label="pyiron version")
+        self.add(label="git repository")
+        self.add(label="git hash/tag")
+        self.add(label="Software used")
+        self.add(label="Software versions")
+        self.add(label="Software installation procedure")
