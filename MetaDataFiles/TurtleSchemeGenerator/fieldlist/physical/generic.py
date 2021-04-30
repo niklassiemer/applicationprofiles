@@ -30,7 +30,7 @@ class Experiment(PhysicalActivity):
         self.add(label="Measurement date", field_type='date', name="measurementDateTime", order_priority=-10)
 
 
-class SpotMeasurement(Experiment):
+class MeasurementAtSpot(Experiment):
     def __init__(self):
         super().__init__()
         # ToDo Move this to? Sample? SamplePreparation?
@@ -73,4 +73,11 @@ class Tip(PhysicalObject):
     def __init__(self):
         super().__init__()
         raise NotImplementedError("We don't have any info on this.")
+
+
+class Detector(PhysicalObject):
+    def __init__(self):
+        super().__init__()
+        raise NotImplementedError("Maybe we need it, maybe not? In all cases I want an streamlined "
+                                  "'Detector ID' field and this will remind me of this")
 
