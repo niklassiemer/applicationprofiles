@@ -59,7 +59,7 @@ class ExpMasterScheme(C6, NanoIndentationCreep):
 
 
 def remove_duplications(term_list):
-    sfb_terms_ids = [term.split()[0] for term in term_list]
+    sfb_terms_ids = [item.split()[0] for item in term_list]
 
     unique_term_ids = []
     duplicated_idx = {}
@@ -95,9 +95,26 @@ def remove_duplications(term_list):
     return list(set(term_list))
 
 
-sfb_terms = [field.ttl_term_str for field in ExpMasterScheme() if field.ttl_term_str != ""]
+MasterScheme = ExpMasterScheme()
+
+sfb_terms = [field.ttl_term_str for field in MasterScheme if field.ttl_term_str != ""]
 sfb_terms = remove_duplications(sfb_terms)
 
+preamble = '''@base  <http://purl.org/coscine/terms/sfb1394/> .
+@prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://purl.org/coscine/terms/sfb1394/>
+dcterms:publisher <http://www.itc.rwth-aachen.de/> ;
+dcterms:license <http://spdx.org/licenses/CC-BY-4.0> ;
+dcterms:rights "Copyright © 2020 RWTH Aachen University" ;
+dcterms:title "SFB1394 Metadata"@en 
+.
+\n'''
+
 with open("experimental_terms.ttl", 'w', encoding='utf8') as f:
+    f.write(preamble)
     for term in sfb_terms:
         f.write(term)
