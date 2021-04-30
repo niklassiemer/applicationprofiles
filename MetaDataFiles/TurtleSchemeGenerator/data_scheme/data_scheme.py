@@ -211,13 +211,13 @@ class MetaDataField:
         if not self.ttl_relations["sh:path"] == "sfb1394:" + self.name:
             return result
 
-        if self.unit is None:
-            label = self.label
-        else:
-            label = self.label + ' [' + self.unit + ']'
+        # if self.unit is None:
+        #     label = self.label
+        # else:
+        #     label = self.label + ' [' + self.unit + ']'
 
         result += self.ttl_relations["sh:path"] + ' \n'
-        result += '  rdfs:label "' + label + '"@en, "' + label + '"@de ;\n'
+        result += '  rdfs:label "' + self.label + '"@en, "' + self.label + '"@de ;\n'
         result += '. \n\n'
         return result
 
