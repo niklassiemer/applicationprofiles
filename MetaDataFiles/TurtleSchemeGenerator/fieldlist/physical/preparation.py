@@ -1,5 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity, Experiment
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import PhysicalActivity, PreSample
 
 
 class Casting(PhysicalActivity):
@@ -33,9 +33,11 @@ class Storage(Annealing):
     pass
 
 
-class Division(PhysicalActivity):
+class Cut(PhysicalActivity):
     def __init__(self):
         super().__init__()
+        self.add(label="Cutting position")
+        self.add(label="Instrument ID")
         raise NotImplementedError("We don't have information from the S-project.")
 
 
@@ -137,7 +139,11 @@ class Etching(PhysicalActivity):
         self.sort_fields_by_order_priority()
 
 
-class SamplePreparation(Etching, Immersion, Polishing, Experiment):
+class Sample(Etching, Immersion, Polishing, Cut, PreSample):
     def __init__(self):
         super().__init__()
+        self.add(label="Order of operation", comment='If multiple modifications to the sample are performed ('
+                                                     'Only for perfectly contiguous preparations), '
+                                                     'provide the order of the operations.')
+
         self.sort_fields_by_order_priority()

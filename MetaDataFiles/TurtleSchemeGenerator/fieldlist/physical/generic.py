@@ -42,10 +42,16 @@ class Instrument(PhysicalObject):
         raise NotImplementedError("We have never even talked about this. Maybe it's perfectly a `PhysicalObject`.")
 
 
-class Sample(PhysicalObject):
+class PreSample(PhysicalObject):
     def __init__(self):
         super().__init__()
         self.add(label="Parent ID", name="parentSample", comment="The super-sample from which this came.")
+        self.sort_fields_by_order_priority()
+
+
+class Sample(PreSample):
+    def __init__(self):
+        super().__init__()
         self.add(
             label="Preparation IDs",
             comment="What was done to this sample that differentiates it from its parent, in order of operation. "
