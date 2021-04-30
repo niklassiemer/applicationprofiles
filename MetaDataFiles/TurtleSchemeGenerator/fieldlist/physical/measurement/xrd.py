@@ -7,11 +7,11 @@ class XRDBasic(PhysicalActivity):
     def __init__(self):
         super().__init__()
         self.add(label="Radiation source")
-        self.add(label="Detector")
+        self.add(label="Detector ID")
         self.add(label="Current", unit='mA')
         self.add(label="Voltage", unit='kV')
         self.add(label="Measurement position")
-        self.add(label="Scan Mode", field_type='class')
+        self.add(label="Scan Mode", field_type=["Bragg-Brentano", "Detector Scan", "unlocked coupled", "Rocking curve"])
         self.add(label="Incidence angle Omega", unit=deg)
 
 
@@ -20,7 +20,7 @@ class Grey(FieldList):
         super().__init__()
         self.add(label="Filter")
         self.add(label="Mask size", unit='mm')
-        self.add(label="Scan axis", field_type='class')
+        self.add(label="Scan axis", field_type=["2Theta", "Chi", "Phi"])
         self.add(label="Diffraction angle 2Theta", name='diffractionAngle', unit=deg)
         self.add(label="Rotation angle phi", unit=deg)
         self.add(label="Rotation angle chi", unit=deg)
