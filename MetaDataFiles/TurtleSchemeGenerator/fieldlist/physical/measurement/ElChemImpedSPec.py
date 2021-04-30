@@ -1,8 +1,7 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
 
 
-class ElChemImpedSpecBasic(Experiment):
+class ElChemImpedSpec(Experiment):
     def __init__(self):
         super().__init__()
         self.add(label="Mode")
@@ -11,17 +10,10 @@ class ElChemImpedSpecBasic(Experiment):
         self.add(label="Reference electrode potential", unit='mV(SHE)', qudt="MilliV")
         self.add(label="Counter electrode")
 
-
-class Green(FieldList):
-    def __init__(self):
-        super().__init__()
+        # green
         self.add(label="Potentiostat")
         self.add(label="Time OCP", unit='s')
         self.add(label="Frequency Start", unit='Hz')
         self.add(label="Frequency End", unit='Hz')
 
-
-class ElChemImpedSpec(Green, ElChemImpedSpecBasic):
-    def __init__(self):
-        super().__init__()
         self.sort_fields_by_order_priority()

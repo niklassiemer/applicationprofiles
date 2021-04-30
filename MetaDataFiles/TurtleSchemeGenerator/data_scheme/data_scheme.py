@@ -154,8 +154,7 @@ class MetaDataField:
         self._single_type = True
 
         if field_type == 'class' or field_type == 'list':
-            self._single_type = False
-            self.field_type = field_type
+            raise ValueError("Undefined Options")
         elif isinstance(field_type, DropdownList):
             self._single_type = False
             self.field_type = field_type.copy()
@@ -212,13 +211,13 @@ class MetaDataField:
         if not self.ttl_relations["sh:path"] == "sfb1394:" + self.name:
             return result
 
-        if self.unit is None:
-            label = self.label
-        else:
-            label = self.label + ' [' + self.unit + ']'
+        # if self.unit is None:
+        #     label = self.label
+        # else:
+        #     label = self.label + ' [' + self.unit + ']'
 
         result += self.ttl_relations["sh:path"] + ' \n'
-        result += '  rdfs:label "' + label + '"@en, "' + label + '"@de ;\n'
+        result += '  rdfs:label "' + self.label + '"@en, "' + self.label + '"@de ;\n'
         result += '. \n\n'
         return result
 
@@ -631,6 +630,6 @@ class MetaDataSchemes:
         else:
             raise ValueError(f"File extension {_ext} is not known.")
 
-        if self.external_vocabulary is not None:
+        if self.external_vocabulary is not None and len(self._external_vocabulary["content"]) > 0:
             with open(self.external_vocabulary, 'w', encoding='utf8') as f:
                 f.write(self._external_vocabulary["content"])

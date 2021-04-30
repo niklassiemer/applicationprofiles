@@ -27,6 +27,15 @@ class Experiment(PhysicalActivity):
         self.add(label='Any data set to be linked with this experiment', long=True)
         self.add(label="Environmental protection during sample processing", name="TestingEnv")
         self.add(label="Pre-treatment", comment="Any modifications to the sample as part of the experiment itself.")
+        self.add(label="Measurement date", field_type='date', name="measurementDateTime", order_priority=-10)
+
+
+class MeasurementAtSpot(Experiment):
+    def __init__(self):
+        super().__init__()
+        # ToDo Move this to? Sample? SamplePreparation?
+        # self.add(label="Sample location", example_input="Longitudinal cross-section; from top surface")
+        self.add(label='Measurement position', example_input="5mm in X and 4 mm in Y from lower left corner")
 
 
 class PhysicalObject(SFBFields):
@@ -42,10 +51,16 @@ class Instrument(PhysicalObject):
         raise NotImplementedError("We have never even talked about this. Maybe it's perfectly a `PhysicalObject`.")
 
 
-class Sample(PhysicalObject):
+class PreSample(PhysicalObject):
     def __init__(self):
         super().__init__()
         self.add(label="Parent ID", name="parentSample", comment="The super-sample from which this came.")
+        self.sort_fields_by_order_priority()
+
+
+class Sample(PreSample):
+    def __init__(self):
+        super().__init__()
         self.add(
             label="Preparation IDs",
             comment="What was done to this sample that differentiates it from its parent, in order of operation. "
@@ -58,4 +73,11 @@ class Tip(PhysicalObject):
     def __init__(self):
         super().__init__()
         raise NotImplementedError("We don't have any info on this.")
+
+
+class Detector(PhysicalObject):
+    def __init__(self):
+        super().__init__()
+        raise NotImplementedError("Maybe we need it, maybe not? In all cases I want an streamlined "
+                                  "'Detector ID' field and this will remind me of this")
 
