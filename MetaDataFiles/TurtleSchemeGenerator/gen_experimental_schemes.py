@@ -2,7 +2,7 @@ from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaData
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Sample
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import Polishing, Immersion, Etching, \
-    SamplePreparation
+    Sample as SamplePreparation
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import ThinFilm
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.apt import AtomProbeTomography
@@ -29,9 +29,9 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.nano_ind
                                                                                                  NanoIndentationCreep)
 
 sample_prep = Scheme('Sample_preparation')
-sample_prep.fields = SamplePreparation()
-sample_prep.write()
-sample_prep.write(file_extension='.txt')
+# sample_prep.fields = SamplePreparation()
+# sample_prep.write()
+# sample_prep.write(file_extension='.txt')
 
 immersion = Scheme("Immersion")
 immersion.fields = Immersion()

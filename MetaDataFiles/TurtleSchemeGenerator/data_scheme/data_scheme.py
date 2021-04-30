@@ -154,8 +154,7 @@ class MetaDataField:
         self._single_type = True
 
         if field_type == 'class' or field_type == 'list':
-            self._single_type = False
-            self.field_type = field_type
+            raise ValueError("Undefined Options")
         elif isinstance(field_type, DropdownList):
             self._single_type = False
             self.field_type = field_type.copy()
