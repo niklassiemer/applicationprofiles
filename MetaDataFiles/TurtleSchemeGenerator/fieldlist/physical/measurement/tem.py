@@ -7,9 +7,16 @@ class Green(FieldList):
     def __init__(self):
         super().__init__()
         self.add(label="Microscope")
+        self.add(label="Sample location", example_input="Top View")
         self.add(label="Experiment Date", field_type='date')
         self.add(label="Accelerating voltage", unit="kV")
-        self.add(label="Magnification / Camera length", name='magnefication', unit='mm')
+        self.add(label="Current", unit='mA')
+        self.add(label="Acquisition mode")
+        self.add(label="Working distance", unit='mm')
+        self.add(label="Lighting mode", field_type=['bright field', 'high angle annular dark-field', 'dark field'])
+        self.add(label="Operation Mode")
+        self.add(label="Magnification / Camera length", name='magnification', unit='mm')
+        self.add(label="Electron source")
         self.add(label="Electron dose", unit='e/nm'+squared, qudt="E-PER-NanoM2")
         self.add(label="Dwell time", unit="ms")
         self.add(label="Data dimension")
@@ -23,7 +30,7 @@ class Green(FieldList):
         self.add(label="2nd dimension starting pixel")
 
 
-class TEM(Experiment, Green):
+class TEM(Green, Experiment):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

@@ -26,6 +26,7 @@ class Experiment(PhysicalActivity):
         self.add(label="Parent Sample ID")
         self.add(label='Any data set to be linked with this experiment', long=True)
         self.add(label="Environmental protection during sample processing", name="TestingEnv")
+        self.add(label="Pre-treatment", comment="Any modifications to the sample as part of the experiment itself.")
 
 
 class PhysicalObject(SFBFields):

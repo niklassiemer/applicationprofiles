@@ -6,6 +6,7 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Exper
 class ScratchBasic(Experiment):
     def __init__(self):
         super().__init__()
+        self.add(label="Sample location", example_input="Longitudinal cross-section; from top surface")
         self.add(label="Tip ID", name="tip")
         self.add(label="Scratch crystallographic orientation")
         self.add(label="Scratch surface plane")

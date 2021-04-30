@@ -6,7 +6,9 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Exper
 class SEMBasic(Experiment):
     def __init__(self):
         super().__init__()
-        self.add(label="Detector(s) used", name="detector")
+        self.add(label="Detector ID(s)", name="detectorID")
+        self.add(label="Sample location", example_input="Longitudinal cross-section; from top surface")
+        self.add(label='Location on sample', example_input="5mm in X and 4 mm in Y from lower left corner")
 
 
 class Green(FieldList):

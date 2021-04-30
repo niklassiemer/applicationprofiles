@@ -6,7 +6,12 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Exper
 class TensileCompressionBasic(Experiment):
     def __init__(self):
         super().__init__()
-        self.add(label="Type of loading", field_type="class")
+        self.add(label="Sample location", example_input="Longitudinal cross-section; from top surface")
+        self.add('In-situ / Quasi-in-situ', field_type="bool", name='inSitu',
+                 comment="If false skip preparation and etching routines")
+        self.add(label="Type of loading", field_type=['tensile', 'compression'])
+        self.add(label="State of stress")
+        self.add(label="Sample geometry", field_type=['flat', 'round'])
 
 
 class Green(FieldList):
