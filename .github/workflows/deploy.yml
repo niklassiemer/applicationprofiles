@@ -23,7 +23,7 @@ jobs:
       shell: bash -l {0}
       run: |
         ls -lrt ;
-        conda develop ./MetaDataFiles ;
+        export PYTHONPATH=${pwd}/MetaDataFiles ;
         python MetaDataFiles/TurtleSchemeGenerator/gen_website.py
     - run: mv website public_html
     - run: touch public_html/.nojekyll
