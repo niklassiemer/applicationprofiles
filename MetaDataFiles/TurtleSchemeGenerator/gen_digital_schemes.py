@@ -1,4 +1,7 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
+
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import CompiledSoftware, ComputeEnvironment
+
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import SampleCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.simulation import SimUniversal, \
     AtomisticOutputCoScInE, AtomisticSnapshotCoScInE
@@ -11,6 +14,16 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.damask import DamaskC
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.image_analysis import ImageAnalysis
 
+
+comp_software_scheme = Scheme("CompiledSoftware")
+comp_software_scheme.fields = CompiledSoftware()
+comp_software_scheme.write()
+comp_software_scheme.write(file_extension='txt')
+
+comp_env = Scheme("ComputeEnvironment")
+comp_env.fields = ComputeEnvironment()
+comp_env.write()
+comp_env.write(file_extension='txt')
 
 sample_scheme = Scheme("AtomisticSample")
 sample_scheme.fields = SampleCoScInE()
