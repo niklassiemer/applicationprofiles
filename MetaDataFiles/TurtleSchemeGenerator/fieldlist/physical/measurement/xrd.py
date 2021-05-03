@@ -1,12 +1,11 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg, squared
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementWithDetector
 
 
-class XRD(Experiment):
+class XRD(MeasurementWithDetector):
     def __init__(self):
         super().__init__()
         self.add(label="Radiation source")
-        self.add(label="Detector ID")
         self.add(label="Current", unit='mA')
         self.add(label="Voltage", unit='kV')
         self.add(label="Scan Mode", field_type=["Bragg-Brentano", "Detector Scan", "unlocked coupled", "Rocking curve"])

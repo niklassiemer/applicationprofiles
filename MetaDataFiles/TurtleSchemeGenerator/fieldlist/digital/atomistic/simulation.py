@@ -111,7 +111,7 @@ class SimTI(FieldList):
         self.add(label="Reference B ID", name="TIRefJobB")
         self.add(label="Sample Reference A ID", name="TISampleRefA")
         self.add(label="Sample Reference B ID", name="TISampleRefB")  # Optional
-        self.add(label="Thermalization Steps")
+        self.add(label="Thermalization steps")
         self.add(label="Number of lambda points")
         self.add(label="Custom lambda points")
         self.add(label="Statistical error tolerance", unit='eV')

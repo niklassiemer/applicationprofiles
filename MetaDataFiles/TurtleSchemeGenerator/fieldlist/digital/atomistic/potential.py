@@ -10,7 +10,7 @@ class MLPotCoScInE(SFBFields):
         self.add("Software used")
         self.add("References")
         # Training metadata
-        self.add("Parent Potential")
+        self.add("Parent potential")
         self.add("Training data")
         self.add("Optimizer parameters")
 

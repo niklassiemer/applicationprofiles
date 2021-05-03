@@ -1,12 +1,11 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementAtSpot
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementAtSpot, MeasurementWithDetector
 
 
-class EBSD(MeasurementAtSpot):
+class EBSD(MeasurementWithDetector, MeasurementAtSpot):
     def __init__(self):
         super().__init__()
         self.add(label="Corrosion", field_type="bool")
-        self.add(label='Detector ID(s)', name="detectorID")
 
         # green
         self.add(label="Accelerating voltage", unit="kV")
@@ -21,6 +20,6 @@ class EBSD(MeasurementAtSpot):
         self.add(label="Software used for data analysis")
 
         # grey
-        self.add(label="Pillar Orientation", long=True)
+        self.add(label="Pillar orientation", long=True)
 
         self.sort_fields_by_order_priority()

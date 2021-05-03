@@ -5,7 +5,7 @@ from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
 class NanoIndentationBasic(MeasurementAtSpot):
     def __init__(self):
         super().__init__()
-        self.add(label="Sample Orientation", long=True)
+        self.add(label="Sample orientation", long=True)
 
         self.add(label="Type of test")
         self.add(label="Control method")
