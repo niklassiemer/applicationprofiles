@@ -1,9 +1,9 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import squared
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import SpotMeasurement
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementAtSpot
 
 
-class TEM(SpotMeasurement):
+class TEM(MeasurementAtSpot):
     def __init__(self):
         super().__init__()
 

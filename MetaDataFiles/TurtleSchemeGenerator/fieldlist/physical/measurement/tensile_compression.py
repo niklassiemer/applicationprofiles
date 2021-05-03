@@ -1,8 +1,8 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import SpotMeasurement
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementAtSpot
 
 
-class TensileCompression(SpotMeasurement):  # ToDo: is this really a SpotMeasurement? SampleLocation was present...
+class TensileCompression(MeasurementAtSpot):  # ToDo: is this really a MeasurementAtSpot? SampleLocation was present...
     def __init__(self):
         super().__init__()
         self.add('In-situ / Quasi-in-situ', field_type="bool", name='inSitu',
