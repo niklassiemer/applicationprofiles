@@ -22,6 +22,7 @@ jobs:
     - name: Generate Website
       shell: bash -l {0}
       run: |
+        ls -lrt ;
         python MetaDataFiles/TurtleSchemeGenerator/gen_website.py
     - run: mv website public_html
     - run: touch public_html/.nojekyll
