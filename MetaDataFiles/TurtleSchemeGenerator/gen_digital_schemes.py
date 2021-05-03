@@ -74,6 +74,7 @@ output = Scheme(scheme_name)
 output.fields = AtomisticOutputCoScInE()
 output.write()
 output.write(file_extension='txt')
+output.write(file_extension="html")
 
 # output.fields = AtomisticOutput()
 # output.write(scheme_name+"_full.ttl")

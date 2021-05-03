@@ -616,6 +616,7 @@ class MetaDataSchemes:
             file_extension(str/None): extension of the file to write. Possible extensions are:
                 '.ttl' (default): write a turtle schema
                 '.txt': write a plain text list
+                '.html': write a stand-alone html file
         """
         _filename, _ext = os.path.splitext(filename) if filename is not None else (self.name, '')
 
@@ -627,6 +628,14 @@ class MetaDataSchemes:
                 f.write(self.gen_scheme())
         elif _ext == '.txt':
             self.fields.write(_filename, encoding=encoding)
+        elif _ext == ".html":
+            html_preamble = "<html>\n <head>\n  <title>" + self.name + "</title>\n </head> \n <body>\n"
+            html_preamble += "    <H2> " + self.name + "</H2> \n"
+            html_end = "\n </body>\n</html>"
+            with open(_filename, 'w', encoding=encoding) as f:
+                f.write(html_preamble)
+                f.write(self.fields.to_pandas().to_html())
+                f.write(html_end)
         else:
             raise ValueError(f"File extension {_ext} is not known.")
 
