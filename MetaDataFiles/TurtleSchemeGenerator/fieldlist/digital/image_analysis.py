@@ -9,10 +9,6 @@ class ImageAnalysisBasic(SFBFields):
         self._fields += [
             Field(label="Python function"),
             Field(label="Python module"),
-            Field(label="Git repository"),
-            Field(label="Commit hash"),
-            Field(label="Python version"),
-            Field(label="Python package versions"),  # TODO: shouldn't this be stored in the git repo dependencies?
             Field(label="Parameters", long=True),
             # Parameter file
             Field(label="Input image(s)", name="inputImages"),

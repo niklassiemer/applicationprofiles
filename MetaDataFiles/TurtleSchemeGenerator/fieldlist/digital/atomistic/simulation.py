@@ -12,8 +12,6 @@ class SimBasic(SFBFields):
         self.add(label="Status", field_type=['initialized', 'created', 'submitted', 'running',
                  'collect', 'finished', 'refresh', 'suspended'])
         self.add(label="Last status update", field_type="date")
-        self.add(label="pyiron version")
-        self.add(label="Other software versions")
         # TODO: We have DOI and References, DOI is for papers about this and references for what?!
         self.add(label="References")
 
@@ -31,7 +29,6 @@ class SimLammps(FieldList):
     def __init__(self):
         super().__init__()
         self.add(label="Potential")
-        self.add(label="Lammps version")
 
 
 class SimVasp(FieldList):
