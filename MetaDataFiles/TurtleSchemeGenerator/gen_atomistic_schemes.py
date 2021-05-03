@@ -9,6 +9,9 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_db import Cal
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.damask import DamaskCoScInE
 
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.image_analysis import ImageAnalysis
+
+
 sample_scheme = Scheme("AtomisticSample")
 sample_scheme.fields = SampleCoScInE()
 sample_scheme.write()
@@ -101,3 +104,8 @@ DAMASK = Scheme("DAMASK")
 DAMASK.fields = DamaskCoScInE()
 DAMASK.write()
 DAMASK.write(file_extension='.txt')
+
+ImageAnalysis_scheme = Scheme("ImageAnalysis")
+ImageAnalysis_scheme.fields = ImageAnalysis()
+ImageAnalysis_scheme.write()
+ImageAnalysis_scheme.write(file_extension="txt")
