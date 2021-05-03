@@ -88,12 +88,12 @@ class ThinFilm(PhysicalActivity):
         self.add(label='Frequency', unit='kHz',
                  comment="if DC is chosen for Magnetron Power mode (not applicable on CoScInE)")
         self.add(label="Pulse time", unit=us,
-                comment="if DC is chosen for Magnetron Power mode (not applicable on CoScInE)")
+                 comment="if DC is chosen for Magnetron Power mode (not applicable on CoScInE)")
         # depending on 2 if HPPMS is chosen
         self.add(label="On-time", unit=us,
-                comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
+                 comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
         self.add(label="Off-time", unit=us,
-                comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
+                 comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
         # To be implemented also for Magnetron B and C ???
         # Added Magnetron ID field - I hope this captures this! TODO: clarify!
         self.add(label="Capping Layer")
