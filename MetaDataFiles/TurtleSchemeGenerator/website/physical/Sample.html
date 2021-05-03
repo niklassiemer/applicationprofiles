@@ -1,0 +1,84 @@
+<html>
+ <head>
+  <title>Sample</title>
+ </head> 
+ <body>
+    <H2> Sample</H2> 
+<table border="2" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>name</th>
+      <th>required</th>
+      <th>example_input</th>
+      <th>type</th>
+      <th>comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>True</td>
+      <td></td>
+      <td>string</td>
+      <td>ID for the object, be it sample, experiment, sim...</td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td>True</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>True</td>
+      <td></td>
+      <td>date</td>
+      <td>Default is today.</td>
+    </tr>
+    <tr>
+      <td>Affiliation</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DOIs</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>To associate publications produced using this object.</td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Where is this in the real world.</td>
+    </tr>
+    <tr>
+      <td>Parent ID</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>The super-sample from which this came.</td>
+    </tr>
+    <tr>
+      <td>Preparation IDs</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>What was done to this sample that differentiates it from its parent, in order of operation. Multiple routines should only be given for perfectly contiguous sample chains.</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+ </body>
+</html>

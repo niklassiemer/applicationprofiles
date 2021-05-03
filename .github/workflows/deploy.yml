@@ -22,13 +22,9 @@ jobs:
     - name: Generate Website
       shell: bash -l {0}
       run: |
-        ls -lrt ;
-        export PYTHONPATH=${pwd}/MetaDataFiles ;
-        python MetaDataFiles/TurtleSchemeGenerator/gen_website.py
-    - run: mv website public_html
-    - run: touch public_html/.nojekyll
+        ls -lrt
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: public_html # The folder the action should deploy.
+        FOLDER: MetaDataFiles/TurtleSchemeGenerator/website # The folder the action should deploy.
