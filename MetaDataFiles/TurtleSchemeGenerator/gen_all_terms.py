@@ -23,6 +23,7 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.xrd impo
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import Polishing, Immersion, Etching, \
     Sample as SamplePreparation, ThinFilm
 
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import Software, CompiledSoftware, ComputeEnvironment
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import SampleCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.simulation import SimUniversal, \
     AtomisticOutputCoScInE, AtomisticSnapshotCoScInE
@@ -67,11 +68,19 @@ class ExpMasterScheme(C6, NanoIndentationCreep):
     pass
 
 
-class SimMasterScheme(SampleCoScInE, SimUniversal, AtomisticOutputCoScInE, AtomisticSnapshotCoScInE, MLPotCoScInE):
+class S1(SampleCoScInE, SimUniversal, AtomisticOutputCoScInE, AtomisticSnapshotCoScInE, MLPotCoScInE, CompiledSoftware):
     pass
 
 
-class MasterScheme(ExpMasterScheme, SimMasterScheme, DamaskCoScInE, ImageAnalysis, CalphadCalc, CalphadDB):
+class S2(S1, Software,  ComputeEnvironment):
+    pass
+
+
+class SimMasterScheme(S2, DamaskCoScInE, ImageAnalysis, CalphadCalc, CalphadDB):
+    pass
+
+
+class MasterScheme(ExpMasterScheme, SimMasterScheme):
     pass
 
 
@@ -116,6 +125,7 @@ MasterScheme = MasterScheme()
 
 sfb_terms = [field.ttl_term_str for field in MasterScheme if field.ttl_term_str != ""]
 sfb_terms = remove_duplications(sfb_terms)
+sfb_terms.sort()
 
 preamble = '''@base  <http://purl.org/coscine/terms/sfb1394/> .
 @prefix sfb1394: <http://purl.org/coscine/terms/sfb1394#> .
@@ -131,7 +141,7 @@ dcterms:title "SFB1394 Metadata"@en
 .
 \n'''
 
-with open("experimental_terms.ttl", 'w', encoding='utf8') as f:
+with open("sfb1394_terms.ttl", 'w', encoding='utf8') as f:
     f.write(preamble)
     for term in sfb_terms:
         f.write(term)

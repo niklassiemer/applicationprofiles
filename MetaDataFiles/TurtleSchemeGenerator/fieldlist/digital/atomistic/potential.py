@@ -7,6 +7,7 @@ class MLPotCoScInE(SFBFields):
         super().__init__()
         self.add(label="Potential ID")
         self.add(label="Potential type/ format", name="potentialID")
+        self.add(label="Software ID")
         self.add(label="References")
         # Training metadata
         self.add(label="Parent potential")

@@ -24,6 +24,8 @@ class SimUniversal(SimTechnical, SimBasic):
         self.add(label="Sample ID") #, required=True)
         self.add(label="Simulation type")
 
+        self.sort_fields_by_order_priority()
+
 
 class SimLammps(FieldList):
     def __init__(self):

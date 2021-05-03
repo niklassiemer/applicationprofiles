@@ -1,8 +1,7 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 
 
-class SimTechnical(FieldList):
+class SimTechnical(SFBFields):
     def __init__(self):
         super().__init__()
         self.add(label="Software IDs", comment="Names/IDs of the Software used.")
@@ -37,7 +36,7 @@ class Software(SFBFields):
         self.add(label='Version')
         self.add(label='Licence')
         self.add(label="git repository")
-        self.add(label="git hash/tag")
+        self.add(label="git hash/tag", name="gitHash")
         self.add(label="Software installation procedure")
 
         self.sort_fields_by_order_priority()
@@ -50,3 +49,5 @@ class CompiledSoftware(Software):
         self.add(label="Compiler version")
         self.add(label="Compiler options")
         self.add(label="Makefile")
+
+        self.sort_fields_by_order_priority()
