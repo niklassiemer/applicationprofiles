@@ -1,8 +1,7 @@
-from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 
 
-class CalphadDBBasic(SFBFields):
+class CalphadDB(SFBFields):
     def __init__(self):
         super().__init__()
         # This will not be unique:
@@ -15,21 +14,11 @@ class CalphadDBBasic(SFBFields):
         # TODO: What is the purpose?
         self.add(label="References")
 
-
-class CalphadDBGreen(FieldList):
-    def __init__(self):
-        super().__init__()
+        # green
         self.add(label="Phases and models")
 
-
-class CalphadDBGrey(FieldList):
-    def __init__(self):
-        super().__init__()
+        # grey
         self.add(label="Crystal structure", long=True)
         self.add(label="Compounds", long=True)
 
-
-class CalphadDB(CalphadDBGrey, CalphadDBGreen, CalphadDBBasic):
-    def __init__(self):
-        super().__init__()
         self.sort_fields_by_order_priority()

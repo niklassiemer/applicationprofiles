@@ -1,8 +1,8 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, squared
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Experiment
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementWithDetector
 
 
-class Synchrotron(Experiment):
+class Synchrotron(MeasurementWithDetector):
     def __init__(self):
         super().__init__()
         self.add(label="Radiation type")
@@ -11,5 +11,4 @@ class Synchrotron(Experiment):
         self.add(label="Energy bandwidth", unit='%', qudt="PERCENT")
         self.add(label="Incoming beam focus", unit=micro+'m'+squared)
         self.add(label="Deflected beam focus", unit=micro+'m'+squared)
-        self.add(label="Detector ID")
         self.sort_fields_by_order_priority()

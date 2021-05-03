@@ -6,7 +6,7 @@ class PhysicalEnvironment(SFBFields):
     def __init__(self):
         super().__init__()
         self.add(label="Temperature", unit=deg+'C')
-        self.add(label="Relative Humidity", unit='%', other_ttl_relations={"qudt:Unit": "unit:PERCENT_RH"})
+        self.add(label="Relative humidity", unit='%', other_ttl_relations={"qudt:Unit": "unit:PERCENT_RH"})
         self.add(label="Environmental gas")
 
 
@@ -23,7 +23,7 @@ class Experiment(PhysicalActivity):
     def __init__(self):
         super().__init__()
         self.add(label='Sample ID')  # In an ideal world, this would keep track of everything, however:
-        self.add(label="Parent Sample ID")
+        self.add(label="Parent sample ID")
         self.add(label='Any data set to be linked with this experiment', long=True)
         self.add(label="Environmental protection during sample processing", name="TestingEnv")
         self.add(label="Pre-treatment", comment="Any modifications to the sample as part of the experiment itself.")
@@ -36,6 +36,12 @@ class MeasurementAtSpot(Experiment):
         # ToDo Move this to? Sample? SamplePreparation?
         # self.add(label="Sample location", example_input="Longitudinal cross-section; from top surface")
         self.add(label='Measurement position', example_input="5mm in X and 4 mm in Y from lower left corner")
+
+
+class MeasurementWithDetector(Experiment):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Detector IDs", comment="What are the detector(s) used?")
 
 
 class PhysicalObject(SFBFields):
@@ -78,6 +84,6 @@ class Tip(PhysicalObject):
 class Detector(PhysicalObject):
     def __init__(self):
         super().__init__()
-        raise NotImplementedError("Maybe we need it, maybe not? In all cases I want an streamlined "
-                                  "'Detector ID' field and this will remind me of this")
+        raise NotImplementedError("Maybe we need it, maybe not? Probably, it a simply a 'PhysicalObject' or an"
+                                  "'Instrument'")
 

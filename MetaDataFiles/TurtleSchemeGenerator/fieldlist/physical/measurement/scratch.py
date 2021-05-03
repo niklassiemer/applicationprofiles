@@ -13,9 +13,9 @@ class Scratch(MeasurementAtSpot):  # ToDo: Is this really a MeasurementAtSpot? S
 
         # green fields
         self.add(label="Type of test")  # Does this differ from "loading type"?
-        self.add(label="Scratch Length", unit=micro+"m")
-        self.add(label="Scratch Velocity", unit=micro+"m/s")
-        self.add(label="Scratch Orientation", unit=deg)
+        self.add(label="Scratch length", unit=micro+"m")
+        self.add(label="Scratch velocity", unit=micro+"m/s")
+        self.add(label="Scratch orientation", unit=deg)
         self.add(label="Maximum scratch load", unit='mN')
         self.add(label="Profiling velocity", unit=micro+"m/s")
 

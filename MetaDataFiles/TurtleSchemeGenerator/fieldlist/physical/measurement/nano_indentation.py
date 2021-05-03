@@ -5,7 +5,7 @@ from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
 class NanoIndentationBasic(MeasurementAtSpot):
     def __init__(self):
         super().__init__()
-        self.add(label="Sample Orientation", long=True)
+        self.add(label="Sample orientation", long=True)
 
         self.add(label="Type of test")
         self.add(label="Control method")
@@ -40,7 +40,7 @@ class NanoIndentationSRJ(NanoIndentationBasic):
         super().__init__()
         self.add(label="Initial strain rate", unit='/s')
         self.add(label="Initial displacement", unit="nm")
-        self.add(label="No. of cycles", name="NoOfCycles")
+        self.add(label="No. of cycles", name="noOfCycles")
         self.add(label="Final strain rate", unit='/s')
         self.add(label="Displacement range for strain rate ", unit="nm")
         self.sort_fields_by_order_priority()
