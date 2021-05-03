@@ -1,9 +1,9 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import SpotMeasurement
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementAtSpot
 
 
-class Scratch(SpotMeasurement):  # ToDo: Is this really a SpotMeasurement? SampleLocation was present...
+class Scratch(MeasurementAtSpot):  # ToDo: Is this really a MeasurementAtSpot? SampleLocation was present...
     def __init__(self):
         super().__init__()
         self.add(label="Tip ID", name="tip")

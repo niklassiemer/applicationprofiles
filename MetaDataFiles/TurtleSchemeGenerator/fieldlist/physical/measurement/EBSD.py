@@ -1,8 +1,8 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import micro, deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import SpotMeasurement
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementAtSpot
 
 
-class EBSD(SpotMeasurement):
+class EBSD(MeasurementAtSpot):
     def __init__(self):
         super().__init__()
         self.add(label="Corrosion", field_type="bool")

@@ -1,8 +1,8 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import SpotMeasurement
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementAtSpot
 
 
-class MicroPillar(SpotMeasurement):
+class MicroPillar(MeasurementAtSpot):
     def __init__(self):
         super().__init__()
         self.add(label="Tip ID", name="tip")  # TODO: Make a Tip object
