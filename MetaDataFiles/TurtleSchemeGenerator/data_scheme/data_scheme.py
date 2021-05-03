@@ -634,7 +634,7 @@ class MetaDataSchemes:
             html_end = "\n </body>\n</html>"
             with open(_filename, 'w', encoding=encoding) as f:
                 f.write(html_preamble)
-                f.write(self.fields.to_pandas().to_html())
+                f.write(self.fields.to_pandas().to_html(index=False, justify='center', border=2))
                 f.write(html_end)
         else:
             raise ValueError(f"File extension {_ext} is not known.")
