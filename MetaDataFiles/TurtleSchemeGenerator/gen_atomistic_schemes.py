@@ -4,6 +4,11 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.simulation 
     AtomisticOutputCoScInE, AtomisticSnapshotCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.potential import MLPotCoScInE
 
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_calc import CalphadCalc
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_db import CalphadDB
+
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.damask import DamaskCoScInE
+
 sample_scheme = Scheme("AtomisticSample")
 sample_scheme.fields = SampleCoScInE()
 sample_scheme.write()
@@ -81,3 +86,18 @@ ML_pot.write(file_extension='txt')
 # ML_pot.fields = MLPot()
 # ML_pot.write(scheme_name+"_full.ttl")
 
+
+Calphad_calc = Scheme("Calphad_calc")
+Calphad_calc.fields = CalphadCalc()
+Calphad_calc.write(file_extension='.txt')
+Calphad_calc.write()
+
+CALPHAD_DB = Scheme("Calphad_db")
+CALPHAD_DB.fields = CalphadDB()
+CALPHAD_DB.write()
+CALPHAD_DB.write(file_extension='.txt')
+
+DAMASK = Scheme("DAMASK")
+DAMASK.fields = DamaskCoScInE()
+DAMASK.write()
+DAMASK.write(file_extension='.txt')
