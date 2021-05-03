@@ -1,0 +1,287 @@
+<html>
+ <head>
+  <title>XRD</title>
+ </head> 
+ <body>
+    <H2> XRD</H2> 
+<table border="2" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>name</th>
+      <th>required</th>
+      <th>example_input</th>
+      <th>type</th>
+      <th>comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>True</td>
+      <td></td>
+      <td>string</td>
+      <td>ID for the object, be it sample, experiment, sim...</td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td>True</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>True</td>
+      <td></td>
+      <td>date</td>
+      <td>Default is today.</td>
+    </tr>
+    <tr>
+      <td>Affiliation</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DOIs</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>To associate publications produced using this object.</td>
+    </tr>
+    <tr>
+      <td>Temperature [°C]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Relative humidity [%]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Environmental gas</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Operator</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>The person who did the physical work. Default is the user.</td>
+    </tr>
+    <tr>
+      <td>Instrument ID</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Which device was used for this activity.</td>
+    </tr>
+    <tr>
+      <td>Sample ID</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Parent sample ID</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Any data set to be linked with this experiment</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Environmental protection during sample processing</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Pre-treatment</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Any modifications to the sample as part of the experiment itself.</td>
+    </tr>
+    <tr>
+      <td>Detector IDs</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>What are the detector(s) used?</td>
+    </tr>
+    <tr>
+      <td>Radiation source</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Current [mA]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Voltage [kV]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Scan Mode</td>
+      <td>False</td>
+      <td></td>
+      <td>choice: ['Bragg-Brentano', 'Detector Scan', 'unlocked coupled', 'Rocking curve']</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Incidence angle Omega [°]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Filter</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Mask size [mm²]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Scan axis</td>
+      <td>False</td>
+      <td></td>
+      <td>choice: ['2Theta', 'Chi', 'Phi']</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Diffraction angle 2Theta [°]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Rotation angle phi [°]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Rotation angle chi [°]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Number of frames</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Measurement time [s]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Start 2Theta [°]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>End 2Theta [°]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Start Theta [°]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>End Theta [°]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Fixed 2Theta position [°]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Step size [°]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Time per step [s]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Measurement date</td>
+      <td>False</td>
+      <td></td>
+      <td>date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+ </body>
+</html>

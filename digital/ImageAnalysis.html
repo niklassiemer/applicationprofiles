@@ -1,0 +1,252 @@
+<html>
+ <head>
+  <title>ImageAnalysis</title>
+ </head> 
+ <body>
+    <H2> ImageAnalysis</H2> 
+<table border="2" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>name</th>
+      <th>required</th>
+      <th>example_input</th>
+      <th>type</th>
+      <th>comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>True</td>
+      <td></td>
+      <td>string</td>
+      <td>ID for the object, be it sample, experiment, sim...</td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td>True</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>True</td>
+      <td></td>
+      <td>date</td>
+      <td>Default is today.</td>
+    </tr>
+    <tr>
+      <td>Affiliation</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DOIs</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>To associate publications produced using this object.</td>
+    </tr>
+    <tr>
+      <td>Software IDs</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Names/IDs of the Software used.</td>
+    </tr>
+    <tr>
+      <td>Software environment ID</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>ID of the software environment including exact versions.</td>
+    </tr>
+    <tr>
+      <td>Python function</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Python module</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Parameters</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Input image(s)</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Minimization algorithm</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Maximum number of iterations</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Stopping criterion</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Regularizer coefficient(s)</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Number of segments</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Feature extractor</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Feature size</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Defect type</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Unit cell vectors [nm]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Image width [nm]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Image height [nm]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Codes used</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Computer name</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Name of the Computer / Compute cluster / Queue used.</td>
+    </tr>
+    <tr>
+      <td>Node</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Number of nodes or list of node names.</td>
+    </tr>
+    <tr>
+      <td>CPU info</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Information about the CPUs used.</td>
+    </tr>
+    <tr>
+      <td>GPU info</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Information about the GPUs used.</td>
+    </tr>
+    <tr>
+      <td>Cores</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Number of compute cores used.</td>
+    </tr>
+    <tr>
+      <td>Required RAM [GB]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Runtime [h]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Submission time</td>
+      <td>False</td>
+      <td></td>
+      <td>date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Stop time</td>
+      <td>False</td>
+      <td></td>
+      <td>date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+ </body>
+</html>
