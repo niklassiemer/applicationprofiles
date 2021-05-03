@@ -1,8 +1,29 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
+
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import CompiledSoftware, ComputeEnvironment
+
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import SampleCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.simulation import SimUniversal, \
     AtomisticOutputCoScInE, AtomisticSnapshotCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.potential import MLPotCoScInE
+
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_calc import CalphadCalc
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_db import CalphadDB
+
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.damask import DamaskCoScInE
+
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.image_analysis import ImageAnalysis
+
+
+comp_software_scheme = Scheme("CompiledSoftware")
+comp_software_scheme.fields = CompiledSoftware()
+comp_software_scheme.write()
+comp_software_scheme.write(file_extension='txt')
+
+comp_env = Scheme("ComputeEnvironment")
+comp_env.fields = ComputeEnvironment()
+comp_env.write()
+comp_env.write(file_extension='txt')
 
 sample_scheme = Scheme("AtomisticSample")
 sample_scheme.fields = SampleCoScInE()
@@ -81,3 +102,23 @@ ML_pot.write(file_extension='txt')
 # ML_pot.fields = MLPot()
 # ML_pot.write(scheme_name+"_full.ttl")
 
+
+Calphad_calc = Scheme("Calphad_calc")
+Calphad_calc.fields = CalphadCalc()
+Calphad_calc.write(file_extension='.txt')
+Calphad_calc.write()
+
+CALPHAD_DB = Scheme("Calphad_db")
+CALPHAD_DB.fields = CalphadDB()
+CALPHAD_DB.write()
+CALPHAD_DB.write(file_extension='.txt')
+
+DAMASK = Scheme("DAMASK")
+DAMASK.fields = DamaskCoScInE()
+DAMASK.write()
+DAMASK.write(file_extension='.txt')
+
+ImageAnalysis_scheme = Scheme("ImageAnalysis")
+ImageAnalysis_scheme.fields = ImageAnalysis()
+ImageAnalysis_scheme.write()
+ImageAnalysis_scheme.write(file_extension="txt")

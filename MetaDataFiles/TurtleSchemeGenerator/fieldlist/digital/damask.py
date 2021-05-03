@@ -9,7 +9,6 @@ class DamaskBasic(SFBFields):
         super().__init__()
         self.add(label="Constitutive models")
         self.add(label="Library module")
-        self.add(label="Software version")
 
 
 class DamaskMaterial(FieldList):

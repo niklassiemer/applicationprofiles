@@ -78,22 +78,22 @@ class ThinFilm(PhysicalActivity):
         self.add(label="Deposition time", unit='min')
         # Magnetron settings
         self.add(label="Magnetron ID")
-        self.add(label="Magnetron: Target type", name="MagnTarget")
-        self.add(label="Magnetron: Power generator", name="MagnPowerGen")
+        self.add(label="Magnetron: Target type", name="magnTarget")
+        self.add(label="Magnetron: Power generator", name="magnPowerGen")
         # 2:
-        self.add(label="Magnetron: Power mode", name="MagnPowerMode",
+        self.add(label="Magnetron: Power mode", name="magnPowerMode",
                  field_type=['DC', 'pulsed DC', 'RF', 'HPPMS'])
-        self.add(label="Magnetron: Set power", name="MagnPowerSet", unit='W')
+        self.add(label="Magnetron: Set power", name="magnPowerSet", unit='W')
         # depending on 2 if DC is chosen
         self.add(label='Frequency', unit='kHz',
                  comment="if DC is chosen for Magnetron Power mode (not applicable on CoScInE)")
         self.add(label="Pulse time", unit=us,
-                comment="if DC is chosen for Magnetron Power mode (not applicable on CoScInE)")
+                 comment="if DC is chosen for Magnetron Power mode (not applicable on CoScInE)")
         # depending on 2 if HPPMS is chosen
         self.add(label="On-time", unit=us,
-                comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
+                 comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
         self.add(label="Off-time", unit=us,
-                comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
+                 comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
         # To be implemented also for Magnetron B and C ???
         # Added Magnetron ID field - I hope this captures this! TODO: clarify!
         self.add(label="Capping Layer")
@@ -110,8 +110,8 @@ class Polishing(PhysicalActivity):
         self.add(label="Grit 2")
         self.add(label="Solvent grit 2")
         self.add(label="Grit material")
-        self.add(label="Polishing Suspension", unit=micro + 'm')
-        self.add(label="Material Suspension")
+        self.add(label="Polishing suspension", unit=micro + 'm')
+        self.add(label="Material suspension")
         self.add(label="Solvent")
         self.sort_fields_by_order_priority()
 

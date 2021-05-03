@@ -6,13 +6,13 @@ class MLPotCoScInE(SFBFields):
     def __init__(self):
         super().__init__()
         self.add(label="Potential ID")
-        self.add("Potential type/ format", name="potentialID")
-        self.add("Software used")
-        self.add("References")
+        self.add(label="Potential type/ format", name="potentialID")
+        self.add(label="Software ID")
+        self.add(label="References")
         # Training metadata
-        self.add("Parent potential")
-        self.add("Training data")
-        self.add("Optimizer parameters")
+        self.add(label="Parent potential")
+        self.add(label="Training data")
+        self.add(label="Optimizer parameters")
 
 
 class MLPotGreen(FieldList):

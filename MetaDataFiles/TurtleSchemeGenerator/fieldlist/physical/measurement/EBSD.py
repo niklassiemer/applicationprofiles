@@ -14,7 +14,7 @@ class EBSD(MeasurementWithDetector, MeasurementAtSpot):
         self.add(label="Step size", unit=micro+"m")
         self.add(label="Raster size", unit=micro+"m(width) x "+micro+"m(height)")
         self.add(label="Acquisition mode", field_type=['Line scan', 'Zig-zag scan'])
-        self.add(label="No. of points")
+        self.add(label="No. of points", name='noOfPoints')
         self.add(label="Working distance", unit='mm')
         self.add(label="Tilt angle", unit=deg)
         self.add(label="Software used for data analysis")
