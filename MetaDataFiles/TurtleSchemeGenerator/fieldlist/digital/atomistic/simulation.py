@@ -1,4 +1,5 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import Sample, SampleCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import SimTechnical
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import angstrom, squared
@@ -23,6 +24,7 @@ class SimUniversal(SimTechnical, SimBasic):
         # Since I took it out of the blue:
         self.add(label="Sample ID") #, required=True)
         self.add(label="Simulation type")
+        self.add(label="Job submission commands", long=True)
 
         self.sort_fields_by_order_priority()
 
@@ -128,11 +130,19 @@ class AtomisticOutputCoScInE(SFBFields):
     #       then say calculation.output.positions[frame]
     def __init__(self):
         super().__init__()
-        self.add(label="Sample ID", required=True)
-        self.add(label="Trajectory ID")
         self.add(label="Simulation ID")
+        self.add(label="External ID")
         self.add(label="Configuration format")
         self.add(label="References")
+
+        # grey
+        self.add(label="Chemical species")  # list(str)
+        self.add(label="Number of atoms")  # int
+        self.add(label="Chemical species count")  # dict
+        self.add(label="Additional properties")
+        self.add(label="Timestep")
+        self.add(label="Time", unit='ps')
+        self.add(label="Number of individual configurations")
 
 
 class AtomisticOutputGreen(FieldList):
@@ -153,29 +163,42 @@ class AtomisticOutput(AtomisticOutputGreen, AtomisticOutputCoScInE):
         self.sort_fields_by_order_priority()
 
 
-class AtomisticSnapshotCoScInE(SFBFields):
+class PostProcessingCoScInE(SFBFields):
     def __init__(self):
         super().__init__()
         # This is the ID: self.add(label="Snapshot ID")
         self.add(label="Sample ID")
         self.add(label="External ID")
-        self.add(label="Snapshot format")
-        self.add(label="Visualization program")
-        self.add(label="Visualization program command")
-        self.add(label="References")
+        self.add(label="Software ID")
+        self.add(label="Data format")
 
         self.sort_fields_by_order_priority()
 
 
-class AtomisticSnapshotGreen(FieldList):
+class PostProcessing(PostProcessingCoScInE):
+    def __init__(self):
+        super().__init__()
+        self.add('Steps', long=True)
+        self.add('Related post processing IDs')
+
+
+class AtomisticSnapshotCoScInE(SFBFields):
+    def __init__(self):
+        super().__init__()
+        self.add('Post processing ID')
+        self.add('Format', example_input='jpg')
+        self.add('External ID')
+
+
+class AtomisticSnapshotGreen(AtomisticSnapshotCoScInE):
     def __init__(self):
         super().__init__()
         self.add(label='Atomistic color')
         self.add(label="Color information")
         self.add(label="Perspective", field_type='bool')
+        self.add(label="Resolution")
+        self.add(label="Frame rate")
+        self.add(label="Duration")
+        self.add(label="Codec")
 
-
-class AtomisticSnapshot(AtomisticSnapshotGreen, AtomisticSnapshotCoScInE):
-    def __init__(self):
-        super().__init__()
         self.sort_fields_by_order_priority()
