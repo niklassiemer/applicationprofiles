@@ -27,7 +27,9 @@ class Experiment(PhysicalActivity):
         self.add(label='Any data set to be linked with this experiment', long=True)
         self.add(label="Environmental protection during sample processing", name="TestingEnv")
         self.add(label="Pre-treatment", comment="Any modifications to the sample as part of the experiment itself.")
-        self.add(label="Measurement date", field_type='date', name="measurementDateTime", order_priority=-10)
+        self.add(label="Measurement date", field_type='date', name="measurementDateTime", order_priority=-10,
+                 comment='Date the Measurement/Experiment was performed; Default is today.')
+        # Todo: actually implement defaults in the ttl!
 
 
 class MeasurementAtSpot(Experiment):
@@ -73,12 +75,6 @@ class Sample(PreSample):
                     "Multiple routines should only be given for perfectly contiguous sample chains."
         )
         self.sort_fields_by_order_priority()
-
-
-class Tip(PhysicalObject):
-    def __init__(self):
-        super().__init__()
-        raise NotImplementedError("We don't have any info on this.")
 
 
 class Detector(PhysicalObject):

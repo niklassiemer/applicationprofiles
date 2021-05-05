@@ -1,4 +1,5 @@
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementAtSpot
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import (MeasurementAtSpot, PhysicalObject,
+    PhysicalActivity)
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
 
 
@@ -51,3 +52,18 @@ class NanoIndentationCreep(NanoIndentation):
         super().__init__()
         self.add(label="Creep dwell period", unit='s')
         self.sort_fields_by_order_priority()
+
+
+class TipCalibration(PhysicalActivity):
+    def __init__(self):
+        super().__init__()
+        self.add(label='Calibration sample ID')
+        self.add(label='Date of Calibration', field_type='date')
+        self.add(label='Frame stiffness', unit='N/m')
+
+
+class Tip(PhysicalObject):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Tip calibration ID")
+        self.add(label="Diamond area function")
