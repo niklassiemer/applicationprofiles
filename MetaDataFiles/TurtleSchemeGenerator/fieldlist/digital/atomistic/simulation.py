@@ -12,7 +12,7 @@ class SimBasic(SFBFields):
         super().__init__()
         self.add(label="Status", field_type=['initialized', 'created', 'submitted', 'running',
                  'collect', 'finished', 'refresh', 'suspended'])
-        self.add(label="Last status update", field_type="date")
+        self.add(label="Last status update", field_type="date", sh_path='csmd:dataset_endDate')
         # TODO: We have DOI and References, DOI is for papers about this and references for what?!
         self.add(label="References")
 
