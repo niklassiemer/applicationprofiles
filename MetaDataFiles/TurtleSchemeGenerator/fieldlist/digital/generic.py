@@ -48,5 +48,7 @@ class CompiledSoftware(Software):
         self.add(label="Compiler version")
         self.add(label="Compiler options")
         self.add(label="Makefile")
+        self.add(label="Dependency Software IDs", example_input="MKL_2021_1, FFTW_3",
+                 comment="Other (compiled) software which is needed to compile this software (mostly libraries).")
 
         self.sort_fields_by_order_priority()
