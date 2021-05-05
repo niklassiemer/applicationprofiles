@@ -47,7 +47,7 @@ class ThinFilm(PhysicalActivity):
         self.add(label="Substrate temperature", unit=deg + 'C')
 
         # Grey fields
-        us = micro+'s'  # TODO: clarify! In the docx this is 'us'
+        us = micro+'s'
         # Substrate info
         self.add(label="Substrate material")
         self.add(label="Substrate geometry and size")
@@ -77,25 +77,55 @@ class ThinFilm(PhysicalActivity):
         self.add(label="Working gas pressure", unit='Pa')
         self.add(label="Deposition time", unit='min')
         # Magnetron settings
-        self.add(label="Magnetron ID")
-        self.add(label="Magnetron: Target type", name="magnTarget")
-        self.add(label="Magnetron: Power generator", name="magnPowerGen")
-        # 2:
-        self.add(label="Magnetron: Power mode", name="magnPowerMode",
-                 field_type=['DC', 'pulsed DC', 'RF', 'HPPMS'])
-        self.add(label="Magnetron: Set power", name="magnPowerSet", unit='W')
-        # depending on 2 if DC is chosen
-        self.add(label='Frequency', unit='kHz',
-                 comment="if DC is chosen for Magnetron Power mode (not applicable on CoScInE)")
-        self.add(label="Pulse time", unit=us,
-                 comment="if DC is chosen for Magnetron Power mode (not applicable on CoScInE)")
-        # depending on 2 if HPPMS is chosen
-        self.add(label="On-time", unit=us,
-                 comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
-        self.add(label="Off-time", unit=us,
-                 comment="if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)")
-        # To be implemented also for Magnetron B and C ???
-        # Added Magnetron ID field - I hope this captures this! TODO: clarify!
+        # Same possible settings for three Magnetrons (A,B,C):
+        for mag in ['A', 'B', 'C']:
+            # IMO it would make sense to have one sh_path for these fields, however, I do not know how to handle the
+            #     different labels in the ontology framework...
+            self.add(label=f"Magnetron {mag}: Target type",
+                     name=f"magn{mag}Target",
+                     # sh_path='sfb1394:magnTarget'
+                     )
+            self.add(label=f"Magnetron {mag}: Power generator",
+                     name=f"magn{mag}PowerGen",
+                     # sh_path='sfb1394:magnPowerGen'
+                     )
+            # 2:
+            self.add(label=f"Magnetron {mag}: Power mode",
+                     name=f"magn{mag}PowerMode",
+                     # sh_path='sfb1394:magnPowerMode',
+                     field_type=['DC', 'pulsed DC', 'RF', 'HPPMS']
+                     )
+            self.add(label=f"Magnetron {mag}: Set power",
+                     name=f"magn{mag}PowerSet",
+                     # sh_path='sfb1394:magnPowerSet',
+                     unit='W'
+                     )
+            # depending on 2 if DC is chosen
+            self.add(label=f'Magnetron {mag}: Frequency',
+                     unit='kHz',
+                     name=f"magn{mag}Freq",
+                     # sh_path='sfb1394:magnFreq',
+                     comment=f"if DC is chosen for Magnetron {mag} Power mode (not applicable on CoScInE)"
+                     )
+            self.add(label=f"Magnetron {mag}: Pulse time",
+                     name=f'magn{mag}PulseTime',
+                     unit=us,
+                     # sh_path='sfb1394:magnPulseTime',
+                     comment=f"if DC is chosen for Magnetron {mag} Power mode (not applicable on CoScInE)"
+                     )
+            # depending on 2 if HPPMS is chosen
+            self.add(label=f"Magnetron {mag}: On-time",
+                     name=f'magn{mag}OnTime',
+                     unit=us,
+                     # sh_path='sfb1394:magnOnTime',
+                     comment=f"if HPPMS is chosen for Magnetron {mag} Power mode (not applicable on CoScInE)"
+                     )
+            self.add(label=f"Magnetron {mag}: Off-time",
+                     name=f'magn{mag}OffTime',
+                     unit=us,
+                     # sh_path='sfb1394:magnOffTime',
+                     comment=f"if HPPMS is chosen for Magnetron {mag} Power mode (not applicable on CoScInE)"
+                     )
         self.add(label="Capping Layer")
         self.add(label="Capping thickness", unit='nm')
 

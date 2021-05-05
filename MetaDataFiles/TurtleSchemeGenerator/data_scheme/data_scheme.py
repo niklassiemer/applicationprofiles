@@ -208,7 +208,7 @@ class MetaDataField:
     @property
     def ttl_term_str(self):
         result = ''
-        if not self.ttl_relations["sh:path"] == "sfb1394:" + self.name:
+        if not self.ttl_relations["sh:path"].startswith("sfb1394:"):
             return result
 
         # if self.unit is None:
