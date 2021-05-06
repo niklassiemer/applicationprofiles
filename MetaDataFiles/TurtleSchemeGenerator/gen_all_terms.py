@@ -24,9 +24,9 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import P
     Sample as SamplePreparation, ThinFilm
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import Software, CompiledSoftware, ComputeEnvironment
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import SampleCoScInE
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import SampleCoScInE, AtomisticOutputCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.simulation import SimUniversal, \
-    AtomisticOutputCoScInE, AtomisticSnapshotCoScInE
+    AtomisticSnapshotCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.potential import MLPotCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_db import CalphadDB
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_calc import CalphadCalc

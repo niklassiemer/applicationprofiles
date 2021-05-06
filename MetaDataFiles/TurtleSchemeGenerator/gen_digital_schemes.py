@@ -4,7 +4,7 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import Compil
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import SampleCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.simulation import SimUniversal, \
-    AtomisticOutputCoScInE, AtomisticSnapshotCoScInE
+    AtomisticSnapshotCoScInE, PostProcessingCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.potential import MLPotCoScInE
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_calc import CalphadCalc
@@ -20,8 +20,8 @@ schemes_to_write = {
     "ComputeEnvironment": ComputeEnvironment,
     "AtomisticSample": SampleCoScInE,
     "Atomistic_simulation": SimUniversal,
-    "Atomistic_output": AtomisticOutputCoScInE,
     "Atomistic_snapshot": AtomisticSnapshotCoScInE,
+    "PostProcessing": PostProcessingCoScInE,
     "ML_potential": MLPotCoScInE,
     "Calphad_calc": CalphadCalc,
     "Calphad_db": CalphadDB,
