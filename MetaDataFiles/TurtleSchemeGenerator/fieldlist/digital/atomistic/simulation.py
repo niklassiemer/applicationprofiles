@@ -12,8 +12,6 @@ class SimBasic(SFBFields):
         self.add(label="Status", field_type=['initialized', 'created', 'submitted', 'running',
                  'collect', 'finished', 'refresh', 'suspended'])
         self.add(label="Last status update", field_type="date", sh_path='csmd:dataset_endDate')
-        # TODO: We have DOI and References, DOI is for papers about this and references for what?!
-        self.add(label="References")
 
 
 # Inherit from SimTechnical first since then its fields are added to the SimBasic.
@@ -48,6 +46,7 @@ class SimMDCoscine(SimUniversal):
     def __init__(self):
         super().__init__()
         # moved here from old AtomisticOutput
+        self.add(label="File format", example_input='xyz', comment='Format of the file the Sample is stored.')
         self.add(label="Time sampled", unit='ps')
         self.add(label="Number of individual configurations sampled")
 

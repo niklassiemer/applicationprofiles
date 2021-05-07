@@ -30,17 +30,9 @@ class SampleCoScInE(SFBFields):
         self.add(label="Sublattices")
         self.add(label="Additional properties")
 
+        self.add(label="File format", example_input='xyz', comment='Format of the file the Sample is stored.')
+
         self.sort_fields_by_order_priority()
-
-
-class AtomisticOutputCoScInE(SFBFields):
-    # TODO: Merge this into Sample/Atomistic Simulation
-    def __init__(self):
-        super().__init__()
-        self.add(label="Configuration format")
-        self.add(label="References")
-
-        # grey
 
 
 class Sample(SampleCoScInE):
