@@ -1,9 +1,9 @@
 <html>
  <head>
-  <title>APT</title>
+  <title>Atomistic_MD</title>
  </head> 
  <body>
-    <H2> APT</H2> 
+    <H2> Atomistic_MD</H2> 
 <table border="2" class="dataframe">
   <thead>
     <tr style="text-align: center;">
@@ -51,39 +51,32 @@
       <td>To associate publications produced using this object.</td>
     </tr>
     <tr>
-      <td>Temperature [°C]</td>
+      <td>Status</td>
       <td>False</td>
       <td></td>
-      <td>string</td>
+      <td>choice: ['initialized', 'created', 'submitted', 'running', 'collect', 'finished', 'refresh', 'suspended']</td>
       <td></td>
     </tr>
     <tr>
-      <td>Relative humidity [%]</td>
+      <td>Last status update</td>
       <td>False</td>
       <td></td>
-      <td>string</td>
+      <td>date</td>
       <td></td>
     </tr>
     <tr>
-      <td>Environmental gas</td>
+      <td>Software IDs</td>
       <td>False</td>
       <td></td>
       <td>string</td>
-      <td></td>
+      <td>Names/IDs of the Software used.</td>
     </tr>
     <tr>
-      <td>Operator</td>
+      <td>Software environment ID</td>
       <td>False</td>
       <td></td>
       <td>string</td>
-      <td>The person who did the physical work. Default is the user.</td>
-    </tr>
-    <tr>
-      <td>Instrument ID</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td>Which device was used for this activity.</td>
+      <td>ID of the software environment including exact versions.</td>
     </tr>
     <tr>
       <td>Sample ID</td>
@@ -93,147 +86,105 @@
       <td></td>
     </tr>
     <tr>
-      <td>Parent sample ID</td>
+      <td>Simulation type</td>
       <td>False</td>
       <td></td>
       <td>string</td>
       <td></td>
     </tr>
     <tr>
-      <td>Any data set to be linked with this experiment</td>
+      <td>Job submission commands</td>
       <td>False</td>
       <td></td>
       <td>string</td>
       <td></td>
     </tr>
     <tr>
-      <td>Environmental protection during sample processing</td>
+      <td>Computer name</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Name of the Computer / Compute cluster / Queue used.</td>
+    </tr>
+    <tr>
+      <td>Node</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Number of nodes or list of node names.</td>
+    </tr>
+    <tr>
+      <td>CPU info</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Information about the CPUs used.</td>
+    </tr>
+    <tr>
+      <td>GPU info</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Information about the GPUs used.</td>
+    </tr>
+    <tr>
+      <td>Cores</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Number of compute cores used.</td>
+    </tr>
+    <tr>
+      <td>Required RAM [GB]</td>
       <td>False</td>
       <td></td>
       <td>string</td>
       <td></td>
     </tr>
     <tr>
-      <td>Pre-treatment</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td>Any modifications to the sample as part of the experiment itself.</td>
-    </tr>
-    <tr>
-      <td>Lift-out region</td>
+      <td>Runtime [h]</td>
       <td>False</td>
       <td></td>
       <td>string</td>
       <td></td>
     </tr>
     <tr>
-      <td>Annular milling parameters</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Low voltage cleaning</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Specimen apex radius [nm]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Shank angle [°]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Mode</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Pulse fraction [%]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Laser pulse energy [pJ]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Pulse frequency [kHz]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Base temperature [K]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Detection rate [%]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Start voltage [kV]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Run time [min]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Stop voltage [kV]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Acquired ions [10^6]</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Measurement date</td>
+      <td>Submission time</td>
       <td>False</td>
       <td></td>
       <td>date</td>
-      <td>Date the Measurement/Experiment was performed; Default is today.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Stop time</td>
+      <td>False</td>
+      <td></td>
+      <td>date</td>
+      <td></td>
     </tr>
     <tr>
       <td>Comments</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>File format</td>
+      <td>False</td>
+      <td>xyz</td>
+      <td>string</td>
+      <td>Format of the file the Sample is stored.</td>
+    </tr>
+    <tr>
+      <td>Time sampled [ps]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Number of individual configurations sampled</td>
       <td>False</td>
       <td></td>
       <td>string</td>

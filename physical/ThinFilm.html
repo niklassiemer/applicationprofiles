@@ -27,14 +27,14 @@
       <td>True</td>
       <td></td>
       <td>string</td>
-      <td></td>
+      <td>The user responsible for this digital record.</td>
     </tr>
     <tr>
       <td>Date</td>
       <td>True</td>
       <td></td>
       <td>date</td>
-      <td>Default is today.</td>
+      <td>Date of the current digital record; Default is today.</td>
     </tr>
     <tr>
       <td>Affiliation</td>
@@ -212,67 +212,172 @@
       <td></td>
     </tr>
     <tr>
-      <td>Magnetron ID</td>
+      <td>Magnetron A: Target type</td>
       <td>False</td>
       <td></td>
       <td>string</td>
       <td></td>
     </tr>
     <tr>
-      <td>Magnetron: Target type</td>
+      <td>Magnetron A: Power generator</td>
       <td>False</td>
       <td></td>
       <td>string</td>
       <td></td>
     </tr>
     <tr>
-      <td>Magnetron: Power generator</td>
-      <td>False</td>
-      <td></td>
-      <td>string</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Magnetron: Power mode</td>
+      <td>Magnetron A: Power mode</td>
       <td>False</td>
       <td></td>
       <td>choice: ['DC', 'pulsed DC', 'RF', 'HPPMS']</td>
       <td></td>
     </tr>
     <tr>
-      <td>Magnetron: Set power [W]</td>
+      <td>Magnetron A: Set power [W]</td>
       <td>False</td>
       <td></td>
       <td>string</td>
       <td></td>
     </tr>
     <tr>
-      <td>Frequency [kHz]</td>
+      <td>Magnetron A: Frequency [kHz]</td>
       <td>False</td>
       <td></td>
       <td>string</td>
-      <td>if DC is chosen for Magnetron Power mode (not applicable on CoScInE)</td>
+      <td>if DC is chosen for Magnetron A Power mode (not applicable on CoScInE)</td>
     </tr>
     <tr>
-      <td>Pulse time [μs]</td>
+      <td>Magnetron A: Pulse time [μs]</td>
       <td>False</td>
       <td></td>
       <td>string</td>
-      <td>if DC is chosen for Magnetron Power mode (not applicable on CoScInE)</td>
+      <td>if DC is chosen for Magnetron A Power mode (not applicable on CoScInE)</td>
     </tr>
     <tr>
-      <td>On-time [μs]</td>
+      <td>Magnetron A: On-time [μs]</td>
       <td>False</td>
       <td></td>
       <td>string</td>
-      <td>if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)</td>
+      <td>if HPPMS is chosen for Magnetron A Power mode (not applicable on CoScInE)</td>
     </tr>
     <tr>
-      <td>Off-time [μs]</td>
+      <td>Magnetron A: Off-time [μs]</td>
       <td>False</td>
       <td></td>
       <td>string</td>
-      <td>if HPPMS is chosen for Magnetron Power mode (not applicable on CoScInE)</td>
+      <td>if HPPMS is chosen for Magnetron A Power mode (not applicable on CoScInE)</td>
+    </tr>
+    <tr>
+      <td>Magnetron B: Target type</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Magnetron B: Power generator</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Magnetron B: Power mode</td>
+      <td>False</td>
+      <td></td>
+      <td>choice: ['DC', 'pulsed DC', 'RF', 'HPPMS']</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Magnetron B: Set power [W]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Magnetron B: Frequency [kHz]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>if DC is chosen for Magnetron B Power mode (not applicable on CoScInE)</td>
+    </tr>
+    <tr>
+      <td>Magnetron B: Pulse time [μs]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>if DC is chosen for Magnetron B Power mode (not applicable on CoScInE)</td>
+    </tr>
+    <tr>
+      <td>Magnetron B: On-time [μs]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>if HPPMS is chosen for Magnetron B Power mode (not applicable on CoScInE)</td>
+    </tr>
+    <tr>
+      <td>Magnetron B: Off-time [μs]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>if HPPMS is chosen for Magnetron B Power mode (not applicable on CoScInE)</td>
+    </tr>
+    <tr>
+      <td>Magnetron C: Target type</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Magnetron C: Power generator</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Magnetron C: Power mode</td>
+      <td>False</td>
+      <td></td>
+      <td>choice: ['DC', 'pulsed DC', 'RF', 'HPPMS']</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Magnetron C: Set power [W]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Magnetron C: Frequency [kHz]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>if DC is chosen for Magnetron C Power mode (not applicable on CoScInE)</td>
+    </tr>
+    <tr>
+      <td>Magnetron C: Pulse time [μs]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>if DC is chosen for Magnetron C Power mode (not applicable on CoScInE)</td>
+    </tr>
+    <tr>
+      <td>Magnetron C: On-time [μs]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>if HPPMS is chosen for Magnetron C Power mode (not applicable on CoScInE)</td>
+    </tr>
+    <tr>
+      <td>Magnetron C: Off-time [μs]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>if HPPMS is chosen for Magnetron C Power mode (not applicable on CoScInE)</td>
     </tr>
     <tr>
       <td>Capping Layer</td>
