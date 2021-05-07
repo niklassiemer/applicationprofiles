@@ -1,5 +1,4 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import FieldList
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import Sample, SampleCoScInE
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import SimTechnical
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import angstrom, squared
@@ -12,9 +11,7 @@ class SimBasic(SFBFields):
         super().__init__()
         self.add(label="Status", field_type=['initialized', 'created', 'submitted', 'running',
                  'collect', 'finished', 'refresh', 'suspended'])
-        self.add(label="Last status update", field_type="date")
-        # TODO: We have DOI and References, DOI is for papers about this and references for what?!
-        self.add(label="References")
+        self.add(label="Last status update", field_type="date", sh_path='csmd:dataset_endDate')
 
 
 # Inherit from SimTechnical first since then its fields are added to the SimBasic.
@@ -45,7 +42,16 @@ class SimVasp(FieldList):
         # TODO: ...etc? Vasp has so many options...
 
 
-class SimMD(FieldList):
+class SimMDCoscine(SimUniversal):
+    def __init__(self):
+        super().__init__()
+        # moved here from old AtomisticOutput
+        self.add(label="File format", example_input='xyz', comment='Format of the file the Sample is stored.')
+        self.add(label="Time sampled", unit='ps')
+        self.add(label="Number of individual configurations sampled")
+
+
+class SimMD(SimMDCoscine):
     def __init__(self):
         super().__init__()
         self.add(label="Temperature", unit='K')
@@ -124,52 +130,14 @@ class LammpsMin(SimMinimize, SimLammps, SimUniversal):
         self.sort_fields_by_order_priority()
 
 
-class AtomisticOutputCoScInE(SFBFields):
-    # TODO: Are we really storing output separate from jobs? If so it needs it's own field
-    #       But somehow I really expect that we want to specify a calculation ID,
-    #       then say calculation.output.positions[frame]
-    def __init__(self):
-        super().__init__()
-        self.add(label="Simulation ID")
-        self.add(label="External ID")
-        self.add(label="Configuration format")
-        self.add(label="References")
-
-        # grey
-        self.add(label="Chemical species")  # list(str)
-        self.add(label="Number of atoms")  # int
-        self.add(label="Chemical species count")  # dict
-        self.add(label="Additional properties")
-        self.add(label="Timestep")
-        self.add(label="Time", unit='ps')
-        self.add(label="Number of individual configurations")
-
-
-class AtomisticOutputGreen(FieldList):
-    def __init__(self):
-        super().__init__()
-        # green
-        self.add("Chemical species")
-        self.add("Number of atoms")
-        self.add("Chemical species count")
-        self.add("Additional properties")
-        self.add("Timestep")
-        self.add("Time", unit='ps')
-
-
-class AtomisticOutput(AtomisticOutputGreen, AtomisticOutputCoScInE):
-    def __init__(self):
-        super().__init__()
-        self.sort_fields_by_order_priority()
-
-
-class PostProcessingCoScInE(SFBFields):
+class PostProcessingCoScInE(SimTechnical):
     def __init__(self):
         super().__init__()
         # This is the ID: self.add(label="Snapshot ID")
-        self.add(label="Sample ID")
+        self.add(label="Source IDs", comment='Simulation IDs (cf. Frames used) / SampleIDs which are post processed.')
         self.add(label="External ID")
-        self.add(label="Software ID")
+        self.add(label='Frames used', long=True, comment='A list of frames per Simulation ID, which are used for the'
+                                                         'post-processing.')
         self.add(label="Data format")
 
         self.sort_fields_by_order_priority()

@@ -15,17 +15,22 @@ class SampleCoScInE(SFBFields):
         self.add(label="Phases", long=True)
         self.add(label="Chemical species")
         self.add(label="Chemical species identifiers")
-        self.add(label="Preparation ID")
-        # yellow
-        self.add(label="Generator ID")
-        self.add(label="Generator frame")  # int
-        self.add(label="Construction method", long=True, comment='E.g. pyiron command')
+        self.add(label="Generator ID", comment='This could be a Simulation ID (cf. Generator frame), an External ID, '
+                                               'or an Sample preparation ID. ')
+        self.add(label="Generator frame", comment='Used to unambiguously refer to a specific structure from '
+                                                  'Generator ID')  # int
+        self.add(label="Construction method", long=True, comment='E.g. pyiron command; recommended only for very short'
+                                                                 '/trivial generation methods, use a '
+                                                                 'SamplePreparation ID otherwise.')
         # grey
         self.add(label="Defects contained")
         self.add(label="Mechanical treatment")
         self.add(label="Heat treatment")  # aka temperature
         self.add(label="Point group")
         self.add(label="Sublattices")
+        self.add(label="Additional properties")
+
+        self.add(label="File format", example_input='xyz', comment='Format of the file the Sample is stored.')
 
         self.sort_fields_by_order_priority()
 
@@ -44,5 +49,6 @@ class Sample(SampleCoScInE):
         self.add(label="Mass", long=True)
         self.add(label="Periodicity of the crystal")
         self.add(label="Sample description")
+        self.add(label="Additional properties")
 
         self.sort_fields_by_order_priority()

@@ -99,6 +99,7 @@ class MetaDataField:
             unit=None,
             long=False,
             example_input="",
+            default_value=None,
             comment="",
             order_priority=None,
             qudt=None,
@@ -139,6 +140,7 @@ class MetaDataField:
 
         self.comment = comment
         self.example_input = example_input
+        self.default_value = default_value
         self.order_priority = order_priority
         self._order_number = None
 
@@ -208,7 +210,7 @@ class MetaDataField:
     @property
     def ttl_term_str(self):
         result = ''
-        if not self.ttl_relations["sh:path"] == "sfb1394:" + self.name:
+        if not self.ttl_relations["sh:path"].startswith("sfb1394:"):
             return result
 
         # if self.unit is None:
@@ -240,6 +242,9 @@ class MetaDataField:
             result += '  sh:maxCount 1 ;\n'
 
         result += '  sh:name "' + self.label_w_unit + '"@en, "' + self.label_w_unit + '"@de ;\n'
+
+        if self.default_value is not None:
+            result += f'  sh:defaultValue "{self.default_value}" ;'
 
         for key, value in self.ttl_relations.items():
             if not ((key == 'qudt:Unit' and value == 'unit:None') or key == 'sh:path'):
@@ -288,6 +293,7 @@ class MetaDataField:
             long=self.long,
             comment=self.comment,
             example_input=self.example_input,
+            default_value=self.default_value,
             qudt=None,  # stored in self.ttl_relations
             sh_path=None,  # stored in self.ttl_relations
             order_priority=self.order_priority,
