@@ -65,12 +65,13 @@ class TipCalibration(PhysicalActivity):
         self.add(label='Measurement position', example_input="5mm in X and 4 mm in Y from lower left corner")
         # ToDo refactor NanoIndentationBasic to include all not Tip- or Sample- related fields here.
         self.add(label='Date of calibration', field_type='date')
+        self.add(label="Diamond area function", comment='As result from this calibration activity.')
+        self.add(label='Frame stiffness', unit='N/m', comment='As result from this calibration activity.')
 
 
 class Tip(PhysicalObject):
     def __init__(self):
         super().__init__()
-        self.add(label="Tip ID", name="tipName")  # the TipID used within nano indentation experiments is not unique!
-        self.add(label="Tip calibration ID")
-        self.add(label="Diamond area function")
-        self.add(label='Frame stiffness', unit='N/m')
+        self.add(label="Tip calibration IDs", comment='List of all calibration activities on this tip.')
+        self.add(label="Diamond area function", comment='from the latest calibration activity.')
+        self.add(label='Frame stiffness', unit='N/m', comment='from the latest calibration activity.')
