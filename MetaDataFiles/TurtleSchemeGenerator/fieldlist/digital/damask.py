@@ -4,11 +4,10 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import SimTec
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 
 
-class DamaskBasic(SFBFields):
+class DamaskGeneral(SFBFields):
     def __init__(self):
         super().__init__()
         self.add(label="Constitutive models")
-        self.add(label="Library module")
 
 
 class DamaskMaterial(FieldList):
@@ -47,13 +46,14 @@ class DamaskNumerical(FieldList):
         self.add(label="Maximum cutbacks")
 
 
-class DamaskCoScInE(SimTechnical, DamaskBasic):
+class DamaskCoScInE(SimTechnical):
+    # Damask has essentially all input in green fields now, however, we should have a Damask class for CoScInE.
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()
 
 
-class Damask(SimTechnical, DamaskNumerical, DamaskBoundaryConditions, DamaskGeometry, DamaskMaterial, DamaskBasic):
+class Damask(SimTechnical, DamaskNumerical, DamaskBoundaryConditions, DamaskGeometry, DamaskMaterial, DamaskGeneral):
     def __init__(self):
         super().__init__()
         self.sort_fields_by_order_priority()

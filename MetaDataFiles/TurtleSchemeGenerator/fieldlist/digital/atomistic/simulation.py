@@ -11,9 +11,7 @@ class SimBasic(SFBFields):
         super().__init__()
         self.add(label="Status", field_type=['initialized', 'created', 'submitted', 'running',
                  'collect', 'finished', 'refresh', 'suspended'])
-        self.add(label="Last status update", field_type="date")
-        # TODO: We have DOI and References, DOI is for papers about this and references for what?!
-        self.add(label="References")
+        self.add(label="Last status update", field_type="date", sh_path='csmd:dataset_endDate')
 
 
 # Inherit from SimTechnical first since then its fields are added to the SimBasic.
@@ -23,6 +21,7 @@ class SimUniversal(SimTechnical, SimBasic):
         # Since I took it out of the blue:
         self.add(label="Sample ID") #, required=True)
         self.add(label="Simulation type")
+        self.add(label="Job submission commands", long=True)
 
         self.sort_fields_by_order_priority()
 
@@ -43,7 +42,16 @@ class SimVasp(FieldList):
         # TODO: ...etc? Vasp has so many options...
 
 
-class SimMD(FieldList):
+class SimMDCoscine(SimUniversal):
+    def __init__(self):
+        super().__init__()
+        # moved here from old AtomisticOutput
+        self.add(label="File format", example_input='xyz', comment='Format of the file the Sample is stored.')
+        self.add(label="Time sampled", unit='ps')
+        self.add(label="Number of individual configurations sampled")
+
+
+class SimMD(SimMDCoscine):
     def __init__(self):
         super().__init__()
         self.add(label="Temperature", unit='K')
@@ -122,60 +130,41 @@ class LammpsMin(SimMinimize, SimLammps, SimUniversal):
         self.sort_fields_by_order_priority()
 
 
-class AtomisticOutputCoScInE(SFBFields):
-    # TODO: Are we really storing output separate from jobs? If so it needs it's own field
-    #       But somehow I really expect that we want to specify a calculation ID,
-    #       then say calculation.output.positions[frame]
+class PostProcessingCoScInE(SimTechnical):
     def __init__(self):
         super().__init__()
-        self.add(label="Sample ID", required=True)
-        self.add(label="Trajectory ID")
-        self.add(label="Simulation ID")
-        self.add(label="Configuration format")
-        self.add(label="References")
+        # This is the ID: self.add(label="Snapshot ID")
+        self.add(label="Source IDs", comment='Simulation IDs (cf. Frames used) / SampleIDs which are post processed.')
+        self.add(label='Frames used', long=True, comment='A list of frames per Simulation ID, which are used for the'
+                                                         'post-processing.')
+        self.add(label="Data format")
 
-
-class AtomisticOutputGreen(FieldList):
-    def __init__(self):
-        super().__init__()
-        # green
-        self.add("Chemical species")
-        self.add("Number of atoms")
-        self.add("Chemical species count")
-        self.add("Additional properties")
-        self.add("Timestep")
-        self.add("Time", unit='ps')
-
-
-class AtomisticOutput(AtomisticOutputGreen, AtomisticOutputCoScInE):
-    def __init__(self):
-        super().__init__()
         self.sort_fields_by_order_priority()
+
+
+class PostProcessing(PostProcessingCoScInE):
+    def __init__(self):
+        super().__init__()
+        self.add('Steps', long=True)
+        self.add('Related post processing IDs')
 
 
 class AtomisticSnapshotCoScInE(SFBFields):
     def __init__(self):
         super().__init__()
-        # This is the ID: self.add(label="Snapshot ID")
-        self.add(label="Sample ID")
-        self.add(label="External ID")
-        self.add(label="Snapshot format")
-        self.add(label="Visualization program")
-        self.add(label="Visualization program command")
-        self.add(label="References")
-
-        self.sort_fields_by_order_priority()
+        self.add('Post processing ID')
+        self.add('Format', example_input='jpg')
 
 
-class AtomisticSnapshotGreen(FieldList):
+class AtomisticSnapshotGreen(AtomisticSnapshotCoScInE):
     def __init__(self):
         super().__init__()
         self.add(label='Atomistic color')
         self.add(label="Color information")
         self.add(label="Perspective", field_type='bool')
+        self.add(label="Resolution")
+        self.add(label="Frame rate")
+        self.add(label="Duration")
+        self.add(label="Codec")
 
-
-class AtomisticSnapshot(AtomisticSnapshotGreen, AtomisticSnapshotCoScInE):
-    def __init__(self):
-        super().__init__()
         self.sort_fields_by_order_priority()

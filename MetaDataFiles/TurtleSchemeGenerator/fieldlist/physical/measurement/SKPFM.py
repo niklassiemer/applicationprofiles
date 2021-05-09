@@ -15,7 +15,5 @@ class SKPFM(Experiment):
         self.add(label="Applied offset voltage", field_type=['sample', 'tip'])
         self.add(label="Tip alternating Voltage", unit='V')
         self.add(label="Scan area", unit="nm x nm")
-        self.add(label="Reference")  #???
-        self.add(label="Experiment condition", long=True)  #??? This
-        # TODO: We haven't gotten enough info from the SKPFM team, those last two are brutally vague
+        self.add(label="Reference electrode", example_input="Au")
         self.sort_fields_by_order_priority()

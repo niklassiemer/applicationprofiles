@@ -1,5 +1,10 @@
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import MeasurementAtSpot
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import (MeasurementAtSpot, PhysicalObject,
+                                                                            PhysicalActivity)
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.units import deg
+
+# info:
+# The Tip ID is not unique! It refers to a specific Tip which, however, changes its properties over time.
+# Thus, the ID of a Tip object != Tip ID
 
 
 class NanoIndentationBasic(MeasurementAtSpot):
@@ -9,10 +14,10 @@ class NanoIndentationBasic(MeasurementAtSpot):
 
         self.add(label="Type of test")
         self.add(label="Control method")
-        self.add(label="Tip ID", name="tip")
-        self.add(label="Diamond area function")
-        self.add(label="Date of calibration", field_type="date")  # TODO: Do we need a tip calibration activity?
-        self.add(label="Frame stiffness", unit='N/m')
+        self.add(label="Tip ID", name="tipName")  # the TipID used within nano indentation experiments is not unique!
+        self.add(label="Diamond area function")   # ToDo: Use the unique TipID (=TipName + Calibration date) only
+        self.add(label="Date of calibration", field_type="date")  # Same here
+        self.add(label="Frame stiffness", unit='N/m')  # Same here
 
         self.add(label="Target load", unit="mN")
         self.add(label="Target depth", unit="nm")
@@ -51,3 +56,22 @@ class NanoIndentationCreep(NanoIndentation):
         super().__init__()
         self.add(label="Creep dwell period", unit='s')
         self.sort_fields_by_order_priority()
+
+
+class TipCalibration(PhysicalActivity):
+    def __init__(self):
+        super().__init__()
+        self.add(label='Calibration sample ID')
+        self.add(label='Measurement position', example_input="5mm in X and 4 mm in Y from lower left corner")
+        # ToDo refactor NanoIndentationBasic to include all not Tip- or Sample- related fields here.
+        self.add(label='Date of calibration', field_type='date')
+        self.add(label="Diamond area function", comment='As result from this calibration activity.')
+        self.add(label='Frame stiffness', unit='N/m', comment='As result from this calibration activity.')
+
+
+class Tip(PhysicalObject):
+    def __init__(self):
+        super().__init__()
+        self.add(label="Tip calibration IDs", comment='List of all calibration activities on this tip.')
+        self.add(label="Diamond area function", comment='from the latest calibration activity.')
+        self.add(label='Frame stiffness', unit='N/m', comment='from the latest calibration activity.')

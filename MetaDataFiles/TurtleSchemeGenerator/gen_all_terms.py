@@ -1,87 +1,12 @@
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.generic import Sample
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.EBSD import EBSD
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.EDX import EDX
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.EPMA import EPMA
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.ElChemImpedSPec import ElChemImpedSpec
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.PotentioDynPolar import PotentioDynPolar
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.SEM import SEM
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.SIET import SIET
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.SKPFM import SKPFM
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.SVET import SVET
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.apt import AtomProbeTomography
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.icp_ms import IcpMS
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.light_microscope import LightMicroscope
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.micro_pillar import MicroPillar
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.nano_indentation import NanoIndentation, \
-    NanoIndentationSRJ, NanoIndentationCreep
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.scratch import Scratch
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.synchrotron import Synchrotron
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.tem import TEM
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.tensile_compression import TensileCompression
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.xps import XPS
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.xrd import XRD
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.preparation import Polishing, Immersion, Etching, \
-    Sample as SamplePreparation, ThinFilm
-
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import Software, CompiledSoftware, ComputeEnvironment
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import SampleCoScInE
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.simulation import SimUniversal, \
-    AtomisticOutputCoScInE, AtomisticSnapshotCoScInE
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.potential import MLPotCoScInE
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_db import CalphadDB
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_calc import CalphadCalc
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.image_analysis import ImageAnalysis
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.damask import DamaskCoScInE
+from gen_experimental_schemes import schemes_to_write as experimental_schemes
+from gen_digital_schemes import schemes_to_write as digital_schemes
 
 
-# Break MRO issues:
-class C0(ThinFilm, Immersion):
-    pass
-
-
-class C1(C0, SamplePreparation, Sample):
-    pass
-
-
-class C2(C1, Polishing):
-    pass
-
-
-class C3(C2, AtomProbeTomography, Etching):
-    pass
-
-
-class C4(C3, IcpMS, LightMicroscope, MicroPillar, PotentioDynPolar):
-    pass
-
-
-class C5(C4, Scratch, SEM, SIET, SKPFM, SVET, Synchrotron, TEM, TensileCompression, XPS):
-    pass
-
-
-class C6(C5, XRD, EBSD, EDX, ElChemImpedSpec, EPMA, NanoIndentation, NanoIndentationSRJ):
-    pass
-
-
-# Finally
-class ExpMasterScheme(C6, NanoIndentationCreep):
-    pass
-
-
-class S1(SampleCoScInE, SimUniversal, AtomisticOutputCoScInE, AtomisticSnapshotCoScInE, MLPotCoScInE, CompiledSoftware):
-    pass
-
-
-class S2(S1, Software,  ComputeEnvironment):
-    pass
-
-
-class SimMasterScheme(S2, DamaskCoScInE, ImageAnalysis, CalphadCalc, CalphadDB):
-    pass
-
-
-class MasterScheme(ExpMasterScheme, SimMasterScheme):
-    pass
+for n, class_ in enumerate(list(experimental_schemes.values()) + list(digital_schemes.values())):
+    if n == 0:
+        MasterScheme = type("TransientClass" + str(n), tuple([class_]), {})
+    else:
+        MasterScheme = type("TransientClass"+str(n), tuple([MasterScheme, class_]), {})
 
 
 def remove_duplications(term_list):
