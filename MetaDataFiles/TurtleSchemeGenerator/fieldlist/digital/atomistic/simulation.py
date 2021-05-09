@@ -135,7 +135,6 @@ class PostProcessingCoScInE(SimTechnical):
         super().__init__()
         # This is the ID: self.add(label="Snapshot ID")
         self.add(label="Source IDs", comment='Simulation IDs (cf. Frames used) / SampleIDs which are post processed.')
-        self.add(label="External ID")
         self.add(label='Frames used', long=True, comment='A list of frames per Simulation ID, which are used for the'
                                                          'post-processing.')
         self.add(label="Data format")
@@ -155,7 +154,6 @@ class AtomisticSnapshotCoScInE(SFBFields):
         super().__init__()
         self.add('Post processing ID')
         self.add('Format', example_input='jpg')
-        self.add('External ID')
 
 
 class AtomisticSnapshotGreen(AtomisticSnapshotCoScInE):

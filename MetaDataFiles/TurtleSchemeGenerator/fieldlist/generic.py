@@ -6,6 +6,8 @@ class SFBFields(FieldList):
         super().__init__()
         self.add(label=id_name, name='ID', required=True, order_priority=1, sh_path='dcterms:identifier',
                  comment="ID for the object, be it sample, experiment, sim...")
+        self.add(label="External/alias ID", name="aliasID", order_priority=1, sh_path='dcterms:identifier',
+                 comment="Alternative ID for this object, e.g. if one is using a different name for another project")
         self.add(label="User", required=True, order_priority=1, comment="The user responsible for this digital record.",
                  sh_path='dcterms:creator', default_value="{ME}")
         self.add(label="Date", required=True, order_priority=1, sh_path='dcterms:created', default_value="{TODAY}",
