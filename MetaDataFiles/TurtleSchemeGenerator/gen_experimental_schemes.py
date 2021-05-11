@@ -29,7 +29,7 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.nano_ind
                                                                                                  NanoIndentationCreep)
 
 schemes_to_write = {
-    'Sample_preparation': SamplePreparation,
+    'SamplePreparation': SamplePreparation,
     "Immersion": Immersion,
     "Etching": Etching,
     "Sample": Sample,
@@ -47,7 +47,7 @@ schemes_to_write = {
     "SVET": SVET,
     "Synchrotron": Synchrotron,
     "TEM": TEM,
-    "Tensile_Compression": TensileCompression,
+    "TensileCompression": TensileCompression,
     "XPS": XPS,
     "XRD": XRD,
     "EBSD": EBSD,
