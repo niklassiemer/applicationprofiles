@@ -1,10 +1,10 @@
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
 
-from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import CompiledSoftware, ComputeEnvironment
+from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.generic import Software, CompiledSoftware, ComputeEnvironment
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.sample import SampleCoScInE, SamplePreparation
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.simulation import SimUniversal, \
-    AtomisticSnapshotCoScInE, PostProcessingCoScInE, SimMDCoscine
+    AtomisticProcessedCoScInE, PostProcessingCoScInE, SimMDCoscine
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.atomistic.potential import MLPotCoScInE
 
 from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.calphad_calc import CalphadCalc
@@ -16,17 +16,18 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.digital.image_analysis import
 
 
 schemes_to_write = {
+    "Software": Software,
     "CompiledSoftware": CompiledSoftware,
     "ComputeEnvironment": ComputeEnvironment,
-    "SamplePreparation": SamplePreparation,
+    "AtomisticSamplePreparation": SamplePreparation,
     "AtomisticSample": SampleCoScInE,
-    "Atomistic_simulation": SimUniversal,
-    "Atomistic_MD": SimMDCoscine,
-    "Atomistic_snapshot": AtomisticSnapshotCoScInE,
-    "PostProcessing": PostProcessingCoScInE,
-    "ML_potential": MLPotCoScInE,
-    "Calphad_calc": CalphadCalc,
-    "Calphad_db": CalphadDB,
+    "AtomisticSimulation": SimUniversal,
+    "AtomisticSimulation_MD": SimMDCoscine,
+    "AtomisticProcessed": AtomisticProcessedCoScInE,
+    "AtomisticPostProcessing": PostProcessingCoScInE,
+    "MLPotential": MLPotCoScInE,
+    "CalphadCalc": CalphadCalc,
+    "CalphadDB": CalphadDB,
     "DAMASK": DamaskCoScInE,
     "ImageAnalysis": ImageAnalysis,
 }
