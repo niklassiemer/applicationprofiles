@@ -22,7 +22,7 @@ schemes_to_write = {
     "AtomisticSamplePreparation": SamplePreparation,
     "AtomisticSample": SampleCoScInE,
     "AtomisticSimulation": SimUniversal,
-    "AtomisticSimulation_MD": SimMDCoscine,
+    "AtomisticSimulationMD": SimMDCoscine,
     "AtomisticProcessed": AtomisticProcessedCoScInE,
     "AtomisticPostProcessing": PostProcessingCoScInE,
     "MLPotential": MLPotCoScInE,
