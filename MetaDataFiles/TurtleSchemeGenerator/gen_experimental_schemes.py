@@ -35,7 +35,7 @@ schemes_to_write = {
     "Sample": Sample,
     "Polishing": Polishing,
     "ThinFilm": ThinFilm,
-    "Tomography": AtomProbeTomography,  # I would prefer the 'APT' as name, however, 'Tomography' is already in use on CoScInE
+    "tomography": AtomProbeTomography,  # I would prefer the 'APT' as name, however, 'tomography' is already in use on CoScInE
     "ICP_MS": IcpMS,
     "LightMicroscope": LightMicroscope,
     "Micropillar": MicroPillar,
