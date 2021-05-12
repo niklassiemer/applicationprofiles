@@ -232,18 +232,20 @@ class MetaDataField:
 
         if self.required:
             result += '  sh:minCount 1 ;\n'
+        result += '  sh:maxCount 1 ;\n'
+        if self.required and (self.field_type is None or self.field_type == "string"):
+            result += '  sh:minLength 1 ;\n'
+
+        if self._single_type:
+            result += '  sh:datatype ' + self.ttl_field_type + ' ;\n'
 
         if self.long:
             result += '  dash:singleLine false ;\n'
 
-        if self._single_type:
-            result += '  sh:datatype ' + self.ttl_field_type + ' ;\n'
-        result += '  sh:maxCount 1 ;\n'
-
-        result += '  sh:name "' + self.label_w_unit + '"@en, "' + self.label_w_unit + '"@de ;\n'
-
         if self.default_value is not None:
             result += f'  sh:defaultValue "{self.default_value}" ;\n'
+
+        result += '  sh:name "' + self.label_w_unit + '"@en, "' + self.label_w_unit + '"@de ;\n'
 
         for key, value in self.ttl_relations.items():
             if not ((key == 'qudt:Unit' and value == 'unit:None') or key == 'sh:path'):
@@ -558,7 +560,7 @@ class MetaDataSchemes:
   dcterms:license <http://spdx.org/licenses/MIT> ;
   dcterms:publisher <https://itc.rwth-aachen.de/> ;
   dcterms:rights "Copyright © 2020 IT Center, RWTH Aachen University" ;
-  dcterms:title  """
+  dcterms:title """
         result += '"SFB1394 ' + self.name + '"@en ;\n\n'
         result += '  a sh:NodeShape ;\n'
         if self.parent_class_name is not None:
