@@ -1,3 +1,5 @@
+from glob import iglob
+
 from gen_experimental_schemes import schemes_to_write as experimental_schemes
 from gen_digital_schemes import schemes_to_write as digital_schemes
 
@@ -70,3 +72,16 @@ with open("sfb1394_terms.ttl", 'w', encoding='utf8') as f:
     f.write(preamble)
     for term in sfb_terms:
         f.write(term)
+
+
+vocab_prefix = """@base  <http://purl.org/coscine/vocabularies/sfb1394/> .
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+"""
+with open('sfb1394_vocab.ttl', 'w', encoding='utf8') as result_file:
+    result_file.write(vocab_prefix)
+    for vocab_file in iglob("*_vocab.ttl"):
+        with open(vocab_file) as f:
+            result_file.write(f.read())

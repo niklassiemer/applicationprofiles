@@ -61,7 +61,7 @@ class Instrument(PhysicalObject):
 class PreSample(PhysicalObject):
     def __init__(self):
         super().__init__()
-        self.add(label="Parent ID", name="parentSample", comment="The super-sample from which this came.")
+        self.add(label="Parent ID", name="parentSampleID", comment="The super-sample from which this came.")
         self.sort_fields_by_order_priority()
 
 
