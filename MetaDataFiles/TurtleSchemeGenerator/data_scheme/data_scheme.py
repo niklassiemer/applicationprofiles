@@ -244,7 +244,7 @@ class MetaDataField:
         result += '  sh:name "' + self.label_w_unit + '"@en, "' + self.label_w_unit + '"@de ;\n'
 
         if self.default_value is not None:
-            result += f'  sh:defaultValue "{self.default_value}" ;'
+            result += f'  sh:defaultValue "{self.default_value}" ;\n'
 
         for key, value in self.ttl_relations.items():
             if not ((key == 'qudt:Unit' and value == 'unit:None') or key == 'sh:path'):
