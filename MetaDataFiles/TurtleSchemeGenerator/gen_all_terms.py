@@ -1,4 +1,6 @@
+import shutil
 from glob import iglob
+import os
 
 from gen_experimental_schemes import schemes_to_write as experimental_schemes
 from gen_digital_schemes import schemes_to_write as digital_schemes
@@ -85,3 +87,26 @@ with open('sfb1394_vocab.ttl', 'w', encoding='utf8') as result_file:
     for vocab_file in iglob("*_vocab.ttl"):
         with open(vocab_file) as f:
             result_file.write(f.read())
+
+
+root_dir = os.path.normpath(os.path.join(os.getcwd(), '../../'))
+vocab_dir = os.path.join(root_dir, 'vocabularies/sfb1394')
+term_dir = os.path.join(root_dir, 'terms/sfb1394')
+profiles_dir = os.path.join(root_dir, 'profiles/sfb1394')
+
+try:
+    os.mkdir(vocab_dir)
+except FileExistsError:
+    pass
+
+shutil.copy('sfb1394_vocab.ttl', os.path.join(vocab_dir, 'index.ttl'))
+
+shutil.copy('sfb1394_terms.ttl', os.path.join(term_dir, 'index.ttl'))
+
+for scheme_name in list(experimental_schemes.keys()) + list(digital_schemes.keys()):
+    scheme_dir = os.path.join(profiles_dir, scheme_name)
+    try:
+        os.mkdir(scheme_dir)
+    except FileExistsError:
+        pass
+    shutil.copy(scheme_name+'.ttl', os.path.join(scheme_dir, 'index.ttl'))
