@@ -238,8 +238,7 @@ class MetaDataField:
 
         if self._single_type:
             result += '  sh:datatype ' + self.ttl_field_type + ' ;\n'
-        else:
-            result += '  sh:maxCount 1 ;\n'
+        result += '  sh:maxCount 1 ;\n'
 
         result += '  sh:name "' + self.label_w_unit + '"@en, "' + self.label_w_unit + '"@de ;\n'
 
