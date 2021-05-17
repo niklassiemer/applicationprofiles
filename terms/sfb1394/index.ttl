@@ -5,270 +5,1333 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 <http://purl.org/coscine/terms/sfb1394/>
-  dcterms:publisher <http://www.itc.rwth-aachen.de/> ;
-  dcterms:license <http://spdx.org/licenses/CC-BY-4.0> ;
-  dcterms:rights "Copyright © 2020 RWTH Aachen University" ;
-  dcterms:title "SFB1394 Metadata"@en .
-
-sfb1394:parentSample
-    rdfs:label "Parent Sample"@en, "Parent Sample"@de ;
+dcterms:publisher <http://www.itc.rwth-aachen.de/> ;
+dcterms:license <http://spdx.org/licenses/CC-BY-4.0> ;
+dcterms:rights "Copyright © 2020 RWTH Aachen University" ;
+dcterms:title "SFB1394 Metadata"@en 
 .
 
-sfb1394:liftOutRegion
-    rdfs:label "Lift-out region"@en, "Lift-out region"@de ;
-.
+sfb1394:1stDimensionPixels 
+  rdfs:label "1st dimension pixels"@en, "1st dimension pixels"@de ;
+. 
 
-sfb1394:annularMillingParameters
-    rdfs:label "Annular Milling Parameters"@en, "Annular Milling Parameters"@de ;
-.
+sfb1394:1stDimensionStartingPixel 
+  rdfs:label "1st dimension starting pixel"@en, "1st dimension starting pixel"@de ;
+. 
 
-sfb1394:lowVoltageCleaning
-    rdfs:label "Low Voltage Cleaning"@en, "Low Voltage Cleaning"@de ;
-.
+sfb1394:1stDimensionUnit 
+  rdfs:label "1st dimension unit"@en, "1st dimension unit"@de ;
+. 
 
-sfb1394:mode
-    rdfs:label "Mode"@en, "Mode"@de ;
-.
+sfb1394:1stDimensionUnitScaling 
+  rdfs:label "1st dimension unit scaling"@en, "1st dimension unit scaling"@de ;
+. 
 
-sfb1394:pulseFraction
-    rdfs:label "Pulse Fraction [%]"@en, "Pulse Fraction [%]"@de ;
-.
+sfb1394:2ndDimensionPixels 
+  rdfs:label "2nd dimension pixels"@en, "2nd dimension pixels"@de ;
+. 
 
-sfb1394:laserPulseEnergy
-    rdfs:label "Laser Pulse Energy [pJ]"@en, "Laser Pulse Energy [pJ]"@de ;
-.
+sfb1394:2ndDimensionStartingPixel 
+  rdfs:label "2nd dimension starting pixel"@en, "2nd dimension starting pixel"@de ;
+. 
 
-sfb1394:pulseFrequency
-    rdfs:label "Pulse frequency [kHz]"@en, "Pulse frequency [kHz]"@de ;
-.
+sfb1394:2ndDimensionUnit 
+  rdfs:label "2nd dimension unit"@en, "2nd dimension unit"@de ;
+. 
 
-sfb1394:baseTemperature
-    rdfs:label "Base temperature [K]"@en, "Base temperature [K]"@de ;
-.
+sfb1394:2ndDimensionUnitScaling 
+  rdfs:label "2nd dimension unit scaling"@en, "2nd dimension unit scaling"@de ;
+. 
 
-sfb1394:detectionRate
-    rdfs:label "Detection rate [%]"@en, "Detection rate [%]"@de ;
-.
+sfb1394:3rdDimensionPixels 
+  rdfs:label "3rd dimension pixels"@en, "3rd dimension pixels"@de ;
+. 
 
-sfb1394:runTime
-    rdfs:label "Run time [hh:mm]"@en, "Run time [hh:mm]"@de ;
-.
+sfb1394:3rdDimensionStartingPixel 
+  rdfs:label "3rd dimension starting pixel"@en, "3rd dimension starting pixel"@de ;
+. 
 
-sfb1394:stopVoltage
-    rdfs:label "Stop voltage [kV]"@en, "Stop voltage [kV]"@de ;
-.
+sfb1394:3rdDimensionUnit 
+  rdfs:label "3rd dimension unit"@en, "3rd dimension unit"@de ;
+. 
 
-sfb1394:id
-    rdfs:label "ID"@en, "ID"@de ;
-.
+sfb1394:3rdDimensionUnitScaling 
+  rdfs:label "3rd dimension unit scaling"@en, "3rd dimension unit scaling"@de ;
+. 
 
-sfb1394:operator 
-  rdfs:label "Operator"@en, "Operator"@de ;
+sfb1394:BaseTatRT 
+  rdfs:label "Base pressure (at room temperature)"@en, "Base pressure (at room temperature)"@de ;
+. 
+
+sfb1394:BaseTatST 
+  rdfs:label "Base pressure (at synthesis temperature)"@en, "Base pressure (at synthesis temperature)"@de ;
+. 
+
+sfb1394:TestingEnv 
+  rdfs:label "Environmental protection during sample processing"@en, "Environmental protection during sample processing"@de ;
+. 
+
+sfb1394:acceleratingVoltage 
+  rdfs:label "Accelerating voltage"@en, "Accelerating voltage"@de ;
+. 
+
+sfb1394:acquiredIons 
+  rdfs:label "Acquired ions"@en, "Acquired ions"@de ;
+. 
+
+sfb1394:acquisitionMode 
+  rdfs:label "Acquisition mode"@en, "Acquisition mode"@de ;
+. 
+
+sfb1394:additionalProperties 
+  rdfs:label "Additional properties"@en, "Additional properties"@de ;
 . 
 
 sfb1394:affiliation 
   rdfs:label "Affiliation"@en, "Affiliation"@de ;
 . 
 
-sfb1394:dois 
-  rdfs:label "DOIs"@en, "DOIs"@de ;
+sfb1394:afmMode 
+  rdfs:label "AFM mode"@en, "AFM mode"@de ;
 . 
 
-sfb1394:comments 
-  rdfs:label "Comments"@en, "Comments"@de ;
+sfb1394:alternatingCurrent 
+  rdfs:label "Alternating current"@en, "Alternating current"@de ;
 . 
 
-sfb1394:preparationRoutine 
-  rdfs:label "Preparation routine"@en, "Preparation routine"@de ;
+sfb1394:alternatingVoltage 
+  rdfs:label "Alternating voltage"@en, "Alternating voltage"@de ;
 . 
 
-sfb1394:sampleStorage 
-  rdfs:label "Sample storage"@en, "Sample storage"@de ;
+sfb1394:analyzedElements 
+  rdfs:label "Analyzed elements"@en, "Analyzed elements"@de ;
 . 
 
-sfb1394:preparationDate 
-  rdfs:label "Preparation Date"@en, "Preparation Date"@de ;
+sfb1394:annularMillingParameters 
+  rdfs:label "Annular milling parameters"@en, "Annular milling parameters"@de ;
 . 
 
-sfb1394:etchingRoutine 
-  rdfs:label "Etching routine"@en, "Etching routine"@de ;
+sfb1394:anodeMaterial 
+  rdfs:label "Anode material"@en, "Anode material"@de ;
 . 
 
-sfb1394:sampleOrientation 
-  rdfs:label "Sample Orientation"@en, "Sample Orientation"@de ;
+sfb1394:anodePower 
+  rdfs:label "Anode power"@en, "Anode power"@de ;
 . 
 
-sfb1394:experimentIdsOfOtherTestsPerformedOnTheSameSpecimen 
-  rdfs:label "Experiment IDs of other tests performed on the same specimen"@en,
-             "Experiment IDs of other tests performed on the same specimen"@de ;
+sfb1394:anodeVoltage 
+  rdfs:label "Anode voltage"@en, "Anode voltage"@de ;
 . 
 
 sfb1394:anyDataSetToBeLinkedWithThisExperiment 
   rdfs:label "Any data set to be linked with this experiment"@en, "Any data set to be linked with this experiment"@de ;
 . 
 
-sfb1394:parentSample 
-  rdfs:label "Parent sample specimen ID"@en, "Parent sample specimen ID"@de ;
+sfb1394:appliedOffsetVoltage 
+  rdfs:label "Applied offset voltage"@en, "Applied offset voltage"@de ;
 . 
 
-sfb1394:sampleLocation 
-  rdfs:label "Sample Location"@en, "Sample Location"@de ;
+sfb1394:argonWorkingGasFlow 
+  rdfs:label "Argon working gas flow"@en, "Argon working gas flow"@de ;
 . 
 
-sfb1394:tip 
-  rdfs:label "Tip used"@en, "Tip used"@de ;
+sfb1394:axesUsedForPlotting 
+  rdfs:label "Axes used for plotting"@en, "Axes used for plotting"@de ;
 . 
 
-sfb1394:testLocationOnSample 
-  rdfs:label "Test location on sample"@en, "Test location on sample"@de ;
+sfb1394:axesUsedForSteppingOrMapping 
+  rdfs:label "Axes used for stepping or mapping"@en, "Axes used for stepping or mapping"@de ;
 . 
 
-sfb1394:typeOfTest 
-  rdfs:label "Type of test"@en, "Type of test"@de ;
+sfb1394:backgroundMethod 
+  rdfs:label "Background method"@en, "Background method"@de ;
 . 
 
-sfb1394:controlMethod 
-  rdfs:label "Control method"@en, "Control method"@de ;
+sfb1394:baseTemperature 
+  rdfs:label "Base temperature"@en, "Base temperature"@de ;
 . 
 
-sfb1394:tipId 
-  rdfs:label "Tip ID"@en, "Tip ID"@de ;
+sfb1394:beamSize 
+  rdfs:label "Beam size"@en, "Beam size"@de ;
 . 
 
-sfb1394:diamondAreaFunction 
-  rdfs:label "Diamond area function"@en, "Diamond area function"@de ;
+sfb1394:biasPowerGenerator 
+  rdfs:label "Bias power generator"@en, "Bias power generator"@de ;
 . 
 
-sfb1394:dateOfCalibration 
-  rdfs:label "Date of Calibration"@en, "Date of Calibration"@de ;
+sfb1394:cappingLayer 
+  rdfs:label "Capping Layer"@en, "Capping Layer"@de ;
 . 
 
-sfb1394:frameStiffness 
-  rdfs:label "Frame stiffness [N/m]"@en, "Frame stiffness [N/m]"@de ;
+sfb1394:cappingThickness 
+  rdfs:label "Capping thickness"@en, "Capping thickness"@de ;
 . 
 
-sfb1394:targetLoad 
-  rdfs:label "Target load [mN]"@en, "Target load [mN]"@de ;
+sfb1394:chemicalSpecies 
+  rdfs:label "Chemical species"@en, "Chemical species"@de ;
 . 
 
-sfb1394:targetDepth 
-  rdfs:label "Target depth [nm]"@en, "Target depth [nm]"@de ;
+sfb1394:chemicalSpeciesIdentifiers 
+  rdfs:label "Chemical species identifiers"@en, "Chemical species identifiers"@de ;
 . 
 
-sfb1394:targetStrainRate 
-  rdfs:label "Target strain rate [/s]"@en, "Target strain rate [/s]"@de ;
+sfb1394:chemicals 
+  rdfs:label "Chemicals"@en, "Chemicals"@de ;
 . 
 
-sfb1394:targetLoadingRate 
-  rdfs:label "Target loading rate [mN/s]"@en, "Target loading rate [mN/s]"@de ;
+sfb1394:codesUsed 
+  rdfs:label "Codes used"@en, "Codes used"@de ;
 . 
 
-sfb1394:targetDisplacementRate 
-  rdfs:label "Target displacement rate [nm/s]"@en, "Target displacement rate [nm/s]"@de ;
+sfb1394:comments 
+  rdfs:label "Comments"@en, "Comments"@de ;
+. 
+
+sfb1394:compiler 
+  rdfs:label "Compiler"@en, "Compiler"@de ;
+. 
+
+sfb1394:compilerOptions 
+  rdfs:label "Compiler options"@en, "Compiler options"@de ;
+. 
+
+sfb1394:compilerVersion 
+  rdfs:label "Compiler version"@en, "Compiler version"@de ;
+. 
+
+sfb1394:compounds 
+  rdfs:label "Compounds"@en, "Compounds"@de ;
+. 
+
+sfb1394:computerName 
+  rdfs:label "Computer name"@en, "Computer name"@de ;
+. 
+
+sfb1394:conditions 
+  rdfs:label "Conditions"@en, "Conditions"@de ;
+. 
+
+sfb1394:constructionMethod 
+  rdfs:label "Construction method"@en, "Construction method"@de ;
 . 
 
 sfb1394:continuousStiffnessMeasurement 
   rdfs:label "Continuous stiffness measurement"@en, "Continuous stiffness measurement"@de ;
 . 
 
-sfb1394:startOfAveragingDepth 
-  rdfs:label "Start of averaging depth [nm]"@en, "Start of averaging depth [nm]"@de ;
+sfb1394:controlMethod 
+  rdfs:label "Control method"@en, "Control method"@de ;
 . 
 
-sfb1394:endOfAveragingDepth 
-  rdfs:label "End of averaging depth [nm]"@en, "End of averaging depth [nm]"@de ;
+sfb1394:cores 
+  rdfs:label "Cores"@en, "Cores"@de ;
 . 
 
-sfb1394:holdTimeAtMaximumLoad 
-  rdfs:label "Hold time at maximum load [s]"@en, "Hold time at maximum load [s]"@de ;
+sfb1394:corrosion 
+  rdfs:label "Corrosion"@en, "Corrosion"@de ;
+. 
+
+sfb1394:countRate 
+  rdfs:label "Count rate"@en, "Count rate"@de ;
+. 
+
+sfb1394:counterElectrode 
+  rdfs:label "Counter electrode"@en, "Counter electrode"@de ;
+. 
+
+sfb1394:cpuInfo 
+  rdfs:label "CPU info"@en, "CPU info"@de ;
+. 
+
+sfb1394:creepDwellPeriod 
+  rdfs:label "Creep dwell period"@en, "Creep dwell period"@de ;
+. 
+
+sfb1394:crystalStructure 
+  rdfs:label "Crystal structure"@en, "Crystal structure"@de ;
+. 
+
+sfb1394:current 
+  rdfs:label "Current"@en, "Current"@de ;
+. 
+
+sfb1394:dataDimension 
+  rdfs:label "Data dimension"@en, "Data dimension"@de ;
+. 
+
+sfb1394:dataFormat 
+  rdfs:label "Data format"@en, "Data format"@de ;
+. 
+
+sfb1394:database 
+  rdfs:label "Database"@en, "Database"@de ;
+. 
+
+sfb1394:databaseFilename 
+  rdfs:label "Database filename"@en, "Database filename"@de ;
+. 
+
+sfb1394:date 
+  rdfs:label "Date"@en, "Date"@de ;
+. 
+
+sfb1394:dateOfCalibration 
+  rdfs:label "Date of calibration"@en, "Date of calibration"@de ;
+. 
+
+sfb1394:defectType 
+  rdfs:label "Defect type"@en, "Defect type"@de ;
+. 
+
+sfb1394:defectsContained 
+  rdfs:label "Defects contained"@en, "Defects contained"@de ;
+. 
+
+sfb1394:deflectedBeamFocus 
+  rdfs:label "Deflected beam focus"@en, "Deflected beam focus"@de ;
+. 
+
+sfb1394:dependencySoftwareIds 
+  rdfs:label "Dependency Software IDs"@en, "Dependency Software IDs"@de ;
+. 
+
+sfb1394:depositionTime 
+  rdfs:label "Deposition time"@en, "Deposition time"@de ;
+. 
+
+sfb1394:detectionRate 
+  rdfs:label "Detection rate"@en, "Detection rate"@de ;
+. 
+
+sfb1394:detectorIds 
+  rdfs:label "Detector IDs"@en, "Detector IDs"@de ;
+. 
+
+sfb1394:diamondAreaFunction 
+  rdfs:label "Diamond area function"@en, "Diamond area function"@de ;
+. 
+
+sfb1394:diffractionAngle 
+  rdfs:label "Diffraction angle 2Theta"@en, "Diffraction angle 2Theta"@de ;
+. 
+
+sfb1394:displacementRangeForStrainRate 
+  rdfs:label "Displacement range for strain rate "@en, "Displacement range for strain rate "@de ;
 . 
 
 sfb1394:driftCorrectionEnabled 
   rdfs:label "Drift correction enabled"@en, "Drift correction enabled"@de ;
 . 
 
-sfb1394:sampleTemperature 
-  rdfs:label "Sample temperature [�C]"@en, "Sample temperature [�C]"@de ;
+sfb1394:duration 
+  rdfs:label "Duration"@en, "Duration"@de ;
 . 
 
-sfb1394:tipTemperature 
-  rdfs:label "Tip temperature [�C]"@en, "Tip temperature [�C]"@de ;
+sfb1394:dwellTime 
+  rdfs:label "Dwell time"@en, "Dwell time"@de ;
 . 
 
-sfb1394:relativeHumidity 
-  rdfs:label "Relative Humidity [%]"@en, "Relative Humidity [%]"@de ;
+sfb1394:electrolyteCondition 
+  rdfs:label "Electrolyte condition"@en, "Electrolyte condition"@de ;
 . 
 
-sfb1394:TestingEnv 
-  rdfs:label "Environmental protection during specimen testing"@en,
-             "Environmental protection during specimen testing"@de ;
+sfb1394:electrolytePh 
+  rdfs:label "Electrolyte pH"@en, "Electrolyte pH"@de ;
+. 
+
+sfb1394:electronDose 
+  rdfs:label "Electron dose"@en, "Electron dose"@de ;
+. 
+
+sfb1394:electronSource 
+  rdfs:label "Electron source"@en, "Electron source"@de ;
+. 
+
+sfb1394:elementData 
+  rdfs:label "Element data"@en, "Element data"@de ;
+. 
+
+sfb1394:elementsIncluded 
+  rdfs:label "Elements included"@en, "Elements included"@de ;
+. 
+
+sfb1394:elementsSelected 
+  rdfs:label "Elements selected"@en, "Elements selected"@de ;
+. 
+
+sfb1394:end2theta 
+  rdfs:label "End 2Theta"@en, "End 2Theta"@de ;
+. 
+
+sfb1394:endOfAveragingDepth 
+  rdfs:label "End of averaging depth"@en, "End of averaging depth"@de ;
+. 
+
+sfb1394:endTheta 
+  rdfs:label "End Theta"@en, "End Theta"@de ;
+. 
+
+sfb1394:energyBandwidth 
+  rdfs:label "Energy bandwidth"@en, "Energy bandwidth"@de ;
+. 
+
+sfb1394:energyRangeEnd 
+  rdfs:label "Energy range end"@en, "Energy range end"@de ;
+. 
+
+sfb1394:energyRangeStart 
+  rdfs:label "Energy range start"@en, "Energy range start"@de ;
+. 
+
+sfb1394:energyResolution 
+  rdfs:label "Energy resolution"@en, "Energy resolution"@de ;
 . 
 
 sfb1394:environmentalGas 
   rdfs:label "Environmental gas"@en, "Environmental gas"@de ;
 . 
 
-sfb1394:testDate 
-  rdfs:label "Test date"@en, "Test date"@de ;
+sfb1394:etchingDuration 
+  rdfs:label "Etching duration"@en, "Etching duration"@de ;
 . 
 
-sfb1394:parentSampleSpecimenId
-    rdfs:label "Parent sample specimen ID"@en, "Parent sample specimen ID"@de ;
-.
-
-sfb1394:specimenId
-    rdfs:label "Specimen ID"@en, "Specimen ID"@de ;
-.
-
-sfb1394:immersionExperimentId
-  rdfs:label "Immersion Experiment ID"@en, "Immersion Experiment ID"@de ;
+sfb1394:etchingEnergy 
+  rdfs:label "Etching energy"@en, "Etching energy"@de ;
 . 
 
-sfb1394:pre-treatment
-    rdfs:label "Pre-treatment"@en, "Pre-treatment"@de ;
-.
+sfb1394:etchingPower 
+  rdfs:label "Etching power"@en, "Etching power"@de ;
+. 
 
-sfb1394:afmMode
-    rdfs:label "AFM mode"@en, "AFM mode"@de ;
-.
+sfb1394:etchingSource 
+  rdfs:label "Etching source"@en, "Etching source"@de ;
+. 
 
-sfb1394:kpfmMode
-    rdfs:label "KPFM mode"@en, "KPFM mode"@de ;
-.
+sfb1394:featureExtractor 
+  rdfs:label "Feature extractor"@en, "Feature extractor"@de ;
+. 
 
-sfb1394:tipName
-    rdfs:label "Tip name"@en, "Tip name"@de ;
-.
+sfb1394:featureSize 
+  rdfs:label "Feature size"@en, "Feature size"@de ;
+. 
 
-sfb1394:workingDistance
-    rdfs:label "Working distance [nm]"@en, "Working distance [nm]"@de ;
-.
+sfb1394:fileFormat 
+  rdfs:label "File format"@en, "File format"@de ;
+. 
 
-sfb1394:scanVelocity
-    rdfs:label "Scan velocity [Hz]"@en, "Scan velocity [Hz]"@de ;
-.
+sfb1394:filter 
+  rdfs:label "Filter"@en, "Filter"@de ;
+. 
 
-sfb1394:tipOffsetVoltage
-    rdfs:label "Tip offset voltage [V]"@en, "Tip offset voltage [V]"@de ;
-.
+sfb1394:finalStrainRate 
+  rdfs:label "Final strain rate"@en, "Final strain rate"@de ;
+. 
 
-sfb1394:appliedOffsetVoltage
-    rdfs:label "Applied offset voltage"@en, "Applied offset voltage"@de ;
-.
+sfb1394:fixed2thetaPosition 
+  rdfs:label "Fixed 2Theta position"@en, "Fixed 2Theta position"@de ;
+. 
 
-sfb1394:tipAlternatingVoltage
-    rdfs:label "Tip alternating Voltage [V]"@en, "Tip alternating Voltage [V]"@de ;
-.
+sfb1394:fixedPhases 
+  rdfs:label "Fixed phases"@en, "Fixed phases"@de ;
+. 
 
-sfb1394:scanArea
-    rdfs:label "Scan area [nm x nm]"@en, "Scan area [nm x nm]"@de ;
-.
+sfb1394:flowRate 
+  rdfs:label "Flow rate"@en, "Flow rate"@de ;
+. 
 
-sfb1394:reference
-    rdfs:label "Reference"@en, "Reference"@de ;
-.
+sfb1394:format 
+  rdfs:label "Format"@en, "Format"@de ;
+. 
 
-sfb1394:experimentCondition
-    rdfs:label "Experiment condition"@en, "Experiment condition"@de ;
-.
+sfb1394:frameStiffness 
+  rdfs:label "Frame stiffness"@en, "Frame stiffness"@de ;
+. 
+
+sfb1394:framesUsed 
+  rdfs:label "Frames used"@en, "Frames used"@de ;
+. 
+
+sfb1394:frequency 
+  rdfs:label "Frequency"@en, "Frequency"@de ;
+. 
+
+sfb1394:frequencyEnd 
+  rdfs:label "Frequency end"@en, "Frequency end"@de ;
+. 
+
+sfb1394:frequencyStart 
+  rdfs:label "Frequency start"@en, "Frequency start"@de ;
+. 
+
+sfb1394:generatorFrame 
+  rdfs:label "Generator frame"@en, "Generator frame"@de ;
+. 
+
+sfb1394:generatorId 
+  rdfs:label "Generator ID"@en, "Generator ID"@de ;
+. 
+
+sfb1394:gitHash 
+  rdfs:label "git hash/tag"@en, "git hash/tag"@de ;
+. 
+
+sfb1394:gitRepository 
+  rdfs:label "git repository"@en, "git repository"@de ;
+. 
+
+sfb1394:gpuInfo 
+  rdfs:label "GPU info"@en, "GPU info"@de ;
+. 
+
+sfb1394:grit1 
+  rdfs:label "Grit 1"@en, "Grit 1"@de ;
+. 
+
+sfb1394:grit2 
+  rdfs:label "Grit 2"@en, "Grit 2"@de ;
+. 
+
+sfb1394:gritMaterial 
+  rdfs:label "Grit material"@en, "Grit material"@de ;
+. 
+
+sfb1394:heatTreatment 
+  rdfs:label "Heat treatment"@en, "Heat treatment"@de ;
+. 
+
+sfb1394:heatingTime 
+  rdfs:label "Heating time"@en, "Heating time"@de ;
+. 
+
+sfb1394:holdTimeAtMaximumLoad 
+  rdfs:label "Hold time at maximum load"@en, "Hold time at maximum load"@de ;
+. 
+
+sfb1394:imageHeight 
+  rdfs:label "Image height"@en, "Image height"@de ;
+. 
+
+sfb1394:imageSize 
+  rdfs:label "Image size"@en, "Image size"@de ;
+. 
+
+sfb1394:imageWidth 
+  rdfs:label "Image width"@en, "Image width"@de ;
+. 
+
+sfb1394:immersionExperimentRoutine 
+  rdfs:label "Immersion experiment routine"@en, "Immersion experiment routine"@de ;
+. 
+
+sfb1394:inSitu 
+  rdfs:label "In-situ / Quasi-in-situ"@en, "In-situ / Quasi-in-situ"@de ;
+. 
+
+sfb1394:incidenceAngleOmega 
+  rdfs:label "Incidence angle Omega"@en, "Incidence angle Omega"@de ;
+. 
+
+sfb1394:incomingBeamFocus 
+  rdfs:label "Incoming beam focus"@en, "Incoming beam focus"@de ;
+. 
+
+sfb1394:initialDisplacement 
+  rdfs:label "Initial displacement"@en, "Initial displacement"@de ;
+. 
+
+sfb1394:initialStrainRate 
+  rdfs:label "Initial strain rate"@en, "Initial strain rate"@de ;
+. 
+
+sfb1394:inputImages 
+  rdfs:label "Input image(s)"@en, "Input image(s)"@de ;
+. 
+
+sfb1394:ionSelectiveElectrodeSolution 
+  rdfs:label "Ion selective electrode solution"@en, "Ion selective electrode solution"@de ;
+. 
+
+sfb1394:ionSelectiveMembrane 
+  rdfs:label "Ion selective membrane"@en, "Ion selective membrane"@de ;
+. 
+
+sfb1394:irCompensation 
+  rdfs:label "IR compensation"@en, "IR compensation"@de ;
+. 
+
+sfb1394:isotope 
+  rdfs:label "Isotope"@en, "Isotope"@de ;
+. 
+
+sfb1394:jobSubmissionCommands 
+  rdfs:label "Job submission commands"@en, "Job submission commands"@de ;
+. 
+
+sfb1394:kpfmMode 
+  rdfs:label "KPFM mode"@en, "KPFM mode"@de ;
+. 
+
+sfb1394:laserPulseEnergy 
+  rdfs:label "Laser pulse energy"@en, "Laser pulse energy"@de ;
+. 
+
+sfb1394:licence 
+  rdfs:label "Licence"@en, "Licence"@de ;
+. 
+
+sfb1394:lift-outRegion 
+  rdfs:label "Lift-out region"@en, "Lift-out region"@de ;
+. 
+
+sfb1394:lightingMode 
+  rdfs:label "Lighting mode"@en, "Lighting mode"@de ;
+. 
+
+sfb1394:loadingType 
+  rdfs:label "Loading type"@en, "Loading type"@de ;
+. 
+
+sfb1394:location 
+  rdfs:label "Location"@en, "Location"@de ;
+. 
+
+sfb1394:lowVoltageCleaning 
+  rdfs:label "Low voltage cleaning"@en, "Low voltage cleaning"@de ;
+. 
+
+sfb1394:magnAFreq 
+  rdfs:label "Magnetron A: Frequency"@en, "Magnetron A: Frequency"@de ;
+. 
+
+sfb1394:magnAOffTime 
+  rdfs:label "Magnetron A: Off-time"@en, "Magnetron A: Off-time"@de ;
+. 
+
+sfb1394:magnAOnTime 
+  rdfs:label "Magnetron A: On-time"@en, "Magnetron A: On-time"@de ;
+. 
+
+sfb1394:magnAPowerGen 
+  rdfs:label "Magnetron A: Power generator"@en, "Magnetron A: Power generator"@de ;
+. 
+
+sfb1394:magnAPowerMode 
+  rdfs:label "Magnetron A: Power mode"@en, "Magnetron A: Power mode"@de ;
+. 
+
+sfb1394:magnAPowerSet 
+  rdfs:label "Magnetron A: Set power"@en, "Magnetron A: Set power"@de ;
+. 
+
+sfb1394:magnAPulseTime 
+  rdfs:label "Magnetron A: Pulse time"@en, "Magnetron A: Pulse time"@de ;
+. 
+
+sfb1394:magnATarget 
+  rdfs:label "Magnetron A: Target type"@en, "Magnetron A: Target type"@de ;
+. 
+
+sfb1394:magnBFreq 
+  rdfs:label "Magnetron B: Frequency"@en, "Magnetron B: Frequency"@de ;
+. 
+
+sfb1394:magnBOffTime 
+  rdfs:label "Magnetron B: Off-time"@en, "Magnetron B: Off-time"@de ;
+. 
+
+sfb1394:magnBOnTime 
+  rdfs:label "Magnetron B: On-time"@en, "Magnetron B: On-time"@de ;
+. 
+
+sfb1394:magnBPowerGen 
+  rdfs:label "Magnetron B: Power generator"@en, "Magnetron B: Power generator"@de ;
+. 
+
+sfb1394:magnBPowerMode 
+  rdfs:label "Magnetron B: Power mode"@en, "Magnetron B: Power mode"@de ;
+. 
+
+sfb1394:magnBPowerSet 
+  rdfs:label "Magnetron B: Set power"@en, "Magnetron B: Set power"@de ;
+. 
+
+sfb1394:magnBPulseTime 
+  rdfs:label "Magnetron B: Pulse time"@en, "Magnetron B: Pulse time"@de ;
+. 
+
+sfb1394:magnBTarget 
+  rdfs:label "Magnetron B: Target type"@en, "Magnetron B: Target type"@de ;
+. 
+
+sfb1394:magnCFreq 
+  rdfs:label "Magnetron C: Frequency"@en, "Magnetron C: Frequency"@de ;
+. 
+
+sfb1394:magnCOffTime 
+  rdfs:label "Magnetron C: Off-time"@en, "Magnetron C: Off-time"@de ;
+. 
+
+sfb1394:magnCOnTime 
+  rdfs:label "Magnetron C: On-time"@en, "Magnetron C: On-time"@de ;
+. 
+
+sfb1394:magnCPowerGen 
+  rdfs:label "Magnetron C: Power generator"@en, "Magnetron C: Power generator"@de ;
+. 
+
+sfb1394:magnCPowerMode 
+  rdfs:label "Magnetron C: Power mode"@en, "Magnetron C: Power mode"@de ;
+. 
+
+sfb1394:magnCPowerSet 
+  rdfs:label "Magnetron C: Set power"@en, "Magnetron C: Set power"@de ;
+. 
+
+sfb1394:magnCPulseTime 
+  rdfs:label "Magnetron C: Pulse time"@en, "Magnetron C: Pulse time"@de ;
+. 
+
+sfb1394:magnCTarget 
+  rdfs:label "Magnetron C: Target type"@en, "Magnetron C: Target type"@de ;
+. 
+
+sfb1394:magnification 
+  rdfs:label "Magnification"@en, "Magnification"@de ;
+. 
+
+sfb1394:magnificationTEM 
+  rdfs:label "Magnification / Camera length"@en, "Magnification / Camera length"@de ;
+. 
+
+sfb1394:makefile 
+  rdfs:label "Makefile"@en, "Makefile"@de ;
+. 
+
+sfb1394:maskSize 
+  rdfs:label "Mask size"@en, "Mask size"@de ;
+. 
+
+sfb1394:materialSuspension 
+  rdfs:label "Material suspension"@en, "Material suspension"@de ;
+. 
+
+sfb1394:maximumNumberOfIterations 
+  rdfs:label "Maximum number of iterations"@en, "Maximum number of iterations"@de ;
+. 
+
+sfb1394:maximumScratchLoad 
+  rdfs:label "Maximum scratch load"@en, "Maximum scratch load"@de ;
+. 
+
+sfb1394:measurementDateTime 
+  rdfs:label "Measurement date"@en, "Measurement date"@de ;
+. 
+
+sfb1394:measurementModus 
+  rdfs:label "Measurement modus"@en, "Measurement modus"@de ;
+. 
+
+sfb1394:measurementPosition 
+  rdfs:label "Measurement position"@en, "Measurement position"@de ;
+. 
+
+sfb1394:measurementTime 
+  rdfs:label "Measurement time"@en, "Measurement time"@de ;
+. 
+
+sfb1394:mechanicalTreatment 
+  rdfs:label "Mechanical treatment"@en, "Mechanical treatment"@de ;
+. 
+
+sfb1394:minimizationAlgorithm 
+  rdfs:label "Minimization algorithm"@en, "Minimization algorithm"@de ;
+. 
+
+sfb1394:mode 
+  rdfs:label "Mode"@en, "Mode"@de ;
+. 
+
+sfb1394:name 
+  rdfs:label "Name"@en, "Name"@de ;
+. 
+
+sfb1394:noOfCycles 
+  rdfs:label "No. of cycles"@en, "No. of cycles"@de ;
+. 
+
+sfb1394:noOfPoints 
+  rdfs:label "No. of points"@en, "No. of points"@de ;
+. 
+
+sfb1394:node 
+  rdfs:label "Node"@en, "Node"@de ;
+. 
+
+sfb1394:numberOfFrames 
+  rdfs:label "Number of frames"@en, "Number of frames"@de ;
+. 
+
+sfb1394:numberOfIndividualConfigurationsSampled 
+  rdfs:label "Number of individual configurations sampled"@en, "Number of individual configurations sampled"@de ;
+. 
+
+sfb1394:numberOfSegments 
+  rdfs:label "Number of segments"@en, "Number of segments"@de ;
+. 
+
+sfb1394:off-time 
+  rdfs:label "Off-time"@en, "Off-time"@de ;
+. 
+
+sfb1394:on-time 
+  rdfs:label "On-time"@en, "On-time"@de ;
+. 
+
+sfb1394:operationMode 
+  rdfs:label "Operation mode"@en, "Operation mode"@de ;
+. 
+
+sfb1394:operator 
+  rdfs:label "Operator"@en, "Operator"@de ;
+. 
+
+sfb1394:optimizerParameters 
+  rdfs:label "Optimizer parameters"@en, "Optimizer parameters"@de ;
+. 
+
+sfb1394:orderOfOperation 
+  rdfs:label "Order of operation"@en, "Order of operation"@de ;
+. 
+
+sfb1394:otherDimensionsInfo 
+  rdfs:label "Other dimensions info"@en, "Other dimensions info"@de ;
+. 
+
+sfb1394:parameters 
+  rdfs:label "Parameters"@en, "Parameters"@de ;
+. 
+
+sfb1394:parentPotential 
+  rdfs:label "Parent potential"@en, "Parent potential"@de ;
+. 
+
+sfb1394:parentSampleID 
+  rdfs:label "Parent ID"@en, "Parent ID"@de ;
+. 
+
+sfb1394:parentSampleId 
+  rdfs:label "Parent sample ID"@en, "Parent sample ID"@de ;
+. 
+
+sfb1394:passEnergy 
+  rdfs:label "Pass energy"@en, "Pass energy"@de ;
+. 
+
+sfb1394:peakID 
+  rdfs:label "Elements included/Peak ID"@en, "Elements included/Peak ID"@de ;
+. 
+
+sfb1394:phases 
+  rdfs:label "Phases"@en, "Phases"@de ;
+. 
+
+sfb1394:phasesAndModels 
+  rdfs:label "Phases and models"@en, "Phases and models"@de ;
+. 
+
+sfb1394:photonFlux 
+  rdfs:label "Photon flux"@en, "Photon flux"@de ;
+. 
+
+sfb1394:pillarOrientation 
+  rdfs:label "Pillar orientation"@en, "Pillar orientation"@de ;
+. 
+
+sfb1394:pointGroup 
+  rdfs:label "Point group"@en, "Point group"@de ;
+. 
+
+sfb1394:polishingSuspension 
+  rdfs:label "Polishing suspension"@en, "Polishing suspension"@de ;
+. 
+
+sfb1394:postProcessingId 
+  rdfs:label "Post processing ID"@en, "Post processing ID"@de ;
+. 
+
+sfb1394:potentialID 
+  rdfs:label "Potential type/ format"@en, "Potential type/ format"@de ;
+. 
+
+sfb1394:potentialId 
+  rdfs:label "Potential ID"@en, "Potential ID"@de ;
+. 
+
+sfb1394:potentialMeasurement 
+  rdfs:label "Potential measurement"@en, "Potential measurement"@de ;
+. 
+
+sfb1394:potentiostat 
+  rdfs:label "Potentiostat"@en, "Potentiostat"@de ;
+. 
+
+sfb1394:pre-treatment 
+  rdfs:label "Pre-treatment"@en, "Pre-treatment"@de ;
+. 
+
+sfb1394:preparationIds 
+  rdfs:label "Preparation IDs"@en, "Preparation IDs"@de ;
+. 
+
+sfb1394:profilingVelocity 
+  rdfs:label "Profiling velocity"@en, "Profiling velocity"@de ;
+. 
+
+sfb1394:pulseFraction 
+  rdfs:label "Pulse fraction"@en, "Pulse fraction"@de ;
+. 
+
+sfb1394:pulseFrequency 
+  rdfs:label "Pulse frequency"@en, "Pulse frequency"@de ;
+. 
+
+sfb1394:pulseTime 
+  rdfs:label "Pulse time"@en, "Pulse time"@de ;
+. 
+
+sfb1394:pythonFunction 
+  rdfs:label "Python function"@en, "Python function"@de ;
+. 
+
+sfb1394:pythonModule 
+  rdfs:label "Python module"@en, "Python module"@de ;
+. 
+
+sfb1394:pythonVersion 
+  rdfs:label "Python version"@en, "Python version"@de ;
+. 
+
+sfb1394:radiationSource 
+  rdfs:label "Radiation source"@en, "Radiation source"@de ;
+. 
+
+sfb1394:radiationType 
+  rdfs:label "Radiation type"@en, "Radiation type"@de ;
+. 
+
+sfb1394:rasterSize 
+  rdfs:label "Raster size"@en, "Raster size"@de ;
+. 
+
+sfb1394:referenceElectrode 
+  rdfs:label "Reference electrode"@en, "Reference electrode"@de ;
+. 
+
+sfb1394:referenceElectrodePotential 
+  rdfs:label "Reference electrode potential"@en, "Reference electrode potential"@de ;
+. 
+
+sfb1394:referenceSolution 
+  rdfs:label "Reference solution"@en, "Reference solution"@de ;
+. 
+
+sfb1394:references 
+  rdfs:label "References"@en, "References"@de ;
+. 
+
+sfb1394:regularizerCoefficients 
+  rdfs:label "Regularizer coefficient(s)"@en, "Regularizer coefficient(s)"@de ;
+. 
+
+sfb1394:rejectedPhases 
+  rdfs:label "Rejected phases"@en, "Rejected phases"@de ;
+. 
+
+sfb1394:relativeHumidity 
+  rdfs:label "Relative humidity"@en, "Relative humidity"@de ;
+. 
+
+sfb1394:replicates 
+  rdfs:label "Replicates"@en, "Replicates"@de ;
+. 
+
+sfb1394:requiredRam 
+  rdfs:label "Required RAM"@en, "Required RAM"@de ;
+. 
+
+sfb1394:revolutionsPerMinute 
+  rdfs:label "Revolutions per minute"@en, "Revolutions per minute"@de ;
+. 
+
+sfb1394:rotationAngleChi 
+  rdfs:label "Rotation angle chi"@en, "Rotation angle chi"@de ;
+. 
+
+sfb1394:rotationAnglePhi 
+  rdfs:label "Rotation angle phi"@en, "Rotation angle phi"@de ;
+. 
+
+sfb1394:runTime 
+  rdfs:label "Run time"@en, "Run time"@de ;
+. 
+
+sfb1394:runtime 
+  rdfs:label "Runtime"@en, "Runtime"@de ;
+. 
+
+sfb1394:sampleArea 
+  rdfs:label "Sample area"@en, "Sample area"@de ;
+. 
+
+sfb1394:sampleGeometry 
+  rdfs:label "Sample geometry"@en, "Sample geometry"@de ;
+. 
+
+sfb1394:sampleId 
+  rdfs:label "Sample ID"@en, "Sample ID"@de ;
+. 
+
+sfb1394:sampleOrientation 
+  rdfs:label "Sample orientation"@en, "Sample orientation"@de ;
+. 
+
+sfb1394:sampleTemperature 
+  rdfs:label "Sample temperature"@en, "Sample temperature"@de ;
+. 
+
+sfb1394:scale 
+  rdfs:label "Scale"@en, "Scale"@de ;
+. 
+
+sfb1394:scanArea 
+  rdfs:label "Scan area"@en, "Scan area"@de ;
+. 
+
+sfb1394:scanAxis 
+  rdfs:label "Scan axis"@en, "Scan axis"@de ;
+. 
+
+sfb1394:scanEnd 
+  rdfs:label "Scan end"@en, "Scan end"@de ;
+. 
+
+sfb1394:scanMode 
+  rdfs:label "Scan Mode"@en, "Scan Mode"@de ;
+. 
+
+sfb1394:scanStart 
+  rdfs:label "Scan start"@en, "Scan start"@de ;
+. 
+
+sfb1394:scanVelocity 
+  rdfs:label "Scan velocity"@en, "Scan velocity"@de ;
+. 
+
+sfb1394:scratchCrystallographicOrientation 
+  rdfs:label "Scratch crystallographic orientation"@en, "Scratch crystallographic orientation"@de ;
+. 
+
+sfb1394:scratchLength 
+  rdfs:label "Scratch length"@en, "Scratch length"@de ;
+. 
+
+sfb1394:scratchOrientation 
+  rdfs:label "Scratch orientation"@en, "Scratch orientation"@de ;
+. 
+
+sfb1394:scratchSurfacePlane 
+  rdfs:label "Scratch surface plane"@en, "Scratch surface plane"@de ;
+. 
+
+sfb1394:scratchVelocity 
+  rdfs:label "Scratch velocity"@en, "Scratch velocity"@de ;
+. 
+
+sfb1394:setpointTemperature 
+  rdfs:label "Setpoint temperature"@en, "Setpoint temperature"@de ;
+. 
+
+sfb1394:shankAngle 
+  rdfs:label "Shank angle"@en, "Shank angle"@de ;
+. 
+
+sfb1394:simulationType 
+  rdfs:label "Simulation type"@en, "Simulation type"@de ;
+. 
+
+sfb1394:softwareEnvironmentId 
+  rdfs:label "Software environment ID"@en, "Software environment ID"@de ;
+. 
+
+sfb1394:softwareId 
+  rdfs:label "Software ID"@en, "Software ID"@de ;
+. 
+
+sfb1394:softwareIds 
+  rdfs:label "Software IDs"@en, "Software IDs"@de ;
+. 
+
+sfb1394:softwareInstallationProcedure 
+  rdfs:label "Software installation procedure"@en, "Software installation procedure"@de ;
+. 
+
+sfb1394:softwareUsedForDataAnalysis 
+  rdfs:label "Software used for data analysis"@en, "Software used for data analysis"@de ;
+. 
+
+sfb1394:softwareUsedToTest 
+  rdfs:label "Software used to test"@en, "Software used to test"@de ;
+. 
+
+sfb1394:solvent 
+  rdfs:label "Solvent"@en, "Solvent"@de ;
+. 
+
+sfb1394:solventGrit1 
+  rdfs:label "Solvent grit 1"@en, "Solvent grit 1"@de ;
+. 
+
+sfb1394:solventGrit2 
+  rdfs:label "Solvent grit 2"@en, "Solvent grit 2"@de ;
+. 
+
+sfb1394:sourceIds 
+  rdfs:label "Source IDs"@en, "Source IDs"@de ;
+. 
+
+sfb1394:specimenApexRadius 
+  rdfs:label "Specimen apex radius"@en, "Specimen apex radius"@de ;
+. 
+
+sfb1394:specimenDimensions 
+  rdfs:label "Specimen dimensions"@en, "Specimen dimensions"@de ;
+. 
+
+sfb1394:spotSize 
+  rdfs:label "Spot size"@en, "Spot size"@de ;
+. 
+
+sfb1394:standardUsed 
+  rdfs:label "Standard used"@en, "Standard used"@de ;
+. 
+
+sfb1394:start2theta 
+  rdfs:label "Start 2Theta"@en, "Start 2Theta"@de ;
+. 
+
+sfb1394:startOfAveragingDepth 
+  rdfs:label "Start of averaging depth"@en, "Start of averaging depth"@de ;
+. 
+
+sfb1394:startTheta 
+  rdfs:label "Start Theta"@en, "Start Theta"@de ;
+. 
+
+sfb1394:startVoltage 
+  rdfs:label "Start voltage"@en, "Start voltage"@de ;
+. 
+
+sfb1394:stateOfStress 
+  rdfs:label "State of stress"@en, "State of stress"@de ;
+. 
+
+sfb1394:status 
+  rdfs:label "Status"@en, "Status"@de ;
+. 
+
+sfb1394:stepSize 
+  rdfs:label "Step size"@en, "Step size"@de ;
+. 
+
+sfb1394:stopTime 
+  rdfs:label "Stop time"@en, "Stop time"@de ;
+. 
+
+sfb1394:stopVoltage 
+  rdfs:label "Stop voltage"@en, "Stop voltage"@de ;
+. 
+
+sfb1394:stoppingCriterion 
+  rdfs:label "Stopping criterion"@en, "Stopping criterion"@de ;
+. 
+
+sfb1394:storageTilt 
+  rdfs:label "Storage tilt"@en, "Storage tilt"@de ;
+. 
+
+sfb1394:strainRate 
+  rdfs:label "Strain rate"@en, "Strain rate"@de ;
+. 
+
+sfb1394:sublattices 
+  rdfs:label "Sublattices"@en, "Sublattices"@de ;
+. 
+
+sfb1394:submissionTime 
+  rdfs:label "Submission time"@en, "Submission time"@de ;
+. 
+
+sfb1394:substrateBiasType 
+  rdfs:label "Substrate bias type"@en, "Substrate bias type"@de ;
+. 
+
+sfb1394:substrateGeometryAndSize 
+  rdfs:label "Substrate geometry and size"@en, "Substrate geometry and size"@de ;
+. 
+
+sfb1394:substrateMaterial 
+  rdfs:label "Substrate material"@en, "Substrate material"@de ;
+. 
+
+sfb1394:substrateRotation 
+  rdfs:label "Substrate rotation"@en, "Substrate rotation"@de ;
+. 
+
+sfb1394:substrateTemperature 
+  rdfs:label "Substrate temperature"@en, "Substrate temperature"@de ;
+. 
+
+sfb1394:substrateVoltage 
+  rdfs:label "Substrate voltage"@en, "Substrate voltage"@de ;
+. 
+
+sfb1394:sweeps 
+  rdfs:label "Sweeps"@en, "Sweeps"@de ;
+. 
+
+sfb1394:targetDepth 
+  rdfs:label "Target depth"@en, "Target depth"@de ;
+. 
+
+sfb1394:targetDisplacementRate 
+  rdfs:label "Target displacement rate"@en, "Target displacement rate"@de ;
+. 
+
+sfb1394:targetLoad 
+  rdfs:label "Target load"@en, "Target load"@de ;
+. 
+
+sfb1394:targetLoadingRate 
+  rdfs:label "Target loading rate"@en, "Target loading rate"@de ;
+. 
+
+sfb1394:targetStrainRate 
+  rdfs:label "Target strain rate"@en, "Target strain rate"@de ;
+. 
+
+sfb1394:temperature 
+  rdfs:label "Temperature"@en, "Temperature"@de ;
+. 
+
+sfb1394:temperatureOfDeformation 
+  rdfs:label "Temperature of deformation"@en, "Temperature of deformation"@de ;
+. 
+
+sfb1394:testDuration 
+  rdfs:label "Test duration"@en, "Test duration"@de ;
+. 
+
+sfb1394:tilt 
+  rdfs:label "Tilt"@en, "Tilt"@de ;
+. 
+
+sfb1394:tiltAngle 
+  rdfs:label "Tilt angle"@en, "Tilt angle"@de ;
+. 
+
+sfb1394:timeOcp 
+  rdfs:label "Time OCP"@en, "Time OCP"@de ;
+. 
+
+sfb1394:timePerStep 
+  rdfs:label "Time per step"@en, "Time per step"@de ;
+. 
+
+sfb1394:timeSampled 
+  rdfs:label "Time sampled"@en, "Time sampled"@de ;
+. 
+
+sfb1394:timeStep 
+  rdfs:label "Time step"@en, "Time step"@de ;
+. 
+
+sfb1394:tip 
+  rdfs:label "Tip ID"@en, "Tip ID"@de ;
+. 
+
+sfb1394:tipAlternatingVoltage 
+  rdfs:label "Tip alternating Voltage"@en, "Tip alternating Voltage"@de ;
+. 
+
+sfb1394:tipLength 
+  rdfs:label "Tip length"@en, "Tip length"@de ;
+. 
+
+sfb1394:tipName 
+  rdfs:label "Tip ID"@en, "Tip ID"@de ;
+. 
+
+sfb1394:tipOffsetVoltage 
+  rdfs:label "Tip offset voltage"@en, "Tip offset voltage"@de ;
+. 
+
+sfb1394:tipTemperature 
+  rdfs:label "Tip temperature"@en, "Tip temperature"@de ;
+. 
+
+sfb1394:trainingData 
+  rdfs:label "Training data"@en, "Training data"@de ;
+. 
+
+sfb1394:typeOfCalculation 
+  rdfs:label "Type of calculation"@en, "Type of calculation"@de ;
+. 
+
+sfb1394:typeOfLoading 
+  rdfs:label "Type of loading"@en, "Type of loading"@de ;
+. 
+
+sfb1394:typeOfTest 
+  rdfs:label "Type of test"@en, "Type of test"@de ;
+. 
+
+sfb1394:unitCellVectors 
+  rdfs:label "Unit cell vectors"@en, "Unit cell vectors"@de ;
+. 
+
+sfb1394:version 
+  rdfs:label "Version"@en, "Version"@de ;
+. 
+
+sfb1394:vibratingElectrode 
+  rdfs:label "Vibrating electrode"@en, "Vibrating electrode"@de ;
+. 
+
+sfb1394:vibratingElectrodeAmplitude 
+  rdfs:label "Vibrating electrode amplitude"@en, "Vibrating electrode amplitude"@de ;
+. 
+
+sfb1394:vibratingElectrodeFrequency 
+  rdfs:label "Vibrating electrode frequency"@en, "Vibrating electrode frequency"@de ;
+. 
+
+sfb1394:voltage 
+  rdfs:label "Voltage"@en, "Voltage"@de ;
+. 
+
+sfb1394:volume 
+  rdfs:label "Volume"@en, "Volume"@de ;
+. 
+
+sfb1394:workingDistance 
+  rdfs:label "Working distance"@en, "Working distance"@de ;
+. 
+
+sfb1394:workingGasPressure 
+  rdfs:label "Working gas pressure"@en, "Working gas pressure"@de ;
+. 
+
+sfb1394:workingPressure 
+  rdfs:label "Working pressure"@en, "Working pressure"@de ;
+. 
 

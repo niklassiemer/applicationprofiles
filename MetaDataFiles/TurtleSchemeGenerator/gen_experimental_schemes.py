@@ -29,13 +29,13 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.physical.measurement.nano_ind
                                                                                                  NanoIndentationCreep)
 
 schemes_to_write = {
-    'Sample_preparation': SamplePreparation,
+    'SamplePreparation': SamplePreparation,
     "Immersion": Immersion,
     "Etching": Etching,
     "Sample": Sample,
     "Polishing": Polishing,
     "ThinFilm": ThinFilm,
-    "APT": AtomProbeTomography,
+    "tomography": AtomProbeTomography,  # I would prefer the 'APT' as name, however, 'tomography' is already in use on CoScInE
     "ICP_MS": IcpMS,
     "LightMicroscope": LightMicroscope,
     "Micropillar": MicroPillar,
@@ -47,7 +47,7 @@ schemes_to_write = {
     "SVET": SVET,
     "Synchrotron": Synchrotron,
     "TEM": TEM,
-    "Tensile_Compression": TensileCompression,
+    "TensileCompression": TensileCompression,
     "XPS": XPS,
     "XRD": XRD,
     "EBSD": EBSD,

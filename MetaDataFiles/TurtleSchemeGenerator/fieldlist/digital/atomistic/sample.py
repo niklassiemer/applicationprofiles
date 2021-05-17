@@ -4,7 +4,7 @@ from MetaDataFiles.TurtleSchemeGenerator.fieldlist.generic import SFBFields
 class SamplePreparation(SFBFields):
     def __init__(self):
         super().__init__()
-        self.add('Software ID')
+        self.add(label='Software ID')
         self.add(label="Data format")
 
 
