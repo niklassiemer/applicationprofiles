@@ -48,6 +48,7 @@ class SimMDCoscine(SimUniversal):
         # moved here from old AtomisticOutput
         self.add(label="File format", example_input='xyz', comment='Format of the file the Sample is stored.')
         self.add(label="Time sampled", unit='ps')
+        self.add(label="Time step", unit='fs')
         self.add(label="Number of individual configurations sampled")
 
 
@@ -64,7 +65,6 @@ class SimMD(SimMDCoscine):
         self.add(label="Pressure end", unit="GPa")
         self.add(label="Barostat style", field_type="list")
         self.add(label="Barostat timescale", unit="fs")
-        self.add(label="Time step", unit='fs')
         self.add(label="Atomic steps")
         self.add(label="Print period")
         self.add(label="Print detail")
@@ -149,14 +149,14 @@ class PostProcessing(PostProcessingCoScInE):
         self.add('Related post processing IDs')
 
 
-class AtomisticSnapshotCoScInE(SFBFields):
+class AtomisticProcessedCoScInE(SFBFields):
     def __init__(self):
         super().__init__()
         self.add('Post processing ID')
         self.add('Format', example_input='jpg')
 
 
-class AtomisticSnapshotGreen(AtomisticSnapshotCoScInE):
+class AtomisticProcessedGreen(AtomisticProcessedCoScInE):
     def __init__(self):
         super().__init__()
         self.add(label='Atomistic color')
