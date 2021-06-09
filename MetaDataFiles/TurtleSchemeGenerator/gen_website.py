@@ -1,4 +1,5 @@
 import os
+import shutil
 
 from MetaDataFiles.TurtleSchemeGenerator.data_scheme.data_scheme import MetaDataSchemes as Scheme
 
@@ -9,19 +10,14 @@ web_dir = os.path.join(os.getcwd(), 'website')
 try:
     os.mkdir(web_dir)
 except FileExistsError:
-    pass
+    shutil.rmtree(web_dir)
+    os.mkdir(web_dir)
 
 web_digital_dir = os.path.join(web_dir, 'digital')
-try:
-    os.mkdir(web_digital_dir)
-except FileExistsError:
-    pass
+os.mkdir(web_digital_dir)
 
 web_physical_dir = os.path.join(web_dir, 'physical')
-try:
-    os.mkdir(web_physical_dir)
-except FileExistsError:
-    pass
+os.mkdir(web_physical_dir)
 
 index_html = """<html>
  <head>
