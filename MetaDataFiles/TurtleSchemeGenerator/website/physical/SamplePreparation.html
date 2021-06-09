@@ -1,0 +1,238 @@
+<html>
+ <head>
+  <title>SamplePreparation</title>
+ </head> 
+ <body>
+    <H2> SamplePreparation</H2> 
+<table border="2" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>name</th>
+      <th>required</th>
+      <th>example_input</th>
+      <th>type</th>
+      <th>comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>True</td>
+      <td></td>
+      <td>string</td>
+      <td>ID for the object, be it sample, experiment, sim...</td>
+    </tr>
+    <tr>
+      <td>External/alias ID</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Alternative ID for this object, e.g. if one is using a different name for another project</td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td>True</td>
+      <td></td>
+      <td>string</td>
+      <td>The user responsible for this digital record.</td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>True</td>
+      <td></td>
+      <td>date</td>
+      <td>Date of the current digital record; Default is today.</td>
+    </tr>
+    <tr>
+      <td>Affiliation</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DOIs</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>To associate publications produced using this object.</td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Where is this in the real world.</td>
+    </tr>
+    <tr>
+      <td>Parent ID</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>The super-sample from which this came.</td>
+    </tr>
+    <tr>
+      <td>Temperature [°C]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Relative humidity [%]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Environmental gas</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Operator</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>The person who did the physical work. Default is the user.</td>
+    </tr>
+    <tr>
+      <td>Instrument ID</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>Which device was used for this activity.</td>
+    </tr>
+    <tr>
+      <td>Grit 1</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Solvent grit 1</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Grit 2</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Solvent grit 2</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Grit material</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Polishing suspension [μm]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Material suspension</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Solvent</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Immersion experiment routine</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Electrolyte pH</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Electrolyte condition</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Flow rate [ml/h]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Revolutions per minute [rpm]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Volume [ml]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Chemicals</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Duration [s]</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Order of operation</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td>If multiple modifications to the sample are performed (Only for perfectly contiguous preparations), provide the order of the operations.</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>False</td>
+      <td></td>
+      <td>string</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+ </body>
+</html>
